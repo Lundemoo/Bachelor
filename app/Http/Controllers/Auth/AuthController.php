@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatesAndRegistersUsers;
 
 use Illuminate\Contracts\Auth\Guard;
+
 use Illuminate\Contracts\Auth\Registrar;
 //use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -45,7 +46,7 @@ class AuthController extends Controller {
         
         
         
-        public function postLogin(LoginRequest $request)
+        public function postLogin(Request $request)
     {
         if ($this->auth->attempt($request->only('email', 'password')))
         {
