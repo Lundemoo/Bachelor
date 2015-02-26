@@ -35,7 +35,9 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/">Hovedmeny</a></li>
 				</ul>
+<div>
 
+</div>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="/auth/login">Logg inn</a></li>
