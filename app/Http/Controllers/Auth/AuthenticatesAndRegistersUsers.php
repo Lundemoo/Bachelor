@@ -1,10 +1,20 @@
-<?php namespace App\Http\Controllers\Auth;
-use Auth;
+<?php namespace app\Http\Controllers\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
+use App\Services\Registrar;
 trait AuthenticatesAndRegistersUsers {
+/**
+* The Guard implementation.
+*
+* @var Guard
+*/
+protected $auth;
+/**
+* The registrar implementation.
+*
+* @var Registrar
+*/
+protected $registrar;
 /**
 * Show the application registration form.
 *
@@ -22,14 +32,14 @@ return view('auth.register');
 */
 public function postRegister(Request $request)
 {
-$validator = $this->validator($request->all());
+$validator = $this->registrar->validator($request->all());
 if ($validator->fails())
 {
 $this->throwValidationException(
 $request, $validator
 );
 }
-Auth::login($this->create($request->all()));
+$this->auth->login($this->registrar->create($request->all()));
 return redirect($this->redirectPath());
 }
 /**
@@ -53,7 +63,7 @@ $this->validate($request, [
 'email' => 'required|email', 'password' => 'required',
 ]);
 $credentials = $request->only('email', 'password');
-if (Auth::attempt($credentials, $request->has('remember')))
+if ($this->auth->attempt($credentials, $request->has('remember')))
 {
 return redirect()->intended($this->redirectPath());
 }
@@ -79,7 +89,7 @@ return 'These credentials do not match our records.';
 */
 public function getLogout()
 {
-Auth::logout();
+$this->auth->logout();
 return redirect('/');
 }
 /**
@@ -93,7 +103,7 @@ if (property_exists($this, 'redirectPath'))
 {
 return $this->redirectPath;
 }
-return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
+return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
 }
 /**
 * Get the path to the login route.
@@ -103,33 +113,5 @@ return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
 public function loginPath()
 {
 return property_exists($this, 'loginPath') ? $this->loginPath : '/auth/login';
-}
-}
-
-
-
-
-
-
-class LoginRequest extends FormRequest {
-/**
-* Get the validation rules that apply to the request.
-*
-* @return array
-*/
-public function rules()
-{
-return [
-'email' => 'required', 'password' => 'required',
-];
-}
-/**
-* Determine if the user is authorized to make this request.
-*
-* @return bool
-*/
-public function authorize()
-{
-return true;
 }
 }

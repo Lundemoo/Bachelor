@@ -24,7 +24,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Fornavn</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="fornavn" value="{{ old('fornavn') }}">
+								<input type="text" class="form-control" name="firstname" value="{{ old('fornavn') }}">
 							</div>
 						</div>
 

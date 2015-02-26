@@ -33,7 +33,7 @@ class AuthController extends Controller {
 	public function __construct(Guard $auth, Registrar $registrar)
 	{
             
-            var_dump($registrar);
+            
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
