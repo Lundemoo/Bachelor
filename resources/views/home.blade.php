@@ -11,7 +11,14 @@
                                     Du er logget inn som {{ Auth::user()->fornavn }} {{ Auth::user()->etternavn }}</br>
                                     Epost: {{ Auth::user()->email }}
                                         
-                                
+                                  @if (Auth::check())
+                                        
+                                      
+                                        @if (Auth::user()->firstname == "Petter")
+                                      Hei
+                                        
+                                        @endif
+                                        @endif
 
    
                                 

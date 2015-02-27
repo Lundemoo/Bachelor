@@ -11,10 +11,26 @@
 |
 */
 
+Route::filter('admin', function(){
+   if(Auth::check()){
+       
+   
+    if(Auth::user()->email != "petter_lundemo@hotmail.com"){
+       return "Du er ikke admin!";
+   } 
+   } else {
+       return "Du er ikke pålogget!";
+   }
+});
+
+
 Route::get('/', 'HomeController@index');
 Route::post('/', 'WelcomeController@denne');
 Route::post('a', array('uses' => 'WelcomeController@denne'));
-
+Route::get('/hei', array('before' => 'admin', function(){
+    
+   return "Halla Admin!"; 
+}));
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
