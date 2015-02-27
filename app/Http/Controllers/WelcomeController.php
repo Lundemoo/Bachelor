@@ -44,8 +44,6 @@ class WelcomeController extends Controller {
            
             return "HEI!g " . $hei;
         }
-    public function showProject(){
 
-    }
 
 }
