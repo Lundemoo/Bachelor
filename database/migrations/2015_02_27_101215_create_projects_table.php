@@ -11,13 +11,22 @@ class CreateProjectsTable extends Migration {
 	 * @return void
 	 */
 	public function up()
-	{
-		Schema::create('projects', function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->timestamps();
-		});
-	}
+    {
+        Schema::create('projects', function (Blueprint $table) {
+            $table->increments('projectID');
+            $table->string('projectName');
+            $table->string('projectAddress');
+            $table->integer('budget');
+            $table->string('contactpersonID');
+            $table->date('startDate');
+            $table->text('description');
+            $table->date('expectedCompletion');
+            $table->boolean('done')->default(false);
+            $table->timestamps();
+        });
+
+    }
+
 
 	/**
 	 * Reverse the migrations.
