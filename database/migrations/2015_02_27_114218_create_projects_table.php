@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration {
             $table->increments('projectID');
             $table->string('projectName');
             $table->string('projectAddress');
-            $table->integer('budget');
+            $table->integer('budget')->nullable();
             $table->string('contactpersonID');
             $table->date('startDate');
             $table->text('description');

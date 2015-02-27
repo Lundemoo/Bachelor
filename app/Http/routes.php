@@ -26,6 +26,7 @@ Route::filter('admin', function(){
 
 Route::get('/', 'HomeController@index');
 Route::post('/', 'WelcomeController@denne');
+Route::post('showProject', 'WelcomeController@dshowProject'));
 Route::post('a', array('uses' => 'WelcomeController@denne'));
 Route::get('/hei', array('before' => 'admin', function(){
     
