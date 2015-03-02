@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
-use App\Project;
 use App\Http\Requests;
+use App\Project;
+use Request;
 use App\Http\Controllers\Controller;
 
 class PagesController extends Controller {
@@ -36,6 +37,15 @@ class PagesController extends Controller {
         return view('projects.createProjectView');
 
     }
+
+    public function store()
+{
+    $input = Request::all();
+
+    Project::create($input);
+
+return redirect('project');
+}
 
 
 

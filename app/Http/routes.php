@@ -34,6 +34,7 @@ Route::get('/hei', array('before' => 'admin', function(){
 
 Route::get('project/create', 'PagesController@createProject');
 Route::get('project', 'PagesController@showProject');
+Route::post('project', 'PagesController@store');
 
 
 Route::controllers([

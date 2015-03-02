@@ -9,7 +9,7 @@
 {{ $project->projectName}}
 </h2>
 <h3>
-{{ $project->projectAddress}
+{{ $project->projectAddress}}
 </h3>
 
 
