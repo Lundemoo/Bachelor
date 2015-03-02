@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Input;
+use App\Project;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
 class PagesController extends Controller {
 
     /*
@@ -20,7 +25,9 @@ class PagesController extends Controller {
      */
     public function showProject(){
 
-        return view('projects.showProjectView');
+       $projects = \App\Project::all();
+
+        return view('projects.showProjectView',compact('projects'));
     }
 
 
