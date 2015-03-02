@@ -23,11 +23,18 @@ class PagesController extends Controller {
      *
      * @return void
      */
-    public function showProject(){
+    public function showProject()
+    {
 
-       $projects = \App\Project::all();
+        $projects = \App\Project::all();
 
         return view('projects.showProjectView',compact('projects'));
+    }
+
+    public function createProject()
+    {
+        return view('projects.createProjectView');
+
     }
 
 

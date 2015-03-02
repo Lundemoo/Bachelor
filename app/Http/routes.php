@@ -26,12 +26,15 @@ Route::filter('admin', function(){
 
 Route::get('/', 'HomeController@index');
 Route::post('/', 'WelcomeController@denne');
-Route::get('project', 'PagesController@showProject');
 Route::post('a', array('uses' => 'WelcomeController@denne'));
 Route::get('/hei', array('before' => 'admin', function(){
-    
-   return "Halla Admin!"; 
+
+    return "Halla Admin!";
 }));
+
+Route::get('project/create', 'PagesController@createProject');
+Route::get('project', 'PagesController@showProject');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
