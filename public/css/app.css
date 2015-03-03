@@ -8,6 +8,7 @@ body {
   margin: 0;
   background: url(../bilder/bakgrunn.png);
   background-repeat: repeat-x;
+    backround-color: black;
 }
 article,
 aside,
