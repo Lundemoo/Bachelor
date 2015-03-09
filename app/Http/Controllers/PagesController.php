@@ -41,7 +41,7 @@ class PagesController extends Controller {
     public function store()
 {
     $input = Request::all();
-
+echo "Hei!";
     Project::create($input);
 
 return redirect('project');
