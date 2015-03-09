@@ -6,14 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateBuilderTable' => $baseDir . '/database/migrations/2015_03_09_152601_create_builder_table.php',
-    'CreateCarTable' => $baseDir . '/database/migrations/2015_03_09_154021_create_car_table.php',
-    'CreateContactpersonsTable' => $baseDir . '/database/migrations/2015_03_09_151920_create_contactpersons_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateProjectContactpersonsTable' => $baseDir . '/database/migrations/2015_03_09_152436_create_projectContactpersons_table.php',
     'CreateProjectsTable' => $baseDir . '/database/migrations/2015_02_27_114218_create_projects_table.php',
-    'CreateProjecttypesTable' => $baseDir . '/database/migrations/2015_03_09_152753_create_projecttypes_table.php',
-    'CreateTimelisteprosjekterTable' => $baseDir . '/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php',
     'CreateTimesheetTable' => $baseDir . '/database/migrations/2015_02_26_125116_create_timesheet_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -21,9 +15,6 @@ return array(
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
-    'Logbook' => $baseDir . '/database/migrations/2015_03_09_150913_logbook.php',
-    'Logbookaddition' => $baseDir . '/database/migrations/2015_03_09_150619_logbookaddition.php',
-    'Loginattempt' => $baseDir . '/database/migrations/2015_03_09_151406_loginattempt.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
