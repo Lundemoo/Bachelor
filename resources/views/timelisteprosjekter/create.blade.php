@@ -11,6 +11,9 @@
     {!! Form::label('projectId', 'prosjektID:') !!}
     {!! Form::text('projectId', null, ['class' => 'form-control'] ) !!}
 </div>
+@foreach ($projects as $project)
+    <h2> <li> Prosjekter: {{$project->projectId}}</li> </h2>
+@endforeach
 <br/>
 <div class="form-group">
     {!! Form::label('date', 'dato:') !!}
