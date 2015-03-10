@@ -7,5 +7,3 @@
 /composer.lock
 /composer.json
 vendor/autoload.php
-/var/www/html/vendor/composer/autoload_classmap.php
-/vendor/composer/autoload_classmap.php
