@@ -17,6 +17,38 @@
 	  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
      <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
      <link rel="stylesheet" href="/resources/demos/style.css">
+     
+     
+     
+     <!-- PICKER PICKER PICKER PICKER -->
+     
+     
+     <link rel="stylesheet" href="/picker/default.css">
+     <link rel="stylesheet" href="/picker/default.time.css">
+     <link rel="stylesheet" href="/picker/default.date.css">
+     
+     
+     
+    
+      <script src="/picker/picker.js"></script>
+      <script src="/picker/picker.time.js"></script>
+    <script src="/picker/picker.date.js"></script>
+    <script src="/picker/legacy.js"></script>
+  
+    
+     
+     
+     
+     
+     
+     
+     <!-- PICKER PICKER PICKER PICKER -->
+     
+     
+     
+     
+     
+     
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
