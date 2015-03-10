@@ -1,6 +1,14 @@
 @extends('app')
 @section('content')
 
+ <script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
+
+
+
 <h1> Registrate a project </h1>
 
 
@@ -38,20 +46,23 @@
 
 <div class="form-group">
 
- {!! Form::label('projectDescription', 'Project description:') !!}
+ {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('projectDescription', null, ['class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 
 </div>
 
 
 <br>
 
-<div class="form-group">
+<div class="form-group" >
 
- {!! Form::label('startDate', 'Project startup:') !!}
+ {!! Form::label('contactpersonID', 'Contact personer') !!}
 
- {!! Form::input('date','startDate', date('Y-m-d'), ['class' => 'form-control']) !!}
+  <!--<input type="text", id="datepicker">-->
+
+{!! Form::select('contactpersonID', $contactperson_list) !!}
+
 
 </div>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Project;
+use App\ContactPerson;
 use Request;
 use App\Http\Controllers\Controller;
 
@@ -34,7 +35,13 @@ class PagesController extends Controller {
 
     public function createProject()
     {
-        return view('projects.createProjectView');
+        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list));
+
+
+
+
 
     }
 
