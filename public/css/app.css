@@ -9,6 +9,21 @@ body {
   background: url(../bilder/bakgrunn.png);
   background-repeat: repeat-x;
 }
+footer {
+
+    margin-top:15%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    height: 80px;
+
+
+}
+
+
+
+
 article,
 aside,
 details,
@@ -4990,7 +5005,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.72);
 }
 .panel-heading {
   padding: 10px 15px;
