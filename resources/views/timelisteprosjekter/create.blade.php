@@ -6,11 +6,7 @@
 <hr/>
 
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
-<div class="form-group">
-    {!! Form::label('employeeNr', 'ansattNr:') !!}
-    {!! Form::text('employeeNr', null, ['class' => 'form-control'] ) !!}
-</div>
-<br/>
+
 <div class="form-group">
     {!! Form::label('projectId', 'prosjektID:') !!}
     {!! Form::text('projectId', null, ['class' => 'form-control'] ) !!}
@@ -18,17 +14,17 @@
 <br/>
 <div class="form-group">
     {!! Form::label('date', 'dato:') !!}
-    {!! Form::text('date', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
     {!! Form::label('starttime', 'Start tid:') !!}
-    {!! Form::text('starttime', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('starttime', '07:00:00', ['class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
     {!! Form::label('endtime', 'Slutt tid:') !!}
-    {!! Form::text('endtime', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('endtime', '15:00:00', ['class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">

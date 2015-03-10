@@ -36,7 +36,11 @@ class TimelisteprosjektController extends Controller {
 
     public function store(){
 
+        // hente inn alt fra form, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.
+        // i tilegg hente inn alle prosjekter og få det i en liste
+
         $input = Request::all();
+         $input['employeeNr'] = 5;
         Timelisteprosjekt::create($input);
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
