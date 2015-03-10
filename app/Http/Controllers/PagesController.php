@@ -37,6 +37,9 @@ class PagesController extends Controller {
     {
         $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
 
+       /* var_dump($contactperson_list);
+        exit;
+*/
         return view('projects.createProjectView', array('contactperson_list' => $contactperson_list));
 
 
