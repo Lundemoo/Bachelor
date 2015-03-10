@@ -34,7 +34,13 @@ class PagesController extends Controller {
 
     public function createProject()
     {
-        return view('projects.createProjectView');
+        $contactperson_list = ContactPersons::lists('contactname', 'contactpersonID');
+
+        return view::make('projects.createProjectView', array('contactperson_list' => $contactperson_list));
+
+
+
+
 
     }
 
