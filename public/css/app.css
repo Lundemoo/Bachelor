@@ -8,7 +8,6 @@ body {
   margin: 0;
   background: url(../bilder/bakgrunn.png);
   background-repeat: repeat-x;
-    backround-color: black;
 }
 article,
 aside,
@@ -60,6 +59,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+
 }
 mark {
   background: #ff0;
@@ -1020,6 +1020,8 @@ h3,
 .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 h1 small,
 .h1 small,
@@ -2394,6 +2396,8 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+    margin-right:20%;
+    margin-left:20%;
 }
 .radio,
 .checkbox {
