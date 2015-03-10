@@ -46,9 +46,9 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('projectDescription', 'Project description:') !!}
+ {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('projectDescription', null, ['class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 
 </div>
 
@@ -57,11 +57,12 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group" >
 
- {!! Form::label('startDate', 'Project startup:') !!}
+ {!! Form::label('contactpersonID', 'Contact personer') !!}
 
   <!--<input type="text", id="datepicker">-->
 
-  {!! Form::input('date','startDate', date('Y-m-d'), ['class' => 'form-control']) !!}
+{!! Form::select('contactpersonID', $contactperson_list) !!}
+
 
 </div>
 
