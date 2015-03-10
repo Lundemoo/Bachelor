@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset = "utf-8">
-
-</head>
-
-<body>
+@extends('app')
+@section('content')
 
 <h1> Registrer timelister</h1>
 
@@ -15,6 +9,16 @@
 <div class="form-group">
     {!! Form::label('employeeNr', 'ansattNr:') !!}
     {!! Form::text('employeeNr', null, ['class' => 'form-control'] ) !!}
+</div>
+<br/>
+<div class="form-group">
+    {!! Form::label('projectId', 'prosjektID:') !!}
+    {!! Form::text('projectId', null, ['class' => 'form-control'] ) !!}
+</div>
+<br/>
+<div class="form-group">
+    {!! Form::label('date', 'dato:') !!}
+    {!! Form::text('date', null, ['class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
@@ -44,6 +48,6 @@
 
 
 
-</body>
 
-</html>
+
+@stop
