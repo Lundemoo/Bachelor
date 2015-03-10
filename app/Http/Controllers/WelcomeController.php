@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
+use Auth;
 class WelcomeController extends Controller {
 
 	/*
@@ -40,8 +41,9 @@ class WelcomeController extends Controller {
 	}
         
         public function denne(){
-           $hei = Input::get('test');
            
+           echo Auth::user()->id;
+           exit;
             return "HEI!g " . $hei;
         }
 
