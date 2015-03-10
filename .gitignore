@@ -4,7 +4,6 @@
 /vendor/*
 /tests/*
 /storage/*
-/.idea/*
 /composer.lock
 /composer.json
 vendor/autoload.php
