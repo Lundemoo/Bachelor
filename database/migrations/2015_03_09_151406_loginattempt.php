@@ -16,6 +16,7 @@ class Loginattempt extends Migration {
             $table->string('userId');
             $table->string('IP');
             $table->string('browser');
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
 	}

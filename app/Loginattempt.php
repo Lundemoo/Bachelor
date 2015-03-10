@@ -26,6 +26,8 @@ class Loginattempt extends Model {
 	 *
 	 * @var array
 	 */
+        
+        
 	
 
 }
