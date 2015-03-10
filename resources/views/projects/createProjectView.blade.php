@@ -44,6 +44,17 @@
 
 </div>
 
+
+<br>
+
+<div class="form-group">
+
+ {!! Form::label('startDate', 'Project startup:') !!}
+
+ {!! Form::input('date','startDate', date('Y-m-d'), ['class' => 'form-control']) !!}
+
+</div>
+
 <br>
 
 <div class="form-group">

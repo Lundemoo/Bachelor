@@ -19,9 +19,17 @@ class ComposerAutoloaderInitc143c8bb467ca2a090921eb5fb1955be
             return self::$loader;
         }
 
+<<<<<<< HEAD (9575672) - Alt
         spl_autoload_register(array('ComposerAutoloaderInitc143c8bb467ca2a090921eb5fb1955be', 'loadClassLoader'), true, true);
+=======
+        spl_autoload_register(array('ComposerAutoloaderInit979aafc8d48c4c97c3e4344214b0854f', 'loadClassLoader'), true, true);
+>>>>>>> origin/master (6461e03) - timelisteprosj
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
+<<<<<<< HEAD (9575672) - Alt
         spl_autoload_unregister(array('ComposerAutoloaderInitc143c8bb467ca2a090921eb5fb1955be', 'loadClassLoader'));
+=======
+        spl_autoload_unregister(array('ComposerAutoloaderInit979aafc8d48c4c97c3e4344214b0854f', 'loadClassLoader'));
+>>>>>>> origin/master (6461e03) - timelisteprosj
 
         $includePaths = require __DIR__ . '/include_paths.php';
         array_push($includePaths, get_include_path());
@@ -46,14 +54,22 @@ class ComposerAutoloaderInitc143c8bb467ca2a090921eb5fb1955be
 
         $includeFiles = require __DIR__ . '/autoload_files.php';
         foreach ($includeFiles as $file) {
+<<<<<<< HEAD (9575672) - Alt
             composerRequirec143c8bb467ca2a090921eb5fb1955be($file);
+=======
+            composerRequire979aafc8d48c4c97c3e4344214b0854f($file);
+>>>>>>> origin/master (6461e03) - timelisteprosj
         }
 
         return $loader;
     }
 }
 
+<<<<<<< HEAD (9575672) - Alt
 function composerRequirec143c8bb467ca2a090921eb5fb1955be($file)
+=======
+function composerRequire979aafc8d48c4c97c3e4344214b0854f($file)
+>>>>>>> origin/master (6461e03) - timelisteprosj
 {
     require $file;
 }

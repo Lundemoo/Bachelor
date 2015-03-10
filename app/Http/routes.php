@@ -41,3 +41,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
+Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
+Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB

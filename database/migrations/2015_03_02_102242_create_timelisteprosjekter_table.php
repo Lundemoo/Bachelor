@@ -14,10 +14,11 @@ class CreateTimelisteprosjekterTable extends Migration {
 	{
 		Schema::create('timelisteprosjekter', function(Blueprint $table)
 		{
-			$table->increments('projectId');
+			$table->integer('projectId');
 			$table->integer('employeeNr');
-			$table->datetime('starttime');
-			$table->datetime('endtime');
+			$table->date('date');
+			$table->time('starttime');
+			$table->time('endtime');
 			$table->text('comment');
 			$table->timestamps();
 

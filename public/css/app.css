@@ -8,8 +8,22 @@ body {
   margin: 0;
   background: url(../bilder/bakgrunn.png);
   background-repeat: repeat-x;
-    backround-color: black;
 }
+footer {
+
+    margin-top:15%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    height: 80px;
+
+
+}
+
+
+
+
 article,
 aside,
 details,
@@ -60,6 +74,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+
 }
 mark {
   background: #ff0;
@@ -1020,6 +1035,8 @@ h3,
 .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 h1 small,
 .h1 small,
@@ -2394,6 +2411,8 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+    margin-right:20%;
+    margin-left:20%;
 }
 .radio,
 .checkbox {
@@ -4986,7 +5005,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.72);
 }
 .panel-heading {
   padding: 10px 15px;

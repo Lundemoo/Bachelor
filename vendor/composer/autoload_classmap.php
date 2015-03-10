@@ -21,9 +21,13 @@ return array(
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Factory.php',
     'IlluminateQueueClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
+<<<<<<< HEAD (9575672) - Alt
     'Logbook' => $baseDir . '/database/migrations/2015_03_09_150913_logbook.php',
     'Logbookaddition' => $baseDir . '/database/migrations/2015_03_09_150619_logbookaddition.php',
     'Loginattempt' => $baseDir . '/database/migrations/2015_03_09_151406_loginattempt.php',
+=======
+
+>>>>>>> origin/master (6461e03) - timelisteprosj
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
     'PHPUnit_Extensions_PhptTestCase' => $vendorDir . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
