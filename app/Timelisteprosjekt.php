@@ -6,8 +6,9 @@ class Timelisteprosjekt extends Model {
 
 protected $table = "timelisteprosjekter";
     protected $fillable = [
-        'projectID',
+        'projectId',
         'employeeNr',
+        'date',
         'starttime',
         'endtime',
         'comment'
