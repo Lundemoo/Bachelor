@@ -8,12 +8,13 @@
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
 
 <div class="form-group">
-    {!! Form::label('projectId', 'prosjektID:') !!}
-    {!! Form::text('projectId', null, ['class' => 'form-control'] ) !!}
+
+{!! Form::label('projectID', 'Prosjekter') !!}
+
+<!--<input type="text", id="datepicker">-->
+
+{!! Form::select('projectId', $projects) !!}
 </div>
-@foreach ($projects as $project)
-    <h2> <li> Prosjekter: {{$project->projectId}}</li> </h2>
-@endforeach
 <br/>
 <div class="form-group">
     {!! Form::label('date', 'dato:') !!}

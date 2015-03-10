@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
+use App\Project;
 
 //use Illuminate\Http\Request;
 use Request;
@@ -30,8 +31,15 @@ class TimelisteprosjektController extends Controller {
 
     public function create(){
 
-        $projects = DB::table('projects')->get();
-        return view('timelisteprosjekter.create',['projects'=> $projects]);
+       // $projects = DB::table('projects')->get();
+      //  return view('timelisteprosjekter.create',['projects'=> $projects]);
+
+        $projects = Project::lists('projectId');
+
+        /* var_dump($contactperson_list);
+         exit;
+ */
+        return view('timelisteprosjekter.create', array('projects' => $projects));
     }
 
 
@@ -42,13 +50,9 @@ class TimelisteprosjektController extends Controller {
 
         $input = Request::all();
 
-       // $projects = \App\Project::all();   // bruk denne for å hente alle prosjekter. funker.
-
-
-
-
       //$input['employeeNr'] = Auth::user()->id;   // funker når man er logget inn
         $input['employeeNr'] = 7;
+        $input['projectId'] += 1;
         Timelisteprosjekt::create($input);
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
