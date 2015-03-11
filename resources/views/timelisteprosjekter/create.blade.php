@@ -8,8 +8,12 @@
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
 
 <div class="form-group">
-    {!! Form::label('projectId', 'prosjektID:') !!}
-    {!! Form::text('projectId', null, ['class' => 'form-control'] ) !!}
+
+{!! Form::label('projectID', 'Prosjekter') !!}
+
+<!--<input type="text", id="datepicker">-->
+
+{!! Form::select('projectId', $projects) !!}
 </div>
 <br/>
 <div class="form-group">
