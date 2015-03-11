@@ -32,8 +32,8 @@
       <file leaf-file-name="Logbookaddition.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5924933" vertical-offset="0" max-vertical-offset="391">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.27345845" vertical-offset="0" max-vertical-offset="391">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -449,7 +449,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426069899044</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="logbookaddition start">
+      <created>1426076525816</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1426076525816</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -502,7 +508,8 @@
     <MESSAGE value="timelisteprosjekt form updates siste" />
     <MESSAGE value="timelisteprosjekt form med prosjektliste" />
     <MESSAGE value="logbookaddition påbegynt" />
-    <option name="LAST_COMMIT_MESSAGE" value="logbookaddition påbegynt" />
+    <MESSAGE value="logbookaddition start" />
+    <option name="LAST_COMMIT_MESSAGE" value="logbookaddition start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -897,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5924933" vertical-offset="0" max-vertical-offset="391">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.27345845" vertical-offset="0" max-vertical-offset="391">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="41" />
           <folding />
         </state>
       </provider>
