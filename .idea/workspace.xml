@@ -29,11 +29,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Logbookaddition.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Logbookaddition.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27345845" vertical-offset="0" max-vertical-offset="391">
+            <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="391">
               <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8527778" vertical-offset="1002" max-vertical-offset="1530">
+              <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createProjectView.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/projects/createProjectView.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.61538464" vertical-offset="1089" max-vertical-offset="1581">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.8461537" vertical-offset="145" max-vertical-offset="544">
+              <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/timelisteprosjekter/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.423077" vertical-offset="613" max-vertical-offset="986">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -70,9 +110,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php" />
         <option value="$PROJECT_DIR$/app/Logbookaddition.php" />
         <option value="$PROJECT_DIR$/resources/views/logbookaddition/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php" />
       </list>
     </option>
   </component>
@@ -455,7 +495,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426076525816</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="logbookaddition start">
+      <created>1426080417170</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1426080417170</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -735,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/createProjectView.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="925" max-vertical-offset="1581">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-26.653847" vertical-offset="106" max-vertical-offset="1156">
@@ -810,14 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/timelisteprosjekter/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2508591" vertical-offset="160" max-vertical-offset="986">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.115385" vertical-offset="316" max-vertical-offset="952">
@@ -848,22 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="408">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="544">
-          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-44.46154" vertical-offset="0" max-vertical-offset="1428">
-          <caret line="68" column="7" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -904,8 +919,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27345845" vertical-offset="0" max-vertical-offset="391">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="391">
           <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537" vertical-offset="145" max-vertical-offset="544">
+          <caret line="19" column="111" selection-start-line="19" selection-start-column="111" selection-end-line="19" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/createProjectView.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.61538464" vertical-offset="1089" max-vertical-offset="1581">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/timelisteprosjekter/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.423077" vertical-offset="613" max-vertical-offset="986">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8527778" vertical-offset="1002" max-vertical-offset="1530">
+          <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
           <folding />
         </state>
       </provider>
