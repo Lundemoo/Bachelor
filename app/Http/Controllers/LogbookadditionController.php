@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
+use App\Car;
 use Request;
 use DB;
 use Carbon\Carbon;
@@ -29,7 +30,7 @@ class LogbookadditionController extends Controller
 
        // return view('logbookaddition.create');
 
-        $cars = Car::lists('registrationNr');
+        $cars = Car::lists('nickname', 'registrationNr');
 
         return view('logbookaddition.create', array('cars' => $cars));
 
@@ -40,7 +41,6 @@ class LogbookadditionController extends Controller
 
         $input = Request::all();
         $input['employeeNr'] = 1;
-        $input['totalkm'] = 100;
         Logbookaddition::create($input);
 
 
