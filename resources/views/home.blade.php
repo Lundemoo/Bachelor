@@ -12,17 +12,7 @@
                                     Epost: {{ Auth::user()->email }}
                                     
  
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+
 
 <link rel="stylesheet" href="/picker/default.css">
 <link rel="stylesheet" href="/picker/default.time.css">
@@ -44,6 +34,33 @@
 
 <body>
 
+<script>
+
+function set(){
+
+var n = getClockTime(0);
+
+document.getElementById('input_from').value=n;
+}
+function getClockTime(timeZone)
+{
+var now = new Date();
+var hour = now.getHours() + timeZone;
+var minute = now.getMinutes();
+var second = now.getSeconds();
+var ap = "AM";
+if (hour > 11) ap = "PM";
+if (hour > 12) hour = hour - 12;
+if (hour == 0) hour = 12;
+if (hour < 10) hour = "0" + hour;
+if (minute < 10) minute = "0" + minute;
+if (second < 10) second = "0" + second;
+var timeString = hour + ':' + minute + ':' + second + " " + ap;
+return timeString;
+}
+
+</script>
+
     <section class="section">
 
         <form>
@@ -54,18 +71,16 @@
                     id="input_from"
                     class="timepicker"
                     type="time"
-                    name="time">
-                    <!-- valuee="2:30 AM"
-                    data-value="0:00" -->
+                    name="time"
+                    value="">
+                   <!-- data-value="0:00" -->
             </fieldset>
         </form>
 
-        
+
 
     </section>
-    
-    
-    
+
     
     
                 <input
@@ -74,8 +89,8 @@
                     name="date"
                     type="text"
                     autofocuss
-                    value="14 August, 2014"
-                    data-valuee="2014-08-08">
+                    value=""
+                    data-valuee="">
                 
     
 <div id="container"></div>
@@ -91,9 +106,14 @@
 
     <script type="text/javascript">
 
+
+
         var $input = $( '.timepicker' ).pickatime({
+
         })
         var picker = $input.pickatime('picker')
+
+        set();
        // picker.open()
 
     </script>
@@ -131,27 +151,6 @@ dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
         alert(document.getElementById('input_01').value + " - " + document.getElementById('input_from').value);
     }
     </script>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
 
                                     
                                     
