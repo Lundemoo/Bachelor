@@ -5,6 +5,7 @@ use App\Http\Requests;
 use App\Project;
 use App\ContactPerson;
 use Request;
+use App\Builder;
 use App\Http\Controllers\Controller;
 
 class PagesController extends Controller {
@@ -36,11 +37,12 @@ class PagesController extends Controller {
     public function createProject()
     {
         $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $customer_list = Builder::lists('customername','customerID');
 
        /* var_dump($contactperson_list);
         exit;
 */
-        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list));
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list), array('customer_list' => $customer_list));
 
 
 

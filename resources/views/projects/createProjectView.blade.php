@@ -57,6 +57,8 @@ $( "#datepicker" ).datepicker();
 
 <br>
 
+
+
 <div class="form-group" >
 
  {!! Form::label('contactpersonID', 'Contact personer') !!}
@@ -68,16 +70,29 @@ $( "#datepicker" ).datepicker();
 
 </div>
 
+{!! Form::open(['url' => 'project']) !!}
+
+<div class="form-group">
+
+
+ {!! Form::submit('Registrer ny contact', ['class' => 'btn btn-primary form-control']) !!}
+
+</div>
+
+
+{!! Form::close() !!}
+
+
 <br>
 
 
 <div class="form-group" >
 
- {!! Form::label('contactpersonID', 'Contact personer') !!}
+ {!! Form::label('customerID', 'Byggherre') !!}
 
   <!--<input type="text", id="datepicker">-->
 
-{!! Form::select('contactpersonID', $contactperson_list) !!}
+{!! Form::select('customerID', $customer_list) !!}
 
 
 </div>
