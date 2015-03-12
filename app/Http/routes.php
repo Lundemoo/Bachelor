@@ -51,3 +51,8 @@ Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagr
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
+
+//routes for å registrere ny bil. skal kun være mulig for sjefene.
+Route::get('car', 'CarController@index');
+Route::get('car/create', 'CarController@create'); //skjemautfylling
+Route::post('car', 'CarController@store');  //lagre i DB

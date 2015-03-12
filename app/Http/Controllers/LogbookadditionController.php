@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
+use App\Car;
 use Request;
 use DB;
 use Carbon\Carbon;
