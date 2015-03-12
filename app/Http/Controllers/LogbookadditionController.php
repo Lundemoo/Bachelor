@@ -27,7 +27,11 @@ class LogbookadditionController extends Controller
 
     public function create(){
 
-        return view('logbookaddition.create');
+       // return view('logbookaddition.create');
+
+        $cars = Car::lists('registrationNr');
+
+        return view('logbookaddition.create', array('cars' => $cars));
 
 
     }
