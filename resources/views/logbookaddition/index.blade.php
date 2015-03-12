@@ -16,6 +16,7 @@
    <div class="innholdet"> Dato: {{ $logbookaddition->date }}</div>
    <div class="innholdet"> Start destination: {{ $logbookaddition->startdestination }}</div>
    <div class="innholdet"> Stop destination: {{ $logbookaddition->stopdestination }}</div>
+   <div class="innholdet"> Total km: {{ $logbookaddition->totalkm }}</div>
 
     <!-- <li>{{ link_to("/logbookaddition/{$logbookaddition->registrationNr}", $logbookaddition->registrationNr)}}</li>  -->
 

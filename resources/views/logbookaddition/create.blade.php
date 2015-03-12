@@ -60,7 +60,7 @@
     {!! Form::open(['url' => 'logbookaddition']) !!}
 <div class="form-group">
 
-    {!! Form::label('registrationNr', 'Cars') !!}
+    {!! Form::label('registrationNr', 'Car') !!}
     {!! Form::select('registrationNr', $cars) !!}
 </div>
     <div class="form-group">
