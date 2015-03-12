@@ -18,8 +18,6 @@ class CreateContactpersonsTable extends Migration {
             $table->string('contactsurname');
             $table->string('contacttelephone');
             $table->string('contactemail');
-            $table->string('contactcompany');
-            $table->string('contactrole');
             $table->timestamps();
         });
 	}

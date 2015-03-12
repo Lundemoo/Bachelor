@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset = "utf-8">
+@extends('app')
+@section('content')
 
-</head>
-
-<body>
-
-<h1> Registrer Bil</h1>
+<div class="panel panel-default">
+				<div class="panel-heading">Register Car</div>
+				<div class="panel-body">
 
 <hr/>
 
@@ -36,10 +32,8 @@
 
 
 
+</div>
+</div>
+@endsection
 
 
-
-
-</body>
-
-</html>

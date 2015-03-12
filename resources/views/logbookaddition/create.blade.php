@@ -51,7 +51,9 @@
 
 <body onload="initialize()">
 
-<h1> Registrer Kjørebok</h1>
+<div class="panel panel-default">
+				<div class="panel-heading">Register driving</div>
+				<div class="panel-body">
 
 
     <!--fra min index blade fil -->
@@ -84,7 +86,8 @@
     </div>
 
 </form>
-
+</div>
+</div>
 
 @stop
 
