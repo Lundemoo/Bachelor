@@ -38,9 +38,9 @@
 
 function set(){
 
-var n = getClockTime(0);
+var t = getClockTime(0);
 
-document.getElementById('input_from').value=n;
+document.getElementById('input_from').value=t;
 }
 function getClockTime(timeZone)
 {
