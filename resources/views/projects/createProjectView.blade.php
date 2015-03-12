@@ -7,9 +7,11 @@ $( "#datepicker" ).datepicker();
 });
 </script>
 
+<div class="panel panel-default">
+				<div class="panel-heading">Register Project</div>
+				<div class="panel-body">
 
 
-<h1> Registrate a project </h1>
 
 
 {!! Form::open(['url' => 'project']) !!}
@@ -55,6 +57,8 @@ $( "#datepicker" ).datepicker();
 
 <br>
 
+
+
 <div class="form-group" >
 
  {!! Form::label('contactpersonID', 'Contact personer') !!}
@@ -62,6 +66,33 @@ $( "#datepicker" ).datepicker();
   <!--<input type="text", id="datepicker">-->
 
 {!! Form::select('contactpersonID', $contactperson_list) !!}
+
+
+</div>
+
+{!! Form::open(['url' => 'project']) !!}
+
+<div class="form-group">
+
+
+ {!! Form::submit('Registrer ny contact', ['class' => 'btn btn-primary form-control']) !!}
+
+</div>
+
+
+{!! Form::close() !!}
+
+
+<br>
+
+
+<div class="form-group" >
+
+ {!! Form::label('customerID', 'Byggherre') !!}
+
+  <!--<input type="text", id="datepicker">-->
+
+{!! Form::select('customerID', $customer_list) !!}
 
 
 </div>
@@ -81,6 +112,8 @@ $( "#datepicker" ).datepicker();
 
 {!! Form::close() !!}
 
+</div>
+</div>
 
 
 

@@ -42,6 +42,12 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+//routes for timelisteregistrering aka timelisteprosjekter
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
+
+//routes for kjørebok registrering aka logbookaddition
+Route::get('logbookaddition', 'LogbookadditionController@index');
+Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
+Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
