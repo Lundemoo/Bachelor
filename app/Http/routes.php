@@ -51,3 +51,6 @@ Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagr
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
+
+//Route::any('/storecontact/{all}', function($all){ return $all;});
+Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
