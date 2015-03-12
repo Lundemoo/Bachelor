@@ -1,7 +1,6 @@
 @extends('app')
 @section('content')
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="robots" content="noindex,follow" />
@@ -57,10 +56,11 @@
 
     <!--fra min index blade fil -->
     {!! Form::open(['url' => 'logbookaddition']) !!}
-    <div class="form-group">
-        {!! Form::label('registrationNr', 'RegistreringsNr:') !!}
-        {!! Form::text('registrationNr', null, ['class' => 'form-control'] ) !!}
-    </div>
+<div class="form-group">
+
+    {!! Form::label('registrationNr', 'Cars') !!}
+    {!! Form::select('registrationNr', $cars) !!}
+</div>
     <div class="form-group">
         {!! Form::label('date', 'Dato:') !!}
         {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
