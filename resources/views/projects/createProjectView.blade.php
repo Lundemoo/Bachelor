@@ -7,9 +7,11 @@ $( "#datepicker" ).datepicker();
 });
 </script>
 
+<div class="panel panel-default">
+				<div class="panel-heading">Register Project</div>
+				<div class="panel-body">
 
 
-<h1> Registrate a project </h1>
 
 
 {!! Form::open(['url' => 'project']) !!}
@@ -68,6 +70,20 @@ $( "#datepicker" ).datepicker();
 
 <br>
 
+
+<div class="form-group" >
+
+ {!! Form::label('contactpersonID', 'Contact personer') !!}
+
+  <!--<input type="text", id="datepicker">-->
+
+{!! Form::select('contactpersonID', $contactperson_list) !!}
+
+
+</div>
+
+<br>
+
 <div class="form-group">
 
 
@@ -81,6 +97,8 @@ $( "#datepicker" ).datepicker();
 
 {!! Form::close() !!}
 
+</div>
+</div>
 
 
 
