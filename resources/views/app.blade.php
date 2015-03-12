@@ -23,20 +23,7 @@
      <!-- PICKER PICKER PICKER PICKER -->
      
      
-     <link rel="stylesheet" href="/picker/default.css">
-     <link rel="stylesheet" href="/picker/default.time.css">
-     <link rel="stylesheet" href="/picker/default.date.css">
-     
-     
-     
-    
-      <script src="/picker/picker.js"></script>
-      <script src="/picker/picker.time.js"></script>
-    <script src="/picker/picker.date.js"></script>
-    <script src="/picker/legacy.js"></script>
-  
-    
-     
+   
      
      
      
