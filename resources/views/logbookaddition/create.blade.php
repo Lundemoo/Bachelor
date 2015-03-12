@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 
-<head>
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="robots" content="noindex,follow" />
     <title>Registrere Kjørebok</title>
@@ -47,10 +47,13 @@
         }
 
     </script>
-</head>
 
-<body onload="initialize()">
 
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
 				<div class="panel-heading">Register driving</div>
 				<div class="panel-body">
@@ -71,7 +74,7 @@
         {!! Form::label('startdestination', 'Start:') !!}
         {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
     </div>
-    <div class="form-group">
+    <div class="form-group" onload="initialize()">
         {!! Form::label('stopdestination', 'Stop:') !!}
         {!! Form::text('stopdestination', null, ['class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
     </div>
@@ -86,6 +89,9 @@
     </div>
 
 </form>
+</div>
+</div>
+</div>
 </div>
 </div>
 

@@ -6,7 +6,9 @@ $(function() {
 $( "#datepicker" ).datepicker();
 });
 </script>
-
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
 				<div class="panel-heading">Register Project</div>
 				<div class="panel-body">
@@ -112,6 +114,9 @@ $( "#datepicker" ).datepicker();
 
 {!! Form::close() !!}
 
+</div>
+</div>
+</div>
 </div>
 </div>
 
