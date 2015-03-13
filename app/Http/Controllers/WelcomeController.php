@@ -40,11 +40,9 @@ class WelcomeController extends Controller {
 		return view('welcome')->with('hei', $hei);
 	}
         
-        public function denne(){
+        public function denne($all){
            
-           echo Auth::user()->id;
-           exit;
-            return "HEI!g " . $hei;
+           return "HEI";
         }
 
 
