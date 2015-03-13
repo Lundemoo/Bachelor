@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use \App\Loginattempt;
 
 trait ResetsPasswords {
 
@@ -106,9 +105,6 @@ trait ResetsPasswords {
 			$user->password = bcrypt($password);
 
 			$user->save();
-                        
-                        Loginattempt::where('userId', '=', $user->email)->update(array('active' => '0'));
-                        
 
 			$this->auth->login($user);
 		});
@@ -137,7 +133,7 @@ trait ResetsPasswords {
 			return $this->redirectPath;
 		}
 
-		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/';
+		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
 	}
 
 }
