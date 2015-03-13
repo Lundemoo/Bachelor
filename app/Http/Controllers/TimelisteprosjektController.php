@@ -2,13 +2,14 @@
 
 use App\Timelisteprosjekt;
 use App\Http\Requests;
+use App\Http\Requests\CreateTimelisteprosjektRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
 
 //use Illuminate\Http\Request;
-use Request;
+//use Request;
 use DB;
 use Carbon\Carbon;
 
@@ -43,12 +44,13 @@ class TimelisteprosjektController extends Controller {
     }
 
 
-    public function store(){
+    public function store(CreateTimelisteprosjektRequest $request){
 
         // hente inn alt fra form, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.
         // i tilegg hente inn alle prosjekter og få det i en liste
 
-        $input = Request::all();
+       // $input = Request::all();
+        $input = $request->all();
 
       //$input['employeeNr'] = Auth::user()->id;   // funker når man er logget inn
         $input['employeeNr'] = 7;
