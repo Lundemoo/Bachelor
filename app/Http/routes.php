@@ -52,7 +52,12 @@ Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
 
+<<<<<<< HEAD
+//Route::any('/storecontact/{all}', function($all){ return $all;});
+Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
+=======
 //routes for å registrere ny bil. skal kun være mulig for sjefene.
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
+>>>>>>> 39f3b6ad0c246f4704fa5a5736a1d0fcdbb84cd6
