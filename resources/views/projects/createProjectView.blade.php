@@ -53,7 +53,9 @@ $( "#datepicker" ).datepicker();
 				<div class="panel-heading">Register Project</div>
 				<div class="panel-body">
                                     
-                                    <div id="newcontact"><table><tr><td>Fornavn: </td><td><input type="text" id="fornavn"></td></tr>
+                                    <div id="newcontact">
+                                        <table><tr><td>
+                                        <table><tr><td>Fornavn: </td><td><input type="text" id="fornavn"></td></tr>
                                             <tr><td>Etternavn: </td><td><input type="text" id="etternavn"></td></tr>
                                             <tr><td>Telefon: </td><td><input type="text" id="telefon"></td></tr>
                                             <tr><td>Email: </td><td><input type="email" id="email"></td></tr>
@@ -63,6 +65,13 @@ $( "#datepicker" ).datepicker();
                                             
                                         </table>
                                         <a href="#" onclick="test()">Avslutt</a><div id="result"></div>
+                                                </td><td valign="top">
+                                        
+                                        {!! Form::select('companyid', $company_list, null, array('size' => '5')) !!}
+                                        
+                                                </td></tr></table>
+
+                                        
                                     </div>
                                     
 
@@ -214,6 +223,13 @@ function lagre() {
     $.get(her, 
     
     function(data, status){
+        
+        if(isNaN(data.chatAr(0))) {
+            alert("Suksess");
+        } else {
+            alert("Noe er galt");
+        }
+        
         alert("Data: " + data + "\nStatus: " + status);
     });
 

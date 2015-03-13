@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Project;
 use App\ContactPerson;
+use App\Company;
 use Request;
 use App\Builder;
 use App\Http\Controllers\Controller;
@@ -36,13 +37,14 @@ class PagesController extends Controller {
 
     public function createProject()
     {
+        
+        
+        
         $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         $customer_list = Builder::lists('customername','customerID');
-
-       /* var_dump($contactperson_list);
-        exit;
-*/
-        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list), array('customer_list' => $customer_list));
+        $company_list = Company::lists('companyname','companyid');
+        
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list,'company_list' => $company_list, 'customer_list' => $customer_list));
 
 
 
