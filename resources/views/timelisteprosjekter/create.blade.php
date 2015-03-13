@@ -7,7 +7,7 @@
 				<div class="panel-heading">Register Timesheet</div>
 				<div class="panel-body">
 
-<hr/>
+<br>
 
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
 

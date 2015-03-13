@@ -7,7 +7,7 @@
 				<div class="panel-heading">Register Car</div>
 				<div class="panel-body">
 
-<hr/>
+<br>
 
 {!! Form::open(['url' => 'car']) !!}
 <div class="form-group">

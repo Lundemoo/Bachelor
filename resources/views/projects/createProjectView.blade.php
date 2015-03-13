@@ -42,13 +42,13 @@ $(function() {
 $( "#datepicker" ).datepicker();
 });
 </script>
-<<<<<<< HEAD
+
 <div id="grey" onclick="test()">&nbsp;</div>
-=======
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
->>>>>>> 39f3b6ad0c246f4704fa5a5736a1d0fcdbb84cd6
+
 <div class="panel panel-default">
 				<div class="panel-heading">Register Project</div>
 				<div class="panel-body">
