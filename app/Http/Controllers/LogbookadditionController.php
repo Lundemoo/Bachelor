@@ -2,12 +2,13 @@
 
 use App\Logbookaddition;
 use App\Http\Requests;
+use App\Http\Requests\CreateLogbookadditionRequest;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
 use App\Car;
-use Request;
+//use Request;
 use DB;
 use Carbon\Carbon;
 
@@ -37,9 +38,10 @@ class LogbookadditionController extends Controller
 
     }
 
-    public function store(){
+    public function store(CreateLogbookadditionRequest $request){
 
-        $input = Request::all();
+       // $input = Request::all();
+        $input = $request->all();
         $input['employeeNr'] = 1;
         Logbookaddition::create($input);
 
