@@ -42,18 +42,20 @@ $(function() {
 $( "#datepicker" ).datepicker();
 });
 </script>
-<<<<<<< HEAD
+
 <div id="grey" onclick="test()">&nbsp;</div>
-=======
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
->>>>>>> 39f3b6ad0c246f4704fa5a5736a1d0fcdbb84cd6
+
 <div class="panel panel-default">
 				<div class="panel-heading">Register Project</div>
 				<div class="panel-body">
                                     
-                                    <div id="newcontact"><table><tr><td>Fornavn: </td><td><input type="text" id="fornavn"></td></tr>
+                                    <div id="newcontact">
+                                        <table><tr><td>
+                                        <table><tr><td>Fornavn: </td><td><input type="text" id="fornavn"></td></tr>
                                             <tr><td>Etternavn: </td><td><input type="text" id="etternavn"></td></tr>
                                             <tr><td>Telefon: </td><td><input type="text" id="telefon"></td></tr>
                                             <tr><td>Email: </td><td><input type="email" id="email"></td></tr>
@@ -63,6 +65,13 @@ $( "#datepicker" ).datepicker();
                                             
                                         </table>
                                         <a href="#" onclick="test()">Avslutt</a><div id="result"></div>
+                                                </td><td valign="top">
+                                        
+                                        {!! Form::select('companyid', $company_list, null, array('size' => '5')) !!}
+                                        
+                                                </td></tr></table>
+
+                                        
                                     </div>
                                     
 
@@ -214,6 +223,13 @@ function lagre() {
     $.get(her, 
     
     function(data, status){
+        
+        if(isNaN(data.chatAr(0))) {
+            alert("Suksess");
+        } else {
+            alert("Noe er galt");
+        }
+        
         alert("Data: " + data + "\nStatus: " + status);
     });
 
