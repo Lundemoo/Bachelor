@@ -1,0 +1,9 @@
+/config/database.php
+/nbproject/private/
+/vendor/**/.git/
+/vendor/*
+/tests/*
+/storage/*
+/composer.lock
+/composer.json
+vendor/autoload.php
