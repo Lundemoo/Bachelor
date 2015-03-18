@@ -60,4 +60,6 @@ Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
-
+//Route::get('car/{registrationNr}','CarController@show'); //vise frem en bil basert på registrationNr
+Route::get('car/{registrationNr}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
+Route::PATCH('car/{registrationNr}/update', 'CarController@update'); //ipdate metoden

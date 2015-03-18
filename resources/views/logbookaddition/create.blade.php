@@ -57,10 +57,9 @@
 <div class="panel panel-default">
 				<div class="panel-heading">Register driving</div>
 				<div class="panel-body">
-
-
+                    <body onload="initialize()">
     <!--fra min index blade fil -->
-    {!! Form::open(['url' => 'logbookaddition']) !!}
+    {!! Form::open(['url' => 'logbookaddition', ]) !!}
 <div class="form-group">
 
     {!! Form::label('registrationNr', 'Car') !!}
@@ -89,14 +88,15 @@
     </div>
 
 </form>
-                    @if ($errors->any())
-                        <ul class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
 
                     @endif
+
 </div>
 </div>
 </div>

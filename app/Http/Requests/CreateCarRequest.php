@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CreateLogbookadditionRequest extends Request {
+class CreateCarRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -23,10 +23,8 @@ class CreateLogbookadditionRequest extends Request {
 	{
 		return [
 			'registrationNr' => 'required',
-			'startdestination' => 'required',
-			'stopdestination' => 'required',
-			'totalkm' => 'required',
-			'date' => 'required|date'
+			'nickname' => 'required',
+			'brand' => 'required',
 		];
 	}
 
