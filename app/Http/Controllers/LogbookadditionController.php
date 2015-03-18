@@ -49,10 +49,34 @@ class LogbookadditionController extends Controller
         $logbookadditions = DB::table('logbookaddition')->get();
         return view('logbookaddition.index', ['logbookadditions' => $logbookadditions]);
 
+    }
 
+    /*
+   * metode for å redigere en kjørebok som er lagt inn i systemet/DB
+   */
+    public function edit($employeeNr){  //argumenter på endres ettervært som primary key er endret i DB
 
+        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+
+        $cars = Car::lists('nickname', 'registrationNr'); //henter liste med alle biler
+
+        return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
 
     }
+
+    /*
+ * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
+ */
+    public function update($employeeNr, CreateLogbookadditionRequest $request){
+
+        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+
+        $logbookaddition->update($request->all());
+
+        return redirect('logbookaddition');
+    }
+
+
 
 
 

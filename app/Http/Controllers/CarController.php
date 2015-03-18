@@ -31,7 +31,6 @@ class CarController extends Controller
          return view('car.create');
 
 
-
     }
 
     public function store(CreateCarRequest $request){
@@ -53,9 +52,8 @@ class CarController extends Controller
        // $car = DB::table('car')->get($registrationNr);
         return $car;
 
-
-
     }
+
     /*
      * metode for å redigere en bil som er lagt inn i systemet/DB
      */
@@ -71,7 +69,7 @@ class CarController extends Controller
     }
 
     /*
-     * Metode som henter infi fra den edit-formen og oppdaterer aktuell bil i databasen
+     * Metode som henter inn fra edit-formen og oppdaterer aktuell bil i databasen
      */
     public function update($registrationNr, CreatecarRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
 
