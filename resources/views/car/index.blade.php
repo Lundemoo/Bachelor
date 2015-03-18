@@ -7,7 +7,7 @@
 
 <body>
 
-<h1> Alle timelister</h1>
+<h1> Alle biler</h1>
 
 @foreach ($cars as $car)
    <h2> <li> RegistreringsNr: {{$car->registrationNr}}</li> </h2>

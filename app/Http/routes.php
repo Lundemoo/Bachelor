@@ -47,6 +47,9 @@ Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
 
+Route::get('timelisteprosjekter/{projectId}/edit', 'TimelisteprosjektController@edit'); // for å redigere info om en bil som er lagt inn i DB
+Route::PATCH('timelisteprosjekter/{projectId}/update', 'TimelisteprosjektController@update'); //update metoden
+
 //routes for kjørebok registrering aka logbookaddition
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
@@ -62,4 +65,4 @@ Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
 //Route::get('car/{registrationNr}','CarController@show'); //vise frem en bil basert på registrationNr
 Route::get('car/{registrationNr}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
-Route::PATCH('car/{registrationNr}/update', 'CarController@update'); //ipdate metoden
+Route::PATCH('car/{registrationNr}/update', 'CarController@update'); //update metoden

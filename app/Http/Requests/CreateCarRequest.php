@@ -22,7 +22,7 @@ class CreateCarRequest extends Request {
 	public function rules()
 	{
 		return [
-			'registrationNr' => 'required',
+			'registrationNr' => 'required|max:7',
 			'nickname' => 'required',
 			'brand' => 'required',
 		];

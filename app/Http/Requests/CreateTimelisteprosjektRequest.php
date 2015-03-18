@@ -22,8 +22,8 @@ class CreateTimelisteprosjektRequest extends Request {
 	public function rules()
 	{
 		return [
-			'projectId' => 'required',
-			'date' => 'required',
+			'projectId' => 'required|unique',
+			'date' => 'required|date',
 			'starttime' => 'required',
 			'endtime' => 'required',
 			'comment' => 'required'
