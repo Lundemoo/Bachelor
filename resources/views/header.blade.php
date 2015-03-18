@@ -25,7 +25,7 @@
 						<li><a href="/car/create">Registrer bil</a></li>
                         <li><a href="/timelisteprosjekter/create">Registrer timelister</a></li>
                         <li><a href="/logbookaddition/create">Registrer kjørebok</a></li>
-                        <li><a href="/projects/create">Registrer prosjekt</a></li>
+                        <li><a href="/project/create">Registrer prosjekt</a></li>
 
 					@else
 						<li class="dropdown">
