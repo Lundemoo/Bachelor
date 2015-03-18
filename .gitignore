@@ -2,11 +2,8 @@
 /nbproject/private/
 /vendor/**/.git/
 /vendor/*
-vendor/
-/vendor/
 /tests/*
 /storage/*
 /composer.lock
 /composer.json
 vendor/autoload.php
-composer.json
