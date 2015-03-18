@@ -26,28 +26,28 @@
 						<div class="form-group">
                                                     <label class="col-md-4 control-label">Fornavn</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control-required" name="firstname" value="{{ old('fornavn') }}">
+								<input type="text" class="form-control-required" name="firstname" value="{{ old('firstname') }}">
 							</div>
 						</div>
                                         
                                                 <div class="form-group">
 							<label class="col-md-4 control-label">Etternavn</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control-required" name="firstname" value="{{ old('fornavn') }}">
+								<input type="text" class="form-control-required" name="lastname" value="{{ old('lastname') }}">
 							</div>
 						</div>
                                         
                                                   <div class="form-group">
 							<label class="col-md-4 control-label">Telefon</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="firstname" value="{{ old('fornavn') }}">
+								<input type="text" class="form-control" name="telephone" value="{{ old('telephone') }}">
 							</div>
 						</div>
                                         
                                                 <div class="form-group">
 							<label class="col-md-4 control-label">Adresse</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="firstname" value="{{ old('fornavn') }}">
+								<input type="text" class="form-control" name="address" value="{{ old('address') }}">
 							</div>
 						</div>
                                         
