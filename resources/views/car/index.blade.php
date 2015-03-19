@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset = "utf-8">
-
-</head>
-
-<body>
+@extends('app')
+@section('content')
 
 <h1> Alle biler</h1>
 
@@ -19,7 +13,4 @@
 
 @endforeach
 
-
-</body>
-
-</html>
+@endsection

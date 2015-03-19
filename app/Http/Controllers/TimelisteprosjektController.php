@@ -77,7 +77,7 @@ class TimelisteprosjektController extends Controller {
 
         $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
 
-        $projects = Project::lists('projectId'); // henter alle prosjekter
+        $projects = Project::lists('projectName', 'projectId'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
 

@@ -100,7 +100,7 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('budget', 'Project budget:') !!}
+ {!! Form::label('budget', 'Estimated hours:') !!}
 
  {!! Form::text('budget', null, ['class' => 'form-control']) !!}
 

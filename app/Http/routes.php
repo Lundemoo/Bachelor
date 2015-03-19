@@ -67,3 +67,10 @@ Route::post('car', 'CarController@store');  //lagre i DB
 //Route::get('car/{registrationNr}','CarController@show'); //vise frem en bil basert på registrationNr
 Route::get('car/{registrationNr}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
 Route::PATCH('car/{registrationNr}/update', 'CarController@update'); //update metoden
+
+//routes for builder Skal kun være mulig for sjefene.
+Route::get('builder', 'BuilderController@index');
+Route::get('builder/create', 'BuilderController@create');
+Route::post('builder', 'BuilderController@store');
+Route::get('builder/{customerID}/edit', 'BuilderController@edit');
+Route::PATCH('builder/{customerID}/update', 'BuilderController@update');

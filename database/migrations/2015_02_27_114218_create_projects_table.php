@@ -18,13 +18,20 @@ class CreateProjectsTable extends Migration {
             $table->string('projectAddress');
             $table->integer('budget')->nullable();
             $table->string('contactpersonID');
-            $table->integer('customerID')->unsigned();
-            $table->foreign('customerID')->references('customerID')->on('builder');
             $table->date('startDate');
             $table->text('description');
             $table->date('expectedCompletion');
             $table->boolean('done')->default(false);
             $table->timestamps();
+
+            /*
+             * foreign constraints. fremmednøkler.
+             */
+            $table->integer('customerID')->unsigned();
+            $table->foreign('customerID')  //fremmednøklen
+                ->references('customerID') //som er denne raden
+                ->on('builder');           // i denne tabellen
+
         });
 
     }
