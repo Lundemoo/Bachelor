@@ -5,6 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model {
 
 
+        protected $table = "builder";
+
 	protected $fillable = [
         'projectName',
         'projectAddress',
@@ -22,7 +24,7 @@ class Project extends Model {
          * Et prosjekt tilhører en builder. En til mange relasjon.
          */
 
-        public function builder(){
+       public function builder(){
 
                 return $this->belongsTo('App\Builder');
         }

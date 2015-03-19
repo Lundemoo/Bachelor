@@ -19,7 +19,7 @@ class Builder extends Model {
      * En builder kan ha mange projects. En til mange releasjon.
      */
 
-    public function projects(){
+  public function projects(){
 
         return $this->hasMany('App\Project');
 
