@@ -1,5 +1,7 @@
 @extends('app')
 @section('content')
+
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -22,17 +24,21 @@
 <br/>
 <div class="form-group">
     {!! Form::label('date', 'dato:') !!}
-    {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
+    {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+</div>
+<div id="container"></div>
+
+
+
+<br/>
+<div class="form-group">
+    {!! Form::label('start', 'Start tid:') !!}
+    {!! Form::text('start', '9:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('starttime', 'Start tid:') !!}
-    {!! Form::text('starttime', '07:00:00', ['class' => 'form-control'] ) !!}
-</div>
-<br/>
-<div class="form-group">
-    {!! Form::label('endtime', 'Slutt tid:') !!}
-    {!! Form::text('endtime', '15:00:00', ['class' => 'form-control'] ) !!}
+    {!! Form::label('slutt', 'Slutt tid:') !!}
+    {!! Form::text('slutt', '3:00 PM', ['class' => 'timepicker'] ) !!}
 </div>
 <br/>
 <div class="form-group">
@@ -59,5 +65,8 @@
         </div>
     </div>
 </div>
+
+
+    
 
 @stop

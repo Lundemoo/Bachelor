@@ -65,10 +65,13 @@
     {!! Form::label('registrationNr', 'Car') !!}
     {!! Form::select('registrationNr', $cars) !!}
 </div>
-    <div class="form-group">
-        {!! Form::label('date', 'Dato:') !!}
-        {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
-    </div>
+<div class="form-group">
+    {!! Form::label('date', 'dato:') !!}
+    {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+</div>
+<div id="container"></div>
+
+
     <div class="form-group">
         {!! Form::label('startdestination', 'Start:') !!}
         {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
