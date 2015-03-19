@@ -40,9 +40,9 @@ class LogbookadditionController extends Controller
 
     public function store(CreateLogbookadditionRequest $request){
 
-       // $input = Request::all();
         $input = $request->all();
-        $input['employeeNr'] = 1;
+        //$input['employeeNr'] = Auth::user()->id;   // funker når man er logget inn
+        $input['employeeNr'] = 2;
         Logbookaddition::create($input);
 
 
