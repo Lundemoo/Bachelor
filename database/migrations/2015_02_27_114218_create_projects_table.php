@@ -18,7 +18,8 @@ class CreateProjectsTable extends Migration {
             $table->string('projectAddress');
             $table->integer('budget')->nullable();
             $table->string('contactpersonID');
-            $table->string('customerID');
+            $table->integer('customerID')->unsigned();
+            $table->foreign('customerID')->references('customerID')->on('builder');
             $table->date('startDate');
             $table->text('description');
             $table->date('expectedCompletion');

@@ -24,11 +24,13 @@
 <br/>
 <div class="form-group">
     {!! Form::label('date', 'dato:') !!}
-    {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+    {!! Form::text('date', date('Y-m-d'), array('class' => 'datepicker') ) !!}
 </div>
 <div id="container"></div>
 
-
+<script>
+    var minimal = 0;
+    </script>
 
 <br/>
 <div class="form-group">

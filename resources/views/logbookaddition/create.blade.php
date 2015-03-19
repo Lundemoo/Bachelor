@@ -69,6 +69,9 @@
     {!! Form::label('date', 'dato:') !!}
     {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
 </div>
+    <script>
+    var minimal = 0;
+    </script>
 <div id="container"></div>
 
 

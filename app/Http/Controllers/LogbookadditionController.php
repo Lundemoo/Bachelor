@@ -12,7 +12,7 @@ use App\Car;
 use DB;
 use Carbon\Carbon;
 
-
+use Illuminate\Support\Facades\Input;
 
 
 class LogbookadditionController extends Controller
@@ -39,10 +39,13 @@ class LogbookadditionController extends Controller
     }
 
     public function store(CreateLogbookadditionRequest $request){
-
+echo "HEI!";
        // $input = Request::all();
         $input = $request->all();
-        $input['employeeNr'] = 1;
+        $input['date'] = Input::get('date_submit');
+        
+        $input['employeeNr'] = Auth::user()->id;
+        
         Logbookaddition::create($input);
 
 
