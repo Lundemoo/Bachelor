@@ -46,18 +46,24 @@ Route::controllers([
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
+Route::get('timelisteprosjekter/{projectId}/edit', 'TimelisteprosjektController@edit'); // for å redigere info om en timeliste som finns i DB
+Route::PATCH('timelisteprosjekter/{projectId}/update', 'TimelisteprosjektController@update'); //update metoden
 
 //routes for kjørebok registrering aka logbookaddition
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
+Route::get('logbookaddition/{employeeNr}/edit', 'LogbookadditionController@edit'); // for å redigere kjørebok
+Route::PATCH('logbookaddition/{employeeNr}/update', 'LogbookadditionController@update'); //oppdaterer redigert info i DB
 
 
 //Route::any('/storecontact/{all}', function($all){ return $all;});
 Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 
-//routes for å registrere ny bil. skal kun være mulig for sjefene.
+//routes for å registrere/edit bil. skal kun være mulig for sjefene.
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
-
+//Route::get('car/{registrationNr}','CarController@show'); //vise frem en bil basert på registrationNr
+Route::get('car/{registrationNr}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
+Route::PATCH('car/{registrationNr}/update', 'CarController@update'); //update metoden

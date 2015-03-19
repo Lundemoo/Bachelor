@@ -23,7 +23,7 @@ class CreateTimelisteprosjektRequest extends Request {
 	{
 		return [
 			'projectId' => 'required',
-			'date' => 'required',
+			'date' => 'required|date',
 			'starttime' => 'required',
 			'endtime' => 'required',
 			'comment' => 'required'

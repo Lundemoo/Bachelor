@@ -57,19 +57,21 @@
 <div class="panel panel-default">
 				<div class="panel-heading">Register driving</div>
 				<div class="panel-body">
-
-
+                    <body onload="initialize()">
     <!--fra min index blade fil -->
-    {!! Form::open(['url' => 'logbookaddition']) !!}
+    {!! Form::open(['url' => 'logbookaddition', ]) !!}
 <div class="form-group">
 
     {!! Form::label('registrationNr', 'Car') !!}
     {!! Form::select('registrationNr', $cars) !!}
 </div>
-    <div class="form-group">
-        {!! Form::label('date', 'Dato:') !!}
-        {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
-    </div>
+<div class="form-group">
+    {!! Form::label('date', 'dato:') !!}
+    {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+</div>
+<div id="container"></div>
+
+
     <div class="form-group">
         {!! Form::label('startdestination', 'Start:') !!}
         {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
@@ -89,14 +91,15 @@
     </div>
 
 </form>
-                    @if ($errors->any())
-                        <ul class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
 
                     @endif
+
 </div>
 </div>
 </div>

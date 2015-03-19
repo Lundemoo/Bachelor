@@ -7,12 +7,12 @@
 				<div class="panel-heading">Register Car</div>
 				<div class="panel-body">
 
-<br>
+<br/>
 
 {!! Form::open(['url' => 'car']) !!}
 <div class="form-group">
     {!! Form::label('registrationNr', 'registrationNr:') !!}
-    {!! Form::text('registrationNr', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('registrationNr', null, [ 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
@@ -32,7 +32,14 @@
 
 {!! Form::close() !!}
 
+                    @if ($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
 
+                    @endif
 
 </div>
 </div>

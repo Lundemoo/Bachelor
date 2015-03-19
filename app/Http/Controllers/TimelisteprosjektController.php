@@ -9,7 +9,7 @@ use App\User;
 use App\Project;
 
 //use Illuminate\Http\Request;
-//use Request;
+use Request;
 use DB;
 use Carbon\Carbon;
 
@@ -63,9 +63,31 @@ class TimelisteprosjektController extends Controller {
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
         return view('timelisteprosjekter.index', ['timelisteprosjekter' => $timelisteprosjekter]);
 
+    }
 
+    /*
+    * metode for å redigere en timeliste (timesheetproject) som er lagt inn i systemet/DB
+    */
+    public function edit($projectId){
 
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
 
+        $projects = Project::lists('projectId'); // henter alle prosjekter
+
+        return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
+
+    }
+
+    /*
+   * Metode som henter infi fra den edit-formen og oppdaterer aktuell bil i databasen
+   */
+    public function update($projectId, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
+
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
+
+        $timelisteprosjekt->update($request->all());
+
+        return redirect('timelisteprosjekter');
     }
 
 
