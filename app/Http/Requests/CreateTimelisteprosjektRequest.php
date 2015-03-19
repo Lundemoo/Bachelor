@@ -1,7 +1,7 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-
+use Illuminate\Support\Facades\Input;
 class CreateTimelisteprosjektRequest extends Request {
 
 	/**
@@ -21,11 +21,12 @@ class CreateTimelisteprosjektRequest extends Request {
 	 */
 	public function rules()
 	{
+            
 		return [
 			'projectId' => 'required',
-			'date' => 'required|date',
-			'starttime' => 'required',
-			'endtime' => 'required',
+			'date' => 'required',
+			'starttime' => '',
+			'endtime' => '',
 			'comment' => 'required'
 		];
 	}

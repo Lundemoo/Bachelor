@@ -13,7 +13,7 @@ use Request;
 use DB;
 use Carbon\Carbon;
 
-
+use Illuminate\Support\Facades\Input;
 
 
 class TimelisteprosjektController extends Controller {
@@ -35,7 +35,9 @@ class TimelisteprosjektController extends Controller {
        // $projects = DB::table('projects')->get();
       //  return view('timelisteprosjekter.create',['projects'=> $projects]);
 
-        $projects = Project::lists('projectName','projectID');
+        $projects = Project::lists('projectName', 'projectID');
+        
+        
 
         /* var_dump($contactperson_list);
          exit;
@@ -53,8 +55,11 @@ class TimelisteprosjektController extends Controller {
         $input = $request->all();
 
       //$input['employeeNr'] = Auth::user()->id;   // funker når man er logget inn
-        $input['employeeNr'] = 7;
-        $input['projectId'] += 1;
+        $input['employeeNr'] = Auth::user()->id;
+        $input['projectID'] = Input::get('projectId');
+        $input['date'] = Input::get('date_submit');
+        $input['starttime'] = Input::get('start');
+        $input['endtime'] = Input::get('slutt');
         Timelisteprosjekt::create($input);
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
