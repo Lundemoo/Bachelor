@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model {
 
 
-        protected $table = "builder";
+        protected $table = "projects";
 
 	protected $fillable = [
         'projectName',

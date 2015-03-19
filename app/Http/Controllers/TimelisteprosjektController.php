@@ -35,7 +35,7 @@ class TimelisteprosjektController extends Controller {
        // $projects = DB::table('projects')->get();
       //  return view('timelisteprosjekter.create',['projects'=> $projects]);
 
-        $projects = Project::lists('projectId');
+        $projects = Project::lists('projectName','projectID');
 
         /* var_dump($contactperson_list);
          exit;
@@ -72,7 +72,7 @@ class TimelisteprosjektController extends Controller {
 
         $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
 
-        $projects = Project::lists('projectId'); // henter alle prosjekter
+        $projects = Project::lists('projectName', 'projectId'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
 

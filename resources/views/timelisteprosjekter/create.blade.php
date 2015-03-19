@@ -19,7 +19,7 @@
 
 <!--<input type="text", id="datepicker">-->
 
-{!! Form::select('projectId', $projects) !!}
+{!! Form::select('projectID', $projects) !!}
 </div>
 <br/>
 <div class="form-group">
