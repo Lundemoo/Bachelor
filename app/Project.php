@@ -16,4 +16,15 @@ class Project extends Model {
         'done'
     ];
 
+        /**
+         * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+         *
+         * Et prosjekt tilhører en builder. En til mange relasjon.
+         */
+
+        public function builder(){
+
+                return $this->belongsTo('App\Builder');
+        }
+
 }
