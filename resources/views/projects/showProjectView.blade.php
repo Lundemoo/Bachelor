@@ -8,9 +8,12 @@
 <h2>
 {{ $project->projectName}}
 </h2>
-<h3>
+<li>
 {{ $project->projectAddress}}
-</h3>
+</li>
+<li>
+{{ $project->projectAddress}}
+</li>
 
 
 

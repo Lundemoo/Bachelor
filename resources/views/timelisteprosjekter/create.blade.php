@@ -33,7 +33,7 @@
 <br/>
 <div class="form-group">
     {!! Form::label('start', 'Start tid:') !!}
-    {!! Form::text('start', '9:00 AM', ['class' => 'timepicker'] ) !!}
+    {!! Form::text('start', '7:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
 <br/>
 <div class="form-group">
