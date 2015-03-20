@@ -20,7 +20,7 @@ class TimelisteprosjektController extends Controller {
 
     public function index(){
 
-        //DB::table('timelisteprosjekter')->insert(array('projectId' => 1, 'employeeNr' => '1', 'starttime' => '2015-02-02 00:00:00', 'endtime' => '2015-04-04 00:00:00', 'comment' => 'kjempemessig'));
+        //DB::table('timelisteprosjekter')->insert(array('projectID' => 1, 'employeeNR' => '1', 'starttime' => '2015-02-02 00:00:00', 'endtime' => '2015-04-04 00:00:00', 'comment' => 'kjempemessig'));
         //return 'Hei på deg!';
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
 
@@ -54,9 +54,9 @@ class TimelisteprosjektController extends Controller {
        // $input = Request::all();
         $input = $request->all();
 
-      //$input['employeeNr'] = Auth::user()->id;   // funker når man er logget inn
-        $input['employeeNr'] = Auth::user()->id;
-        $input['projectID'] = Input::get('projectId');
+      //$input['employeeNR'] = Auth::user()->id;   // funker når man er logget inn
+        $input['employeeNR'] = Auth::user()->id;
+        $input['projectID'] = Input::get('projectID');
         $input['date'] = Input::get('date_submit');
         $input['starttime'] = Input::get('start');
         $input['endtime'] = Input::get('slutt');
@@ -73,11 +73,11 @@ class TimelisteprosjektController extends Controller {
     /*
     * metode for å redigere en timeliste (timesheetproject) som er lagt inn i systemet/DB
     */
-    public function edit($projectId){
+    public function edit($projectID){
 
-        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectID);
 
-        $projects = Project::lists('projectName', 'projectId'); // henter alle prosjekter
+        $projects = Project::lists('projectName', 'projectID'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
 
@@ -86,9 +86,9 @@ class TimelisteprosjektController extends Controller {
     /*
    * Metode som henter infi fra den edit-formen og oppdaterer aktuell bil i databasen
    */
-    public function update($projectId, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
+    public function update($projectID, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
 
-        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectId);
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectID);
 
         $timelisteprosjekt->update($request->all());
 

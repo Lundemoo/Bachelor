@@ -13,8 +13,8 @@ class Logbook extends Migration {
 	public function up()
 	{
               Schema::create('logbook', function (Blueprint $table) {
-            $table->integer('employeeNr');
-            $table->string('registrationNr');
+            $table->integer('employeeNR');
+            $table->string('registrationNR');
             $table->date('date');
             $table->timestamps();
         });

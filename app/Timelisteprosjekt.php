@@ -5,10 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 class Timelisteprosjekt extends Model {
 
     protected $table = "timelisteprosjekter";
-    protected $primaryKey = 'projectId';
+    protected $primaryKey = 'projectID';
     protected $fillable = [
-        'projectId',
-        'employeeNr',
+        'projectID',
+        'employeeNR',
         'date',
         'starttime',
         'endtime',

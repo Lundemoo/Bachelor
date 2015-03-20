@@ -13,7 +13,7 @@ class Loginattempt extends Migration {
 	public function up()
 	{
 		Schema::create('loginattempt', function (Blueprint $table) {
-            $table->string('userId');
+            $table->string('userID');
             $table->string('IP');
             $table->string('browser');
             $table->boolean('active')->default(1);

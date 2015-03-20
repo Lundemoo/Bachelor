@@ -5,9 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model {
 
     protected $table = "car";
-    protected $primaryKey = 'registrationNr';
+    protected $primaryKey = 'registrationNR';
     protected $fillable = [
-        'registrationNr',
+        'registrationNR',
         'nickname',
         'brand'
     ];

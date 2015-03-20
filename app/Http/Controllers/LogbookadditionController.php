@@ -31,7 +31,7 @@ class LogbookadditionController extends Controller
 
        // return view('logbookaddition.create');
 
-        $cars = Car::lists('nickname', 'registrationNr');
+        $cars = Car::lists('nickname', 'registrationNR');
 
         return view('logbookaddition.create', array('cars' => $cars));
 
@@ -44,7 +44,7 @@ echo "HEI!";
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
         
-        $input['employeeNr'] = Auth::user()->id;
+        $input['employeeNR'] = Auth::user()->id;
         
         Logbookaddition::create($input);
 
@@ -57,11 +57,11 @@ echo "HEI!";
     /*
    * metode for å redigere en kjørebok som er lagt inn i systemet/DB
    */
-    public function edit($employeeNr){  //argumenter på endres ettervært som primary key er endret i DB
+    public function edit($employeeNR){  //argumenter på endres ettervært som primary key er endret i DB
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
 
-        $cars = Car::lists('nickname', 'registrationNr'); //henter liste med alle biler
+        $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
 
         return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
 
@@ -70,9 +70,9 @@ echo "HEI!";
     /*
  * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
  */
-    public function update($employeeNr, CreateLogbookadditionRequest $request){
+    public function update($employeeNR, CreateLogbookadditionRequest $request){
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
 
         $logbookaddition->update($request->all());
 

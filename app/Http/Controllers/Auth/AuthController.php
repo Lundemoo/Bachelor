@@ -53,7 +53,7 @@ class AuthController extends Controller {
       
             
             $userid = $request->only('email')['email'];
-    $getall = Loginattempt::whereBetween('created_at', array($then, $now))->where('userId', '=', $userid)->where('active', '=', '1')->count();
+    $getall = Loginattempt::whereBetween('created_at', array($then, $now))->where('userID', '=', $userid)->where('active', '=', '1')->count();
             
             
             if($getall >= 5){
@@ -74,7 +74,7 @@ class AuthController extends Controller {
         }
         
         Loginattempt::create([
-            'userId' => $userid,
+            'userID' => $userid,
             'IP' => $_SERVER['REMOTE_ADDR'],
             'browser' => $_SERVER['HTTP_USER_AGENT']
             

@@ -14,7 +14,7 @@ class CreateTimesheetTable extends Migration {
 	{
 		Schema::create('timesheet', function(Blueprint $table)
 		{
-			$table->increments('employeeNr');
+			$table->increments('employeeNR');
 			$table->date('date');
 			$table->timestamps();
 		});

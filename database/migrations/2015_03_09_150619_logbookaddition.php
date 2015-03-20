@@ -13,8 +13,8 @@ class Logbookaddition extends Migration {
 	public function up()
 	{
 		   Schema::create('logbookaddition', function (Blueprint $table) {
-            $table->integer('employeeNr');
-            $table->string('registrationNr');
+            $table->integer('employeeNR');
+            $table->string('registrationNR');
             $table->string('startdestination');
             $table->string('stopdestination');
             $table->double('totalkm');

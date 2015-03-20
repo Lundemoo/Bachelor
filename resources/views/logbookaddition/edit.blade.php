@@ -59,11 +59,11 @@
                     <div class="panel-body">
                         <body onload="initialize()">
                         <!--fra min index blade fil -->
-                        {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->employeeNr ]]) !!}
+                        {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->employeeNR ]]) !!}
                         <div class="form-group">
 
-                            {!! Form::label('registrationNr', 'Car') !!}
-                            {!! Form::select('registrationNr', $cars) !!}
+                            {!! Form::label('registrationNR', 'Car') !!}
+                            {!! Form::select('registrationNR', $cars) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date', 'Dato:') !!}

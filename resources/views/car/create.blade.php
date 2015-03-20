@@ -11,8 +11,8 @@
 
 {!! Form::open(['url' => 'car']) !!}
 <div class="form-group">
-    {!! Form::label('registrationNr', 'registrationNr:') !!}
-    {!! Form::text('registrationNr', null, [ 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
+    {!! Form::label('registrationNR', 'registrationNR:') !!}
+    {!! Form::text('registrationNR', null, [ 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">

@@ -46,10 +46,10 @@ class CarController extends Controller
 
     }
 
-    public function show($registrationNr){
+    public function show($registrationNR){
 
-       $car = Car::find($registrationNr);  //finn ut hvorfor dette ikke fungerer
-       // $car = DB::table('car')->get($registrationNr);
+       $car = Car::find($registrationNR);  //finn ut hvorfor dette ikke fungerer
+       // $car = DB::table('car')->get($registrationNR);
         return $car;
 
     }
@@ -58,10 +58,10 @@ class CarController extends Controller
      * metode for å redigere en bil som er lagt inn i systemet/DB
      */
 
-    public function edit($registrationNr){
+    public function edit($registrationNR){
 
-        $car = Car::findOrFail($registrationNr);
-        $car_reg = $car['registrationNr']; //kan tas bort
+        $car = Car::findOrFail($registrationNR);
+        $car_reg = $car['registrationNR']; //kan tas bort
 
 
        return view('car.edit', compact('car'));
@@ -71,9 +71,9 @@ class CarController extends Controller
     /*
      * Metode som henter inn fra edit-formen og oppdaterer aktuell bil i databasen
      */
-    public function update($registrationNr, CreatecarRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
+    public function update($registrationNR, CreatecarRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
 
-        $car = Car::findOrFail($registrationNr);
+        $car = Car::findOrFail($registrationNR);
 
         $car->update($request->all());
 

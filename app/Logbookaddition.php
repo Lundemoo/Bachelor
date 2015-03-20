@@ -5,10 +5,10 @@ use Illuminate\Database\Eloquent\Model;
 class Logbookaddition extends Model {
 
     protected $table = "logbookaddition";
-    protected $primaryKey = 'employeeNr';
+    protected $primaryKey = 'employeeNR';
     protected $fillable = [
-        'employeeNr',
-        'registrationNr',
+        'employeeNR',
+        'registrationNR',
         'startdestination',
         'stopdestination',
         'totalkm',

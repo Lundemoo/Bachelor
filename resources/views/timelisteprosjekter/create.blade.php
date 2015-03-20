@@ -8,14 +8,21 @@
 <div class="panel panel-default">
 				<div class="panel-heading">Register Timesheet</div>
 				<div class="panel-body">
+ @if ($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
 
+                    @endif
 <br/>
 
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
 
 <div class="form-group">
 
-{!! Form::label('projectID', 'Prosjekter') !!}
+{!! Form::label('projectIDs', 'Prosjekter') !!}
 
 <!--<input type="text", id="datepicker">-->
 
@@ -54,14 +61,7 @@
 
 {!! Form::close() !!}
 
-                    @if ($errors->any())
-                        <ul class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-
-                    @endif
+                   
                 </div>
 </div>
         </div>
