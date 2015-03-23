@@ -4,25 +4,25 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
-				<div class="panel-heading">Register Car</div>
+				<div class="panel-heading">Registrer Bil</div>
 				<div class="panel-body">
 
 <br/>
 
 {!! Form::open(['url' => 'car']) !!}
 <div class="form-group">
-    {!! Form::label('registrationNR', 'registrationNR:') !!}
-    {!! Form::text('registrationNR', null, [ 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
+    {!! Form::label('registrationNR', 'Registreringsnummer:') !!}
+    {!! Form::text('registrationNR', null, [ 'placeholder'=>'NN12345', 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
     {!! Form::label('nickname', 'Kallenavn:') !!}
-    {!! Form::text('nickname', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('nickname', null, ['placeholder'=>'Skriv inn kallenavn på bil', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">
     {!! Form::label('brand', 'Modell/merke:') !!}
-    {!! Form::text('brand', null, ['class' => 'form-control'] ) !!}
+    {!! Form::text('brand', null, ['placeholder'=>'Skriv inn bilmerke eller modell', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 

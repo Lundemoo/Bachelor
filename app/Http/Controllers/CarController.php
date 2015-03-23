@@ -39,8 +39,11 @@ class CarController extends Controller
         $input = $request->all();
         Car::create($input);
 
+        \Session::flash('flash_message', 'Bilen er lagret!');
+
 
         $cars = DB::table('car')->get();
+
         return view('car.index', ['cars' => $cars]);
 
 

@@ -36,6 +36,8 @@ class BuilderController extends Controller
         $input = $request->all();
         Builder::create($input);
 
+        \Session::flash('flash_message', 'Byggherre er lagret!');
+
         $builders = DB::table('builder')->get();
         return view('builder.index', ['builders' => $builders]);
 

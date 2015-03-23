@@ -22,7 +22,7 @@
 
 <div class="form-group">
 
-{!! Form::label('projectIDs', 'Prosjekter') !!}
+{!! Form::label('projectIDs', 'Project: ') !!}
 
 <!--<input type="text", id="datepicker">-->
 
@@ -30,7 +30,7 @@
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('date', 'dato:') !!}
+    {!! Form::label('date', 'Date:') !!}
     {!! Form::text('date', date('Y-m-d'), array('class' => 'datepicker') ) !!}
 </div>
 <div id="container"></div>
@@ -41,17 +41,17 @@
 
 <br/>
 <div class="form-group">
-    {!! Form::label('start', 'Start tid:') !!}
+    {!! Form::label('start', 'Start time:') !!}
     {!! Form::text('start', '7:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('slutt', 'Slutt tid:') !!}
+    {!! Form::label('slutt', 'Stop time:') !!}
     {!! Form::text('slutt', '3:00 PM', ['class' => 'timepicker'] ) !!}
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('comment', 'Kommentar:') !!}
+    {!! Form::label('comment', 'Comment:') !!}
     {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
 </div>
 

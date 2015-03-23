@@ -44,9 +44,11 @@ echo "HEI!";
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
         
-        $input['employeeNR'] = Auth::user()->id;
+        $input['employeeNR'] = Auth::user()->ID;
         
         Logbookaddition::create($input);
+
+        \Session::flash('flash_message', 'Your driving is saved!');
 
 
         $logbookadditions = DB::table('logbookaddition')->get();

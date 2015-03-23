@@ -63,6 +63,7 @@ class TimelisteprosjektController extends Controller {
         Timelisteprosjekt::create($input);
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
+        \Session::flash('flash_message', 'Your timesheet is saved!');
 
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
