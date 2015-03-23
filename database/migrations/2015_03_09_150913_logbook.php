@@ -14,7 +14,7 @@ class Logbook extends Migration {
 	{
               Schema::create('logbook', function (Blueprint $table) {
             $table->integer('employeeNR');
-            $table->string('registrationNR'); //fremmednøkkel
+            $table->string('registrationNR')->index(); //fremmednøkkel
             $table->date('date');
             $table->timestamps();
 
