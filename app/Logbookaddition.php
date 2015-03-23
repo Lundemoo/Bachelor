@@ -16,4 +16,9 @@ class Logbookaddition extends Model {
 
     ];
 
+    public function logbook(){
+
+        return $this->belongsTo('App\Logbook');
+    }
+
 }
