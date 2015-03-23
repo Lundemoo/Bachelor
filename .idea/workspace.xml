@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="029af3b2-73d2-420e-b838-16037a211078" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Logbook.php" />
-      <change type="MOVED" beforePath="C:\wamp\www\Bachelor\database\migrations\2015_03_08_150101_create_car_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_09_150912_create_car_table.php" />
+      <change type="MOVED" beforePath="C:\wamp\www\Bachelor\database\migrations\2015_03_09_150619_logbookaddition.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Logbook.php" afterPath="$PROJECT_DIR$/app/Logbook.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -44,17 +44,17 @@
       <file leaf-file-name="2015_03_09_150913_logbook.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7307692" vertical-offset="158" max-vertical-offset="799">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state vertical-scroll-proportion="-15.923077" vertical-offset="130" max-vertical-offset="867">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_03_09_150912_create_car_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015_03_09_150912_create_car_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150912_create_car_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43814433" vertical-offset="0" max-vertical-offset="663">
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="663">
               <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
               <folding />
             </state>
@@ -64,8 +64,8 @@
       <file leaf-file-name="Logbookaddition.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="408">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="408">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -94,17 +94,27 @@
       <file leaf-file-name="Logbook.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Logbook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="561">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="561">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_03_09_150619_logbookaddition.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150619_logbookaddition.php">
+      <file leaf-file-name="2015_03_09_150914_logbookaddition.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="697">
+            <state vertical-scroll-proportion="0.6546392" vertical-offset="197" max-vertical-offset="1088">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateLogbookadditionRequest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateLogbookadditionRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.7692307" vertical-offset="46" max-vertical-offset="663">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -149,9 +159,12 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_03_08_150912_create_car_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateCarRequest.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_08_150101_create_car_table.php" />
-        <option value="$PROJECT_DIR$/app/Logbook.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150912_create_car_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150619_logbookaddition.php" />
+        <option value="$PROJECT_DIR$/app/Logbook.php" />
+        <option value="$PROJECT_DIR$/app/Logbookaddition.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php" />
       </list>
     </option>
   </component>
@@ -558,7 +571,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427121790007</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="foreign keys mellom car og logbook. en -til - mange relasjon.">
+      <created>1427123241320</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1427123241320</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -645,7 +664,8 @@
     <MESSAGE value="endret i registrer project fra budsjet til estimert timeantall" />
     <MESSAGE value="Laget flash bokser som sier ifra at er registrert." />
     <MESSAGE value="foreign car - logbook" />
-    <option name="LAST_COMMIT_MESSAGE" value="foreign car - logbook" />
+    <MESSAGE value="foreign keys mellom car og logbook. en -til - mange relasjon." />
+    <option name="LAST_COMMIT_MESSAGE" value="foreign keys mellom car og logbook. en -til - mange relasjon." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -878,13 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateLogbookadditionRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0790378" vertical-offset="46" max-vertical-offset="663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48109967" vertical-offset="298" max-vertical-offset="1394">
@@ -936,14 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6414763" vertical-offset="230" max-vertical-offset="1445">
@@ -968,14 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Car.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="544">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Builder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.192307" vertical-offset="13" max-vertical-offset="595">
@@ -992,17 +989,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Logbook.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150912_create_car_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="561">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="663">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150619_logbookaddition.php">
+    <entry file="file://$PROJECT_DIR$/app/Logbook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+        <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="561">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Car.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="544">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="408">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateLogbookadditionRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7692307" vertical-offset="46" max-vertical-offset="663">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1010,16 +1031,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7307692" vertical-offset="158" max-vertical-offset="799">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state vertical-scroll-proportion="-15.923077" vertical-offset="130" max-vertical-offset="867">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150912_create_car_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43814433" vertical-offset="0" max-vertical-offset="663">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.6546392" vertical-offset="197" max-vertical-offset="1088">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
           <folding />
         </state>
       </provider>

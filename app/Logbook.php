@@ -7,7 +7,7 @@ class Logbook extends Model
 
 
     protected $table = "logbook";
-
+    protected $primaryKey = 'employeeNR';
     protected $fillable = [
         'registrationNR',
         'date'

@@ -13,15 +13,19 @@ class Logbook extends Migration {
 	public function up()
 	{
               Schema::create('logbook', function (Blueprint $table) {
-            $table->integer('employeeNR');
+            $table->integer('employeeNR')->unsigned();
             $table->string('registrationNR')->index(); //fremmednøkkel
-            $table->date('date');
+            $table->date('date')->index();
             $table->timestamps();
+
+				  /* Primary key */
+
+				  $table->primary('employeeNR')->unsigned();
 
 				  /*
                  * foreign constraints. fremmednøkler.
                  */
-				  $table->foreign('registrationNR')  //fremmednøklen
+				  $table->foreign('registrationNR')  //fremmednøkkelen til bil
 				  ->references('registrationNR')
 				  ->on('car');
 
