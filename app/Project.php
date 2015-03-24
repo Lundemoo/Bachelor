@@ -29,4 +29,23 @@ class Project extends Model {
                 return $this->belongsTo('App\Builder');
         }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * Mange til mange relasjon. Henter timesheet som er assosiert med gitt prosjekt
+     */
+
+        public function timesheet(){
+
+            return $this->belongsToMany('App\Timesheet')->withTimestamps();
+        }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+
+        public function contactperson(){
+
+            return $this->belongsToMany('App\ContactPerson')->withTimestamps();
+        }
+
 }

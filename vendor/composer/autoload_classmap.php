@@ -11,7 +11,7 @@ return array(
     'CreateCompaniesTable' => $baseDir . '/database/migrations/2015_03_12_094215_create_companies_table.php',
     'CreateContactpersonsTable' => $baseDir . '/database/migrations/2015_03_12_094216_create_contactpersons_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreateProjectContactpersonsTable' => $baseDir . '/database/migrations/2015_03_09_152436_create_projectContactpersons_table.php',
+    'CreateProjectContactpersonsTable' => $baseDir . '/database/migrations/2015_03_12_094217_create_projectContactpersons_table.php',
     'CreateProjectsTable' => $baseDir . '/database/migrations/2015_02_27_114218_create_projects_table.php',
     'CreateProjecttypesTable' => $baseDir . '/database/migrations/2015_03_09_152753_create_projecttypes_table.php',
     'CreateTimelisteprosjekterTable' => $baseDir . '/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php',

@@ -15,4 +15,10 @@ protected $table = "contactpersons";
 
     ];
 
+
+    public function project(){
+
+        return $this->belongsToMany('App\Project')->withTimestamps();
+    }
+
 }
