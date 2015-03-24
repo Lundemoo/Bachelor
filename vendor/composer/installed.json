@@ -634,11 +634,7 @@
         ]
     },
     {
-<<<<<<< HEAD
-        "name": "jakub-onderka/php-console-color",
-        "version": "0.1",
-        "version_normalized": "0.1.0.0",
-=======
+
         "name": "sebastian/recursion-context",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -697,7 +693,7 @@
         "name": "sebastian/exporter",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
->>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
+
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/exporter.git",
@@ -2490,11 +2486,11 @@
         "homepage": "http://symfony.com"
     },
     {
-<<<<<<< HEAD
+
         "name": "league/flysystem",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
-=======
+
         "name": "symfony/finder",
         "version": "v2.6.5",
         "version_normalized": "2.6.5.0",
@@ -2551,7 +2547,7 @@
         "version": "v2.6.5",
         "version_normalized": "2.6.5.0",
         "target-dir": "Symfony/Component/Console",
->>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
+
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Console.git",
@@ -2915,7 +2911,7 @@
     },
     {
         "name": "laravel/framework",
-<<<<<<< HEAD
+
         "version": "v5.0.16",
         "version_normalized": "5.0.16.0",
         "source": {
@@ -2927,7 +2923,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/laravel/framework/zipball/861a1e78c84dca82fe4bd85d00349c52304eea77",
             "reference": "861a1e78c84dca82fe4bd85d00349c52304eea77",
-=======
+
         "version": "v5.0.18",
         "version_normalized": "5.0.18.0",
         "source": {
@@ -2939,7 +2935,7 @@
             "type": "zip",
             "url": "https://api.github.com/repos/laravel/framework/zipball/b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
             "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
->>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
+
             "shasum": ""
         },
         "require": {
@@ -3018,11 +3014,9 @@
             "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
             "predis/predis": "Required to use the redis cache and queue drivers (~1.0)."
         },
-<<<<<<< HEAD
-        "time": "2015-03-13 13:27:55",
-=======
+
         "time": "2015-03-21 16:10:01",
->>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
+
         "type": "library",
         "extra": {
             "branch-alias": {
