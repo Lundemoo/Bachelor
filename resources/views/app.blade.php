@@ -9,6 +9,14 @@
 	<title>Jara Bygg</title>
 
 	<link href="/css/app.css" rel="stylesheet">
+        
+        
+<link rel="stylesheet" href="/picker/default.css">
+<link rel="stylesheet" href="/picker/default.time.css">
+<link rel="stylesheet" href="/picker/default.date.css">
+
+        
+        
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -49,12 +57,30 @@
 <body>
 <header> @include('header')</header>
 
+<!--flash beskjeder -->
+@if(Session::has('flash_message'))
+	<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+	@endif
+
 	<div class="contents">@yield('content')</div>
 
 <footer> @include('footer')</footer>
 
 	<!-- Scripts -->
+        
+        
+            <script src="/picker/jquery.1.9.1.js"></script>
+    <script src="/picker/picker.js"></script>
+    <script src="/picker/picker.time.js"></script>
+    <script src="/picker/picker.date.js"></script>
+    <script src="/picker/legacy.js"></script>
+    <script src="/picker/startpickers.js"></script>
+        
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<script> //srcipt for flash message-at boksen forsvinner etter 3 sekund
+		$('div.alert').delay(3000).slideUp(300);
+	</script>
 </body>
 </html>

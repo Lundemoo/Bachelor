@@ -25,16 +25,19 @@
 						
 
 					@else
-                                        @if (Auth::user()->brukertype == 1)
+                                        
+                                        @if(Auth::user()->brukertype == 1)
+                                        
                                         <li><a href="/car/create">Registrer bil</a></li>
-                                        <li><a href="/projects/create">Registrer prosjekt</a></li>
-                                        <li><a href="/project/create">Lage prosjekt</a></li>                
+                        <li><a href="/project/create">Registrer prosjekt</a></li>
+                        <li><a href="/builder/create">Registrer byggherre</a></li>
+
                                         
                                         @endif
                                         
-                        <li><a href="/timelisteprosjekter/create">Registrer timelister</a></li>
+                                                                <li><a href="/timelisteprosjekter/create">Registrer timelister</a></li>
                         <li><a href="/logbookaddition/create">Registrer kjørebok</a></li>
-                        
+                                        
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

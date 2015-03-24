@@ -14,9 +14,20 @@ class CreateTimesheetTable extends Migration {
 	{
 		Schema::create('timesheet', function(Blueprint $table)
 		{
-			$table->increments('employeeNr');
+			$table->integer('employeeNR')->unsigned();  //ps: har forandret til integer her
 			$table->date('date');
 			$table->timestamps();
+
+			/*Primary key */
+			$table->primary('employeeNR')->unsigned();
+
+			/*
+             * foreign constraints.
+             */
+			$table->foreign('employeeNR')  //fremmednøkkelen
+			->references('ID')
+				->on('users');
+
 		});
 	}
 

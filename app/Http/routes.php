@@ -46,18 +46,31 @@ Route::controllers([
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
+Route::get('timelisteprosjekter/{projectID}/edit', 'TimelisteprosjektController@edit'); // for å redigere info om en timeliste som finns i DB
+Route::PATCH('timelisteprosjekter/{projectID}/update', 'TimelisteprosjektController@update'); //update metoden
 
 //routes for kjørebok registrering aka logbookaddition
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
+Route::get('logbookaddition/{employeeNR}/edit', 'LogbookadditionController@edit'); // for å redigere kjørebok
+Route::PATCH('logbookaddition/{employeeNR}/update', 'LogbookadditionController@update'); //oppdaterer redigert info i DB
 
 
 //Route::any('/storecontact/{all}', function($all){ return $all;});
 Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 
-//routes for å registrere ny bil. skal kun være mulig for sjefene.
+//routes for å registrere/edit bil. skal kun være mulig for sjefene.
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
+//Route::get('car/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
+Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
+Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
 
+//routes for builder Skal kun være mulig for sjefene.
+Route::get('builder', 'BuilderController@index');
+Route::get('builder/create', 'BuilderController@create');
+Route::post('builder', 'BuilderController@store');
+Route::get('builder/{customerID}/edit', 'BuilderController@edit');
+Route::PATCH('builder/{customerID}/update', 'BuilderController@update');

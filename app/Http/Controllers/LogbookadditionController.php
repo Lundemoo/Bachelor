@@ -12,7 +12,7 @@ use App\Car;
 use DB;
 use Carbon\Carbon;
 
-
+use Illuminate\Support\Facades\Input;
 
 
 class LogbookadditionController extends Controller
@@ -31,7 +31,7 @@ class LogbookadditionController extends Controller
 
        // return view('logbookaddition.create');
 
-        $cars = Car::lists('nickname', 'registrationNr');
+        $cars = Car::lists('nickname', 'registrationNR');
 
         return view('logbookaddition.create', array('cars' => $cars));
 
@@ -39,20 +39,49 @@ class LogbookadditionController extends Controller
     }
 
     public function store(CreateLogbookadditionRequest $request){
-
+echo "HEI!";
        // $input = Request::all();
         $input = $request->all();
-        $input['employeeNr'] = 1;
+        $input['date'] = Input::get('date_submit');
+        
+        $input['employeeNR'] = Auth::user()->ID;
+        
         Logbookaddition::create($input);
+
+        \Session::flash('flash_message', 'Your driving is saved!');
 
 
         $logbookadditions = DB::table('logbookaddition')->get();
         return view('logbookaddition.index', ['logbookadditions' => $logbookadditions]);
 
+    }
 
+    /*
+   * metode for å redigere en kjørebok som er lagt inn i systemet/DB
+   */
+    public function edit($employeeNR){  //argumenter på endres ettervært som primary key er endret i DB
 
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
+
+        $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
+
+        return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
 
     }
+
+    /*
+ * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
+ */
+    public function update($employeeNR, CreateLogbookadditionRequest $request){
+
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
+
+        $logbookaddition->update($request->all());
+
+        return redirect('logbookaddition');
+    }
+
+
 
 
 

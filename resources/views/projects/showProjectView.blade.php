@@ -5,12 +5,15 @@
 @foreach($projects as $project)
 
 
-<h2>
+<p>Prosjekt:
 {{ $project->projectName}}
-</h2>
-<h3>
+</p>
+<p>Adresse:
 {{ $project->projectAddress}}
-</h3>
+</p>
+<p>Beskrivelse
+{{ $project->description}}
+</p>
 
 
 

@@ -22,11 +22,11 @@ class CreateLogbookadditionRequest extends Request {
 	public function rules()
 	{
 		return [
-			'registrationNr' => 'required',
+			'registrationNR' => 'required|max:7',
 			'startdestination' => 'required',
 			'stopdestination' => 'required',
-			'totalkm' => 'required|integer',
-			'date' => 'required|date'
+			'totalkm' => 'required',
+			'date' => 'required'
 		];
 	}
 

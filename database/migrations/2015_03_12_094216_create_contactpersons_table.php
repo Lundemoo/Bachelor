@@ -13,12 +13,24 @@ class CreateContactpersonsTable extends Migration {
         public function up()
     {
         Schema::create('contactpersons', function (Blueprint $table) {
-            $table->increments('contactpersonID');
+            $table->increments('contactpersonID')->unsigned();
             $table->string('contactname');
             $table->string('contactsurname');
             $table->string('contacttelephone');
             $table->string('contactemail');
             $table->timestamps();
+
+            /*Primary key */
+          //  $table->primary('contactpersonID')->unsigned();   // dette er PK
+
+            /*
+             * foreign constraints.
+             */
+            $table->integer('companyID')->unsigned();
+            $table->foreign('companyID')  //fremmednøkkelen
+            ->references('companyID')
+                ->on('companies');
+
         });
 	}
 

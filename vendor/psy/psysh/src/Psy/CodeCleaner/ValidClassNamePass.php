@@ -200,8 +200,18 @@ class ValidClassNamePass extends NamespaceAwarePass
     protected function ensureMethodExists($class, $name, $stmt)
     {
         $this->ensureClassExists($class, $stmt);
+<<<<<<< HEAD
         // if method name is an expression, give it a pass for now
         if (!$name instanceof Expr && !method_exists($class, $name)) {
+=======
+
+        // if method name is an expression, give it a pass for now
+        if ($name instanceof Expr) {
+            return;
+        }
+
+        if (!method_exists($class, $name) && !method_exists($class, '__callStatic')) {
+>>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
             throw $this->createError(sprintf('Call to undefined method %s::%s()', $class, $name), $stmt);
         }
     }

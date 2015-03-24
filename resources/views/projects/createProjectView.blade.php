@@ -82,7 +82,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectName', 'Project name:') !!}
 
- {!! Form::text('projectName', null, ['class' => 'form-control']) !!}
+ {!! Form::text('projectName', null, ['placeholder'=>'Skriv inn prosjektnavn','class' => 'form-control']) !!}
 
 </div>
 
@@ -92,7 +92,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectAddress', 'Project address:') !!}
 
- {!! Form::text('projectAddress', null, ['class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=>'Skriv inn prosjektets adresse','class' => 'form-control']) !!}
 
 </div>
 
@@ -100,9 +100,9 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('budget', 'Project budget:') !!}
+ {!! Form::label('budget', 'Estimated hours:') !!}
 
- {!! Form::text('budget', null, ['class' => 'form-control']) !!}
+ {!! Form::text('budget', null, ['placeholder'=>'Skriv inn estimerte timer til prosjektet','class' => 'form-control']) !!}
 
 </div>
 
@@ -112,7 +112,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['placeholder'=>'Gi en beskrivelse av prosjektet','class' => 'form-control']) !!}
 
 </div>
 
