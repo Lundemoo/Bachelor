@@ -25,6 +25,7 @@ class addcontactpersonController extends Controller {
         
         
         
+        
         for($i = 0; $i < strlen($alle[0]); $i++){
             
             if(strrpos($legal, $alle[0][$i]) == false){

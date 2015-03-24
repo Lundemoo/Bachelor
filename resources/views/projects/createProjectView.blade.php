@@ -211,21 +211,22 @@ function lagre() {
     var phone = document.getElementById('telefon').value;
     var email = document.getElementById('email').value;
     
- alert("HEI!");   
+   
 
 
  var test = "hahaha";
     var her = "{{ url('/storecontact/') }}";
     
     her += "/" + firstname + "|" + lastname + "|" + phone + "|" + email + "";
-    
+    alert(her);
 
     $.get(her, 
     
     function(data, status){
         
-        if(isNaN(data.chatAr(0))) {
-            alert("Suksess");
+        if(isNaN(data.charAt(0))) {
+            alert(data);
+            alert("All is good");
         } else {
             alert("Noe er galt");
         }
