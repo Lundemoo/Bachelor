@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
-
+use Helper;
 //use Illuminate\Http\Request;
 use Request;
 use DB;
