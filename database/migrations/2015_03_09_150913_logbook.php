@@ -25,9 +25,13 @@ class Logbook extends Migration {
 				  /*
                  * foreign constraints. fremmednøkler.
                  */
-				  $table->foreign('registrationNR')  //fremmednøkkelen til bil
+				  $table->foreign('registrationNR')
 				  ->references('registrationNR')
 				  ->on('car');
+
+				  $table->foreign('employeeNR')
+				  ->references('ID')
+					  ->on('users');
 
 
         });
