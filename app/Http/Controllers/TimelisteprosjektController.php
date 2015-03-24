@@ -55,19 +55,32 @@ class TimelisteprosjektController extends Controller {
         $input = $request->all();
 
       //$input['employeeNR'] = Auth::user()->id;   // funker når man er logget inn
-        $input['employeeNR'] = Auth::user()->id;
+        
+        
         $input['projectID'] = Input::get('projectID');
         $input['date'] = Input::get('date_submit');
         $input['starttime'] = Input::get('start');
         $input['endtime'] = Input::get('slutt');
+       if(Helper::isSafe($input['projectID'], 4)){
         Timelisteprosjekt::create($input);
+       }
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
         \Session::flash('flash_message', 'Your timesheet is saved!');
 
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
-        return view('timelisteprosjekter.index', ['timelisteprosjekter' => $timelisteprosjekter]);
+        
+        
+         $projects = Project::lists('projectName', 'projectID');
+        
+        
+
+        /* var_dump($contactperson_list);
+         exit;
+ */
+        return view('timelisteprosjekter.create', array('projects' => $projects));
+        
 
     }
 

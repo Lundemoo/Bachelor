@@ -21,8 +21,7 @@ class CreateTimelisteprosjektRequest extends Request {
 	 */
 	public function rules()
 	{
-            echo "HEI!";
-            exit;
+            
 		return [
 			'projectID' => 'required',
 			'date' => 'required',
