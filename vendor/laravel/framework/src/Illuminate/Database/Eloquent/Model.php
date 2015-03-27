@@ -147,7 +147,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 	protected $touches = array();
 
 	/**
-	 * User exposed observable events
+	 * User exposed observable events.
 	 *
 	 * @var array
 	 */
@@ -554,6 +554,11 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 	 */
 	public static function forceCreate(array $attributes)
 	{
+		if (static::$unguarded)
+		{
+			return static::create($attributes);
+		}
+
 		static::unguard();
 
 		$model = static::create($attributes);
@@ -3303,7 +3308,7 @@ abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializab
 	}
 
 	/**
-	 * Handle dynamic method calls into the method.
+	 * Handle dynamic method calls into the model.
 	 *
 	 * @param  string  $method
 	 * @param  array   $parameters
