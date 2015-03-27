@@ -26,7 +26,7 @@ class CreateTimelisteprosjekterTable extends Migration {
 			/**
 			 * composite primary key
 			 */
-			$table->primary(array('projectID', 'employeeNR','date', 'starttime', 'endtime'));
+			$table->primary(array('projectID', 'employeeNR','date'));
 
 			/* foreign key 1 */
 			$table->foreign('projectID')
