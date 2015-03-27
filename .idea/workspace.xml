@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="029af3b2-73d2-420e-b838-16037a211078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bachelor.iws" />
@@ -721,7 +719,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427450356243</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="sammensatte primærnøkler">
+      <created>1427450977762</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1427450977762</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
