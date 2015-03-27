@@ -34,8 +34,13 @@ class CreateTimelisteprosjekterTable extends Migration {
 
 			/* foreign key 2 */
 			$table->foreign('employeeNR')
-			->references('ID')
-				->on('users');
+			->references('employeeNR')
+				->on('timesheet');
+
+			/* foreign key 3 */
+			$table->foreign('date')
+				->references('date')
+				->on('timesheet');
 
 		});
 	}
