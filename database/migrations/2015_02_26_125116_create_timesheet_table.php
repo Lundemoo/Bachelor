@@ -17,7 +17,7 @@ class CreateTimesheetTable extends Migration {
 			$table->integer('employeeNR')->unsigned();  //ps: har forandret til integer her
 			$table->date('date');
 			$table->timestamps();
-			
+
 			/**
 			 * composite primary key
 			 */
