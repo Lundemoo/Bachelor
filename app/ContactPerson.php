@@ -6,12 +6,10 @@ class ContactPerson extends Model {
 protected $table = "contactpersons";
     protected $fillable = [
         'contactname',
-        'contactpersonID',
         'contactsurname',
         'contactemail',
-        'contactcompany',
-        'contactrole',
-        'contacttelephone'
+        'contacttelephone',
+        'companyID'
 
     ];
 

@@ -20,7 +20,9 @@ class Logbook extends Migration {
 
 				  /* Primary key */
 
-				  $table->primary('employeeNR')->unsigned();
+				  $table->primary(array('employeeNR', 'registrationNR', 'date'))->unsigned();
+                                  
+                                 
 
 				  /*
                  * foreign constraints. fremmednøkler.

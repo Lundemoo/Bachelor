@@ -9,6 +9,7 @@
 	<title>Jara Bygg</title>
 
 	<link href="/css/app.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
         
         
 <link rel="stylesheet" href="/picker/default.css">

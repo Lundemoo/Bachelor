@@ -2,7 +2,7 @@
 @section('content')
 
 <h1> Alle biler</h1>
-
+<center>
 @foreach ($cars as $car)
    <h2> <li> RegistreringsNr: {{$car->registrationNR}}</li> </h2>
 
@@ -12,5 +12,5 @@
     <!-- <li>{{ link_to("/car/{$car->registrationNR}", $car->registrationNR)}}</li>  -->
 
 @endforeach
-
+</center>
 @endsection

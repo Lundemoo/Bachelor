@@ -11,6 +11,11 @@ use App\Car;
 //use Request;
 use DB;
 use Carbon\Carbon;
+use App\Logbook;
+
+
+
+
 
 use Illuminate\Support\Facades\Input;
 
@@ -39,20 +44,46 @@ class LogbookadditionController extends Controller
     }
 
     public function store(CreateLogbookadditionRequest $request){
-echo "HEI!";
+
        // $input = Request::all();
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
+        $thisid = "";echo $input['date'];
+        $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
         
-        $input['employeeNR'] = Auth::user()->ID;
+        
+        if($result == 0){
+            
+            $mid = Logbook::create(array(
+               'employeeNR' => Auth::user()->id,
+                'registrationNR' => $input['registrationNR'],
+                'date' => $input['date']
+                
+            ));
+            $thisid = $mid->employeeNR;
+            
+        } else {
+            $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->get();
+            
+            foreach($result as $res){
+                $thisid = $res->employeeNR;
+                
+            }
+            
+        }
+        
+        
+        $input['employeeNR'] = $thisid;
         
         Logbookaddition::create($input);
 
-        \Session::flash('flash_message', 'Your driving is saved!');
+        \Session::flash('flash_message', 'Logbook is saved!');
 
 
-        $logbookadditions = DB::table('logbookaddition')->get();
-        return view('logbookaddition.index', ['logbookadditions' => $logbookadditions]);
+        $cars = Car::lists('nickname', 'registrationNR');
+
+        return view('logbookaddition.create', array('cars' => $cars));
+
 
     }
 

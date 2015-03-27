@@ -60,6 +60,8 @@ Route::PATCH('logbookaddition/{employeeNR}/update', 'LogbookadditionController@u
 //Route::any('/storecontact/{all}', function($all){ return $all;});
 Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 
+Route::get('/storefirm/{all}',  'addcontactpersonController@storefirm');
+
 //routes for å registrere/edit bil. skal kun være mulig for sjefene.
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling

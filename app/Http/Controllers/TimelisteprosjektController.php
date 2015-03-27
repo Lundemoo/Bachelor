@@ -20,6 +20,9 @@ class TimelisteprosjektController extends Controller {
 
     public function index(){
 
+        
+        
+        
         //DB::table('timelisteprosjekter')->insert(array('projectID' => 1, 'employeeNR' => '1', 'starttime' => '2015-02-02 00:00:00', 'endtime' => '2015-04-04 00:00:00', 'comment' => 'kjempemessig'));
         //return 'Hei på deg!';
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();

@@ -36,7 +36,7 @@ return "Hello Worlddsadsa";
    
         
         
-        if(count($var) == 0){
+        if(strlen($var) == 0){
             return false;
         }
         
@@ -97,7 +97,6 @@ if(is_numeric($type)){
       
       }  elseif($type == 1){
           
-      
           
           
           

@@ -4,6 +4,7 @@ use Auth;
 use App\ContactPerson;
 use Validator;
 use Helper;
+use App\Company;
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +12,6 @@ use Helper;
  * and open the template in the editor.
  */
 class addcontactpersonController extends Controller {
-
     
     public function storecontact($all){
         $alle = explode("|", $all);
@@ -22,6 +22,7 @@ class addcontactpersonController extends Controller {
         $lastname = $alle[1];
         $phone = $alle[2];
         $email = $alle[3];
+        $companyid = $alle[4];
        
         
         
@@ -53,20 +54,30 @@ class addcontactpersonController extends Controller {
             }
         
         
+            if(!(Helper::isSafe($companyid, 4))){
+                $returnen .= "4";
+                
+                $fail = 1;
+            }
+        
+        
       
-        
-        
         
         if($fail == 0){
        
-        ContactPerson::create(array(
-            'contactname' => $alle[0],
-            'contactsurname' => $alle[1],
-            'contacttelephone' => $alle[2],
-            'contactemail' => $alle[3]
-        ));
+            
+       $restest = ContactPerson::create(array(
+'contactname' => $firstname,
+'contactsurname' => $lastname,
+'contacttelephone' => $phone,
+'contactemail' => $email,
+'companyID' => $companyid
+));
         
-        $returnen .= "YAY!";
+        
+       
+        
+        return "ID" . $restest->id;
         }
         
         
@@ -76,6 +87,95 @@ class addcontactpersonController extends Controller {
         
         
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    public function storefirm($all){
+        $alle = explode("|", $all);
+        $returnen = "";
+        $fail = 0;
+        
+        $name = $alle[0];
+        $role = $alle[1];
+       
+       
+        
+        
+           
+            
+            if(!(Helper::isSafe($name, 1))){
+           $returnen .= "0";
+           $fail = 1;
+            }
+         
+            
+            
+            if(!(Helper::isSafe($role, 0))){
+           $returnen .= "1";
+           $fail = 1;
+            }
+         
+            
+      
+        
+        
+        
+        if($fail == 0){
+         
+      
+        $restest = Company::create(array(
+            'companyname' => $alle[0],
+            'role' => $alle[1]
+        ));
+      
+        return "ID" . $restest->id;
+        }
+        
+        
+        
+        
+        
+        return $returnen;
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 }
 

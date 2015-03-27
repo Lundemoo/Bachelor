@@ -218,53 +218,6 @@
         "description": "implementation of xdg base directory specification for php"
     },
     {
-        "name": "nikic/php-parser",
-        "version": "v1.1.0",
-        "version_normalized": "1.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/nikic/PHP-Parser.git",
-            "reference": "ac05ef6f95bf8361549604b6031c115f92f39528"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ac05ef6f95bf8361549604b6031c115f92f39528",
-            "reference": "ac05ef6f95bf8361549604b6031c115f92f39528",
-            "shasum": ""
-        },
-        "require": {
-            "ext-tokenizer": "*",
-            "php": ">=5.3"
-        },
-        "time": "2015-01-18 11:29:59",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/bootstrap.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Nikita Popov"
-            }
-        ],
-        "description": "A PHP parser written in PHP",
-        "keywords": [
-            "parser",
-            "php"
-        ]
-    },
-    {
         "name": "mtdowling/cron-expression",
         "version": "v1.0.4",
         "version_normalized": "1.0.4.0",
@@ -634,7 +587,6 @@
         ]
     },
     {
-
         "name": "sebastian/recursion-context",
         "version": "1.0.0",
         "version_normalized": "1.0.0.0",
@@ -693,7 +645,6 @@
         "name": "sebastian/exporter",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
-
         "source": {
             "type": "git",
             "url": "https://github.com/sebastianbergmann/exporter.git",
@@ -2486,11 +2437,6 @@
         "homepage": "http://symfony.com"
     },
     {
-
-        "name": "league/flysystem",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
-
         "name": "symfony/finder",
         "version": "v2.6.5",
         "version_normalized": "2.6.5.0",
@@ -2547,7 +2493,6 @@
         "version": "v2.6.5",
         "version_normalized": "2.6.5.0",
         "target-dir": "Symfony/Component/Console",
-
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Console.git",
@@ -2783,38 +2728,39 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "swiftmailer/swiftmailer",
-        "version": "v5.4.0",
-        "version_normalized": "5.4.0.0",
+        "name": "symfony/yaml",
+        "version": "v2.6.5",
+        "version_normalized": "2.6.5.0",
+        "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
-            "url": "https://github.com/swiftmailer/swiftmailer.git",
-            "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f"
+            "url": "https://github.com/symfony/Yaml.git",
+            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/31454f258f10329ae7c48763eb898a75c39e0a9f",
-            "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f",
+            "url": "https://api.github.com/repos/symfony/Yaml/zipball/0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
+            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
         "require-dev": {
-            "mockery/mockery": "~0.9.1"
+            "symfony/phpunit-bridge": "~2.7"
         },
-        "time": "2015-03-14 06:06:39",
+        "time": "2015-03-12 10:28:44",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "5.4-dev"
+                "dev-master": "2.6-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
-            "files": [
-                "lib/swift_required.php"
-            ]
+            "psr-0": {
+                "Symfony\\Component\\Yaml\\": ""
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
@@ -2822,120 +2768,77 @@
         ],
         "authors": [
             {
-                "name": "Chris Corbyn"
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             },
             {
                 "name": "Fabien Potencier",
                 "email": "fabien@symfony.com"
             }
         ],
-        "description": "Swiftmailer, free feature-rich PHP mailer",
-        "homepage": "http://swiftmailer.org",
-        "keywords": [
-            "mail",
-            "mailer"
-        ]
+        "description": "Symfony Yaml Component",
+        "homepage": "http://symfony.com"
     },
     {
-        "name": "psy/psysh",
-        "version": "v0.4.2",
-        "version_normalized": "0.4.2.0",
+        "name": "nikic/php-parser",
+        "version": "v1.2.1",
+        "version_normalized": "1.2.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/bobthecow/psysh.git",
-            "reference": "e50a63b4e4971041fda993b0dd6977fc60bc39d4"
+            "url": "https://github.com/nikic/PHP-Parser.git",
+            "reference": "dba7524b3724f25b947cd26a580787c55c8a6f9b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e50a63b4e4971041fda993b0dd6977fc60bc39d4",
-            "reference": "e50a63b4e4971041fda993b0dd6977fc60bc39d4",
+            "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dba7524b3724f25b947cd26a580787c55c8a6f9b",
+            "reference": "dba7524b3724f25b947cd26a580787c55c8a6f9b",
             "shasum": ""
         },
         "require": {
-            "dnoegel/php-xdg-base-dir": "0.1",
-            "jakub-onderka/php-console-highlighter": "0.3.*",
-            "nikic/php-parser": "~1.0",
-            "php": ">=5.3.0",
-            "symfony/console": "~2.3.10|~2.4.2|~2.5"
+            "ext-tokenizer": "*",
+            "php": ">=5.3"
         },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "~1.5",
-            "phpunit/phpunit": "~3.7|~4.0",
-            "squizlabs/php_codesniffer": "~2.0",
-            "symfony/finder": "~2.1|~3.0"
-        },
-        "suggest": {
-            "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
-            "ext-pdo-sqlite": "The doc command requires SQLite to work.",
-            "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
-            "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
-        },
-        "time": "2015-03-14 17:29:14",
-        "bin": [
-            "bin/psysh"
-        ],
+        "time": "2015-03-24 19:10:28",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-develop": "0.4.x-dev"
+                "dev-master": "1.2-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "files": [
-                "src/Psy/functions.php"
-            ],
-            "psr-0": {
-                "Psy\\": "src/"
-            }
+                "lib/bootstrap.php"
+            ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "MIT"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
-                "name": "Justin Hileman",
-                "email": "justin@justinhileman.info",
-                "homepage": "http://justinhileman.com"
+                "name": "Nikita Popov"
             }
         ],
-        "description": "An interactive shell for modern PHP.",
-        "homepage": "http://psysh.org",
+        "description": "A PHP parser written in PHP",
         "keywords": [
-            "REPL",
-            "console",
-            "interactive",
-            "shell"
+            "parser",
+            "php"
         ]
     },
     {
         "name": "laravel/framework",
-
-        "version": "v5.0.16",
-        "version_normalized": "5.0.16.0",
+        "version": "v5.0.20",
+        "version_normalized": "5.0.20.0",
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "861a1e78c84dca82fe4bd85d00349c52304eea77"
+            "reference": "419d3f485ce7946cace4325ef19a30e1d5543951"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/861a1e78c84dca82fe4bd85d00349c52304eea77",
-            "reference": "861a1e78c84dca82fe4bd85d00349c52304eea77",
-
-        "version": "v5.0.18",
-        "version_normalized": "5.0.18.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
-            "reference": "b21be29a1fb12c84ab4e0b723e9c11492d0b25fe",
-
+            "url": "https://api.github.com/repos/laravel/framework/zipball/419d3f485ce7946cace4325ef19a30e1d5543951",
+            "reference": "419d3f485ce7946cace4325ef19a30e1d5543951",
             "shasum": ""
         },
         "require": {
@@ -3014,9 +2917,7 @@
             "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
             "predis/predis": "Required to use the redis cache and queue drivers (~1.0)."
         },
-
-        "time": "2015-03-21 16:10:01",
-
+        "time": "2015-03-24 13:36:37",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3052,57 +2953,5 @@
             "framework",
             "laravel"
         ]
-    },
-    {
-        "name": "symfony/yaml",
-        "version": "v2.6.5",
-        "version_normalized": "2.6.5.0",
-        "target-dir": "Symfony/Component/Yaml",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Yaml.git",
-            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
-            "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2015-03-12 10:28:44",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Yaml\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "http://symfony.com"
     }
 ]
