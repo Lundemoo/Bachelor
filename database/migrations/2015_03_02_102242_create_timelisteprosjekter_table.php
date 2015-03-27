@@ -22,6 +22,21 @@ class CreateTimelisteprosjekterTable extends Migration {
 			$table->text('comment');
 			$table->timestamps();
 
+			/**
+			 * composite primary key
+			 */
+			$table->primary(array('projectID', 'employeeNR','date', 'starttime', 'endtime'));
+
+			/* foreign key 1 */
+			$table->foreign('projectID')
+			->references('projectID')
+				->on('projects');
+
+			/* foreign key 2 */
+			$table->foreign('employeeNR')
+			->references('ID')
+				->on('users');
+
 		});
 	}
 

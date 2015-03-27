@@ -21,7 +21,7 @@ class CreateContactpersonsTable extends Migration {
             $table->timestamps();
 
             /*Primary key */
-          //  $table->primary('contactpersonID')->unsigned();   // dette er PK
+            $table->primary('contactpersonID')->unsigned();   // dette er PK
 
             /*
              * foreign constraints.

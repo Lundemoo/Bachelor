@@ -17,6 +17,11 @@ class CreateProjectContactpersonsTable extends Migration {
             $table->integer('contactpersonID')->unsigned();  //kn vurdere index her også. lettere hente ut osv.
             $table->timestamps();
 
+			/**
+			 * composite primary key
+			 */
+			$table->primary(array('projectID', 'contactpersonID'));
+
 
 			/* foreign keys 1 */
 			$table->foreign('projectID')->references('projectID')->on('projects'); //ps vurdere onCASCADE her
