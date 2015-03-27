@@ -115,6 +115,10 @@ class ValidClassNamePassTest extends CodeCleanerTestCase
 
             // class constant fetch
             array('Psy\\Test\\CodeCleaner\\ValidClassNamePass\\NotAClass::FOO'),
+
+            // static call
+            array('Psy\\Test\\CodeCleaner\\ValidClassNamePass\\NotAClass::foo()'),
+            array('Psy\\Test\\CodeCleaner\\ValidClassNamePass\\NotAClass::$foo()'),
         );
     }
 
@@ -170,6 +174,15 @@ class ValidClassNamePassTest extends CodeCleanerTestCase
             // Class constant fetch (ValidConstantPassTest validates the actual constant)
             array('class A {} A::FOO'),
             array('$a = new DateTime; $a::ATOM'),
+
+            // static call
+            array('DateTime::createFromFormat()'),
+            array('DateTime::$someMethod()'),
+<<<<<<< HEAD
+=======
+            array('Psy\Test\CodeCleaner\Fixtures\ClassWithStatic::doStuff()'),
+            array('Psy\Test\CodeCleaner\Fixtures\ClassWithCallStatic::doStuff()'),
+>>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
         );
     }
 }

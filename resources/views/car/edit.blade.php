@@ -9,10 +9,10 @@
 
     <h1>Edit: {!! $car->nickname !!}</h1>
 
-    {!! Form::model($car, ['method' => 'PATCH', 'action' => ['CarController@update', $car->registrationNr]]) !!}
+    {!! Form::model($car, ['method' => 'PATCH', 'action' => ['CarController@update', $car->registrationNR]]) !!}
     <div class="form-group">
-        {!! Form::label('registrationNr', 'registrationNr:') !!}
-        {!! Form::text('registrationNr', null, ['class' => 'form-control'] ) !!}
+        {!! Form::label('registrationNR', 'registrationNR:') !!}
+        {!! Form::text('registrationNR', null, ['class' => 'form-control'] ) !!}
     </div>
 
     <div class="form-group">

@@ -8,7 +8,7 @@ class Timelisteprosjekt extends Model {
     protected $primaryKey = 'projectID';
     protected $fillable = [
         'projectID',
-        'employeeNr',
+        'employeeNR',
         'date',
         'starttime',
         'endtime',

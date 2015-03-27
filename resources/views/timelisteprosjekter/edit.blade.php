@@ -7,9 +7,9 @@
                     <div class="panel-heading">Edit Timeliste</div>
                     <div class="panel-body">
 
-                        <h1>Edit: {!! $timelisteprosjekt->projectId !!}</h1>
+                        <h1>Edit: {!! $timelisteprosjekt->projectID !!}</h1>
 
-                        {!! Form::model($timelisteprosjekt, ['method'=> 'PATCH', 'action' => ['TimelisteprosjektController@update', $timelisteprosjekt->projectId]]) !!}
+                        {!! Form::model($timelisteprosjekt, ['method'=> 'PATCH', 'action' => ['TimelisteprosjektController@update', $timelisteprosjekt->projectID]]) !!}
 
                         <div class="form-group">
 
@@ -17,7 +17,7 @@
 
                             <!--<input type="text", id="datepicker">-->
 
-                            {!! Form::select('projectId', $projects) !!}
+                            {!! Form::select('projectID', $projects) !!}
                         </div>
                         <br/>
                         <div class="form-group">

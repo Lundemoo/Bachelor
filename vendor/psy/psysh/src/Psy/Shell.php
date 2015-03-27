@@ -11,23 +11,23 @@
 
 namespace Psy;
 
-use Psy\Exception\ThrowUpException;
 use Psy\Exception\BreakException;
 use Psy\Exception\ErrorException;
 use Psy\Exception\Exception as PsyException;
+use Psy\Exception\ThrowUpException;
 use Psy\Output\ShellOutput;
 use Psy\Presenter\PresenterManagerAware;
 use Psy\TabCompletion\Matcher;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command as BaseCommand;
 use Symfony\Component\Console\Formatter\OutputFormatter;
+use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\ArgvInput;
 
 /**
  * The Psy Shell application.
@@ -41,7 +41,11 @@ use Symfony\Component\Console\Input\ArgvInput;
  */
 class Shell extends Application
 {
-    const VERSION = 'v0.4.1';
+<<<<<<< HEAD
+    const VERSION = 'v0.4.2';
+=======
+    const VERSION = 'v0.4.3';
+>>>>>>> af5783b61aa30e5f42b45b1a7f31b1f49d4ef27b
 
     const PROMPT      = '>>> ';
     const BUFF_PROMPT = '... ';
@@ -323,6 +327,8 @@ class Shell extends Application
      *
      * This will continue fetching user input until the code buffer contains
      * valid code.
+     *
+     * @throws BreakException if user hits Ctrl+D
      */
     public function getInput()
     {

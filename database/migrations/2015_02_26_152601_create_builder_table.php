@@ -15,7 +15,7 @@ class CreateBuilderTable extends Migration {
 		Schema::create('builder', function(Blueprint $table)
 		{
 
-			$table->increments('customerID');
+			$table->increments('customerID')->unsigned();  // hvis feil, sjekk om det skal være usigned her eller ikke
 			$table->string('customername');
 			$table->string('customeraddress');
 			$table->integer('customertelephone');

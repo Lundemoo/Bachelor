@@ -11,6 +11,11 @@ use App\Car;
 //use Request;
 use DB;
 use Carbon\Carbon;
+use App\Logbook;
+
+
+
+
 
 use Illuminate\Support\Facades\Input;
 
@@ -31,7 +36,7 @@ class LogbookadditionController extends Controller
 
        // return view('logbookaddition.create');
 
-        $cars = Car::lists('nickname', 'registrationNr');
+        $cars = Car::lists('nickname', 'registrationNR');
 
         return view('logbookaddition.create', array('cars' => $cars));
 
@@ -39,29 +44,57 @@ class LogbookadditionController extends Controller
     }
 
     public function store(CreateLogbookadditionRequest $request){
-echo "HEI!";
+
        // $input = Request::all();
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
+        $thisid = "";echo $input['date'];
+        $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
         
-        $input['employeeNr'] = Auth::user()->id;
+        
+        if($result == 0){
+            
+            $mid = Logbook::create(array(
+               'employeeNR' => Auth::user()->id,
+                'registrationNR' => $input['registrationNR'],
+                'date' => $input['date']
+                
+            ));
+            $thisid = $mid->employeeNR;
+            
+        } else {
+            $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->get();
+            
+            foreach($result as $res){
+                $thisid = $res->employeeNR;
+                
+            }
+            
+        }
+        
+        
+        $input['employeeNR'] = $thisid;
         
         Logbookaddition::create($input);
 
+        \Session::flash('flash_message', 'Logbook is saved!');
 
-        $logbookadditions = DB::table('logbookaddition')->get();
-        return view('logbookaddition.index', ['logbookadditions' => $logbookadditions]);
+
+        $cars = Car::lists('nickname', 'registrationNR');
+
+        return view('logbookaddition.create', array('cars' => $cars));
+
 
     }
 
     /*
    * metode for å redigere en kjørebok som er lagt inn i systemet/DB
    */
-    public function edit($employeeNr){  //argumenter på endres ettervært som primary key er endret i DB
+    public function edit($employeeNR){  //argumenter på endres ettervært som primary key er endret i DB
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
 
-        $cars = Car::lists('nickname', 'registrationNr'); //henter liste med alle biler
+        $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
 
         return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
 
@@ -70,9 +103,9 @@ echo "HEI!";
     /*
  * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
  */
-    public function update($employeeNr, CreateLogbookadditionRequest $request){
+    public function update($employeeNR, CreateLogbookadditionRequest $request){
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNr);
+        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
 
         $logbookaddition->update($request->all());
 

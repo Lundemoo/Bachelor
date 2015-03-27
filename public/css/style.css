@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 25, 2015, 12:42:36 AM
+    Author     : petter
+*/
+
+#success {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+    
+    
+}
+
+    #newcontact {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 60%;
+        height-min: 200px;
+        border: 2px solid black;
+        background-color: white;
+        margin-left: -30%;
+        
+        display:none;
+        z-index: 9999;
+        max-width: 800px;
+        color: black;
+        padding: 20px;
+        border: 2px solid gray;
+        
+        
+        
+    }
+    #grey {
+        z-index: 9998;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+        display: none;
+        left: 0;
+        right: 0;
+        position: fixed;
+        border: 1px solid grey;
+        
+    }
+
+    
+    table.newcontact {
+        
+        border: 1px solid gray;
+        width: 100%;
+        
+    }
+    td.newcontact {
+        
+        padding: 3px;
+        
+        
+    }
+    
+    #companyid {
+        width: 200px;
+       
+        
+    }
+    
+    #nyttfirmanavn {
+        
+    }
+    #nyttfirmarolle {
+        
+    }
+    
+    #gjem {
+        display: none;
+    }

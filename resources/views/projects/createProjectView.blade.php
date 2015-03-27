@@ -1,41 +1,7 @@
 @extends('app')
 @section('content')
 
-<style>
-    #newcontact {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        width: 40%;
-        height: 200px;
-        border: 2px solid black;
-        background-color: white;
-        margin-left: -20%;
-        
-        display:none;
-        z-index: 9999;
-        max-width: 800px;
-        color: black;
-        padding: 20px;
-        border: 2px solid gray;
-        
-        
-        
-    }
-    #grey {
-        z-index: 9998;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        opacity: 0.8;
-        display: none;
-        left: 0;
-        right: 0;
-        position: fixed;
-        border: 1px solid grey;
-        
-    }
-</style>
+
 
  <script>
 $(function() {
@@ -54,26 +20,53 @@ $( "#datepicker" ).datepicker();
 				<div class="panel-body">
                                     
                                     <div id="newcontact">
-                                        <table><tr><td>
-                                        <table><tr><td>Fornavn: </td><td><input type="text" id="fornavn"></td></tr>
-                                            <tr><td>Etternavn: </td><td><input type="text" id="etternavn"></td></tr>
-                                            <tr><td>Telefon: </td><td><input type="text" id="telefon"></td></tr>
-                                            <tr><td>Email: </td><td><input type="email" id="email"></td></tr>
+                                       
+                                        <table class="newcontact"><tr><td>
+                                        <table><tr><td class="newcontact">Fornavn: </td><td class="newcontact"><input type="text" id="fornavn"></td></tr>
+                                            <tr><td class="newcontact">Etternavn: </td><td class="newcontact"><input type="text" id="etternavn"></td></tr>
+                                            <tr><td class="newcontact">Telefon: </td><td class="newcontact"><input type="text" id="telefon"></td></tr>
+                                            <tr><td class="newcontact">Email: </td><td class="newcontact"><input type="email" id="email"></td></tr>
                                         
                                             <tr><td colspan="2">
-                                                    <input type="submit" name="store" id="store" value="Lagre!" onclick="lagre()"></td></tr>
+                                                <input type="submit" name="store" id="store" value="Lagre!" onclick="lagre()"></br>
+                                                <a href="#" onclick="test()">Avslutt</a><div id="result"><td></tr>
                                             
                                         </table>
-                                        <a href="#" onclick="test()">Avslutt</a><div id="result"></div>
-                                                </td><td valign="top">
-                                        
-                                        {!! Form::select('companyid', $company_list, null, array('size' => '5')) !!}
-                                        
-                                                </td></tr></table>
+                                        </div>
+                                                </td><td valign="top" width="50%">
+                                                    <table width="100%" style="border: 0px solid red;"><tr><td>
+                                        {!! Form::select('companyid', $company_list, null, array('size' => '5', 'id' => 'companyid')) !!}
+                                                            </td></tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p id="gjem" style="display: none;">
+                                                                Navn: <input type="text" name="nyttfirmanavn" id="nyttfirmanavn"></br>
+                                                                Rolle: <input type="text" name="nyttfirmarolle" id="nyttfirmarolle"></p>
+                                                                <p id="gjemandre"><a href="#" id="linkborte" onclick="leggtil()">+ Nytt firma</a></p>
+                                                            </td>
+                                                        </tr></table>
+                                            </td></tr></table>
 
                                         
                                     </div>
+                                    <script>
                                     
+                                    function leggtil(){
+                                        
+                                    if(document.getElementById('gjem').style.display == "none"){
+                                        document.getElementById('gjem').style.display = "block";
+                                        
+                                        
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">Avbryt</a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
+                                    } else {
+                                        
+                                        document.getElementById('gjem').style.display = "none";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">+ Nytt firma</a>";
+                                    }
+                                    
+                                        
+                                    }
+                                    </script>
 
                                     
 {!! Form::open(['url' => 'project']) !!}
@@ -82,7 +75,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectName', 'Project name:') !!}
 
- {!! Form::text('projectName', null, ['class' => 'form-control']) !!}
+ {!! Form::text('projectName', null, ['placeholder'=>'Skriv inn prosjektnavn','class' => 'form-control']) !!}
 
 </div>
 
@@ -92,7 +85,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectAddress', 'Project address:') !!}
 
- {!! Form::text('projectAddress', null, ['class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=>'Skriv inn prosjektets adresse','class' => 'form-control']) !!}
 
 </div>
 
@@ -102,7 +95,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('budget', 'Estimated hours:') !!}
 
- {!! Form::text('budget', null, ['class' => 'form-control']) !!}
+ {!! Form::text('budget', null, ['placeholder'=>'Skriv inn estimerte timer til prosjektet','class' => 'form-control']) !!}
 
 </div>
 
@@ -112,7 +105,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['placeholder'=>'Gi en beskrivelse av prosjektet','class' => 'form-control']) !!}
 
 </div>
 
@@ -132,6 +125,22 @@ $( "#datepicker" ).datepicker();
 </br><a href="#" onclick="test()">+ Ny kontaktperson</a>
 </div>
 
+
+
+
+<div class="form-group" >
+
+ {!! Form::label('customerID', 'Byggherre') !!}
+
+  <!--<input type="text", id="datepicker">-->
+
+{!! Form::select('customerID', $customer_list) !!}
+
+
+</div>
+
+
+
 {!! Form::open(['url' => 'project']) !!}
 
 <div class="form-group">
@@ -148,16 +157,6 @@ $( "#datepicker" ).datepicker();
 <br>
 
 
-<div class="form-group" >
-
- {!! Form::label('customerID', 'Byggherre') !!}
-
-  <!--<input type="text", id="datepicker">-->
-
-{!! Form::select('customerID', $customer_list) !!}
-
-
-</div>
 
 <br>
 
@@ -210,27 +209,72 @@ function lagre() {
     var lastname = document.getElementById('etternavn').value;
     var phone = document.getElementById('telefon').value;
     var email = document.getElementById('email').value;
-    
- alert("HEI!");   
+       var companyid = document.getElementById('companyid').value;
+       
+   
 
 
- var test = "hahaha";
+ 
     var her = "{{ url('/storecontact/') }}";
     
-    her += "/" + firstname + "|" + lastname + "|" + phone + "|" + email + "";
+    her += "/" + firstname + "|" + lastname + "|" + phone + "|" + email + "|" + companyid + "";
     
 
     $.get(her, 
     
     function(data, status){
         
-        if(isNaN(data.chatAr(0))) {
-            alert("Suksess");
+        if(isNaN(data.charAt(0))) {
+            
+            
+            
+            var option = document.createElement("option");
+option.text = firstname + " " + lastname;
+option.value = data.substring(2);
+var select = document.getElementById("contactpersonID");
+select.appendChild(option);
+
+test();
+                 document.getElementById('fornavn').style.border = "1px solid gray";
+            document.getElementById('etternavn').style.border = "1px solid gray";
+            document.getElementById('telefon').style.border = "1px solid gray";
+            document.getElementById('email').style.border = "1px solid gray";
+            
+            
+                 document.getElementById('fornavn').value = "";
+            document.getElementById('etternavn').value = "";
+            document.getElementById('telefon').value = "";
+            document.getElementById('email').value = "";
+            
+            
+            
         } else {
-            alert("Noe er galt");
+            document.getElementById('fornavn').style.border = "1px solid gray";
+            document.getElementById('etternavn').style.border = "1px solid gray";
+            document.getElementById('telefon').style.border = "1px solid gray";
+            document.getElementById('email').style.border = "1px solid gray";
+            document.getElementById('companyid').style.border = "1px solid gray";
+            
+            for(var e = 0; e < data.length; e++){
+                if(data.charAt(e) === "0") {
+                    document.getElementById('fornavn').style.border = "1px solid red";
+                } else if(data.charAt(e) === "1") {
+                    document.getElementById('etternavn').style.border = "1px solid red";
+                } else if(data.charAt(e) === "2") {
+                    document.getElementById('telefon').style.border = "1px solid red";
+                } else if(data.charAt(e) === "3") {
+                    document.getElementById('email').style.border = "1px solid red";
+                } else if(data.charAt(e) === "4") {
+                    document.getElementById('companyid').style.border = "1px solid red";
+                } else {
+                    alert("Noe gikk galt");
+                }
+                
+                
+            }
         }
         
-        alert("Data: " + data + "\nStatus: " + status);
+        
     });
 
 
@@ -238,6 +282,101 @@ function lagre() {
 }
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function lagrefirma() {
+    var firmname = document.getElementById('nyttfirmanavn').value;
+    var role = document.getElementById('nyttfirmarolle').value;
+   
+   
+
+
+ 
+    var her = "{{ url('/storefirm/') }}";
+    
+    her += "/" + firmname + "|" + role + "";
+  
+
+    $.get(her, 
+    
+    function(data, status){
+        
+        if(isNaN(data.charAt(0))) {
+            
+            var option = document.createElement("option");
+option.text = firmname;
+option.value = data.substring(2);
+var select = document.getElementById("companyid");
+select.appendChild(option);
+            
+            document.getElementById('nyttfirmanavn').style.border = "1px solid gray";
+            document.getElementById('nyttfirmarolle').style.border = "1px solid gray";
+            
+            document.getElementById('nyttfirmanavn').value = "";
+            document.getElementById('nyttfirmarolle').value = "";
+            
+            
+        } else {
+            document.getElementById('nyttfirmanavn').style.border = "1px solid gray";
+            document.getElementById('nyttfirmarolle').style.border = "1px solid gray";
+            
+            
+            for(var e = 0; e < data.length; e++){
+                if(data.charAt(e) === "0") {
+                    document.getElementById('nyttfirmanavn').style.border = "1px solid red";
+                } else if(data.charAt(e) === "1") {
+                    document.getElementById('nyttfirmarolle').style.border = "1px solid red";
+                } else {
+                    alert("Noe gikk galt");
+                }
+                
+                
+            }
+        }
+        
+        
+    });
+
+
+
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 @extends('app')
 @section('content')
 
-    <h1>Edit: {!! $car->registrationNr !!}</h1>
+    <h1>Edit: {!! $car->registrationNR !!}</h1>
 
 @stop

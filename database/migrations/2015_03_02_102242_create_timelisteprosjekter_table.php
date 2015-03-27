@@ -14,13 +14,34 @@ class CreateTimelisteprosjekterTable extends Migration {
 	{
 		Schema::create('timelisteprosjekter', function(Blueprint $table)
 		{
-			$table->integer('projectId');
-			$table->integer('employeeNr');
+			$table->integer('projectID');
+			$table->integer('employeeNR');
 			$table->date('date');
 			$table->time('starttime');
 			$table->time('endtime');
 			$table->text('comment');
+			$table->boolean('approved');
 			$table->timestamps();
+
+			/**
+			 * composite primary key
+			 */
+			$table->primary(array('projectID', 'employeeNR','date', 'starttime', 'endtime'));
+
+			/* foreign key 1 */
+			$table->foreign('projectID')
+			->references('projectID')
+				->on('projects');
+
+			/* foreign key 2 */
+			$table->foreign('employeeNR')
+			->references('employeeNR')
+				->on('timesheet');
+
+			/* foreign key 3 */
+			$table->foreign('date')
+				->references('date')
+				->on('timesheet');
 
 		});
 	}

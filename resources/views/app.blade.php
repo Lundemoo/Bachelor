@@ -9,6 +9,7 @@
 	<title>Jara Bygg</title>
 
 	<link href="/css/app.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
         
         
 <link rel="stylesheet" href="/picker/default.css">
@@ -57,6 +58,11 @@
 <body>
 <header> @include('header')</header>
 
+<!--flash beskjeder -->
+@if(Session::has('flash_message'))
+	<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+	@endif
+
 	<div class="contents">@yield('content')</div>
 
 <footer> @include('footer')</footer>
@@ -73,5 +79,9 @@
         
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<script> //srcipt for flash message-at boksen forsvinner etter 3 sekund
+		$('div.alert').delay(3000).slideUp(300);
+	</script>
 </body>
 </html>

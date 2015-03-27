@@ -19,7 +19,7 @@ class Loginattempt extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['userId', 'IP', 'browser'];
+	protected $fillable = ['userID', 'IP', 'browser'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

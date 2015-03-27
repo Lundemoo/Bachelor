@@ -3,6 +3,8 @@ use Illuminate\Support\Facades\Input;
 use Auth;
 use App\ContactPerson;
 use Validator;
+use Helper;
+use App\Company;
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -10,87 +12,72 @@ use Validator;
  * and open the template in the editor.
  */
 class addcontactpersonController extends Controller {
-
     
     public function storecontact($all){
         $alle = explode("|", $all);
         $returnen = "";
         $fail = 0;
         
-        $illegal = "#$%^&*()+=-[]';,./{}|:!<>?\"~";
-        $legal = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ-";
+        $firstname = $alle[0];
+        $lastname = $alle[1];
+        $phone = $alle[2];
+        $email = $alle[3];
+        $companyid = $alle[4];
+       
         
-        $legalemail = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-.@1234567890";
-        $legalphone = "1234567890";
         
-        
-        
-        for($i = 0; $i < strlen($alle[0]); $i++){
+           
             
-            if(strrpos($legal, $alle[0][$i]) == false){
-                $returnen .= "0";
-                $fail = 1;
-                break;
+            if(!(Helper::isSafe($firstname, 1))){
+           $returnen .= "0";
+           $fail = 1;
             }
-                
+         
             
-        }
-        
-        
-          for($i = 0; $i < strlen($alle[1]); $i++){
             
-            if(strrpos($legal, $alle[1][$i]) == false){
-                $returnen .= "1";
-                $fail = 1;
-                break;
+            if(!(Helper::isSafe($lastname, 1))){
+           $returnen .= "1";
+           $fail = 1;
             }
-                
+         
             
-        }
-        
-        
-        
-        
-        for($i = 0; $i < strlen($alle[2]); $i++){
-            
-            if(strrpos($legalphone, $alle[2][$i]) == false){
-                $returnen .= "2";
-                $fail = 1;
-                break;
+            if(!(Helper::isSafe($phone, 3))){
+           $returnen .= "2";
+           $fail = 1;
             }
-                
-            
-        }
+         
         
-        
-         for($i = 0; $i < strlen($alle[3]); $i++){
-            
-            if(strrpos($legalemail, $alle[3][$i]) == false){
+            if(!(Helper::isSafe($email, 2))){
                 $returnen .= "3";
-                $fail = 1;
-                break;
-            }
                 
-            
-        }
+                $fail = 1;
+            }
         
         
+            if(!(Helper::isSafe($companyid, 4))){
+                $returnen .= "4";
+                
+                $fail = 1;
+            }
         
         
       
         
-        
-        
         if($fail == 0){
        
-        ContactPerson::create(array(
-            'contactname' => $alle[0],
-            'contactsurname' => $alle[1],
-            'contacttelephone' => $alle[2],
-            'contactemail' => $alle[3]
-        ));
+            
+       $restest = ContactPerson::create(array(
+'contactname' => $firstname,
+'contactsurname' => $lastname,
+'contacttelephone' => $phone,
+'contactemail' => $email,
+'companyID' => $companyid
+));
         
-        $returnen .= "YAY!";
+        
+       
+        
+        return "ID" . $restest->id;
         }
         
         
@@ -100,6 +87,95 @@ class addcontactpersonController extends Controller {
         
         
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    public function storefirm($all){
+        $alle = explode("|", $all);
+        $returnen = "";
+        $fail = 0;
+        
+        $name = $alle[0];
+        $role = $alle[1];
+       
+       
+        
+        
+           
+            
+            if(!(Helper::isSafe($name, 1))){
+           $returnen .= "0";
+           $fail = 1;
+            }
+         
+            
+            
+            if(!(Helper::isSafe($role, 0))){
+           $returnen .= "1";
+           $fail = 1;
+            }
+         
+            
+      
+        
+        
+        
+        if($fail == 0){
+         
+      
+        $restest = Company::create(array(
+            'companyname' => $alle[0],
+            'role' => $alle[1]
+        ));
+      
+        return "ID" . $restest->id;
+        }
+        
+        
+        
+        
+        
+        return $returnen;
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 }
 

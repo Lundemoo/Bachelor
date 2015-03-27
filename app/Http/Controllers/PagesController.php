@@ -55,10 +55,18 @@ class PagesController extends Controller {
     public function store()
 {
     $input = Request::all();
-echo "Hei!";
-    Project::create($input);
 
-return redirect('project');
+    Project::create($input);
+    
+     \Session::flash('flash_message', 'Project created!');
+
+$contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $customer_list = Builder::lists('customername','customerID');
+        $company_list = Company::lists('companyname','companyid');
+        
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list,'company_list' => $company_list, 'customer_list' => $customer_list));
+
+
 }
 
 
