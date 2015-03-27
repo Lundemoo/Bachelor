@@ -57,21 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_02_26_125116_create_timesheet_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2015_02_26_125116_create_timesheet_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28150135" vertical-offset="201" max-vertical-offset="867">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state vertical-scroll-proportion="-8.461538" vertical-offset="86" max-vertical-offset="867">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_03_02_102242_create_timelisteprosjekter_table.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2015_03_02_102242_create_timelisteprosjekter_table.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.038462" vertical-offset="309" max-vertical-offset="1071">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6756032" vertical-offset="105" max-vertical-offset="1088">
+              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -176,8 +176,8 @@
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_12_094217_create_projectContactpersons_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_12_094216_create_contactpersons_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php" />
       </list>
     </option>
   </component>
@@ -725,7 +725,19 @@
       <option name="project" value="LOCAL" />
       <updated>1427450977762</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="sammensatte primærnøkler">
+      <created>1427451052297</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1427451052297</updated>
+    </task>
+    <task id="LOCAL-00037" summary="approved lagt inn">
+      <created>1427451257678</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1427451257678</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -795,7 +807,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="s" />
     <MESSAGE value="endringer med layout" />
     <MESSAGE value="endringer i create project" />
     <MESSAGE value="små endirnger" />
@@ -820,7 +831,8 @@
     <MESSAGE value="placeholder" />
     <MESSAGE value="mange -til -mange relasjoner" />
     <MESSAGE value="sammensatte primærnøkler" />
-    <option name="LAST_COMMIT_MESSAGE" value="sammensatte primærnøkler" />
+    <MESSAGE value="approved lagt inn" />
+    <option name="LAST_COMMIT_MESSAGE" value="approved lagt inn" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1182,18 +1194,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.038462" vertical-offset="309" max-vertical-offset="1071">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.461538" vertical-offset="86" max-vertical-offset="867">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_26_125116_create_timesheet_table.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_02_102242_create_timelisteprosjekter_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28150135" vertical-offset="201" max-vertical-offset="867">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.6756032" vertical-offset="105" max-vertical-offset="1088">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
           <folding />
         </state>
       </provider>
