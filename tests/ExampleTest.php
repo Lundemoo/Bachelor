@@ -1,17 +1,12 @@
 <?php
 
-class ExampleTest extends TestCase {
+use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 
-	/**
-	 * A basic functional test example.
-	 *
-	 * @return void
-	 */
-	public function testBasicExample()
-	{
-		$response = $this->call('GET', '/');
+class ExampleTest extends IntegrationTest {
 
-		$this->assertEquals(200, $response->getStatusCode());
-	}
+public function it_display_all_posts()
+{
+    $this->visit('car');
+}
 
 }

@@ -15,7 +15,7 @@ class CreateTimesheetTable extends Migration {
 		Schema::create('timesheet', function(Blueprint $table)
 		{
 			$table->integer('employeeNR')->unsigned();  //ps: har forandret til integer her
-			$table->date('date');
+			$table->date('date')->index();
 			$table->timestamps();
 
 			/**

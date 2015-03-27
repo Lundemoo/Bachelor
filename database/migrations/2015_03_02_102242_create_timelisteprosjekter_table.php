@@ -14,9 +14,9 @@ class CreateTimelisteprosjekterTable extends Migration {
 	{
 		Schema::create('timelisteprosjekter', function(Blueprint $table)
 		{
-			$table->integer('projectID');
-			$table->integer('employeeNR');
-			$table->date('date');
+			$table->integer('projectID')->unsigned();
+			$table->integer('employeeNR')->unsigned();
+			$table->date('date')->index();
 			$table->time('starttime');
 			$table->time('endtime');
 			$table->text('comment');
