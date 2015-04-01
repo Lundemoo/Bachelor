@@ -20,7 +20,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '5.0.21';
+	const VERSION = '5.0.23';
 
 	/**
 	 * The base path for the Laravel installation.
@@ -70,15 +70,6 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 * @var array
 	 */
 	protected $serviceProviders = array();
-
-	/**
-	 * A lookup of service providers by name.
-	 *
-	 * If the a provider is force-registered twice, only the first instance is included.
-	 *
-	 * @var array
-	 */
-	protected $registeredProviders = array();
 
 	/**
 	 * The names of the loaded service providers.
@@ -509,7 +500,10 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	{
 		$name = is_string($provider) ? $provider : get_class($provider);
 
-		return isset($this->registeredProviders[$name]) ? $this->registeredProviders[$name] : null;
+		return array_first($this->serviceProviders, function($key, $value) use ($name)
+		{
+			return $value instanceof $name;
+		});
 	}
 
 	/**
@@ -534,11 +528,6 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 		$this['events']->fire($class = get_class($provider), array($provider));
 
 		$this->serviceProviders[] = $provider;
-
-		if ( ! isset($this->registeredProviders[$class]))
-		{
-			$this->registeredProviders[$class] = $provider;
-		}
 
 		$this->loadedProviders[$class] = true;
 	}
