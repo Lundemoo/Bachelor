@@ -20,7 +20,7 @@ class Logbook extends Migration {
 
 				  /* Primary key */
 
-				  $table->primary(array('employeeNR', 'registrationNR', 'date'))->unsigned();
+				  $table->primary(array('employeeNR', 'registrationNR', 'date'));
                                   
                                  
 

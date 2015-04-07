@@ -77,5 +77,4 @@ Route::post('builder', 'BuilderController@store');
 Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 
-//hovedsiden for alle redigeringssidene kun for sjefene
-Route::get('editpage', 'EditpageController@index');
+Route::get('oversikt', 'OversiktController@show');
