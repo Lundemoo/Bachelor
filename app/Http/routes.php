@@ -76,3 +76,5 @@ Route::get('builder/create', 'BuilderController@create');
 Route::post('builder', 'BuilderController@store');
 Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
+
+Route::get('oversikt', 'OversiktController@show');

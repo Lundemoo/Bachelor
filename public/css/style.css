@@ -82,3 +82,39 @@ and open the template in the editor.
     #gjem {
         display: none;
     }
+    #menyvalg {
+        width: 40%;
+        height: 50px;
+        border: 1px solid white;
+        background-color: #E26300;
+        color: black;
+        font-size: 30px;
+        
+        
+    }
+    
+    
+                                        
+                                        
+                                        table.easynav {
+                                            border: 1px solid white;
+                                        }
+                                        td.besokerikke {
+                                            
+                                        border-bottom: 1px solid white;
+                                        border-right: 1px solid white;
+                                        height: 50px;
+                                        }
+                                        
+                                        td.besoker {
+                                            border-bottom: 0px;
+                                            border-right: 1px solid white;
+                                            height: 50px;
+                                        }
+                                        td.tom {
+                                            border: 0px;
+                                        }
+                                        td.innholdeasynav {
+                                            padding-left: 50px;
+                                        }
+                                    

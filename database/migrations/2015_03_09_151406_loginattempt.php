@@ -21,15 +21,6 @@ class Loginattempt extends Migration {
 
 			/* Primary key */
 
-			$table->primary('userID')->unsigned();
-
-			/*
-             * foreign constraints.
-             */
-
-			$table->foreign('userID')  //fremmednøkkelen
-			->references('ID')
-				->on('users');
 
         });
 	}
