@@ -16,7 +16,8 @@ class EditpageController extends Controller
 
     public function index()
     {
-       return view('editpage.menu');
+        $cars = DB::table('car')->paginate(3);
+       return view('editpage.menu',['cars'=> $cars]);
     }
 
 

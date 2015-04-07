@@ -80,7 +80,7 @@ class CarController extends Controller
 
         $car->update($request->all());
 
-        return redirect('car');
+        return redirect('editpage');
     }
 
 
