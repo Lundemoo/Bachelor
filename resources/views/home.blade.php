@@ -51,13 +51,4 @@
 </div>
 
 
-<script>
-    
-    
-    function oc(link){
-        
-        window.location.href = link;
-        
-    }
-    </script>
 @endsection

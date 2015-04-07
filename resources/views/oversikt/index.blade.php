@@ -25,11 +25,44 @@ $( "#datepicker" ).datepicker();
                                     
                                     <table class="easynav" width="100%">
                                         
-                                        <tr><td class="besokerikke" width="10%">Første</td><td class="besoker" width="10%">Andre</td><td class="besokerikke" width="10%">Tredje</td><td class="tom" width="70%">&nbsp;</td></tr>
+                                        <tr>
+                                            @if($siden == 0)
+                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=0')">Timelister</td>
+                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=1')">Kjørebok</td>
+                                            @else
+                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=0')">Timelister</td>
+                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=1')">Kjørebok</td>
+                                            @endif
+                                            
+                                            <td class="tom" width="80%">&nbsp;</td></tr>
                                         
-                                        <tr><td colspan="3" class="innholdeasynav"></br><h4>BIL</h4>
+                                        <tr><td colspan="3" class="innholdeasynav">
+                                                
+                                        <center>
+                                            <select name="month" onchange="oc('/oversikt?side={{$siden}}&valg=' + this.value)">
+                                                <option value="-1">Velg måned</option>
+                                                <option value="0">Januar</option>
+                                                <option value="1">Februar</option>
+                                                <option value="2">Mars</option>
+                                                <option value="3">April</option>
+                                                <option value="4">Mai</option>
+                                                <option value="5">Juni</option>
+                                                <option value="6">Juli</option>
+                                                <option value="7">August</option>
+                                                <option value="8">September</option>
+                                                <option value="9">Oktober</option>
+                                                <option value="10">November</option>
+                                                <option value="11">Desember</option>
+                                                
+                                            </select>
+                                            
+                                            
+                                        </center></br><h4>BIL</h4>
                                                 </br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4>
-                                        
+                                                </br></br>
+                                                {{ $siden }}
+                                                
+                                                {{ Lang::get('general.main') }}
                                     </table>
                                     
 

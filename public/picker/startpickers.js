@@ -60,3 +60,17 @@ if(minimal == 1){
         //     picker.set('disable', true);
         // });
         }
+        
+        
+        
+        
+        
+        
+        
+    
+    function oc(link){
+        
+        window.location.href = link;
+        
+    }
+    
