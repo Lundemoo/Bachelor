@@ -78,3 +78,5 @@ Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 
 Route::get('oversikt', 'OversiktController@show');
+
+Route::get('editpage', 'EditpageController@index');
