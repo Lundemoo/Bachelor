@@ -1,31 +1,7 @@
 @extends('app')
 @section('content')
-    <style>
-
-        table.test {
-            border: 1px solid white;
-        }
-        td.ikke {
-
-            border-bottom: 1px solid white;
-            border-right: 1px solid white;
-            height: 50px;
-        }
-
-        td.besoker {
-            border-bottom: 0px;
-            border-right: 1px solid white;
-            height: 50px;
-        }
-        td.tom {
-            border: 0px;
-        }
-        td.innhold {
-            padding-left: 50px;
-        }
 
 
-    </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -33,7 +9,14 @@
                     <div class="panel-heading">Edit menu</div>
                     <div class="panel-body">
 
+                        <table class="easynav" width="100%">
 
+                            <tr><td class="besokerikke" width="10%">Første</td><td class="besoker" width="10%">Andre</td><td class="besokerikke" width="10%">Tredje</td><td class="tom" width="70%">&nbsp;</td></tr>
+
+                            <tr><td colspan="3" class="innholdeasynav"></br><h4>BIL</h4>
+                                    </br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4></br><h4>BIL</h4>
+
+                        </table>
 
 
 
