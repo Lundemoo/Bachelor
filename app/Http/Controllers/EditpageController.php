@@ -9,6 +9,7 @@ use App\User;
 use Request;
 use DB;
 use Carbon\Carbon;
+use Illuminate\Pagination\Paginator;
 
 
 class EditpageController extends Controller
@@ -16,7 +17,8 @@ class EditpageController extends Controller
 
     public function index()
     {
-        $cars = DB::table('car')->paginate(3);
+        $cars = DB::table('car')->paginate(6);
+
        return view('editpage.menu',['cars'=> $cars]);
     }
 
