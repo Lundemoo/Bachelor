@@ -97,19 +97,32 @@ and open the template in the editor.
                                         
                                         
                                         table.easynav {
-                                            border: 1px solid white;
+                                        <!-- border: 1px solid white; -->
+                                            border: none;
+                                            margin-top: 0px;
                                         }
                                         td.besokerikke {
                                             
                                         border-bottom: 1px solid white;
                                         border-right: 1px solid white;
                                         height: 50px;
+                                            text-align: center;
+                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                            color:black;
+                                            line-height: 1.42857143;
+                                            background-color: #E26300;
+
                                         }
                                         
                                         td.besoker {
                                             border-bottom: 0px;
                                             border-right: 1px solid white;
                                             height: 50px;
+                                            text-align: center;
+                                            font-weight: bold;
+
                                         }
                                         td.tom {
                                             border: 0px;

@@ -1,7 +1,10 @@
 @extends('app')
 @section('content')
 <style>
-
+    .panel-body2 {
+        padding: 0px;
+        background-color: rgba(0, 0, 0, 0.72);
+    }
 
 </style>
 
@@ -10,19 +13,24 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Redigering oversikt</div>
-                    <div class="panel-body">
+                    <div class="panel-body2">
 
 
                         <table class="easynav" width="100%">
 
-                            <tr><td class="besokerikke" width="10%">Brukere</td><td class="besokerikke" width="10%">Prosjekter</td><td class="besokerikke" width="10%">Byggherrer</td><td class="besokerikke" width="10%">Kontaktpersoner</td><td class="besoker" width="10%">Biler</td><td class="tom" width="70%">&nbsp;</td></tr>
+                            <tr><td class="besokerikke" width="12%">Brukere</td>
+                                <td class="besokerikke" width="12%">Prosjekter</td>
+                                <td class="besokerikke" width="12%">Byggherrer</td>
+                                <td class="besokerikke" width="12%">Kontaktpersoner</td>
+                                <td class="besoker" width="12%">Biler</td>
+                                <td class="tom" width="40%">&nbsp;</td></tr>
 
-                            <tr><td colspan="3" class="innholdeasynav"></br>
+                            <tr><td colspan="3" class="innholdeasynav">
 
 
                                     @foreach ($cars as $car)
 
-                                        <article id="jada" class="col-md-6">
+                                        <article class="col-md-6">
                                             <h4> {{$car->registrationNR}}</h4>
                                             <h4>  {{$car->nickname}}</h4>
                                             <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
@@ -33,7 +41,7 @@
 
                                     @endforeach
 
-                                    {!! $cars->render()!!}
+                                        {!! $cars->render()!!}
 
                                 </td></tr> </table>
 
@@ -53,3 +61,5 @@
         </div>
     </div>
 @endsection
+
+@stop
