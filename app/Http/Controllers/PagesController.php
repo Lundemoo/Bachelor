@@ -1,8 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
-use App\Project;
 use App\Http\Requests;
+use App\Project;
+use App\ContactPerson;
+use App\Company;
+use Request;
+use App\Builder;
 use App\Http\Controllers\Controller;
 
 class PagesController extends Controller {
@@ -23,12 +27,47 @@ class PagesController extends Controller {
      *
      * @return void
      */
-    public function showProject(){
+    public function showProject()
+    {
 
-       $projects = \App\Project::all();
+        $projects = \App\Project::all();
 
         return view('projects.showProjectView',compact('projects'));
     }
+
+    public function createProject()
+    {
+        
+        
+        
+        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $customer_list = Builder::lists('customername','customerID');
+        $company_list = Company::lists('companyname','companyid');
+        
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list,'company_list' => $company_list, 'customer_list' => $customer_list));
+
+
+
+
+
+    }
+
+    public function store()
+{
+    $input = Request::all();
+
+    Project::create($input);
+    
+     \Session::flash('flash_message', 'Project created!');
+
+$contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $customer_list = Builder::lists('customername','customerID');
+        $company_list = Company::lists('companyname','companyid');
+        
+        return view('projects.createProjectView', array('contactperson_list' => $contactperson_list,'company_list' => $company_list, 'customer_list' => $customer_list));
+
+
+}
 
 
 

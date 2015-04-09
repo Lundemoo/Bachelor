@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration {
 	public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->increments('projectID');
+            $table->increments('projectID')->unsigned()->index();
             $table->string('projectName');
             $table->string('projectAddress');
             $table->integer('budget')->nullable();
@@ -23,6 +23,15 @@ class CreateProjectsTable extends Migration {
             $table->date('expectedCompletion');
             $table->boolean('done')->default(false);
             $table->timestamps();
+
+            /*
+             * foreign constraints. fremmednøkler.
+             */
+            $table->integer('customerID')->unsigned();
+            $table->foreign('customerID')  //fremmednøklen
+                ->references('customerID') //som er denne raden
+                ->on('builder');           // i denne tabellen
+
         });
 
     }

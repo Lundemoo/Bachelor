@@ -1,0 +1,168 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 25, 2015, 12:42:36 AM
+    Author     : petter
+*/
+
+#success {
+    background-color: lightgreen;
+    border: 2px solid green;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+    
+    
+}
+
+    #newcontact {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 60%;
+        height-min: 200px;
+        border: 2px solid black;
+        background-color: white;
+        margin-left: -30%;
+        
+        display:none;
+        z-index: 9999;
+        max-width: 800px;
+        color: black;
+        padding: 20px;
+        border: 2px solid gray;
+        
+        
+        
+    }
+    #grey {
+        z-index: 9998;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.8;
+        display: none;
+        left: 0;
+        right: 0;
+        position: fixed;
+        border: 1px solid grey;
+        
+    }
+
+    
+    table.newcontact {
+        
+        border: 1px solid gray;
+        width: 100%;
+        
+    }
+    td.newcontact {
+        
+        padding: 3px;
+        
+        
+    }
+    
+    #companyid {
+        width: 200px;
+       
+        
+    }
+    
+    #nyttfirmanavn {
+        
+    }
+    #nyttfirmarolle {
+        
+    }
+    
+    #gjem {
+        display: none;
+    }
+    #menyvalg {
+        width: 40%;
+        height: 50px;
+        border: 1px solid white;
+        background-color: #E26300;
+        color: black;
+        font-size: 30px;
+        
+        
+    }
+    
+    
+                                        
+                                        
+                                        table.easynav {
+                                        <!-- border: 1px solid white; -->
+                                            border: none;
+                                            margin-top: 0px;
+                                        }
+                                        td.besokerikke {
+                                            
+                                        border-bottom: 1px solid white;
+                                        border-right: 1px solid white;
+                                        height: 50px;
+                                            text-align: center;
+                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                            color:black;
+                                            line-height: 1.42857143;
+                                            background-color: #E26300;
+
+                                        }
+                                        
+                                        td.besoker {
+                                            border-bottom: 0px;
+                                            border-right: 1px solid white;
+                                            height: 50px;
+                                            text-align: center;
+                                            font-weight: bold;
+
+                                        }
+                                        td.tom {
+                                            border: 0px;
+                                        }
+                                        td.innholdeasynav {
+                                            padding-left: 50px;
+                                        }
+                                        table.framvisning {
+                                            border: 2px solid grey;
+                                            background-color: #eee;
+                                        }
+                                        td.framvisninghoved {
+                                            border: 1px solid #e26300;
+                                            background-color: #AAA;
+                                            text-align: center;
+                                            text-decoration: underline;
+                                            font-size: 16px;
+                                            padding: 3px;
+                                            font-weight: bold;
+                                        }
+                                        td.framvisningrows {
+                                            border: 1px solid #e26300;
+                                            padding:2px;
+                                            text-align: center;
+                                            color: #000;
+                                            font-weight: bold;
+                                        }
+                                        td.framvisningsiste {
+                                            
+                                        }
+                                        select.months {
+                                            border: 1px solid grey;
+                                            padding: 5px;
+                                        }
+                                        div.rund {
+                                            -moz-border-radius: 15px/15px;
+                                            -webkit-border-radius: 15px 15px;
+                                            border-radius: 15px/15px;
+                                            
+                                            
+                                            width:15px;
+                                            height:15px; 
+                                        }

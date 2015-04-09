@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'KOFEWKOmvksd32543'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -136,6 +136,10 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
+           
+
+    
 
 		/*
 		 * Application Service Providers...
@@ -145,6 +149,8 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+                'App\Providers\Helper',
+        
 
 	],
 
@@ -193,8 +199,12 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-            'HTML'            => 'Illuminate\Html\HtmlFacade',
-'Form'            => 'Illuminate\Html\FormFacade',
+        'HTML'            => 'Illuminate\Html\HtmlFacade',
+     'Form'            => 'Illuminate\Html\FormFacade',
+            'Helper' => 'App\Facades\Helper',
+           
+           
+            //Lage alias med full path, så bruk den som alias. Kanskje det går.
 
 	],
 
