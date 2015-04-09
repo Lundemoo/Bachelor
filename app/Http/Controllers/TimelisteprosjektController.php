@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\Project;
+use App\Timesheet;
 use Helper;
 //use Illuminate\Http\Request;
 use Request;
@@ -58,12 +59,28 @@ class TimelisteprosjektController extends Controller {
         $input = $request->all();
 
       //$input['employeeNR'] = Auth::user()->id;   // funker når man er logget inn
-        
-        
+       
         $input['projectID'] = Input::get('projectID');
         $input['date'] = Input::get('date_submit');
-        $input['starttime'] = Input::get('start');
-        $input['endtime'] = Input::get('slutt');
+        $input['starttime'] = Helper::changeTime(Input::get('start'));
+        $input['endtime'] = Helper::changeTime(Input::get('slutt'));
+        
+        $input['employeeNR'] = Auth::user()->id;
+        
+         $result = DB::table('timesheet')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('date', '=', $input['date'])->count();
+        if($result == 0){
+            Timesheet::create(array(
+                'employeeNR' => Auth::user()->id,
+                'date' => $input['date']
+                
+                
+            ));
+        }
+         
+        
+        
+        
+        
        if(Helper::isSafe($input['projectID'], 4)){
         Timelisteprosjekt::create($input);
        }
