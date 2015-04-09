@@ -56,8 +56,17 @@ class BuilderController extends Controller
         $builder = Builder::findOrFail($customerID);
 
         $builder->update($request->all());
-
+        \Session::flash('flash_message', 'Endringen er lagret!');
         return redirect('builder');
+    }
+
+    public function destroy($customerID){
+        $builder = Builder::findOrFail($customerID);
+        $builder->delete();
+        \Session::flash('flash_message', 'Byggherre er slettet!');
+        return redirect('editpage');
+
+
     }
 
 
