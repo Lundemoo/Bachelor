@@ -7,6 +7,8 @@
             background-color: rgba(0, 0, 0, 0.72);
         }
 
+
+
     </style>
 
     <script type=text/javascript>
@@ -14,6 +16,8 @@
             var remember = document.getElementById('remember');
             if (remember.checked){
                 alert("checked") ;
+                $verdi = document.getElementById("remember").getAttribute("value");
+                alert("verdien er" + $verdi);
             }else{
                 alert("You didn't check it! Let me check it for you.")
             }
@@ -42,10 +46,6 @@
                             <!--kode for å komme til den siden man var på må vel inn her en plass -->
 
 
-
-
-
-
                             <tr><td colspan="3" class="innholdeasynav">
 
 
@@ -54,9 +54,24 @@
                                         <article class="col-md-6">
                                             <h4> {{$car->registrationNR}}</h4>
                                             <h4>  {{$car->nickname}}</h4>
-                                            <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
-                                            Slette <input name="agree" type="checkbox" value="1"onclick="validate()">
+                                           <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
+
+
+                                            {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR]]) !!}
+                                                <div class="form-group">
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+
+                                                    {!! Form::hidden('registrationNR', $car->registrationNR) !!}
+                                                </div>
+                                                <br/>
+
+                                                {!! Form::close() !!}
+
+
+
+
                                         </article>
+
 
 
 

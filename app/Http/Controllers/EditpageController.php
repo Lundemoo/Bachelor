@@ -47,6 +47,14 @@ class EditpageController extends Controller
         return view('editpage.menu')->with('siden', $siden);
     }
 
+    public function destroy($registrationNR){
+
+        $car = Car::findOrFail($registrationNR);
+        $car->delete();
+        return view('car');
+
+
+    }
 
 
 

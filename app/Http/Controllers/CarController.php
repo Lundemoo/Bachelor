@@ -83,6 +83,21 @@ class CarController extends Controller
         return redirect('editpage');
     }
 
+    /**
+     * @param $registrationNR
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * Metode som sletter en valgt bil fra databasen. Kun for sjefer.
+     */
+
+    public function destroy($registrationNR){
+        $car = Car::findOrFail($registrationNR);
+        $car->delete();
+
+        return redirect('editpage');
+
+
+    }
+
 
 
 }
