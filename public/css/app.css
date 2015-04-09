@@ -1388,14 +1388,6 @@ pre code {
     padding-left: 15px;
     padding-right: 15px;
 }
-.containeren {
-    margin-right: auto;
-    margin-left: 100px;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 400px;
-    height:400px;
-}
 
 @media (min-width: 768px) {
     .container {
