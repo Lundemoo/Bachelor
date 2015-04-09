@@ -3,15 +3,6 @@
 namespace App\Services;
 class Helper
 {
- 
-public function sayHello(){
-return "Hello Worlddsadsa";
-}
-
-
-
-
-
 
 
 
@@ -60,7 +51,7 @@ if(is_numeric($type)){
       } elseif($type == 4){
         $legal = "11234567890,.";  
       } elseif($type == 5){
-        $legal = "11234567890:/";  
+        $legal = "11234567890:/-";  
       } elseif($type == 6){
         $legal = "aabcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ 1234567890-.";  
       } elseif($type == 7){
@@ -129,11 +120,11 @@ if(is_numeric($type)){
           return false;
       }
       } elseif($type == 5){
+          
       if(!(is_numeric($var[0]) && is_numeric($var[1]) && is_numeric($var[2]) && is_numeric($var[3]) && $var[4] == "-" && is_numeric($var[5]) && is_numeric($var[6]) && $var[7] == "-" && is_numeric($var[8]) && is_numeric($var[9]))){
           
-       return false;   
+       return false;
       }
-      
       
       } elseif($type == 6){
       

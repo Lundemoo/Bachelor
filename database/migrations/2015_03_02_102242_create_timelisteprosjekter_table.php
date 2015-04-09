@@ -14,19 +14,20 @@ class CreateTimelisteprosjekterTable extends Migration {
 	{
 		Schema::create('timelisteprosjekter', function(Blueprint $table)
 		{
+                        $table->increments('ID')->unsigned();
 			$table->integer('projectID')->unsigned();
 			$table->integer('employeeNR')->unsigned();
 			$table->date('date')->index();
 			$table->time('starttime');
 			$table->time('endtime');
 			$table->text('comment');
-			$table->boolean('approved');
+			$table->boolean('approved')->default(false);
 			$table->timestamps();
 
 			/**
 			 * composite primary key
 			 */
-			$table->primary(array('projectID', 'employeeNR','date'));
+			
 
 			/* foreign key 1 */
 			$table->foreign('projectID')
