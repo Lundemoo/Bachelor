@@ -7,6 +7,11 @@
             background-color: rgba(0, 0, 0, 0.72);
         }
 
+        #editknapp{
+
+            -webkit-border-radius: 5px;
+        }
+
 
 
     </style>
@@ -54,10 +59,11 @@
                                         <article class="col-md-6">
                                             <h4> {{$car->registrationNR}}</h4>
                                             <h4>  {{$car->nickname}}</h4>
-                                           <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
+
+                                            <button id="editknapp"><a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a></button>
 
 
-                                            {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR]]) !!}
+                                             {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR]]) !!}
                                                 <div class="form-group">
                                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
@@ -67,12 +73,7 @@
 
                                                 {!! Form::close() !!}
 
-
-
-
                                         </article>
-
-
 
 
                                     @endforeach
