@@ -7,15 +7,7 @@
             background-color: rgba(0, 0, 0, 0.72);
         }
 
-        #editknapp{
-
-            border-radius:2em;
-        }
-
     </style>
-
-
-
 
 
     <div class="container-fluid">
@@ -67,6 +59,10 @@
 
                                                 {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
 
+                                                {!! Form::button('Endre', ['class' => 'btn ']) !!}
+
+
+
                                                 {!! Form::close() !!}
 
 
@@ -102,7 +98,7 @@
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                     <tr><td colspan="3" class="innholdeasynav"><br>
-                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                <tr><table class="table" cellspacing="5" id="brukervisning">
                                         <thead>
                                         <tr>
                                             <th>id </th>
@@ -131,6 +127,8 @@
                                                     {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]]) !!}
 
                                                     {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
+
+                                                    {!! Form::button('Endre', ['class' => 'btn ']) !!}
 
                                                     {!! Form::close() !!}
 
@@ -194,7 +192,7 @@
 
                                 <tr><td colspan="3" class="innholdeasynav">
 
-                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                <tr><table class="table" cellspacing="5" id="byggherrevisning">
                                         <thead>
                                         <tr>
                                             <th>KundeID </th>
@@ -224,6 +222,8 @@
                                                         {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]]) !!}
 
                                                         {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
+
+                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
 
                                                         {!! Form::close() !!}
 
@@ -255,7 +255,7 @@
 
                                 <tr><td colspan="3" class="innholdeasynav">
 
-                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
                                         <thead>
                                         <tr>
                                             <th>Kontaktperson ID </th>
