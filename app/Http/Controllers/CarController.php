@@ -86,7 +86,6 @@ class CarController extends Controller
 
     public function destroy($registrationNR){
 
-
         $car = Car::findOrFail($registrationNR);
         $car->delete();
         \Session::flash('flash_message', 'bilen er slettet!');

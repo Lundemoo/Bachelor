@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Input;
 
 class EditpageController extends Controller
 {
+    public $restful = true;
 
     public function index()
     {

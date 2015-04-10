@@ -56,14 +56,23 @@
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
                                             <td>
-                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]]) !!}
-
-                                                {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
-
-                                                {!! Form::button('Endre', ['class' => 'btn ']) !!}
 
 
+                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
 
+                                                {!! Form::button('Slette', array(
+						                                'class' => 'btn btn-danger',
+                                                        'data-toggle' => 'modal',
+					                                	'data-target' => '#confirmDelete',
+					                                	'data-title' => 'Slette',
+					                                	'data-message' => 'Vil du slette ?',
+					                                	'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+					                                	))
+                                                !!}
+
+                                                @include('includes.jara_confirm')
                                                 {!! Form::close() !!}
 
 
@@ -85,7 +94,7 @@
 
                             <!--include på jara confirm knapp
 
-                               ['includes.jara_confirm.blade'] -->
+                                ['includes.jara_confirm.blade'] -->
 
                             <!-- REDIGERE BRUKERE -->
 
