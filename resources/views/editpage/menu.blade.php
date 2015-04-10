@@ -33,14 +33,14 @@
 
 
 
-                            <tr><td colspan="3" class="innholdeasynav">
-                                    <br>
+                            <tr><td colspan="3" class="innholdeasynav"><br>
 
                                    <tr><table class="table" cellspacing="5" id="bilvisning">
                                         <thead>
                                         <tr>
-                                            <th>RegistreringsNr </th>
-                                            <th>Kallenavn </th>
+                                            <th>RegistreringsNr</th>
+                                            <th>Kallenavn</th>
+                                            <th>Modell</th>
                                             <th> </th>
 
                                         </tr>
@@ -52,8 +52,9 @@
                                             <tbody>
                                             <tr>
 
-                                            <td> {{$car->registrationNR}}<br></td>
+                                            <td> {{$car->registrationNR}}</td>
                                             <td>  {{$car->nickname}}<br></td>
+                                            <td> {{$car->brand}}<br><br></td>
                                             <td>
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]]) !!}
 
@@ -107,6 +108,7 @@
                                             <th>Telefon </th>
                                             <th>E-post </th>
                                             <th>Aktiv </th>
+                                            <th>  </th>
                                         </tr>
 
                                         </thead>
@@ -158,7 +160,7 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav">
+                                <tr><td colspan="3" class="innholdeasynav"><br>
 
 
                                         @foreach ($projects as $project)
@@ -190,7 +192,7 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav">
+                                <tr><td colspan="3" class="innholdeasynav"><br>
 
                                 <tr><table class="table" cellspacing="5" id="byggherrevisning">
                                         <thead>
@@ -253,7 +255,7 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav">
+                                <tr><td colspan="3" class="innholdeasynav"><br>
 
                                 <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
                                         <thead>
