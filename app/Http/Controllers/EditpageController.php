@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 use Lang;
 use App;
+use Helper;
 use Illuminate\Support\Facades\Input;
 use Helper;
 
@@ -42,19 +43,31 @@ class EditpageController extends Controller
         if ($siden > 4 || $siden < 0) {
             $siden = 0;
         }
+        
+        if($siden > 4 || $siden < 0){
+            $siden = 0;
+        }
+
+        
+        
+        
+        
 
        return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'siden'=> $siden]);
     }
 
     public function show(){
         App::setLocale('en');
-        $siden = 0;
-        if(Input::get('side') == "" || Input::get('side') == "0"){
-            $siden = 0;
+        if(Helper::isSafe(Input::get('side'), 4) && Input::get('side') != ""){
+            $siden = Input::get('side');
         } else {
-            $siden = 1;
+            $siden = 0;
         }
-
+        
+        if($siden > 4 || $siden < 0){
+            $siden = 0;
+        }
+echo $siden; exit;
         return view('editpage.menu')->with('siden', $siden);
     }
 
