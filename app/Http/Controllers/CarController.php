@@ -20,7 +20,6 @@ class CarController extends Controller
     {
         $cars = DB::table('car')->get();
 
-
         return view('car.index',['cars'=> $cars]);
 
     }
@@ -35,15 +34,12 @@ class CarController extends Controller
 
     public function store(CreateCarRequest $request){
 
-        //$input = Request::all();
         $input = $request->all();
         Car::create($input);
 
         \Session::flash('flash_message', 'Bilen er lagret!');
 
-
         $cars = DB::table('car')->get();
-
         return view('car.index', ['cars' => $cars]);
 
 
@@ -51,8 +47,7 @@ class CarController extends Controller
 
     public function show($registrationNR){
 
-       $car = Car::find($registrationNR);  //finn ut hvorfor dette ikke fungerer
-       // $car = DB::table('car')->get($registrationNR);
+       $car = Car::find($registrationNR);
         return $car;
 
     }
@@ -79,7 +74,7 @@ class CarController extends Controller
         $car = Car::findOrFail($registrationNR);
 
         $car->update($request->all());
-
+        \Session::flash('flash_message', 'Endringen er lagret!');
         return redirect('editpage');
     }
 
@@ -92,6 +87,7 @@ class CarController extends Controller
     public function destroy($registrationNR){
         $car = Car::findOrFail($registrationNR);
         $car->delete();
+        \Session::flash('flash_message', 'bilen er slettet!');
 
         return redirect('editpage');
 

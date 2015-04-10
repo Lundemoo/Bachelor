@@ -7,6 +7,11 @@
             background-color: rgba(0, 0, 0, 0.72);
         }
 
+        #editknapp{
+
+            -webkit-border-radius: 5px;
+        }
+
 
 
     </style>
@@ -22,6 +27,22 @@
                 alert("You didn't check it! Let me check it for you.")
             }
         }
+    </script>
+
+    <script>
+    function confirmChange()
+    {
+
+    var answer  = confirm("Would you like to ...?");
+
+    if(answer==true) {
+
+    return false;
+
+    }else{
+    //do something
+    return false;
+    }
     </script>
 
     <div class="container-fluid">
@@ -51,28 +72,23 @@
 
                                     @foreach ($cars as $car)
 
-                                        <article class="col-md-6">
+                                        <span>
+
                                             <h4> {{$car->registrationNR}}</h4>
                                             <h4>  {{$car->nickname}}</h4>
-                                           <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
+
+                                            <button id="editknapp"><a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} " onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="redigere"> </i> Redigere</a></button>
 
 
-                                            {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR]]) !!}
-                                                <div class="form-group">
+                                             {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR],'onclick'=> "if(!confirm('Are you sure delete this record?')){return false;};"]) !!}
+                                            <div class="form-group">
                                                     {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
                                                     {!! Form::hidden('registrationNR', $car->registrationNR) !!}
                                                 </div>
-                                                <br/>
 
+                                                </span>
                                                 {!! Form::close() !!}
-
-
-
-
-                                        </article>
-
-
 
 
                                     @endforeach
@@ -95,23 +111,28 @@
 
                                     <tr><td colspan="3" class="innholdeasynav">
 
+                                            @foreach ($users as $user)
 
-                                            @foreach ($builders as $builder)
 
-                                                <article class="col-md-6">
-                                                    <h4> {{$builder->customername}}</h4>
-                                                    <a href= "{{ URL::to("/builder/{$builder->customerID}/edit")}} "><i class="redigere"> </i> Redigere</a>
-                                                    Slette <input name="agree" type="checkbox" value="1">
-                                                </article>
 
+                                            <h4> {{$user->firstname}}</h4>
+
+                                                {!! Form::open(['method' => 'DELETE', 'url' =>['editpage/destroy', $user->id]]) !!}
+                                                <div class="form-group">
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+
+                                                    {!! Form::hidden('id', $user->id) !!}
+                                                </div>
+
+                                                </span>
+                                                {!! Form::close() !!}
 
 
                                             @endforeach
 
-                                            {!! $builders->render()!!}
-
 
                                         </td></tr>
+
 
 
 
@@ -129,20 +150,18 @@
                                 <tr><td colspan="3" class="innholdeasynav">
 
 
-                                        @foreach ($cars as $car)
+                                        @foreach ($projects as $project)
 
                                             <article class="col-md-6">
-                                                <h4> {{$car->registrationNR}}</h4>
-                                                <h4>  {{$car->nickname}}</h4>
-                                                <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
-                                                Slette <input name="agree" type="checkbox" value="1">
+                                                <h4> {{$project->projectName}}</h4>
+
                                             </article>
 
 
 
                                         @endforeach
 
-                                        {!! $cars->render()!!}
+                                        {!! $projects->render()!!}
 
 
                                     </td></tr>
@@ -168,14 +187,24 @@
                                             <article class="col-md-6">
                                                 <h4> {{$builder->customername}}</h4>
                                                 <a href= "{{ URL::to("/builder/{$builder->customerID}/edit")}} "><i class="redigere"> </i> Redigere</a>
-                                                Slette <input name="agree" type="checkbox" value="1">
-                                            </article>
+
+                                                {!! Form::open(['method' => 'DELETE', 'url' =>['builder/destroy', $builder->customerID]]) !!}
+                                                <div class="form-group">
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+
+                                                    {!! Form::hidden('customerID', $builder->customerID) !!}
+                                                </div>
+
+                                                </article>
+                                                {!! Form::close() !!}
+
+
+                                                @endforeach
+
+                                                {!! $cars->render()!!}
 
 
 
-                                        @endforeach
-
-                                        {!! $builders->render()!!}
 
 
                                     </td></tr>

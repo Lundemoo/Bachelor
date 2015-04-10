@@ -31,6 +31,8 @@
                                         <li><a href="/car/create">Registrer bil</a></li>
                         <li><a href="/project/create">Registrer prosjekt</a></li>
                         <li><a href="/builder/create">Registrer byggherre</a></li>
+                        <li><a href="/auth/edit">Redigere bruker</a></li>
+
 
                                         
                                         @endif
