@@ -40,14 +40,16 @@
 
 
 
+
                             <tr><td colspan="3" class="innholdeasynav">
+                                    <br>
 
                                    <tr><table class="table" cellspacing="5" id="bilvisning">
                                         <thead>
                                         <tr>
-                                            <th>regNR: </th>
-                                            <th>kallenavn: </th>
-                                            <th>slette: </th>
+                                            <th>RegistreringsNr </th>
+                                            <th>Kallenavn </th>
+                                            <th> </th>
 
                                         </tr>
 
@@ -68,11 +70,6 @@
                                                 {!! Form::close() !!}
 
 
-
-
-
-
-
                                             </td>
 
 
@@ -81,8 +78,6 @@
                                             </tbody>
 
                                     </table></tr>
-
-
 
 
 
@@ -106,29 +101,50 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
-                                    <tr><td colspan="3" class="innholdeasynav">
+                                    <tr><td colspan="3" class="innholdeasynav"><br>
+                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                        <thead>
+                                        <tr>
+                                            <th>id </th>
+                                            <th>Fornavn </th>
+                                            <th>Etternavn </th>
+                                            <th>Telefon </th>
+                                            <th>E-post </th>
+                                            <th>Aktiv </th>
+                                        </tr>
+
+                                        </thead>
 
                                             @foreach ($users as $user)
 
+                                            <tbody>
+                                            <tr>
 
+                                                <td> {{$user->id}}<br></td>
+                                                <td>  {{$user->firstname}}<br></td>
+                                                <td>  {{$user->lastname}}<br></td>
+                                                <td>  {{$user->telephone}}<br></td>
+                                                <td>  {{$user->email}}</td>
+                                                <td>  {{$user->active}}</td>
 
-                                            <h4> {{$user->firstname}}</h4>
+                                                <td>
+                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]]) !!}
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' =>['editpage/destroy', $user->id]]) !!}
-                                                <div class="form-group">
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                    {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
 
-                                                    {!! Form::hidden('id', $user->id) !!}
-                                                </div>
+                                                    {!! Form::close() !!}
 
-                                                </span>
-                                                {!! Form::close() !!}
-
-
+                                                </td>
+                                            </tr>
                                             @endforeach
+                                            </tbody>
+
+                                    </table></tr>
+
+                                {!! $users->render()!!}
 
 
-                                        </td></tr>
+                                </td></tr>
 
 
 
@@ -178,30 +194,51 @@
 
                                 <tr><td colspan="3" class="innholdeasynav">
 
+                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                        <thead>
+                                        <tr>
+                                            <th>KundeID </th>
+                                            <th>Kundenavn </th>
+                                            <th>Kundeadresse </th>
+                                            <th>Kundetelefon </th>
+                                            <th>Kunde Epost </th>
+                                            <th> </th>
+
+                                        </tr>
+
+                                        </thead>
+
 
                                         @foreach ($builders as $builder)
 
-                                            <article class="col-md-6">
-                                                <h4> {{$builder->customername}}</h4>
-                                                <a href= "{{ URL::to("/builder/{$builder->customerID}/edit")}} "><i class="redigere"> </i> Redigere</a>
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' =>['builder/destroy', $builder->customerID]]) !!}
-                                                <div class="form-group">
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                <tbody>
+                                                <tr>
 
-                                                    {!! Form::hidden('customerID', $builder->customerID) !!}
-                                                </div>
+                                                    <td> {{$builder->customerID}}<br></td>
+                                                    <td>  {{$builder->customername}}<br></td>
+                                                    <td>  {{$builder->customeraddress}}<br></td>
+                                                    <td>  {{$builder->customertelephone}}<br></td>
+                                                    <td>  {{$builder->customeremail}}</td>
+                                                    <td>
+                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]]) !!}
 
-                                                </article>
-                                                {!! Form::close() !!}
+                                                        {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
+
+                                                        {!! Form::close() !!}
 
 
+                                                    </td>
+                                                </tr>
                                                 @endforeach
+                                                </tbody>
 
-                                                {!! $builders->render()!!}
+                                    </table></tr>
+
+                                {!! $builders->render()!!}
 
 
-                                    </td></tr>
+                                </td></tr>
 
 
 
@@ -218,29 +255,52 @@
 
                                 <tr><td colspan="3" class="innholdeasynav">
 
+                                <tr><table class="table" cellspacing="5" id="bilvisning">
+                                        <thead>
+                                        <tr>
+                                            <th>Kontaktperson ID </th>
+                                            <th>Fornavn </th>
+                                            <th>Etternavn </th>
+                                            <th>Telefon </th>
+                                            <th>E-post </th>
+                                            <th> </th>
+
+                                        </tr>
+
+                                        </thead>
+
 
                                         @foreach ($contactpersons as $contactperson)
 
-                                            <article class="col-md-6">
-                                                <h4> {{$contactperson->contactname}}</h4>
+                                            <tbody>
+                                            <tr>
 
-                                                {!! Form::open(['method' => 'DELETE', 'url' =>['editpage/destroy_contact', $contactperson->contactpersonID]]) !!}
-                                                <div class="form-group">
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                <td> {{$contactperson->contactpersonID}}<br></td>
+                                                <td>  {{$contactperson->contactname}}<br></td>
+                                                <td>  {{$contactperson->contactsurname}}<br></td>
+                                                <td>  {{$contactperson->contacttelephone}}<br></td>
+                                                <td>  {{$contactperson->contactemail}}<br></td>
+                                                <td>
+                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy_contact', $contactperson->contactpersonID]]) !!}
 
-                                                    {!! Form::hidden('contactpersonID', $contactperson->contactpersonID) !!}
-                                                </div>
+                                                    {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
 
-                                                </article>
+                                                    {!! Form::close() !!}
 
-                                                {!! Form::close() !!}
-
-                                        @endforeach
-
-                                        {!! $contactpersons->render()!!}
+                                                </td>
 
 
-                                    </td></tr>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+
+                                    </table></tr>
+
+
+                                {!! $contactpersons->render()!!}
+
+
+                                </td></tr>
 
 
                             @endif
