@@ -9,8 +9,42 @@
 
         #editknapp{
 
-            -webkit-border-radius: 5px;
+            border-radius:2em;
         }
+
+        .btn btn-danger{
+            height: 5px;
+        }
+
+        .button {
+            width: 10px;
+            padding: 5px 8px;
+            display: inline;
+            background: #777 url(button.png) repeat-x bottom;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+
+        }
+        .button:hover {
+            background-position: 0 center;
+            text-decoration: none;
+            opacity: 0.75;
+
+        }
+        .button:active {
+            background-position: 0 top;
+            position: relative;
+            top: 1px;
+            padding: 6px 10px 4px;
+        }
+
+        .button.orange { background-color: #ff9c00; }
+
+
 
 
 
@@ -72,22 +106,22 @@
 
                                     @foreach ($cars as $car)
 
-                                        <span>
+                                        <article class="col-md-6">
 
                                             <h4> {{$car->registrationNR}}</h4>
                                             <h4>  {{$car->nickname}}</h4>
 
-                                            <button id="editknapp"><a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} " onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="redigere"> </i> Redigere</a></button>
-
-
+                                        <!--    <button id="editknapp"><a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} " onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="redigere"> </i> Redigere</a></button> -->
+                                            <div class="form-group">
+                                <a href="{{ URL::to("/car/{$car->registrationNR}/edit")}} " class='button orange'  onclick="if(!confirm('Are you sure to edit this item?')){return false;};">Rediger</a>
+                                            </div>
                                              {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR],'onclick'=> "if(!confirm('Are you sure delete this record?')){return false;};"]) !!}
                                             <div class="form-group">
-                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                                                    {!! Form::submit('Slette', ['class' => 'btn btn-danger']) !!}
 
                                                     {!! Form::hidden('registrationNR', $car->registrationNR) !!}
                                                 </div>
-
-                                                </span>
+                                       </article>
                                                 {!! Form::close() !!}
 
 
@@ -201,10 +235,7 @@
 
                                                 @endforeach
 
-                                                {!! $cars->render()!!}
-
-
-
+                                                {!! $builders->render()!!}
 
 
                                     </td></tr>
@@ -225,20 +256,25 @@
                                 <tr><td colspan="3" class="innholdeasynav">
 
 
-                                        @foreach ($cars as $car)
+                                        @foreach ($contactpersons as $contactperson)
 
                                             <article class="col-md-6">
-                                                <h4> {{$car->registrationNR}}</h4>
-                                                <h4>  {{$car->nickname}}</h4>
-                                                <a href= "{{ URL::to("/car/{$car->registrationNR}/edit")}} "><i class="redigere"> </i> Redigere</a>
-                                                Slette <input name="agree" type="checkbox" value="1">
-                                            </article>
+                                                <h4> {{$contactperson->contactname}}</h4>
 
+                                                {!! Form::open(['method' => 'DELETE', 'url' =>['editpage/destroy_contact', $contactperson->contactpersonID]]) !!}
+                                                <div class="form-group">
+                                                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
 
+                                                    {!! Form::hidden('contactpersonID', $contactperson->contactpersonID) !!}
+                                                </div>
+
+                                                </article>
+
+                                                {!! Form::close() !!}
 
                                         @endforeach
 
-                                        {!! $cars->render()!!}
+                                        {!! $contactpersons->render()!!}
 
 
                                     </td></tr>
