@@ -15,7 +15,6 @@ use Lang;
 use App;
 use Helper;
 use Illuminate\Support\Facades\Input;
-use Helper;
 
 
 class EditpageController extends Controller
@@ -28,7 +27,6 @@ class EditpageController extends Controller
         $users = DB::table('users')->paginate(6); //henter alle brukere
         $projects = DB::table('projects')->paginate(6); //henter alle prosjekter
         $contactpersons = DB::table('contactpersons')->paginate(6); //henter alle kontaktpersoner
-
 
 
         App::setLocale('en');
@@ -48,10 +46,6 @@ class EditpageController extends Controller
             $siden = 0;
         }
 
-        
-        
-        
-        
 
        return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'siden'=> $siden]);
     }
@@ -89,12 +83,10 @@ echo $siden; exit;
         $contactperson->delete();
         \Session::flash('flash_message', 'Kontakten er slettet!');
         $siden=4;
-        return redirect('editpage?side=4')->with('siden', $siden);;
+        return redirect('editpage?side=4')->with('siden', $siden);
 
 
     }
-
-
 
 
 

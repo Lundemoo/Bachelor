@@ -12,9 +12,6 @@
             border-radius:2em;
         }
 
-        .btn btn-danger{
-            height: 5px;
-        }
 
         .button {
             width: 10px;
@@ -46,8 +43,6 @@
 
 
 
-
-
     </style>
 
     <script type=text/javascript>
@@ -64,27 +59,72 @@
     </script>
 
     <script>
-    function confirmChange()
-    {
-
-    var answer  = confirm("Would you like to ...?");
-
-    if(answer==true) {
-
-    return false;
-
-    }else{
-    //do something
-    return false;
-    }
+        function CustomAlert(){
+            this.render = function(dialog){
+                var winW = window.innerWidth;
+                var winH = window.innerHeight;
+                var dialogoverlay = document.getElementById('dialogoverlay');
+                var dialogbox = document.getElementById('dialogbox');
+                dialogoverlay.style.display = "block";
+                dialogoverlay.style.height = winH+"px";
+                dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+                dialogbox.style.top = "100px";
+                dialogbox.style.display = "block";
+                document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
+                document.getElementById('dialogboxbody').innerHTML = dialog;
+                document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+            }
+            this.ok = function(){
+                document.getElementById('dialogbox').style.display = "none";
+                document.getElementById('dialogoverlay').style.display = "none";
+            }
+        }
+        var Alert = new CustomAlert();
     </script>
+
+    <style>
+        #dialogoverlay{
+            display: none;
+            opacity: .8;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: #FFF;
+            width: 100%;
+            z-index: 10;
+        }
+        #dialogbox{
+            display: none;
+            position: fixed;
+            background: #000;
+            border-radius:7px;
+            width:550px;
+            z-index: 10;
+        }
+        #dialogbox > div{ background:#666;; margin:8px; }
+        #dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
+        #dialogbox > div > #dialogboxbody{ background: orangered; padding:20px; color:#FFF; }
+        #dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+    </style>
+
+
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Redigering oversikt {{$siden}}</div>
+                    <div class="panel-heading">Redigering oversikt</div>
                     <div class="panel-body2">
+
+                        <!-- alertboks -->
+                        <div id="dialogoverlay"></div>
+                        <div id="dialogbox">
+                            <div>
+                                <div id="dialogboxhead"></div>
+                                <div id="dialogboxbody"></div>
+                                <div id="dialogboxfoot"></div>
+                            </div>
+                        </div>
 
 
                         <table class="easynav" width="100%">
@@ -97,8 +137,6 @@
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
                                 <td class="tom" width="40%">&nbsp;</td></tr>
 
-
-                            <!--kode for å komme til den siden man var på må vel inn her en plass -->
 
 
                             <tr><td colspan="3" class="innholdeasynav">
@@ -115,7 +153,7 @@
                                             <div class="form-group">
                                 <a href="{{ URL::to("/car/{$car->registrationNR}/edit")}} " class='button orange'  onclick="if(!confirm('Are you sure to edit this item?')){return false;};">Rediger</a>
                                             </div>
-                                             {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR],'onclick'=> "if(!confirm('Are you sure delete this record?')){return false;};"]) !!}
+                                             {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR],'onsubmit'=>"Alert.render('Sikker på at du vil slette?');"]) !!}
                                             <div class="form-group">
                                                     {!! Form::submit('Slette', ['class' => 'btn btn-danger']) !!}
 
@@ -285,10 +323,6 @@
 
 
                             </table>
-
-
-
-
 
 
 
