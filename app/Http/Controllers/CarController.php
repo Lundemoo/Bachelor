@@ -40,7 +40,7 @@ class CarController extends Controller
         \Session::flash('flash_message', 'Bilen er lagret!');
 
         $cars = DB::table('car')->get();
-        return view('car.index', ['cars' => $cars]);
+        return view('car.create');
 
 
     }
@@ -85,6 +85,7 @@ class CarController extends Controller
      */
 
     public function destroy($registrationNR){
+
         $car = Car::findOrFail($registrationNR);
         $car->delete();
         \Session::flash('flash_message', 'bilen er slettet!');

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Car;
+use App\ContactPerson;
 use App\Http\Requests;
 use App\Http\Requests\CreateCarRequest;
 use App\Http\Controllers\Controller;
@@ -14,18 +15,19 @@ use Lang;
 use App;
 use Helper;
 use Illuminate\Support\Facades\Input;
-use Helper;
 
 
 class EditpageController extends Controller
 {
+    public $restful = true;
 
     public function index()
     {
         $cars = DB::table('car')->paginate(6);  //henter alle biler
         $builders = DB::table('builder')->paginate(6); //henter alle byggherrer
         $users = DB::table('users')->paginate(6); //henter alle brukere
-        $projects = DB::table('projects')->paginate(6); //henter alle brukere
+        $projects = DB::table('projects')->paginate(6); //henter alle prosjekter
+        $contactpersons = DB::table('contactpersons')->paginate(6); //henter alle kontaktpersoner
 
 
         App::setLocale('en');
@@ -45,12 +47,8 @@ class EditpageController extends Controller
             $siden = 0;
         }
 
-        
-        
-        
-        
 
-       return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'siden'=> $siden]);
+       return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'siden'=> $siden]);
     }
 
     public function show(){
@@ -74,12 +72,22 @@ echo $siden; exit;
         $user= User::findOrFail($ID);
         $user->delete();
         \Session::flash('flash_message', 'Brukeren er slettet!');
-        return redirect('editpage');
+        return redirect('editpage?side=1');
 
 
     }
 
+    // slettemetoden for kontaktperson //
+    public function destroy_contact($contactpersonID){
 
+        $contactperson= ContactPerson::findOrFail($contactpersonID);
+        $contactperson->delete();
+        \Session::flash('flash_message', 'Kontakten er slettet!');
+        $siden=4;
+        return redirect('editpage?side=4')->with('siden', $siden);
+
+
+    }
 
 
 
