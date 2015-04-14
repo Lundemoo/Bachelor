@@ -91,7 +91,7 @@ $( "#datepicker" ).datepicker();
                                    
                                    
                                    
-                               </td><td><p id="andregrafinfo"></p></td></tr></table>
+                               </td><td class="infograf"><p id="andregrafinfo"></p></td></tr></table>
                                                    
                                                 
                                              
@@ -116,7 +116,7 @@ $( "#datepicker" ).datepicker();
                                  
                                  <script>
                                      var alle = <?php echo json_encode($totaltimer); ?>;
-                                     tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],2,0.7);
+                                     tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],1,0.7);
                                      </script>
                                  
                                  

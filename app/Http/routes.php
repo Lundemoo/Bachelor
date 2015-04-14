@@ -79,8 +79,10 @@ Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 
 Route::get('oversikt', 'OversiktController@show');
 
+
+
 Route::get('editpage', 'EditpageController@index');
-Route::delete('car/destroy/{registrationNR}', 'CarController@destroy');
+Route::get('car/destroy/{registrationNR}', 'CarController@destroy');
 Route::delete('editpage/destroy', 'EditpageController@destroy');
 
 Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
