@@ -6,6 +6,9 @@ return [
     'projectCreated' => 'Project is created',
     'loginErrorAttempts' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
     'loginError' => 'These credentials do not match our records.',
+    'builderSuccess' => 'Builder is created',
+    'changeSuccess' => 'The change is successful',
+    'builderDeleted' => 'The builder is deleted',
 
     
     

@@ -9,6 +9,8 @@ use App\User;
 use Request;
 use DB;
 use Carbon\Carbon;
+use App;
+use Lang;
 
 
 
@@ -36,7 +38,7 @@ class BuilderController extends Controller
         $input = $request->all();
         Builder::create($input);
 
-        \Session::flash('flash_message', 'Byggherre er lagret!');
+        \Session::flash('flash_message', Lang::get('general.builderSuccess'));
 
         $builders = DB::table('builder')->get();
         return view('builder.index', ['builders' => $builders]);
@@ -56,14 +58,14 @@ class BuilderController extends Controller
         $builder = Builder::findOrFail($customerID);
 
         $builder->update($request->all());
-        \Session::flash('flash_message', 'Endringen er lagret!');
+        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('builder');
     }
 
     public function destroy($customerID){
         $builder = Builder::findOrFail($customerID);
         $builder->delete();
-        \Session::flash('flash_message', 'Byggherre er slettet!');
+        \Session::flash('flash_message', Lang::get('general.builderDeleted'));
         return redirect('editpage');
 
 
