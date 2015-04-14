@@ -61,7 +61,7 @@
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
 
                                                 {!! Form::button('Slette', array(
-						                                'class' => 'btn btn-danger',
+						                                'class' => 'btn btn-danger', 'onclick' => "func('$car->registrationNR')",
                                                         'data-toggle' => 'modal',
 					                                	'data-target' => '#confirmDelete',
 					                                	'data-title' => 'Slette',
@@ -72,7 +72,7 @@
 					                                	))
                                                 !!}
 
-                                                @include('includes.jara_confirm')
+
                                                 {!! Form::close() !!}
 
 
@@ -81,6 +81,14 @@
 
                                             </tr>
                                             @endforeach
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                            function func(variabelen){
+                                                document.getElementById('gjemt').value = variabelen;
+                                            }
+                                            </script>
+                                            
+                                            
                                             </tbody>
 
                                     </table></tr>
@@ -88,7 +96,7 @@
 
 
                                     {!! $cars->render()!!}
-
+                                @include('includes.jara_confirm')
 
                                 </td></tr>
 
