@@ -23,6 +23,7 @@ return [
     'telephone' => 'Telephone',
     'address' => 'Address',
     'updateUserbtn' => 'Update User',
+    'updateBuilderbtn' => 'Update builder',
     'login' => 'Login',
     'inputProblems' => 'There where som problems with your input',
     'password' => 'Password',
@@ -37,6 +38,10 @@ return [
     'customerAddress' => 'Customer address',
     'customerTelephone' => 'Customer telephone',
     'customerEmail' => 'Customer email',
+    'editBuilder' => 'Edit Builder',
+    'allBuilders' => 'All builders',
+
+
 
 
 
