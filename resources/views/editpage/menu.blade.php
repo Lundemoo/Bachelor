@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Redigering oversikt</div>
+                    <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
 
 
@@ -23,11 +23,11 @@
                         <table class="easynav" width="100%">
 
                             @if($siden==0)
-                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                 <td class="tom" width="40%">&nbsp;</td></tr>
 
 
@@ -38,9 +38,9 @@
                                    <tr><table class="table" cellspacing="5" id="bilvisning">
                                         <thead>
                                         <tr>
-                                            <th>RegistreringsNr</th>
-                                            <th>Kallenavn</th>
-                                            <th>Modell</th>
+                                            <th>{{trans('general.registrationNr')}}</th>
+                                            <th>{{trans('general.nickname')}}</th>
+                                            <th>{{trans('general.model')}}</th>
                                             <th> </th>
 
                                         </tr>
@@ -100,11 +100,11 @@
 
                                 @elseif($siden==1)
 
-                                <tr><td class="besoker" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besoker" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                     <tr><td colspan="3" class="innholdeasynav"><br>
@@ -112,11 +112,11 @@
                                         <thead>
                                         <tr>
                                             <th>id </th>
-                                            <th>Fornavn </th>
-                                            <th>Etternavn </th>
-                                            <th>Telefon </th>
-                                            <th>E-post </th>
-                                            <th>Aktiv </th>
+                                            <th>{{trans('general.firstname')}}</th>
+                                            <th>{{trans('general.surname')}}</th>
+                                            <th>{{trans('general.telephone')}}</th>
+                                            <th>{{trans('general.email')}}</th>
+                                            <th>{{trans('general.active')}}</th>
                                             <th>  </th>
                                         </tr>
 
@@ -209,11 +209,11 @@
 
                             @elseif($siden == 2)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -241,11 +241,11 @@
 
                             @elseif($siden == 3)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -253,11 +253,11 @@
                                 <tr><table class="table" cellspacing="5" id="byggherrevisning">
                                         <thead>
                                         <tr>
-                                            <th>KundeID </th>
-                                            <th>Kundenavn </th>
-                                            <th>Kundeadresse </th>
-                                            <th>Kundetelefon </th>
-                                            <th>Kunde Epost </th>
+                                            <th>{{trans('general.customerId')}} </th>
+                                            <th>{{trans('general.customerName')}}</th>
+                                            <th>{{trans('general.customerAddress')}}</th>
+                                            <th>{{trans('general.customerTelephone')}}</th>
+                                            <th>{{trans('general.customerEmail')}}</th>
                                             <th> </th>
 
                                         </tr>
@@ -302,11 +302,11 @@
 
                             @elseif($siden == 4)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -314,11 +314,11 @@
                                 <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
                                         <thead>
                                         <tr>
-                                            <th>Kontaktperson ID </th>
-                                            <th>Fornavn </th>
-                                            <th>Etternavn </th>
-                                            <th>Telefon </th>
-                                            <th>E-post </th>
+                                            <th>{{trans('general.contactpersonId')}}</th>
+                                            <th>{{trans('general.firstname')}}</th>
+                                            <th>{{trans('general.surname')}}</th>
+                                            <th>{{trans('general.telephone')}}</th>
+                                            <th>{{trans('general.email')}}</th>
                                             <th> </th>
 
                                         </tr>

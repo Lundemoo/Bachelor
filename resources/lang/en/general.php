@@ -49,6 +49,18 @@ return [
     'updateCar' => 'Update car',
     'allCars' => 'All cars',
     'delete' => 'Delete',
+    'editOverview' => 'Edit overview',
+    'users' => 'Users',
+    'projects' => 'Projects',
+    'builders' => 'Builders',
+    'contactpersons' => 'Contactpersons',
+    'cars' => 'Cars',
+    'active' => 'Active',
+    'contactpersonId' => 'Contactperson ID',
+    ''
+
+
+
 
 
 
