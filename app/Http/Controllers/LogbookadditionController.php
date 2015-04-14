@@ -48,7 +48,7 @@ class LogbookadditionController extends Controller
        // $input = Request::all();
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
-        $thisid = "";echo $input['date'];
+        $thisid = "";
         $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
         
         

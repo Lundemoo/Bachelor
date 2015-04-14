@@ -16,7 +16,7 @@
                                     
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">Registrer timesliste</div></br>
                                     <div id=menyvalg onclick="oc('/logbookaddition/create')">Registrer kjørebok</div></br>
-                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">Din oversikt</div></br>
+                                    <div id=menyvalg onclick="oc('/oversikt')">Din oversikt</div></br>
                                     @if(Auth::user()->brukertype == 1)
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">Endringer</div></br>
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">Statistikk</div></br>

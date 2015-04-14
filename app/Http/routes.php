@@ -80,3 +80,9 @@ Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 Route::get('oversikt', 'OversiktController@show');
 
 Route::get('editpage', 'EditpageController@index');
+Route::delete('car/destroy/{registrationNR}', 'CarController@destroy');
+Route::delete('editpage/destroy', 'EditpageController@destroy');
+
+Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
+Route::delete('editpage/destroy/{id}', 'EditpageController@destroy');      //slette bruker
+Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
