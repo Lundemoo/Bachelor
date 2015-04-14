@@ -146,7 +146,7 @@ $( "#datepicker" ).datepicker();
 <div class="form-group">
 
 
- {!! Form::submit('Registrer ny contact', ['class' => 'btn btn-primary form-control']) !!}
+ {!! Form::submit('Registrer nytt prosjekt', ['class' => 'btn btn-primary form-control']) !!}
 
 </div>
 
@@ -160,12 +160,7 @@ $( "#datepicker" ).datepicker();
 
 <br>
 
-<div class="form-group">
 
-
- {!! Form::submit('Registrate', ['class' => 'btn btn-primary form-control']) !!}
-
-</div>
 
 
 
@@ -229,7 +224,9 @@ function lagre() {
             
             
             var option = document.createElement("option");
-option.text = firstname + " " + lastname;
+            var e = document.getElementById('companyid');
+            var firmanavnet = e.options[e.selectedIndex].text;
+option.text = firstname + " " + lastname + ", " + firmanavnet;
 option.value = data.substring(2);
 var select = document.getElementById("contactpersonID");
 select.appendChild(option);

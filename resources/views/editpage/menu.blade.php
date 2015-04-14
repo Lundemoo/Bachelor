@@ -55,7 +55,7 @@
                                             <td> {{$car->registrationNR}}</td>
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
-                                            <td><button class='btn btn-danger' type="submit" onclick="func('{{$car->registrationNR}}')">Slett!</button>
+                                            <td>
 
 
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
