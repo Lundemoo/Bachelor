@@ -14,23 +14,20 @@ $( "#datepicker" ).datepicker();
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 
-<div class="panel panel-default">
-				<div class="panel-heading">Oversikt</div>
-				<div class="panel-body">
+            <div class="panel panel-default">
+				<div class="panel-heading">{{trans('general.overview')}}</div>
+				    <div class="panel-body">
                                     
-                     
-                                    
-                                    
-                                    
-                                    <table class="easynav" width="100%">
+
+                        <table class="easynav" width="100%">
                                         
                                         <tr>
                                             @if($siden == 0)
-                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=0')">Timelister</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=1')">Kjørebok</td>
+                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
                                             @else
-                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=0')">Timelister</td>
-                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=1')">Kjørebok</td>
+                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
                                             @endif
                                             
                                             <td class="tom" width="80%">&nbsp;</td></tr>
@@ -48,7 +45,7 @@ $( "#datepicker" ).datepicker();
                                        
                                        
                                        
-                                       <h5>Velg måned</h5>
+                                       <h5>{{trans('general.chooseMonth')}}</h5>
                                         <select name="dato" class='months' onchange="oc('/oversikt?side={{$siden}}&dato=' + this.value)">
                                         @foreach ($selecten as $select)
                                         
@@ -72,8 +69,8 @@ $( "#datepicker" ).datepicker();
                                        ?>
                                        @endforeach
                                        
-                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'><tr><td colspan='7' class='framvisninghoved'>Statistikk</td></tr>
-                                           <tr><td class='framvisningrows' colspan='7'>Totalt timer denne måneden: <?PHP echo $totalt; ?>
+                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'><tr><td colspan='7' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
+                                           <tr><td class='framvisningrows' colspan='7'>{{trans('general.totalHoursMonth')}} <?PHP echo $totalt; ?>
                                                
                                                
                                                
@@ -84,7 +81,7 @@ $( "#datepicker" ).datepicker();
                                                
                                                    <table><tr><td>
                                <canvas id="graph" width="400" height="300">  
-                               </canvas> </td><td><p id='infoen'></p></br>Timeslønn:</br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
+                               </canvas> </td><td><p id='infoen'></p></br> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
                                                                
                                    
                                    <canvas id="andregraf" height="200" width="200" style="border: 1px solid black;"></canvas>
@@ -143,7 +140,7 @@ $( "#datepicker" ).datepicker();
                                            
                                            
                                            
-                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>Prosjekt</td><td width='20%' class='framvisninghoved'>Kommentar</td><td class='framvisninghoved'>Dato</td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Slutt</td><td class='framvisninghoved'>Antall timer</td></tr>
+                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td width='20%' class='framvisninghoved'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td></tr>
                                            <?PHP
                                            $i = 1;
                                            $totalt = 0;
@@ -158,7 +155,7 @@ $( "#datepicker" ).datepicker();
                                                ?>
                                                
                                        @endforeach
-                                       <tr><td class='framvisningsiste'>Totalt:</td><td class='framvisningsiste'>{{$totalt}}</td></tr></table>
+                                       <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr></table>
                                        @endif
                                        
                                        
@@ -176,28 +173,11 @@ $( "#datepicker" ).datepicker();
     var obj = <?php echo json_encode($totaltimer); ?>;
     
     tegn("graph", "infoen", obj[1], obj[0]);</script>
-</div>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @stop
