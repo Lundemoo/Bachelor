@@ -4,14 +4,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Delete Permanently</h3>
+                <h3 class="modal-title">Bekrefte handling</h3>
             </div> <!-- End Modal Header -->
             <div class="modal-body">
-                <p>Are you sure about this ? </p>
+                <p>Er du sikker ? </p>
             </div> <!-- End Modal Body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" id="confirm"><x>Delete</x></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+                <button type="button" class="btn btn-danger" id="confirm"><x>Ja</x></button>
             </div> <!-- End Modal Footer -->
         </div> <!-- End Modal Content -->
     </div> <!-- End Modal Dialog -->
@@ -22,7 +22,6 @@
 <!-- Javascript functions to control modal data injection -->
 <script type="text/javascript">
     $('#confirmDelete').on('show.bs.modal', function (e) {
-        
         $message = $(e.relatedTarget).attr('data-message');
         $(this).find('.modal-body p').text($message);
         $title = $(e.relatedTarget).attr('data-title');
@@ -46,7 +45,6 @@
     <!-- Form confirm (yes/ok) handler, submits form -->
     $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
         var all = document.getElementById('gjemt').value;
-        
-        window.location.replace("/car/destroy/" + all);
+        window.location.replace(all);
     });
 </script>

@@ -69,10 +69,17 @@ echo $siden; exit;
     // slettemetoden for bruker //
     public function destroy($ID){
 
-        $user= User::findOrFail($ID);
+        /*$user= User::findOrFail($ID);
         $user->delete();
         \Session::flash('flash_message', 'Brukeren er slettet!');
-        return redirect('editpage?side=1');
+        return redirect('editpage?side=1');*/
+
+        $user = User::find($ID);
+        DB::table('users')
+            ->where('id', $ID)
+            ->update(array('active'=>'0'));
+        $siden = 1;
+        return redirect('editpage?side=1')->with('siden', $siden);
 
 
     }
@@ -87,6 +94,22 @@ echo $siden; exit;
         return redirect('editpage?side=4')->with('siden', $siden);
 
 
+    }
+
+
+
+    /*
+     * metode for å aktivere bruker. Setter aktiv til 1
+     */
+
+    public function aktiver($ID){
+
+        $user = User::find($ID);
+        DB::table('users')
+            ->where('id', $ID)
+            ->update(array('active'=>'1'));
+        $siden = 1;
+        return redirect('editpage?side=1')->with('siden', $siden);;
     }
 
 
