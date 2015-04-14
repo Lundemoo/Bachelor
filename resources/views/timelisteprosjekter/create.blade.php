@@ -56,7 +56,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Registrer timelisten', ['class' => 'btn btn-primary form-control'] ) !!}
+    {!! Form::submit('Register timesheet', ['class' => 'btn btn-primary form-control'] ) !!}
 </div>
 
 {!! Form::close() !!}
