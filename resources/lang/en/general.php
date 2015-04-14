@@ -14,6 +14,31 @@ return [
     'contactDeleted' => 'The contact is deleted',
     'logbookSuccess' => 'The logbook is created',
     'timesheetSuccess' => 'The timesheet is created',
+    'registerUser' => 'Register user',
+    'edit' => 'Edit: ',
+    'email' => 'Email',
+    'firstname' => 'Firstname',
+    'surname' => 'Surname',
+    'telephone' => 'Telephone',
+    'address' => 'Address',
+    'updateUserbtn' => 'Update User',
+    'login' => 'Login',
+    'inputProblems' => 'There where som problems with your input',
+    'password' => 'Password',
+    'rememberMe' => 'Remember me',
+    'forgotPass' => 'Forgot password?',
+    'ensurePass' => 'Ensure password',
+    'resetPass' => 'Reset password',
+    'sendNewPass' => 'Send new password',
+    'registrate' => 'Registrate',
+
+
+
+
+
+
+
+
 
 
 
