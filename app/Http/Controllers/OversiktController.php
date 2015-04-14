@@ -55,7 +55,7 @@ class OversiktController extends Controller {
             array_push($sendarray, $arrayx);
             array_push($sendarray, $arrayy);
            
-            $alle = DB::table('Timesheet')->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->where('employeeNR', '=', $minid)->get();
+            $alle = DB::table('timesheet')->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->where('employeeNR', '=', $minid)->get();
             
             
             
