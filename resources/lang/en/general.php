@@ -14,6 +14,60 @@ return [
     'contactDeleted' => 'The contact is deleted',
     'logbookSuccess' => 'The logbook is created',
     'timesheetSuccess' => 'The timesheet is created',
+    'registerUser' => 'Register user',
+    'registerBuilder' => 'Register builder',
+    'edit' => 'Edit: ',
+    'email' => 'Email',
+    'firstname' => 'Firstname',
+    'surname' => 'Surname',
+    'telephone' => 'Telephone',
+    'address' => 'Address',
+    'updateUserbtn' => 'Update User',
+    'updateBuilderbtn' => 'Update builder',
+    'login' => 'Login',
+    'inputProblems' => 'There where som problems with your input',
+    'password' => 'Password',
+    'rememberMe' => 'Remember me',
+    'forgotPass' => 'Forgot password?',
+    'ensurePass' => 'Ensure password',
+    'resetPass' => 'Reset password',
+    'sendNewPass' => 'Send new password',
+    'registrate' => 'Registrate',
+    'customerId' => 'Customer ID',
+    'customerName' => 'Customer name',
+    'customerAddress' => 'Customer address',
+    'customerTelephone' => 'Customer telephone',
+    'customerEmail' => 'Customer email',
+    'editBuilder' => 'Edit Builder',
+    'allBuilders' => 'All builders',
+    'registerCar' => 'Register car',
+    'registrationNr' => 'Registration number',
+    'nickname' => 'Nickname',
+    'nicknamePlaceholder' => 'Write nickname for car',
+    'model' => 'Model',
+    'modelPlaceholder' => 'Write model/brand of car',
+    'updateCar' => 'Update car',
+    'allCars' => 'All cars',
+    'delete' => 'Delete',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
