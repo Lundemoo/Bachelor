@@ -97,19 +97,32 @@ and open the template in the editor.
                                         
                                         
                                         table.easynav {
-                                            border: 1px solid white;
+                                        <!-- border: 1px solid white; -->
+                                            border: none;
+                                            margin-top: 0px;
                                         }
                                         td.besokerikke {
                                             
                                         border-bottom: 1px solid white;
                                         border-right: 1px solid white;
                                         height: 50px;
+                                            text-align: center;
+                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                            color:black;
+                                            line-height: 1.42857143;
+                                            background-color: #E26300;
+
                                         }
                                         
                                         td.besoker {
                                             border-bottom: 0px;
                                             border-right: 1px solid white;
                                             height: 50px;
+                                            text-align: center;
+                                            font-weight: bold;
+
                                         }
                                         td.tom {
                                             border: 0px;
@@ -117,4 +130,42 @@ and open the template in the editor.
                                         td.innholdeasynav {
                                             padding-left: 50px;
                                         }
-                                    
+                                        table.framvisning {
+                                            border: 2px solid grey;
+                                            background-color: #eee;
+                                        }
+                                        td.framvisninghoved {
+                                            border: 1px solid #e26300;
+                                            background-color: #AAA;
+                                            text-align: center;
+                                            text-decoration: underline;
+                                            font-size: 16px;
+                                            padding: 3px;
+                                            font-weight: bold;
+                                        }
+                                        td.framvisningrows {
+                                            border: 1px solid #e26300;
+                                            padding:2px;
+                                            text-align: center;
+                                            color: #000;
+                                            font-weight: bold;
+                                        }
+                                        td.framvisningsiste {
+                                            
+                                        }
+                                        select.months {
+                                            border: 1px solid grey;
+                                            padding: 5px;
+                                        }
+                                        div.rund {
+                                            -moz-border-radius: 15px/15px;
+                                            -webkit-border-radius: 15px 15px;
+                                            border-radius: 15px/15px;
+                                            
+                                            
+                                            width:15px;
+                                            height:15px; 
+                                        }
+                                        td.infograf {
+                                           
+                                        }

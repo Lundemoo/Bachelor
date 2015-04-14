@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'KOFEWKOmvksd32543'),
+	'key' => env('APP_KEY', 'SomeRandomString'), //--- MIN KODE FUNGERER IKKE MED DENNE TEKSTEN SOM STRING, CW ----- KOFEWKOmvksd32543
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
