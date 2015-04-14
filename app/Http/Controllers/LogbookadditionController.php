@@ -12,6 +12,8 @@ use App\Car;
 use DB;
 use Carbon\Carbon;
 use App\Logbook;
+use App;
+use Lang;
 
 
 
@@ -77,7 +79,7 @@ class LogbookadditionController extends Controller
         
         Logbookaddition::create($input);
 
-        \Session::flash('flash_message', 'Logbook is saved!');
+        \Session::flash('flash_message', Lang::get('general.logbookSuccess'));
 
 
         $cars = Car::lists('nickname', 'registrationNR');

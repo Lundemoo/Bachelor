@@ -13,6 +13,8 @@ use Helper;
 use Request;
 use DB;
 use Carbon\Carbon;
+use Lang;
+use App;
 
 use Illuminate\Support\Facades\Input;
 
@@ -86,7 +88,7 @@ class TimelisteprosjektController extends Controller {
        }
         // $input['created_at'] = Carbon::now();
         // $input['updated_at'] = Carbon::now();
-        \Session::flash('flash_message', 'Your timesheet is saved!');
+        \Session::flash('flash_message', Lang::get('general.timesheetSuccess'));
 
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
