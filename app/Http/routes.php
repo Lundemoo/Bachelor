@@ -68,7 +68,7 @@ Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
 //Route::get('car/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
-Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
+Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden)
 
 //routes for builder Skal kun være mulig for sjefene.
 Route::get('builder', 'BuilderController@index');
@@ -90,3 +90,4 @@ Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deakti
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
 
 Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
+Route::get('editpage/{id}/edit', 'EditpageController@edit');

@@ -58,24 +58,13 @@
                                             <td>
 
 
-                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
+                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
 
-                                                {!! Form::button('Slette', array(
-						                                'class' => 'btn btn-danger', 'onclick' => "func('$car->registrationNR')",
-                                                        'data-toggle' => 'modal',
-					                                	'data-target' => '#confirmDelete',
-					                                	'data-title' => 'Slette',
-					                                	'data-message' => 'Vil du slette ?',
-					                                	'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
-					                                	))
-                                                !!}
-
-
-                                             <a href="{{ URL::to("/car/{$car->registrationNR}/edit")}}" type="button" class="btn btn">Endre</a>
+                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                 {!! Form::close() !!}
+
+
 
 
                                             </td>
@@ -147,10 +136,11 @@
 
                                                 @if($user->active == "1")
                                                 <td>
-                                                    <!--sletteknapp -->
+
+                                                    <!--deaktivere knapp -->
                                                     {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]])!!}
 
-                                                    {!! Form::button('Slette', array(
+                                                    {!! Form::button('Deaktivere', array(
                                                     'class' => 'btn btn-danger', 'onclick' => "func('editpage/destroy/$user->id')",
                                                     'data-toggle' => 'modal',
                                                     'data-target' => '#confirmDelete',
@@ -161,6 +151,8 @@
                                                     'data-btntxt' => 'Slette'
                                                     ))
                                                     !!}
+
+                                                    {!! Form::button('Endre', ['class' => 'btn ']) !!}
 
                                                     {!! Form::close() !!}
 
@@ -183,6 +175,8 @@
                                                         ))
                                                         !!}
 
+                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
+
                                                         {!! Form::close() !!}
                                                     </td>
                                                     @endif
@@ -197,7 +191,6 @@
                                             <script>
                                                 function func(variabelen){
                                                     var knapp= document.getElementById('gjemt').value = variabelen;
-alert("hei");
                                                 }
                                             </script>
                                             </tbody>
@@ -284,11 +277,9 @@ alert("hei");
                                                     <td>  {{$builder->customertelephone}}<br></td>
                                                     <td>  {{$builder->customeremail}}</td>
                                                     <td>
-                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]]) !!}
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
 
-                                                        {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
-
-                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                         {!! Form::close() !!}
 
