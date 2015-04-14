@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Auth\AuthenticatesAndRegistersUsers;
 use App\Loginattempt;
 use Illuminate\Contracts\Auth\Guard;
+use App;
+use Lang;
 
 use Illuminate\Contracts\Auth\Registrar;
 //use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -61,7 +63,7 @@ class AuthController extends Controller {
             
                 
         return redirect('/auth/login')->withErrors([
-            'email' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
+            'email' => Lang::get('general.loginErrorAttempts'),
         ]);
                 
                 
@@ -84,7 +86,7 @@ class AuthController extends Controller {
        
 
         return redirect('/auth/login')->withErrors([
-            'email' => 'These credentials do not match our records.',
+            'email' => Lang::get('general.loginError'),
         ]);
     }
         

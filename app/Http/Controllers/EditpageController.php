@@ -89,7 +89,7 @@ echo $siden; exit;
 
         $contactperson= ContactPerson::findOrFail($contactpersonID);
         $contactperson->delete();
-        \Session::flash('flash_message', 'Kontakten er slettet!');
+        \Session::flash('flash_message', Lang::get('general.contactDeleted'));
         $siden=4;
         return redirect('editpage?side=4')->with('siden', $siden);
 

@@ -9,6 +9,9 @@ use App\User;
 use Request;
 use DB;
 use Carbon\Carbon;
+use App;
+use Lang;
+
 
 
 
@@ -37,7 +40,7 @@ class CarController extends Controller
         $input = $request->all();
         Car::create($input);
 
-        \Session::flash('flash_message', 'Bilen er lagret!');
+        \Session::flash('flash_message', Lang::get('general.carSuccess'));
 
         $cars = DB::table('car')->get();
         return view('car.create');
@@ -74,7 +77,7 @@ class CarController extends Controller
         $car = Car::findOrFail($registrationNR);
 
         $car->update($request->all());
-        \Session::flash('flash_message', 'Endringen er lagret!');
+        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('editpage');
     }
 
@@ -88,7 +91,7 @@ class CarController extends Controller
 
         $car = Car::findOrFail($registrationNR);
         $car->delete();
-        \Session::flash('flash_message', 'bilen er slettet!');
+        \Session::flash('flash_message', Lang::get('general.carDeleted'));
 
         return redirect('editpage');
 
