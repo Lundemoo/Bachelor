@@ -91,3 +91,10 @@ Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere b
 
 Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
 Route::get('editpage/{id}/edit', 'EditpageController@edit');
+
+/*
+ * contactpersons
+ */
+Route::get('contactperson', 'ContactpersonController@index');
+Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
+Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
