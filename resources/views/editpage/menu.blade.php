@@ -56,9 +56,15 @@
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
                                             <td>
+                                                
+                                                
+                                                <form method="delete" action="car/destroy/{{$car->registrationNR}}"><input type="submit" value="Slett" onClick="if(window.confirm('Hei'))">
+                                                
+                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                </form>
 
 
-                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
+                                                {!! Form::open(['name' => 'form', 'method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
 
                                                 {!! Form::button('Slette', array(
 						                                'class' => 'btn btn-danger',
