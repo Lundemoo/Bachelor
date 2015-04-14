@@ -72,7 +72,7 @@
 					                                	))
                                                 !!}
 
-                                                @include('includes.jara_confirm')
+
                                                 {!! Form::close() !!}
 
 
@@ -96,7 +96,7 @@
 
 
                                     {!! $cars->render()!!}
-
+                                @include('includes.jara_confirm')
 
                                 </td></tr>
 
