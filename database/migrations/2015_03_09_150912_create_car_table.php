@@ -17,6 +17,7 @@ class CreateCarTable extends Migration {
 			$table->string('registrationNR')->index();
 			$table->string('nickname');
 			$table->string('brand');
+			$table->boolean('active')->default(true);
 			$table->timestamps();
 		});
 	}

@@ -41,7 +41,7 @@ class BuilderController extends Controller
         \Session::flash('flash_message', Lang::get('general.builderSuccess'));
 
         $builders = DB::table('builder')->get();
-        return view('builder.index', ['builders' => $builders]);
+        return view('builder.create');
 
     }
 

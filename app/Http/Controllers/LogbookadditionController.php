@@ -59,7 +59,8 @@ class LogbookadditionController extends Controller
             $mid = Logbook::create(array(
                'employeeNR' => Auth::user()->id,
                 'registrationNR' => $input['registrationNR'],
-                'date' => $input['date']
+                'date' => $input['date'],
+                //'bompenger' => $input['bompenger']
                 
             ));
             $thisid = $mid->employeeNR;
@@ -92,9 +93,9 @@ class LogbookadditionController extends Controller
     /*
    * metode for å redigere en kjørebok som er lagt inn i systemet/DB
    */
-    public function edit($employeeNR){  //argumenter på endres ettervært som primary key er endret i DB
+    public function edit($logbookadditionID){  //argumenter på endres ettervært som primary key er endret i DB
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
+        $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
 
         $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
 
@@ -105,9 +106,9 @@ class LogbookadditionController extends Controller
     /*
  * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
  */
-    public function update($employeeNR, CreateLogbookadditionRequest $request){
+    public function update($logbookadditionID, CreateLogbookadditionRequest $request){
 
-        $logbookaddition = Logbookaddition::findOrFail($employeeNR);
+        $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
 
         $logbookaddition->update($request->all());
 

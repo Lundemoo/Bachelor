@@ -53,8 +53,8 @@ Route::PATCH('timelisteprosjekter/{projectID}/update', 'TimelisteprosjektControl
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
-Route::get('logbookaddition/{employeeNR}/edit', 'LogbookadditionController@edit'); // for å redigere kjørebok
-Route::PATCH('logbookaddition/{employeeNR}/update', 'LogbookadditionController@update'); //oppdaterer redigert info i DB
+Route::get('logbookaddition/{logbookadditionID}/edit', 'LogbookadditionController@edit'); // for å redigere kjørebok
+Route::PATCH('logbookaddition/{logbookadditionID}/update', 'LogbookadditionController@update'); //oppdaterer redigert info i DB
 
 
 //Route::any('/storecontact/{all}', function($all){ return $all;});

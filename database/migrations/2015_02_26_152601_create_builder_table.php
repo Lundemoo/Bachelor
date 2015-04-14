@@ -20,6 +20,7 @@ class CreateBuilderTable extends Migration {
 			$table->string('customeraddress');
 			$table->integer('customertelephone');
 			$table->string('customeremail')->unique();
+			$table->boolean('active')->default(true);
 
 			$table->timestamps();
 		});

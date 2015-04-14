@@ -26,7 +26,8 @@ class CreateLogbookadditionRequest extends Request {
 			'startdestination' => 'required',
 			'stopdestination' => 'required',
 			'totalkm' => 'required',
-			'date' => 'required'
+			'date' => 'required',
+			'bompenger' => 'max:200'
 		];
 	}
 
