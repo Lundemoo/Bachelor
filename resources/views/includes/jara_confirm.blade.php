@@ -4,14 +4,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Bekrefte handling</h3>
+                <h3 class="modal-title">{{trans('general.confirmAction')}}</h3>
             </div> <!-- End Modal Header -->
             <div class="modal-body">
-                <p>Er du sikker ? </p>
+                <p>{{trans('general.areusure')}}</p>
             </div> <!-- End Modal Body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
-                <button type="button" class="btn btn-danger" id="confirm"><x>Ja</x></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('general.cancel')}}</button>
+                <button type="button" class="btn btn-danger" id="confirm"><x>{{trans('general.yes')}}</x></button>
             </div> <!-- End Modal Footer -->
         </div> <!-- End Modal Content -->
     </div> <!-- End Modal Dialog -->
