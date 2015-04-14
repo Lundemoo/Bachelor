@@ -55,7 +55,7 @@
                                             <td> {{$car->registrationNR}}</td>
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
-                                            <td><button class='btn btn-danger' type="submit" onclick="func('{{$car->registrationNR}}')">Slett!</button>
+                                            <td>
 
 
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
@@ -73,6 +73,8 @@
                                                 !!}
 
 
+                                             <a href="{{ URL::to("/car/{$car->registrationNR}/edit")}}" type="button" class="btn btn">Endre</a>
+
                                                 {!! Form::close() !!}
 
 
@@ -84,7 +86,8 @@
                                             <input type='hidden' value='' id='gjemt'>
                                             <script>
                                             function func(variabelen){
-                                                document.getElementById('gjemt').value = variabelen;
+                                                var knapp= document.getElementById('gjemt').value = variabelen;
+
                                             }
                                             </script>
                                             
@@ -142,24 +145,67 @@
                                                 <td>  {{$user->email}}</td>
                                                 <td>  {{$user->active}}</td>
 
+                                                @if($user->active == "1")
                                                 <td>
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]]) !!}
+                                                    <!--sletteknapp -->
+                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]])!!}
 
-                                                    {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
-
-                                                    {!! Form::button('Endre', ['class' => 'btn ']) !!}
+                                                    {!! Form::button('Slette', array(
+                                                    'class' => 'btn btn-danger', 'onclick' => "func('editpage/destroy/$user->id')",
+                                                    'data-toggle' => 'modal',
+                                                    'data-target' => '#confirmDelete',
+                                                    'data-title' => 'Slette',
+                                                    'data-message' => 'Vil du slette ?',
+                                                    'data-btncancel' => 'btn-default',
+                                                    'data-btnaction' => 'btn-danger',
+                                                    'data-btntxt' => 'Slette'
+                                                    ))
+                                                    !!}
 
                                                     {!! Form::close() !!}
 
-                                                </td>
+
+                                                    @else
+
+                                                    <td>
+                                                        <!--aktivere knapp-->
+                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['editpage/aktiver', $user->id]])!!}
+
+                                                        {!! Form::button('Aktivere', array(
+                                                        'class' => 'btn btn-success', 'onclick' => "func('editpage/aktiver/$user->id')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+
+                                                        {!! Form::close() !!}
+                                                    </td>
+                                                    @endif
+
+
+
+
+
                                             </tr>
                                             @endforeach
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+alert("hei");
+                                                }
+                                            </script>
                                             </tbody>
 
                                     </table></tr>
 
                                 {!! $users->render()!!}
-
+                                @include('includes.jara_confirm')
 
                                 </td></tr>
 

@@ -32,13 +32,7 @@
 
     {!! Form::close() !!}
 
-                        {!! Form::open(['method' => 'DELETE', 'url' =>['car/destroy', $car->registrationNR]]) !!}
-                        <div class="form-group">
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                        </div>
-                        <br/>
 
-                        {!! Form::close() !!}
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
