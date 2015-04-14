@@ -73,8 +73,8 @@ Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update me
 
 
 /** Redigering av bruker */
-Route::get('auth/{email}/edit', 'UserController@edit'); // for å redigere info om en bil som er lagt inn i DB
-Route::PATCH('auth/{email}/update', 'UserController@update'); //update metoden
+Route::get('auth/{id}/edit', 'UserController@edit'); // for å redigere info om en bruker som er lagt inn i DB
+Route::PATCH('auth/{id}/update', 'UserController@update'); //update metoden
 
 
 //routes for builder Skal kun være mulig for sjefene.

@@ -14,34 +14,33 @@ use Carbon\Carbon;
 class UserController extends Controller{
 
 
-    public function show($email){
+    public function show($id){
 
-        $user = Car::find($email);  //finn ut hvorfor dette ikke fungerer
-        // $car = DB::table('car')->get($registrationNR);
-        return $user;
+        $users = users::find($id);
+        return $users;
 
     }
 
 
 
-    public function edit($email){
+    public function edit($id){
 
-        $user = User::findOrFail($email);
+        $users = User::findOrFail($id);
 
 
 
-        return view('auth.edit', compact('user'));
+        return view('auth.edit', compact('users'));
 
     }
 
     /*
      * Metode som henter inn fra edit-formen og oppdaterer aktuell bil i databasen
      */
-    public function update($email, CreateuserRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
+    public function update($id, CreateuserRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
 
-        $user = User::findOrFail($email);
+        $users = User::findOrFail($id);
 
-        $user->update($request->all());
+        $users->update($request->all());
 
         return redirect('editpage');
     }
