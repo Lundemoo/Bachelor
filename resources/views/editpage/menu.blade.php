@@ -113,7 +113,10 @@
                                                         ))
                                                         !!}
 
-                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
+
+
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                         {!! Form::close() !!}
 
@@ -330,23 +333,70 @@
                                                     <td>  {{$builder->customeraddress}}<br></td>
                                                     <td>  {{$builder->customertelephone}}<br></td>
                                                     <td>  {{$builder->customeremail}}</td>
-                                                    <td>
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
 
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                    @if($builder->active == "1")
+                                                    <td>
+
+                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]])!!}
+
+                                                        {!! Form::button('Deaktivere', array(
+                                                        'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
 
                                                         {!! Form::close() !!}
 
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::close() !!}
 
-                                                    </td>
+                                                    @else
+
+                                                        <td>
+                                                            <!--aktivere knapp-->
+                                                            {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
+
+                                                            {!! Form::button('Aktivere', array(
+                                                            'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
+                                                            'data-toggle' => 'modal',
+                                                            'data-target' => '#confirmDelete',
+                                                            'data-title' => 'Slette',
+                                                            'data-message' => 'Vil du slette ?',
+                                                            'data-btncancel' => 'btn-default',
+                                                            'data-btnaction' => 'btn-danger',
+                                                            'data-btntxt' => 'Slette'
+                                                            ))
+                                                            !!}
+
+                                                            {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                            {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                            {!! Form::close() !!}
+
+
+
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
+                                                <input type='hidden' value='' id='gjemt'>
+                                                <script>
+                                                    function func(variabelen){
+                                                        var knapp= document.getElementById('gjemt').value = variabelen;
+                                                    }
+                                                </script>
                                                 </tbody>
 
                                     </table></tr>
 
                                 {!! $builders->render()!!}
-
+                                @include('includes.jara_confirm')
 
                                 </td></tr>
 

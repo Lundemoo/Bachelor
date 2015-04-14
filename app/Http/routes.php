@@ -76,6 +76,8 @@ Route::get('builder/create', 'BuilderController@create');
 Route::post('builder', 'BuilderController@store');
 Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
+Route::get('builder/destroy/{customerID}', 'BuilderController@destroy'); //deaktivere byggherre
+Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //aktivere byggherre
 
 Route::get('oversikt', 'OversiktController@show');
 
@@ -87,7 +89,6 @@ Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
 
 Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
 
-Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
 
