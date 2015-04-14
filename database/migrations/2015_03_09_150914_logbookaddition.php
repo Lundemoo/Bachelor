@@ -13,16 +13,18 @@ class Logbookaddition extends Migration {
 	public function up()
 	{
 		   Schema::create('logbookaddition', function (Blueprint $table) {
+			$table->increments('logbookadditionID')->unsigned();
             $table->integer('employeeNR')->unsigned();
             $table->string('registrationNR')->index();
             $table->string('startdestination');
             $table->string('stopdestination');
             $table->double('totalkm');
+			$table->integer('bompenger')->default("0");;
             $table->date('date')->index();
+			$table->boolean('active')->default(true);
             $table->timestamps();
 
-				/* primary key */
-			  $table->primary('employeeNR')->unsigned();
+
 
 			   /*
              * foreign constraints.

@@ -24,7 +24,6 @@ class CreateBuilderRequest extends Request {
         return [
             'customername' => 'required',
             'customeraddress' => 'required',
-            'customerID' => 'required',
             'customeremail' => 'required',
             'customertelephone' => 'required',
         ];

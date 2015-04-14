@@ -4,16 +4,12 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Byggherre</div>
+                    <div class="panel-heading">Endre Byggherre</div>
                     <div class="panel-body">
 
-                        <h1>Edit: {!! $builder->customername !!}</h1>
+                        <h1>Endre: {!! $builder->customername !!}</h1>
 
                         {!! Form::model($builder, ['method' => 'PATCH', 'action' => ['BuilderController@update', $builder->customerID]]) !!}
-                        <div class="form-group">
-                            {!! Form::label('customerID', 'CustomerID:') !!}
-                            {!! Form::text('customerID', null, ['class' => 'form-control'] ) !!}
-                        </div>
 
                         <div class="form-group">
                             {!! Form::label('customername', 'Kundenavn:') !!}

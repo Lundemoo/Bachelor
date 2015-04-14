@@ -22,6 +22,7 @@ class CreateTimelisteprosjekterTable extends Migration {
 			$table->time('endtime');
 			$table->text('comment');
 			$table->boolean('approved')->default(false);
+			$table->boolean('active')->default(true);
 			$table->timestamps();
 
 			/**

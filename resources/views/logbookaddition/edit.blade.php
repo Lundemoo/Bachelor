@@ -81,6 +81,10 @@
                             {!! Form::label('totalkm', 'Total km:') !!}
                             {!! Form::text('totalkm', null, ['class' => 'form-control'] ) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('bompenger', 'Bompenger:') !!}
+                            {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
+                        </div>
                         <br/>
 
                         <div class="form-group">

@@ -10,10 +10,7 @@
                         <br/>
 
                         {!! Form::open(['url' => 'builder']) !!}
-                        <div class="form-group">
-                            {!! Form::label('customerID', 'CustomerID:') !!}
-                            {!! Form::text('customerID', null, ['placeholder'=>'KundeID', 'class' => 'form-control'] ) !!}
-                        </div>
+
                         <br/>
                         <div class="form-group">
                             {!! Form::label('customername', 'Kundenavn:') !!}

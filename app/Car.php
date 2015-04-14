@@ -9,7 +9,8 @@ class Car extends Model {
     protected $fillable = [
         'registrationNR',
         'nickname',
-        'brand'
+        'brand',
+        'active'
     ];
 
     /**
