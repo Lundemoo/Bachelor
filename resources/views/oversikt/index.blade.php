@@ -87,7 +87,7 @@ $( "#datepicker" ).datepicker();
                                </canvas> </td><td><p id='infoen'></p></br>Timeslønn:</br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
                                                                
                                    
-                                   <canvas id="andregraf" height="500" width="500" style="border: 1px solid black;"></canvas>
+                                   <canvas id="andregraf" height="200" width="200" style="border: 1px solid black;"></canvas>
                                    
                                    
                                    
@@ -146,7 +146,7 @@ $( "#datepicker" ).datepicker();
                                            <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>Prosjekt</td><td width='20%' class='framvisninghoved'>Kommentar</td><td class='framvisninghoved'>Dato</td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Slutt</td><td class='framvisninghoved'>Antall timer</td></tr>
                                            <?PHP
                                            $i = 1;
-                                           
+                                           $totalt = 0;
                                            ?>
                                        @foreach($resultatene as $resultat)
                                        
