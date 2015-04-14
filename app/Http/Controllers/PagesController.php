@@ -8,7 +8,8 @@ use App\Company;
 use Request;
 use App\Builder;
 use App\Http\Controllers\Controller;
-
+use Lang;
+use App;
 class PagesController extends Controller {
 
     /*
@@ -57,8 +58,8 @@ class PagesController extends Controller {
     $input = Request::all();
 
     Project::create($input);
-    
-     \Session::flash('flash_message', 'Project created!');
+    App::setLocale('no');
+     \Session::flash('flash_message', Lang::get('general.projectCreated'));
 
 $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         $customer_list = Builder::lists('customername','customerID');
