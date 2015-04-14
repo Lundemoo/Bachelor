@@ -40,6 +40,21 @@ return [
     'customerEmail' => 'Customer email',
     'editBuilder' => 'Edit Builder',
     'allBuilders' => 'All builders',
+    'registerCar' => 'Register car',
+    'registrationNr' => 'Registration number',
+    'nickname' => 'Nickname',
+    'nicknamePlaceholder' => 'Write nickname for car',
+    'model' => 'Model',
+    'modelPlaceholder' => 'Write model/brand of car',
+    'updateCar' => 'Update car',
+    'allCars' => 'All cars',
+    'delete' => 'Delete',
+
+
+
+
+
+
 
 
 
