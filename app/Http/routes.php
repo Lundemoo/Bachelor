@@ -37,7 +37,6 @@ Route::get('project', 'PagesController@showProject');
 Route::post('project', 'PagesController@store');
 
 
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
@@ -71,12 +70,6 @@ Route::post('car', 'CarController@store');  //lagre i DB
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
 Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
 
-
-/** Redigering av bruker */
-Route::get('auth/{id}/edit', 'UserController@edit'); // for å redigere info om en bruker som er lagt inn i DB
-Route::PATCH('auth/{id}/update', 'UserController@update'); //update metoden
-
-
 //routes for builder Skal kun være mulig for sjefene.
 Route::get('builder', 'BuilderController@index');
 Route::get('builder/create', 'BuilderController@create');
@@ -92,3 +85,4 @@ Route::delete('editpage/destroy', 'EditpageController@destroy');
 
 Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
 Route::delete('editpage/destroy/{id}', 'EditpageController@destroy');      //slette bruker
+Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
