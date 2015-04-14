@@ -15,6 +15,7 @@ return [
     'logbookSuccess' => 'The logbook is created',
     'timesheetSuccess' => 'The timesheet is created',
     'registerUser' => 'Register user',
+    'registerBuilder' => 'Register builder',
     'edit' => 'Edit: ',
     'email' => 'Email',
     'firstname' => 'Firstname',
@@ -31,6 +32,14 @@ return [
     'resetPass' => 'Reset password',
     'sendNewPass' => 'Send new password',
     'registrate' => 'Registrate',
+    'customerId' => 'Customer ID',
+    'customerName' => 'Customer name',
+    'customerAddress' => 'Customer address',
+    'customerTelephone' => 'Customer telephone',
+    'customerEmail' => 'Customer email',
+
+
+
 
 
 
