@@ -55,6 +55,8 @@
                                             <td> {{$car->registrationNR}}</td>
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
+
+                                                @if($car->active == "1")
                                             <td>
                                                 
                                                 
@@ -62,7 +64,26 @@
                                                 
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 </form> -->
+                                                <!--deaktivere knapp -->
 
+
+                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
+
+                                                {!! Form::button('Deaktivere', array(
+                                                'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
+                                                'data-toggle' => 'modal',
+                                                'data-target' => '#confirmDelete',
+                                                'data-title' => 'Slette',
+                                                'data-message' => 'Vil du slette ?',
+                                                'data-btncancel' => 'btn-default',
+                                                'data-btnaction' => 'btn-danger',
+                                                'data-btntxt' => 'Slette'
+                                                ))
+                                                !!}
+
+
+
+                                                {!! Form::close() !!}
 
 
 
@@ -74,10 +95,33 @@
 
                                                 {!! Form::close() !!}
 
+                                                @else
+
+                                                    <td>
+                                                        <!--aktivere knapp-->
+                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
+
+                                                        {!! Form::button('Aktivere', array(
+                                                        'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+
+                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
+
+                                                        {!! Form::close() !!}
+
 
 
 
                                             </td>
+                                                    @endif
 
 
                                             </tr>
@@ -347,9 +391,9 @@
                                                 <td>  {{$contactperson->contacttelephone}}<br></td>
                                                 <td>  {{$contactperson->contactemail}}<br></td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy_contact', $contactperson->contactpersonID]]) !!}
+                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
 
-                                                    {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
+                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                     {!! Form::close() !!}
 

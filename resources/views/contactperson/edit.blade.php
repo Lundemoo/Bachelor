@@ -25,6 +25,10 @@
                             {!! Form::text('contactemail', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
+                            {!! Form::label('contacttelephone', 'Contact phone:') !!}
+                            {!! Form::text('contacttelephone', null, ['class' => 'form-control'] ) !!}
+                        </div>
+                        <div class="form-group">
                             {!! Form::label('companyid', 'Company id:') !!}
                             {!! Form::text('companyid', null, ['class' => 'form-control'] ) !!}
                         </div>

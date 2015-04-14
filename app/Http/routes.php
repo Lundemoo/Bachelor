@@ -82,8 +82,10 @@ Route::get('oversikt', 'OversiktController@show');
 
 
 Route::get('editpage', 'EditpageController@index');
-Route::get('car/destroy/{registrationNR}', 'CarController@destroy');
-Route::delete('editpage/destroy', 'EditpageController@destroy');
+Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
+Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
+
+Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
 
 Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker

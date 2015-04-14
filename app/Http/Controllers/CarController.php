@@ -89,13 +89,32 @@ class CarController extends Controller
 
     public function destroy($registrationNR){
 
-        $car = Car::findOrFail($registrationNR);
+       /* $car = Car::findOrFail($registrationNR);
         $car->delete();
         \Session::flash('flash_message', Lang::get('general.carDeleted'));
 
+        return redirect('editpage');*/
+        $car = Car::find($registrationNR); //ta bort?
+        DB::table('car')
+            ->where('registrationNR', $registrationNR)
+            ->update(array('active'=>'0'));
+
         return redirect('editpage');
 
+    }
 
+    /*
+     * metode for å aktivere bil. Setter aktiv til 1
+     */
+
+    public function aktiver($registrationNR){
+
+        $car = Car::find($registrationNR);
+        DB::table('car')
+            ->where('registrationNR', $registrationNR)
+            ->update(array('active'=>'1'));
+
+        return redirect('editpage');
     }
 
 
