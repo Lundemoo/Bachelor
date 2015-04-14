@@ -69,10 +69,17 @@ echo $siden; exit;
     // slettemetoden for bruker //
     public function destroy($ID){
 
-        $user= User::findOrFail($ID);
+        /*$user= User::findOrFail($ID);
         $user->delete();
         \Session::flash('flash_message', 'Brukeren er slettet!');
-        return redirect('editpage?side=1');
+        return redirect('editpage?side=1');*/
+
+        $user = User::find($ID);
+        DB::table('users')
+            ->where('id', $ID)
+            ->update(array('active'=>'0'));
+        $siden = 1;
+        return redirect('editpage?side=1')->with('siden', $siden);
 
 
     }
@@ -82,7 +89,7 @@ echo $siden; exit;
 
         $contactperson= ContactPerson::findOrFail($contactpersonID);
         $contactperson->delete();
-        \Session::flash('flash_message', 'Kontakten er slettet!');
+        \Session::flash('flash_message', Lang::get('general.contactDeleted'));
         $siden=4;
         return redirect('editpage?side=4')->with('siden', $siden);
 
@@ -91,6 +98,31 @@ echo $siden; exit;
 
 
 
+    /*
+     * metode for å aktivere bruker. Setter aktiv til 1
+     */
+
+    public function aktiver($ID){
+
+        $user = User::find($ID);
+        DB::table('users')
+            ->where('id', $ID)
+            ->update(array('active'=>'1'));
+        $siden = 1;
+        return redirect('editpage?side=1')->with('siden', $siden);;
+    }
+
+/*
+ * ENDRE BRUKER. flyttes når brukercontroller er ok
+ */
+    public function edit($id){
+
+        $users = User::findOrFail($id);
+
+
+        return view('auth.edit', compact('users'));
+
+    }
 
 
 

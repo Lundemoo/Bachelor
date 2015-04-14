@@ -4,40 +4,40 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Registrer Byggherre</div>
+                    <div class="panel-heading">{{trans('general.registerBuilder')}}</div>
                     <div class="panel-body">
 
                         <br/>
 
                         {!! Form::open(['url' => 'builder']) !!}
                         <div class="form-group">
-                            {!! Form::label('customerID', 'CustomerID:') !!}
-                            {!! Form::text('customerID', null, ['placeholder'=>'KundeID', 'class' => 'form-control'] ) !!}
+                            {!! Form::label('customerID', trans('general.customerId')) !!}
+                            {!! Form::text('customerID', null, ['placeholder'=>trans('general.customerId'), 'class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customername', 'Kundenavn:') !!}
-                            {!! Form::text('customername', null, ['placeholder'=>'Kundenavn/Firmanavn', 'class' => 'form-control'] ) !!}
+                            {!! Form::label('customername', trans('general.customerName')) !!}
+                            {!! Form::text('customername', null, ['placeholder'=>trans('general.customerName'), 'class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customeraddress', 'Kundeadresse:') !!}
-                            {!! Form::text('customeraddress', null, ['placeholder'=>'Kundeadresse','class' => 'form-control'] ) !!}
+                            {!! Form::label('customeraddress', trans('general.customerAddress')) !!}
+                            {!! Form::text('customeraddress', null, ['placeholder'=>trans('general.customerAddress'),'class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customertelephone', 'Kundetelefon:') !!}
+                            {!! Form::label('customertelephone', trans('general.customerTelephone')) !!}
                             {!! Form::text('customertelephone', null, ['placeholder'=>'12345678','class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customeremail', 'Kunde epost:') !!}
+                            {!! Form::label('customeremail', trans('general.customerEmail')) !!}
                             {!! Form::text('customeremail', null, ['placeholder'=>'johndoe@mail.com','class' => 'form-control'] ) !!}
                         </div>
                         <br/>
 
                         <div class="form-group">
-                            {!! Form::submit('Registrer byggherre', ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit(trans('general.registerBuilder'), ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}
