@@ -59,7 +59,7 @@ class BuilderController extends Controller
 
         $builder->update($request->all());
         \Session::flash('flash_message', Lang::get('general.changeSuccess'));
-        return redirect('builder');
+        return redirect('editpage?side=3');
     }
 
     public function destroy($customerID){
@@ -70,6 +70,8 @@ class BuilderController extends Controller
 
 
     }
+
+
 
 
 }

@@ -112,8 +112,17 @@ echo $siden; exit;
         return redirect('editpage?side=1')->with('siden', $siden);;
     }
 
+/*
+ * ENDRE BRUKER. flyttes når brukercontroller er ok
+ */
+    public function edit($id){
+
+        $users = User::findOrFail($id);
 
 
+        return view('auth.edit', compact('users'));
+
+    }
 
 
 
