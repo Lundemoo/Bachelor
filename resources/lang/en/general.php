@@ -57,7 +57,21 @@ return [
     'cars' => 'Cars',
     'active' => 'Active',
     'contactpersonId' => 'Contactperson ID',
-    ''
+    'resetPassword' => 'Click here if you want to reset password: ',
+    'confirmAction' => 'Confirm action',
+    'areusure' => 'Are you sure? ',
+    'cancel' => 'Cancel',
+    'yes' => 'Yes',
+    'registrateLogbook' => 'Registrate logbook',
+    'unableToFind' => 'Sorry, we were unable to geocode the first address',
+    'unableToFind2' => 'Sorry, we were unable to geocode the second address',
+    'registrateDriving' => 'Registrate driving',
+    'car' => 'Car',
+    'date' => 'Date',
+    'roadTolls' => 'Road tolls',
+    'editLogbook' => 'Edit logbook',
+    'allLogbooks' => 'All logbooks',
+    'employeeNr' => 'Employee number',
 
 
 
@@ -83,10 +97,16 @@ return [
 
 
 
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.
