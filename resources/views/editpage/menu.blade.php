@@ -191,7 +191,6 @@
                                             <script>
                                                 function func(variabelen){
                                                     var knapp= document.getElementById('gjemt').value = variabelen;
-alert("hei");
                                                 }
                                             </script>
                                             </tbody>
