@@ -49,4 +49,34 @@ class ContactpersonController extends Controller
         return redirect('editpage');
     }
 
+    /*
+     * metode for å deaktivere kontaktperson. Setter aktiv til 0
+     */
+    public function destroy($contactpersonID){
+
+        $contactperson = ContactPerson::find($contactpersonID);
+        DB::table('contactpersons')
+            ->where('contactpersonID', $contactpersonID)
+            ->update(array('active'=>'0'));
+
+        return redirect('editpage?side=4');
+
+    }
+
+    /*
+   * metode for å aktivere kontaktperson. Setter aktiv til 0
+   */
+
+    public function aktiver($contactpersonID){
+
+        $contactperson = ContactPerson::find($contactpersonID);
+        DB::table('contactpersons')
+            ->where('contactpersonID', $contactpersonID)
+            ->update(array('active'=>'1'));
+
+        return redirect('editpage?side=4');
+    }
+
+
+
 }

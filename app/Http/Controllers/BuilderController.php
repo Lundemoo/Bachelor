@@ -62,7 +62,7 @@ class BuilderController extends Controller
     }
 
     /*
-     * metode for å deaktivere byggherre. Setter aktiv til 1
+     * metode for å deaktivere byggherre. Setter aktiv til 0
      */
     public function destroy($customerID){
 

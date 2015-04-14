@@ -82,6 +82,9 @@ Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //akti
 Route::get('oversikt', 'OversiktController@show');
 
 
+/*
+ * editpage
+ */
 
 Route::get('editpage', 'EditpageController@index');
 Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
@@ -96,8 +99,10 @@ Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@
 Route::get('editpage/{id}/edit', 'EditpageController@edit');
 
 /*
- * contactpersons
+ * contactperson
  */
 Route::get('contactperson', 'ContactpersonController@index');
 Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
 Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
+Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
+Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
