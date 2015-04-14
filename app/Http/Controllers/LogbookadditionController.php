@@ -96,6 +96,7 @@ class LogbookadditionController extends Controller
     public function edit($logbookadditionID){  //argumenter på endres ettervært som primary key er endret i DB
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
+        $logbookaddition['totalkm'] = null;
 
         $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
 
