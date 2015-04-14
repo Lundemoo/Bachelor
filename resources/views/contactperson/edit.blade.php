@@ -31,7 +31,7 @@
                         <br/>
 
                         <div class="form-group">
-                            {!! Form::submit(trans('general.updateCar'), ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit('Update contactperson', ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}
