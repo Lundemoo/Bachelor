@@ -75,6 +75,7 @@
 
                                              <a href="{{ URL::to("/car/{$car->registrationNR}/edit")}}" type="button" class="btn btn">Endre</a>
 
+
                                                 {!! Form::close() !!}
 
 
@@ -147,10 +148,10 @@
 
                                                 @if($user->active == "1")
                                                 <td>
-                                                    <!--sletteknapp -->
+                                                    <!--deaktivere knapp -->
                                                     {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]])!!}
 
-                                                    {!! Form::button('Slette', array(
+                                                    {!! Form::button('Deaktivere', array(
                                                     'class' => 'btn btn-danger', 'onclick' => "func('editpage/destroy/$user->id')",
                                                     'data-toggle' => 'modal',
                                                     'data-target' => '#confirmDelete',
