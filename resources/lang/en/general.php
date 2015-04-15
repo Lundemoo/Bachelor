@@ -108,6 +108,9 @@ return [
     'stopTime' => 'Stop time',
     'mainMenu' => 'Main menu',
     'logout' => 'Log out',
+    'registerProject' => 'Register project',
+    'registerLogbook' => 'Register logbook',
+    
 
 
 
