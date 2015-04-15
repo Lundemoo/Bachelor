@@ -22,6 +22,7 @@ class CreateProjectsTable extends Migration {
             $table->text('description');
             $table->date('expectedCompletion');
             $table->boolean('done')->default(false);
+            $table->boolean('active')->default(true);
             $table->timestamps();
 
             /*

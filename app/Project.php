@@ -17,7 +17,8 @@ class Project extends Model {
         'description',
         'expectedCompletion',
         'done',
-            'customerID'
+        'customerID',
+        'active'
     ];
 
         /**

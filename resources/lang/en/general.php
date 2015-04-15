@@ -49,6 +49,57 @@ return [
     'updateCar' => 'Update car',
     'allCars' => 'All cars',
     'delete' => 'Delete',
+    'editOverview' => 'Edit overview',
+    'users' => 'Users',
+    'projects' => 'Projects',
+    'builders' => 'Builders',
+    'contactpersons' => 'Contactpersons',
+    'cars' => 'Cars',
+    'active' => 'Active',
+    'contactpersonId' => 'Contactperson ID',
+    'resetPassword' => 'Click here if you want to reset password: ',
+    'confirmAction' => 'Confirm action',
+    'areusure' => 'Are you sure? ',
+    'cancel' => 'Cancel',
+    'yes' => 'Yes',
+    'registrateLogbook' => 'Registrate logbook',
+    'unableToFind' => 'Sorry, we were unable to geocode the first address',
+    'unableToFind2' => 'Sorry, we were unable to geocode the second address',
+    'registrateDriving' => 'Registrate driving',
+    'car' => 'Car',
+    'date' => 'Date',
+    'roadTolls' => 'Road tolls',
+    'editLogbook' => 'Edit logbook',
+    'allLogbooks' => 'All logbooks',
+    'employeeNr' => 'Employee number',
+    'overview' => 'Overview',
+    'timesheets' => 'Timesheets',
+    'logbook' => 'Logbook',
+    'chooseMonth' => 'Choose month',
+    'statistic' => 'Statistic',
+    'totalHoursMonth' => 'Total hours this month',
+    'hourPay' => 'Paymen per hour',
+    'project' => 'Project',
+    'comment' => 'Comment',
+    'hourCount' => 'Number of hours',
+    'total' => 'Total',
+    'registrateProject' => 'Registrate project',
+    'finish' => 'Finish',
+    'name' => 'Name',
+    'role' => 'Role',
+    'newFirm' => 'New Firm',
+    'projectName' => 'Project Name',
+    'wprojectName' => 'Write project name',
+    'projectAddress' => 'Project address',
+    'wprojectAddress' => 'Write project address',
+    'estimatedHours' => 'Estimated hours',
+    'westimatedHours' => 'Write estimated hours for project',
+    'projectDescription' => 'Project description',
+    'wprojectDescription' => 'Give a description of the project',
+    'newContactPerson' => 'New Contactperson',
+    'registrateNewproject' => 'Registrate new project',
+    'showprojects' => 'Shows the projects',
+    'description' => 'Description',
 
 
 
@@ -71,10 +122,33 @@ return [
 
 
 
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

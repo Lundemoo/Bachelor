@@ -4,7 +4,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta name="robots" content="noindex,follow" />
-    <title>Registrere Kjørebok</title>
+    <title>{{trans('general.registrateLogbook')}}</title>
     <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" type="text/javascript"></script>
     <!-- According to the Google Maps API Terms of Service you are required display a Google map when using the Google Maps API. see: http://code.google.com/apis/maps/terms.html -->
     <script type="text/javascript">
@@ -26,7 +26,7 @@
             geocoder.getLocations(document.forms[0].startdestination.value, function (response) {
                 if (!response || response.Status.code != 200)
                 {
-                    alert("Sorry, we were unable to geocode the first address");
+                    alert({{trans('general.unableToFind')}});
                 }
                 else
                 {
@@ -34,7 +34,7 @@
                     geocoder.getLocations(document.forms[0].stopdestination.value, function (response) {
                         if (!response || response.Status.code != 200)
                         {
-                            alert("Sorry, we were unable to geocode the second address");
+                            alert({{trans('general.unableToFind2')}});
                         }
                         else
                         {
@@ -55,18 +55,18 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
-				<div class="panel-heading">Register driving</div>
+				<div class="panel-heading">{{trans('general.registrateDriving')}}</div>
 				<div class="panel-body">
                     <body onload="initialize()">
     <!--fra min index blade fil -->
     {!! Form::open(['url' => 'logbookaddition', ]) !!}
 <div class="form-group">
 
-    {!! Form::label('registrationNR', 'Car') !!}
+    {!! Form::label('registrationNR', {{trans('general.car')}}) !!}
     {!! Form::select('registrationNR', $cars) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('date', 'dato:') !!}
+    {!! Form::label('date', {{trans('general.date')}}) !!}
     {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
 </div>
     <script>
@@ -87,10 +87,14 @@
         {!! Form::label('totalkm', 'Total km:') !!}
         {!! Form::text('totalkm', null, ['placeholder'=>'Click here to find totalt km','class' => 'form-control'] ) !!}
     </div>
+    <div class="form-group">
+        {!! Form::label('bompenger', {{trans('general.roadTolls')}}) !!}
+        {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
+    </div>
     <br/>
 
     <div class="form-group">
-        {!! Form::submit('Registrer kjøreboken', ['class' => 'btn btn-primary form-control'] ) !!}
+        {!! Form::submit({{trans('general.registrateLogbook')}}, ['class' => 'btn btn-primary form-control'] ) !!}
     </div>
 
 </form>

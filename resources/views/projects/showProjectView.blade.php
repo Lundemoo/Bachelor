@@ -1,17 +1,17 @@
 @extends('app')
 @section('content')
 
-<h1> Shows the projects </h1>
+<h1> {{trans('general.showprojects')}} </h1>
 @foreach($projects as $project)
 
 
-<p>Prosjekt:
+<p>{{trans('general.project')}}
 {{ $project->projectName}}
 </p>
-<p>Adresse:
+<p>{{trans('general.projectAddress')}}
 {{ $project->projectAddress}}
 </p>
-<p>Beskrivelse
+<p>{{trans('general.description')}}
 {{ $project->description}}
 </p>
 

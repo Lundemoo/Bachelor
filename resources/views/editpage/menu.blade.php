@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Redigering oversikt</div>
+                    <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
 
 
@@ -23,11 +23,11 @@
                         <table class="easynav" width="100%">
 
                             @if($siden==0)
-                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                 <td class="tom" width="40%">&nbsp;</td></tr>
 
 
@@ -38,9 +38,9 @@
                                    <tr><table class="table" cellspacing="5" id="bilvisning">
                                         <thead>
                                         <tr>
-                                            <th>RegistreringsNr</th>
-                                            <th>Kallenavn</th>
-                                            <th>Modell</th>
+                                            <th>{{trans('general.registrationNr')}}</th>
+                                            <th>{{trans('general.nickname')}}</th>
+                                            <th>{{trans('general.model')}}</th>
                                             <th> </th>
 
                                         </tr>
@@ -55,29 +55,72 @@
                                             <td> {{$car->registrationNR}}</td>
                                             <td>  {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
+
+                                                @if($car->active == "1")
                                             <td>
                                                 
                                                 
-                                                <form method="delete" action="car/destroy/{{$car->registrationNR}}"><input type="submit" value="Slett" onClick="if(window.confirm('Hei'))">
+                                              <!--  <form method="delete" action="car/destroy/{{$car->registrationNR}}"><input type="submit" value="Slett" onClick="if(window.confirm('Hei'))">
                                                 
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                </form>
+                                                </form> -->
+                                                <!--deaktivere knapp -->
 
 
-<<<<<<< HEAD
-                                                {!! Form::open(['name' => 'form', 'method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
-=======
+                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
+
+                                                {!! Form::button('Deaktivere', array(
+                                                'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
+                                                'data-toggle' => 'modal',
+                                                'data-target' => '#confirmDelete',
+                                                'data-title' => 'Slette',
+                                                'data-message' => 'Vil du slette ?',
+                                                'data-btncancel' => 'btn-default',
+                                                'data-btnaction' => 'btn-danger',
+                                                'data-btntxt' => 'Slette'
+                                                ))
+                                                !!}
+
+
+                                                {!! Form::close() !!}
+
+
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
->>>>>>> 1e1092bee269bee509417a0a002e6ddb1afd2981
 
                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                 {!! Form::close() !!}
 
+                                                @else
+
+                                                    <td>
+                                                        <!--aktivere knapp-->
+                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
+
+                                                        {!! Form::button('Aktivere', array(
+                                                        'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
+
+
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                        {!! Form::close() !!}
+
 
 
 
                                             </td>
+                                                    @endif
 
 
                                             </tr>
@@ -110,11 +153,11 @@
 
                                 @elseif($siden==1)
 
-                                <tr><td class="besoker" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besoker" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                     <tr><td colspan="3" class="innholdeasynav"><br>
@@ -122,11 +165,11 @@
                                         <thead>
                                         <tr>
                                             <th>id </th>
-                                            <th>Fornavn </th>
-                                            <th>Etternavn </th>
-                                            <th>Telefon </th>
-                                            <th>E-post </th>
-                                            <th>Aktiv </th>
+                                            <th>{{trans('general.firstname')}}</th>
+                                            <th>{{trans('general.surname')}}</th>
+                                            <th>{{trans('general.telephone')}}</th>
+                                            <th>{{trans('general.email')}}</th>
+                                            <th>{{trans('general.active')}}</th>
                                             <th>  </th>
                                         </tr>
 
@@ -219,11 +262,11 @@
 
                             @elseif($siden == 2)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -251,11 +294,11 @@
 
                             @elseif($siden == 3)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -263,11 +306,11 @@
                                 <tr><table class="table" cellspacing="5" id="byggherrevisning">
                                         <thead>
                                         <tr>
-                                            <th>KundeID </th>
-                                            <th>Kundenavn </th>
-                                            <th>Kundeadresse </th>
-                                            <th>Kundetelefon </th>
-                                            <th>Kunde Epost </th>
+                                            <th>{{trans('general.customerId')}} </th>
+                                            <th>{{trans('general.customerName')}}</th>
+                                            <th>{{trans('general.customerAddress')}}</th>
+                                            <th>{{trans('general.customerTelephone')}}</th>
+                                            <th>{{trans('general.customerEmail')}}</th>
                                             <th> </th>
 
                                         </tr>
@@ -286,23 +329,70 @@
                                                     <td>  {{$builder->customeraddress}}<br></td>
                                                     <td>  {{$builder->customertelephone}}<br></td>
                                                     <td>  {{$builder->customeremail}}</td>
-                                                    <td>
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
 
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                    @if($builder->active == "1")
+                                                    <td>
+
+                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]])!!}
+
+                                                        {!! Form::button('Deaktivere', array(
+                                                        'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
 
                                                         {!! Form::close() !!}
 
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::close() !!}
 
-                                                    </td>
+                                                    @else
+
+                                                        <td>
+                                                            <!--aktivere knapp-->
+                                                            {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
+
+                                                            {!! Form::button('Aktivere', array(
+                                                            'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
+                                                            'data-toggle' => 'modal',
+                                                            'data-target' => '#confirmDelete',
+                                                            'data-title' => 'Slette',
+                                                            'data-message' => 'Vil du slette ?',
+                                                            'data-btncancel' => 'btn-default',
+                                                            'data-btnaction' => 'btn-danger',
+                                                            'data-btntxt' => 'Slette'
+                                                            ))
+                                                            !!}
+
+                                                            {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                            {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                            {!! Form::close() !!}
+
+
+
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                                 @endforeach
+                                                <input type='hidden' value='' id='gjemt'>
+                                                <script>
+                                                    function func(variabelen){
+                                                        var knapp= document.getElementById('gjemt').value = variabelen;
+                                                    }
+                                                </script>
                                                 </tbody>
 
                                     </table></tr>
 
                                 {!! $builders->render()!!}
-
+                                @include('includes.jara_confirm')
 
                                 </td></tr>
 
@@ -312,11 +402,11 @@
 
                             @elseif($siden == 4)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">Brukere</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">Prosjekter</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">Byggherrer</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">Kontaktpersoner</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">Biler</td>
+                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="tom" width="40%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
@@ -324,11 +414,11 @@
                                 <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
                                         <thead>
                                         <tr>
-                                            <th>Kontaktperson ID </th>
-                                            <th>Fornavn </th>
-                                            <th>Etternavn </th>
-                                            <th>Telefon </th>
-                                            <th>E-post </th>
+                                            <th>{{trans('general.contactpersonId')}}</th>
+                                            <th>{{trans('general.firstname')}}</th>
+                                            <th>{{trans('general.surname')}}</th>
+                                            <th>{{trans('general.telephone')}}</th>
+                                            <th>{{trans('general.email')}}</th>
                                             <th> </th>
 
                                         </tr>
@@ -346,24 +436,79 @@
                                                 <td>  {{$contactperson->contactsurname}}<br></td>
                                                 <td>  {{$contactperson->contacttelephone}}<br></td>
                                                 <td>  {{$contactperson->contactemail}}<br></td>
-                                                <td>
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy_contact', $contactperson->contactpersonID]]) !!}
 
-                                                    {!! Form::button('Slette', ['class' => 'btn btn-danger', 'data-target' => '#confirmDelete', 'data-title' => 'Slette', 'data-message' => 'Er du sikker på sletting?', 'data-btncancel' => 'btn-default', 'data-btnaction' => 'btn-danger', 'data-btntxt' => 'Slette', 'data-toggle'=> 'modal']) !!}
+                                                @if($contactperson->active == "1")
+                                                <td>
+
+                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['contactperson/destroy', $contactperson->contactpersonID]])!!}
+
+                                                    {!! Form::button('Deaktivere', array(
+                                                    'class' => 'btn btn-danger', 'onclick' => "func('contactperson/destroy/$contactperson->contactpersonID')",
+                                                    'data-toggle' => 'modal',
+                                                    'data-target' => '#confirmDelete',
+                                                    'data-title' => 'Slette',
+                                                    'data-message' => 'Vil du slette ?',
+                                                    'data-btncancel' => 'btn-default',
+                                                    'data-btnaction' => 'btn-danger',
+                                                    'data-btntxt' => 'Slette'
+                                                    ))
+                                                    !!}
+                                                    {!! Form::close() !!}
+
+                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
+
+                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
 
                                                     {!! Form::close() !!}
 
-                                                </td>
+                                                @else
+
+                                                    <td>
+                                                        <!--aktivere knapp-->
+                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
+
+                                                        {!! Form::button('Aktivere', array(
+                                                        'class' => 'btn btn-success', 'onclick' => "func('contactperson/aktiver/$contactperson->contactpersonID')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+                                                        {!! Form::close() !!}
+
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
+
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                        {!! Form::close() !!}
+
+
+
+
+                                                    </td>
+                                                @endif
 
 
                                             </tr>
                                             @endforeach
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+                                                }
+                                            </script>
+
                                             </tbody>
 
                                     </table></tr>
 
 
                                 {!! $contactpersons->render()!!}
+                                @include('includes.jara_confirm')
 
 
                                 </td></tr>

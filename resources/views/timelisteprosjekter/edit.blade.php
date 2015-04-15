@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Timeliste</div>
+                    <div class="panel-heading">Edit Timesheet</div>
                     <div class="panel-body">
 
                         <h1>Edit: {!! $timelisteprosjekt->projectID !!}</h1>
@@ -21,27 +21,27 @@
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('date', 'dato:') !!}
+                            {!! Form::label('date', 'Date:') !!}
                             {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('starttime', 'Start tid:') !!}
+                            {!! Form::label('starttime', 'Start time:') !!}
                             {!! Form::text('starttime', '07:00:00', ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('endtime', 'Slutt tid:') !!}
+                            {!! Form::label('endtime', 'Stop time:') !!}
                             {!! Form::text('endtime', '15:00:00', ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('comment', 'Kommentar:') !!}
+                            {!! Form::label('comment', 'Comment:') !!}
                             {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Lagre timelisten', ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit('Update timesheet', ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}

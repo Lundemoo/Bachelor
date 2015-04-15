@@ -18,6 +18,7 @@ class CreateContactpersonsTable extends Migration {
             $table->string('contactsurname');
             $table->string('contacttelephone');
             $table->string('contactemail');
+            $table->boolean('active')->default(true);
             $table->timestamps();
 
             /*Primary key */

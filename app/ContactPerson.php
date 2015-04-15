@@ -11,7 +11,8 @@ protected $table = "contactpersons";
         'contactsurname',
         'contactemail',
         'contacttelephone',
-        'companyID'
+        'companyID',
+        'active'
 
     ];
 

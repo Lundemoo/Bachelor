@@ -12,7 +12,8 @@ class Timelisteprosjekt extends Model {
         'date',
         'starttime',
         'endtime',
-        'comment'
+        'comment',
+        'active'
 
     ];
 

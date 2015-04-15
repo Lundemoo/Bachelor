@@ -11,6 +11,7 @@ class Builder extends Model {
         'customerID',
         'customeremail',
         'customertelephone',
+        'active'
 
     ];
 

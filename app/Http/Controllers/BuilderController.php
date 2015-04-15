@@ -41,7 +41,7 @@ class BuilderController extends Controller
         \Session::flash('flash_message', Lang::get('general.builderSuccess'));
 
         $builders = DB::table('builder')->get();
-        return view('builder.index', ['builders' => $builders]);
+        return view('builder.create');
 
     }
 
@@ -56,19 +56,38 @@ class BuilderController extends Controller
     public function update($customerID, CreateBuilderRequest $request){
 
         $builder = Builder::findOrFail($customerID);
-
         $builder->update($request->all());
         \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('editpage?side=3');
     }
 
+    /*
+     * metode for å deaktivere byggherre. Setter aktiv til 0
+     */
     public function destroy($customerID){
-        $builder = Builder::findOrFail($customerID);
-        $builder->delete();
-        \Session::flash('flash_message', Lang::get('general.builderDeleted'));
-        return redirect('editpage');
+
+        $builder = Builder::find($customerID);
+        DB::table('builder')
+            ->where('customerID', $customerID)
+            ->update(array('active'=>'0'));
+
+        return redirect('editpage?side=3');
 
 
+    }
+
+    /*
+     * metode for å aktivere byggherre. Setter aktiv til 1
+     */
+
+    public function aktiver($customerID){
+
+        $builder = Builder::find($customerID);
+        DB::table('builder')
+            ->where('customerID', $customerID)
+            ->update(array('active'=>'1'));
+
+        return redirect('editpage?side=3');
     }
 
 

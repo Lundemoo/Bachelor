@@ -1,1 +1,1 @@
-Trykk her for å tilbakestille passordet: {{ url('password/reset/'.$token) }}
+{{trans('general.resetPassword')}} {{ url('password/reset/'.$token) }}

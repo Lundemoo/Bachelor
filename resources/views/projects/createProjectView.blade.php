@@ -16,20 +16,20 @@ $( "#datepicker" ).datepicker();
 		<div class="col-md-8 col-md-offset-2">
 
 <div class="panel panel-default">
-				<div class="panel-heading">Register Project</div>
+				<div class="panel-heading">{{trans('general.registrateProject')}}</div>
 				<div class="panel-body">
                                     
                                     <div id="newcontact">
                                        
                                         <table class="newcontact"><tr><td>
-                                        <table><tr><td class="newcontact">Fornavn: </td><td class="newcontact"><input type="text" id="fornavn"></td></tr>
-                                            <tr><td class="newcontact">Etternavn: </td><td class="newcontact"><input type="text" id="etternavn"></td></tr>
-                                            <tr><td class="newcontact">Telefon: </td><td class="newcontact"><input type="text" id="telefon"></td></tr>
-                                            <tr><td class="newcontact">Email: </td><td class="newcontact"><input type="email" id="email"></td></tr>
+                                        <table><tr><td class="newcontact">{{trans('general.firstname')}} </td><td class="newcontact"><input type="text" id="fornavn"></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.surname')}} </td><td class="newcontact"><input type="text" id="etternavn"></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.telephone')}}</td><td class="newcontact"><input type="text" id="telefon"></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.email')}} </td><td class="newcontact"><input type="email" id="email"></td></tr>
                                         
                                             <tr><td colspan="2">
                                                 <input type="submit" name="store" id="store" value="Lagre!" onclick="lagre()"></br>
-                                                <a href="#" onclick="test()">Avslutt</a><div id="result"><td></tr>
+                                                <a href="#" onclick="test()">{{trans('general.finish')}}</a><div id="result"><td></tr>
                                             
                                         </table>
                                         </div>
@@ -40,9 +40,9 @@ $( "#datepicker" ).datepicker();
                                                         <tr>
                                                             <td>
                                                                 <p id="gjem" style="display: none;">
-                                                                Navn: <input type="text" name="nyttfirmanavn" id="nyttfirmanavn"></br>
-                                                                Rolle: <input type="text" name="nyttfirmarolle" id="nyttfirmarolle"></p>
-                                                                <p id="gjemandre"><a href="#" id="linkborte" onclick="leggtil()">+ Nytt firma</a></p>
+                                                                {{trans('general.name')}} <input type="text" name="nyttfirmanavn" id="nyttfirmanavn"></br>
+                                                                {{trans('general.role')}} <input type="text" name="nyttfirmarolle" id="nyttfirmarolle"></p>
+                                                                <p id="gjemandre"><a href="#" id="linkborte" onclick="leggtil()">+ {{trans('general.newFirm')}}</a></p>
                                                             </td>
                                                         </tr></table>
                                             </td></tr></table>
@@ -57,11 +57,11 @@ $( "#datepicker" ).datepicker();
                                         document.getElementById('gjem').style.display = "block";
                                         
                                         
-                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">Avbryt</a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">{{trans('general.cancel')}}</a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
                                     } else {
                                         
                                         document.getElementById('gjem').style.display = "none";
-                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">+ Nytt firma</a>";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">+ {{trans('general.newFirm')}}</a>";
                                     }
                                     
                                         
@@ -73,19 +73,9 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('projectName', 'Project name:') !!}
+ {!! Form::label('projectName', {{trans('general.projectName')}}) !!}
 
- {!! Form::text('projectName', null, ['placeholder'=>'Skriv inn prosjektnavn','class' => 'form-control']) !!}
-
-</div>
-
-<br>
-
-<div class="form-group">
-
- {!! Form::label('projectAddress', 'Project address:') !!}
-
- {!! Form::text('projectAddress', null, ['placeholder'=>'Skriv inn prosjektets adresse','class' => 'form-control']) !!}
+ {!! Form::text('projectName', null, ['placeholder'=>{{trans('general.wprojectName')}},'class' => 'form-control']) !!}
 
 </div>
 
@@ -93,9 +83,19 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('budget', 'Estimated hours:') !!}
+ {!! Form::label('projectAddress', {{trans('general.projectAddress')}}) !!}
 
- {!! Form::text('budget', null, ['placeholder'=>'Skriv inn estimerte timer til prosjektet','class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=>{{trans('general.wprojectAddress')}},'class' => 'form-control']) !!}
+
+</div>
+
+<br>
+
+<div class="form-group">
+
+ {!! Form::label('budget', {{trans('general.estimatedHours')}}) !!}
+
+ {!! Form::text('budget', null, ['placeholder'=>{{trans('general.westimatedHours')}},'class' => 'form-control']) !!}
 
 </div>
 
@@ -105,7 +105,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('description', null, ['placeholder'=>'Gi en beskrivelse av prosjektet','class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['placeholder'=>{{trans('general.wprojectDescription')}},'class' => 'form-control']) !!}
 
 </div>
 
@@ -115,12 +115,18 @@ $( "#datepicker" ).datepicker();
 
 
 
+ {!! Form::label('contactpersonID',{{trans('general.contactPersons')}}) !!}
 
 
 
+<<<<<<< HEAD
 <center><table width="90%" style="border: 1px solid black;"><tr><td class="over">Kontaktpersoner</td><td class="over">Byggherre</td></tr><tr><td width="50%" class="oppdeltprosjekt">
                 
 <div class="form-group" >
+=======
+</br><a href="#" onclick="test()">+ {{trans('general.newContactPerson')}}</a>
+</div>
+>>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7
 
 
 <div style='height: 80px; width: auto; overflow: auto;'>
@@ -186,7 +192,7 @@ $( "#datepicker" ).datepicker();
 <div class="form-group">
 
 
- {!! Form::submit('Registrer nytt prosjekt', ['class' => 'btn btn-primary form-control']) !!}
+ {!! Form::submit({{trans('general.registrateNewproject')}}, ['class' => 'btn btn-primary form-control']) !!}
 
 </div>
 
@@ -422,3 +428,8 @@ select.appendChild(option);
 
 
 @stop
+<<<<<<< HEAD
+
+=======
+ {!! Form::label('customerID', {{trans('general.builder')}}) !!}
+>>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7

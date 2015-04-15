@@ -7,13 +7,13 @@
 
 <body>
 
-<h1> Alle kjørebøker </h1>
+<h1> {{trans('general.allLogbooks')}}</h1>
 
 @foreach ($logbookadditions as $logbookaddition)
-   <h2> <li> Ansattnr: {{$logbookaddition->employeeNR}}</li> </h2>
+   <h2> <li> {{trans('general.employeeNr')}} {{$logbookaddition->employeeNR}}</li> </h2>
 
-   <div class="innholdet"> RegistrationNr: {{ $logbookaddition->registrationNR }}</div>
-   <div class="innholdet"> Dato: {{ $logbookaddition->date }}</div>
+   <div class="innholdet"> {{trans('general.registrationNr')}} {{ $logbookaddition->registrationNR }}</div>
+   <div class="innholdet"> {{trans('general.date')}} {{ $logbookaddition->date }}</div>
    <div class="innholdet"> Start destination: {{ $logbookaddition->startdestination }}</div>
    <div class="innholdet"> Stop destination: {{ $logbookaddition->stopdestination }}</div>
    <div class="innholdet"> Total km: {{ $logbookaddition->totalkm }}</div>

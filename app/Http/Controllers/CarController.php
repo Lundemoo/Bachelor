@@ -84,18 +84,32 @@ class CarController extends Controller
     /**
      * @param $registrationNR
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * Metode som sletter en valgt bil fra databasen. Kun for sjefer.
+     * Metode som deaktiverer en valgt bil fra databasen. Kun for sjefer.
      */
 
     public function destroy($registrationNR){
 
-        $car = Car::findOrFail($registrationNR);
-        $car->delete();
-        \Session::flash('flash_message', Lang::get('general.carDeleted'));
+        $car = Car::find($registrationNR); 
+        DB::table('car')
+            ->where('registrationNR', $registrationNR)
+            ->update(array('active'=>'0'));
 
         return redirect('editpage');
 
+    }
 
+    /*
+     * metode for å aktivere bil. Setter aktiv til 1
+     */
+
+    public function aktiver($registrationNR){
+
+        $car = Car::find($registrationNR);
+        DB::table('car')
+            ->where('registrationNR', $registrationNR)
+            ->update(array('active'=>'1'));
+
+        return redirect('editpage');
     }
 
 
