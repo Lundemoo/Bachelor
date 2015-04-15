@@ -62,7 +62,7 @@ class addcontactpersonController extends Controller {
         
         
       
-        
+       
         if($fail == 0){
        
             
@@ -75,9 +75,9 @@ class addcontactpersonController extends Controller {
 ));
         
         
-       
+       return "ID" . $restest->contactpersonID;
         
-        return "ID" . $restest->id;
+        
         }
         
         

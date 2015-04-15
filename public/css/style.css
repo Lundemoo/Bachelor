@@ -209,6 +209,37 @@ input[type=checkbox]:not(:checked) + label:before {
     line-height: 15px;
 }
 
+
+
+input[type=radio]:checked + label:before {
+    content: "\2192";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 30px;
+    
+    color: #000000;
+    text-align: center;
+    line-height: 15px;
+}
+
+
+input[type=radio]:not(:checked) + label:before {
+
+   content: "";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    
+    color: #FF0000;
+    text-align: center;
+    line-height: 15px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+
+
+
 td.over {
     border-top: 2px solid #e26300;
     border-left: 2px solid #e26300;
