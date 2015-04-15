@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CreateContactpersonRequest extends Request {
+class CreateCompanyRequest extends Request {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,9 @@ class CreateContactpersonRequest extends Request {
     public function rules()
     {
         return [
-            'contactname' => 'required',
-            'contactsurname' => 'required',
-            'contactemail' => 'required',
-            'contacttelephone' => 'required'
+            'companyname' => 'required',
+            'role' => 'required'
+
         ];
     }
 

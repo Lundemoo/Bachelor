@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration {
 			$table->increments('companyID')->unsigned();
             $table->string('companyname');
             $table->string('role');
+			$table->boolean('active')->default(true);
 			$table->timestamps();
 		});
 	}

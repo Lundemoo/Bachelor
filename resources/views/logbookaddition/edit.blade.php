@@ -85,6 +85,10 @@
                             {!! Form::label('bompenger', trans('general.roadTolls')) !!}
                             {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('active', 'Aktiv:') !!}
+                            {!! Form::checkbox('active', '1' , true) !!}
+                        </div>
                         <br/>
 
                         <div class="form-group">

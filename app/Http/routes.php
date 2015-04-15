@@ -23,6 +23,14 @@ Route::filter('admin', function(){
    }
 });
 
+Route::filter('loggedin', function(){
+   if(Auth::check()){
+       return true;
+   }  else {
+       return false;
+   }
+});
+
 
 Route::get('/', 'HomeController@index');
 Route::post('/', 'WelcomeController@denne');
@@ -81,7 +89,6 @@ Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //akti
 
 Route::get('oversikt', 'OversiktController@show');
 
-
 /*
  * editpage
  */
@@ -106,3 +113,14 @@ Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit
 Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
 Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
 Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
+
+/*
+ * company
+ */
+Route::get('company', 'CompanyController@index');
+Route::get('company/create', 'CompanyController@create'); //skjemautfylling
+Route::post('company', 'CompanyController@store');  //lagre i DB
+Route::get('company/{companyID}/edit', 'CompanyController@edit');
+Route::PATCH('company/{companyID}/update', 'CompanyController@update');
+Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
+Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');

@@ -28,6 +28,7 @@ class EditpageController extends Controller
         $users = DB::table('users')->paginate(6); //henter alle brukere
         $projects = DB::table('projects')->paginate(6); //henter alle prosjekter
         $contactpersons = DB::table('contactpersons')->paginate(6); //henter alle kontaktpersoner
+        $companies = DB::table('companies')->paginate(6); //henter alle firmaer
 
 
         App::setLocale('en');
@@ -39,16 +40,12 @@ class EditpageController extends Controller
             $siden = 0;
         }
 
-        if ($siden > 4 || $siden < 0) {
-            $siden = 0;
-        }
-        
         if($siden > 4 || $siden < 0){
             $siden = 0;
         }
 
 
-       return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'siden'=> $siden]);
+       return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'companies' =>$companies, 'siden'=> $siden]);
     }
 
     public function show(){
@@ -59,7 +56,7 @@ class EditpageController extends Controller
             $siden = 0;
         }
         
-        if($siden > 4 || $siden < 0){
+        if($siden > 5 || $siden < 0){
             $siden = 0;
         }
 echo $siden; exit;

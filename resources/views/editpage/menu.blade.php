@@ -28,7 +28,8 @@
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="tom" width="40%">&nbsp;</td></tr>
+                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                <td class="tom" width="28%">&nbsp;</td></tr>
 
 
 
@@ -41,6 +42,7 @@
                                             <th>{{trans('general.registrationNr')}}</th>
                                             <th>{{trans('general.nickname')}}</th>
                                             <th>{{trans('general.model')}}</th>
+                                            <th>Aktiv:</th>
                                             <th> </th>
 
                                         </tr>
@@ -53,8 +55,9 @@
                                             <tr>
 
                                             <td> {{$car->registrationNR}}</td>
-                                            <td>  {{$car->nickname}}<br></td>
+                                            <td> {{$car->nickname}}<br></td>
                                             <td> {{$car->brand}}<br><br></td>
+                                            <td> {{$car->active}}<br><br></td>
 
                                                 @if($car->active == "1")
                                             <td>
@@ -158,7 +161,8 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="tom" width="40%">&nbsp;</td></tr>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="tom" width="28%">&nbsp;</td></tr>
 
                                     <tr><td colspan="3" class="innholdeasynav"><br>
                                 <tr><table class="table" cellspacing="5" id="brukervisning">
@@ -267,7 +271,8 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="tom" width="40%">&nbsp;</td></tr>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="tom" width="28%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
@@ -299,7 +304,8 @@
                                     <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="tom" width="40%">&nbsp;</td></tr>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="tom" width="28%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
@@ -407,7 +413,8 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="tom" width="40%">&nbsp;</td></tr>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="tom" width="28%">&nbsp;</td></tr>
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
@@ -512,6 +519,122 @@
 
 
                                 </td></tr>
+
+                        <!-- REDIGERE FIRMA -->
+
+                        @elseif($siden == 4)
+
+                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                <td class="tom" width="28%">&nbsp;</td></tr>
+
+                            <tr><td colspan="3" class="innholdeasynav"><br>
+
+                            <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
+                                    <thead>
+                                    <tr>
+                                        <th>FirmaID:</th>
+                                        <th>Firmanavn:</th>
+                                        <th>Rolle:</th>
+                                        <th>Aktiv:}</th>
+
+                                        <th> </th>
+
+                                    </tr>
+
+                                    </thead>
+
+
+                                    @foreach ($companies as $company)
+
+                                        <tbody>
+                                        <tr>
+
+                                            <td> {{$company->companyID}}<br></td>
+                                            <td>  {{$company->companyname}}<br></td>
+                                            <td>  {{$company->role}}<br></td>
+                                            <td>  {{$company->activ}}<br></td>
+
+
+                                            @if($company->active == "1")
+                                                <td>
+
+                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['company/destroy', $company->companyID]])!!}
+
+                                                    {!! Form::button('Deaktivere', array(
+                                                    'class' => 'btn btn-danger', 'onclick' => "func('company/destroy/$company->companyID')",
+                                                    'data-toggle' => 'modal',
+                                                    'data-target' => '#confirmDelete',
+                                                    'data-title' => 'Slette',
+                                                    'data-message' => 'Vil du slette ?',
+                                                    'data-btncancel' => 'btn-default',
+                                                    'data-btnaction' => 'btn-danger',
+                                                    'data-btntxt' => 'Slette'
+                                                    ))
+                                                    !!}
+                                                    {!! Form::close() !!}
+
+                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
+
+                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                    {!! Form::close() !!}
+
+                                            @else
+
+                                                <td>
+                                                    <!--aktivere knapp-->
+                                                    {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
+
+                                                    {!! Form::button('Aktivere', array(
+                                                    'class' => 'btn btn-success', 'onclick' => "func('company/aktiver/$company->companyID')",
+                                                    'data-toggle' => 'modal',
+                                                    'data-target' => '#confirmDelete',
+                                                    'data-title' => 'Slette',
+                                                    'data-message' => 'Vil du slette ?',
+                                                    'data-btncancel' => 'btn-default',
+                                                    'data-btnaction' => 'btn-danger',
+                                                    'data-btntxt' => 'Slette'
+                                                    ))
+                                                    !!}
+                                                    {!! Form::close() !!}
+
+                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
+
+                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                    {!! Form::close() !!}
+
+
+
+
+                                                </td>
+                                            @endif
+
+
+                                        </tr>
+                                        @endforeach
+                                        <input type='hidden' value='' id='gjemt'>
+                                        <script>
+                                            function func(variabelen){
+                                                var knapp= document.getElementById('gjemt').value = variabelen;
+                                            }
+                                        </script>
+
+                                        </tbody>
+
+                                </table></tr>
+
+
+                            {!! $company->render()!!}
+                            @include('includes.jara_confirm')
+
+
+                            </td></tr>
 
 
                             @endif
