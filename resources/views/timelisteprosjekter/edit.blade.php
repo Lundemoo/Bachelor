@@ -39,6 +39,10 @@
                             {!! Form::label('comment', {{trans('general.comment')}}) !!}
                             {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('active', 'Aktiv:') !!}
+                            {!! Form::checkbox('active', '1' , true) !!}
+                        </div>
 
                         <div class="form-group">
                             {!! Form::submit({{trans('general.updateTimesheet')}}, ['class' => 'btn btn-primary form-control'] ) !!}
