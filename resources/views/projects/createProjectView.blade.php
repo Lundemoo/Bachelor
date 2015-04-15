@@ -114,49 +114,67 @@ $( "#datepicker" ).datepicker();
 
 
 
- 
-
-
 
 
 <center><table width="90%" style="border: 1px solid black;"><tr><td class="over"> {{trans('general.contactPerson')}} </td><td class="over"> {{trans('general.builder')}} </td></tr><tr><td width="50%" class="oppdeltprosjekt">
-                
-
-
-
-
-<div style='height: 80px; width: auto; overflow: auto;'>
+                @if(count($contactperson_list) == 0)
+                <div id="ingen" style="display:block;">
+                    @else
+                <div id="ingen" style="display:none;">    
+                        @endif
+        <center><h3>Ingen kontaktperson</h3></br>
+            <a href="#" onclick="test()">{{trans('general.newContactperson')}}</a></center>
+        
+        </div>
+            @if(count($contactperson_list) == 0)
+            <div id="ingen2" style="display:none;">
+                @else
+            <div id="ingen2" style="display:block;">    
+                @endif
+                <center><div style='height: 80px; width: auto; overflow: auto;'>
     <table id="legginnher">
+        
+        @if (isset($contactperson_list) && count($contactperson_list) > 0)
+        
 @foreach ($contactperson_list as $con)
 
 <tr><td><input type="checkbox" name="con[]" value="{{$con[2]}}" id='{{$con[2]}}'> <label for='{{$con[2]}}'>{{$con[0]}} {{$con[1]}}, {{$con[3]}}</label></td></tr>
     
 @endforeach
+@endif
 </table>
-</div>
+                    </div></center>
 
 </br><a href="#" onclick="test()">+ {{trans('general.newContactperson')}}</a>
+
+</div>
 </div>
 
 
             </td><td width="50%" class="oppdeltprosjekt">
                 <div class="form-group" >
 
- 
-
+ @if(count($customer_list) != 0)
  <div style='height: 80px; width: auto; overflow: auto;'>
      <table id="legginnher2">
+          @if (isset($customer_list) && count($customer_list) > 0)
      @foreach ($customer_list as $con)
     
 <tr><td><input type="radio" name="byggherre"  value="{{$con[0]}}" id="f{{$con[0]}}"> <label for='f{{$con[0]}}'>{{$con[1]}}</label></td></tr>
     
 @endforeach
+@endif
      </table>
      
  </div>
+ 
+ @else
+ <center><h3>Ingen byggherrer</h3></br>
+     <a href="/builder/create">Legg til</a>
+ @endif
 
 </div>
-                
+          
  
             </td></tr><tr><td class="over">{{trans('general.startDate')}}</td><td class="over">{{trans('general.estimatedFinish')}}</td></tr>
                 <tr><td class="oppdeltprosjekt">
@@ -275,9 +293,11 @@ function lagre() {
             
 var leggtil = "<tr><td><input type=\"checkbox\" name=\"con[]\" value=\"" + denne + "\" id=\"" + denne + "\" checked> <label for='" + denne + "'>" + firstname + " " + lastname + ", " + firmanavnet + "</label></td></tr>";
 
-// <tr><td><input type="radio" name="byggherre"  value="{{$con[0]}}" id="f{{$con[0]}}"> <label for='f{{$con[0]}}'>{{$con[1]}}</label></td></tr>
+
 
 document.getElementById("legginnher").innerHTML =  leggtil + document.getElementById('legginnher').innerHTML;
+document.getElementById("ingen").style.display = 'none';
+document.getElementById("ingen2").style.display = 'block';
 test();
                  document.getElementById('fornavn').style.border = "1px solid gray";
             document.getElementById('etternavn').style.border = "1px solid gray";
