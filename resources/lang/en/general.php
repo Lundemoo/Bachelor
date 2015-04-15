@@ -113,6 +113,12 @@ return [
     'newContactperson' => 'New Contacperson',
     'startDate' => 'Start date',
     'estimatedFinish' => 'Estimated Finish',
+    'editContactperson' => 'Edit Contactperson',
+    'companyId' => 'Company Id',
+    'updatedContactp' => 'Update Contactperson',
+
+
+
 
 
 
