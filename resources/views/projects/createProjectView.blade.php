@@ -73,9 +73,8 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('projectName', {{trans('general.projectName')}}) !!}
-
- {!! Form::text('projectName', null, ['placeholder'=> {{trans('general.wprojectName')}} ,'class' => 'form-control']) !!}
+ {!! Form::label('projectName', {{trans('general.projectName')}} ) !!}
+ {!! Form::text('projectName', null, ['placeholder'=> trans('general.wprojectName') ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -85,7 +84,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectAddress', {{trans('general.projectAddress')}} ) !!}
 
- {!! Form::text('projectAddress', null, ['placeholder'=> {{trans('general.wprojectAddress')}} ,'class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=> trans('general.wprojectAddress') ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -105,7 +104,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('description', 'Project description:') !!}
 
- {!! Form::textarea('description', null, ['placeholder'=>{{trans('general.wprojectDescription')}},'class' => 'form-control']) !!}
+ {!! Form::textarea('description', null, ['placeholder'=> trans('general.wprojectDescription'),'class' => 'form-control']) !!}
 
 </div>
 
