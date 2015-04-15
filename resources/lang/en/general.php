@@ -119,6 +119,13 @@ return [
     'builder' => 'Builder',
     'contactPerson' => 'Contact person',
     'contactPersons' => 'Contact persons',
+    'yourOverview' => 'Your overview',
+    'changes' => 'Changes',
+    'approveTimesheet' => 'Approve timesheets',
+
+
+
+
 
 
 
