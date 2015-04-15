@@ -89,7 +89,7 @@ class CarController extends Controller
 
     public function destroy($registrationNR){
 
-        $car = Car::find($registrationNR); 
+        $car = Car::find($registrationNR);
         DB::table('car')
             ->where('registrationNR', $registrationNR)
             ->update(array('active'=>'0'));
