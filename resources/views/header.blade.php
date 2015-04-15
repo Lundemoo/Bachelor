@@ -43,7 +43,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="/auth/logout">{{trans('general.logout)}}</a></li>
+								<li><a href="/auth/logout"> {{trans('general.projectAddress')}} </a></li>
 							</ul>
 						</li>
 					@endif
