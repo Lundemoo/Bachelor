@@ -16,7 +16,7 @@ $( "#datepicker" ).datepicker();
 		<div class="col-md-8 col-md-offset-2">
 
 <div class="panel panel-default">
-				<div class="panel-heading">{{trans('general.registrateProject')}}</div>
+				<div class="panel-heading"> {{trans('general.registrateProject')}} </div>
 				<div class="panel-body">
                                     
                                     <div id="newcontact">
@@ -57,11 +57,11 @@ $( "#datepicker" ).datepicker();
                                         document.getElementById('gjem').style.display = "block";
                                         
                                         
-                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">{{trans('general.cancel')}}</a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\"> {{trans('general.cancel')}} </a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
                                     } else {
                                         
                                         document.getElementById('gjem').style.display = "none";
-                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">+ {{trans('general.newFirm')}}</a>";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\">+ {{trans('general.newFirm')}} </a>";
                                     }
                                     
                                         
@@ -75,7 +75,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('projectName', {{trans('general.projectName')}}) !!}
 
- {!! Form::text('projectName', null, ['placeholder'=>{{trans('general.wprojectName')}},'class' => 'form-control']) !!}
+ {!! Form::text('projectName', null, ['placeholder'=> {{trans('general.wprojectName')}} ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -83,9 +83,9 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('projectAddress', {{trans('general.projectAddress')}}) !!}
+ {!! Form::label('projectAddress', {{trans('general.projectAddress')}} ) !!}
 
- {!! Form::text('projectAddress', null, ['placeholder'=>{{trans('general.wprojectAddress')}},'class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=> {{trans('general.wprojectAddress')}} ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -95,7 +95,7 @@ $( "#datepicker" ).datepicker();
 
  {!! Form::label('budget', {{trans('general.estimatedHours')}}) !!}
 
- {!! Form::text('budget', null, ['placeholder'=>{{trans('general.westimatedHours')}},'class' => 'form-control']) !!}
+ {!! Form::text('budget', null, ['placeholder'=> {{trans('general.westimatedHours')}} ,'class' => 'form-control']) !!}
 
 </div>
 

@@ -110,7 +110,7 @@ return [
     'logout' => 'Log out',
     'registerProject' => 'Register project',
     'registerLogbook' => 'Register logbook',
-    
+
 
 
 
