@@ -405,25 +405,5 @@ select.appendChild(option);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @stop
 
