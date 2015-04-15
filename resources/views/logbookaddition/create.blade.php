@@ -26,7 +26,7 @@
             geocoder.getLocations(document.forms[0].startdestination.value, function (response) {
                 if (!response || response.Status.code != 200)
                 {
-                    alert({{trans('general.unableToFind')}});
+                    alert("cant fin geo location nr 1");
                 }
                 else
                 {
@@ -34,7 +34,7 @@
                     geocoder.getLocations(document.forms[0].stopdestination.value, function (response) {
                         if (!response || response.Status.code != 200)
                         {
-                            alert({{trans('general.unableToFind2')}});
+                            alert("cant find geolocation nr 2");
                         }
                         else
                         {
