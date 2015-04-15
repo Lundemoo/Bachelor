@@ -73,19 +73,8 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('projectName', {{trans('general.projectName')}}) !!}
-
- {!! Form::text('projectName', null, ['placeholder'=> {{trans('general.wprojectName')}} ,'class' => 'form-control']) !!}
-
-</div>
-
-<br>
-
-<div class="form-group">
-
- {!! Form::label('projectAddress', {{trans('general.projectAddress')}} ) !!}
-
- {!! Form::text('projectAddress', null, ['placeholder'=> {{trans('general.wprojectAddress')}} ,'class' => 'form-control']) !!}
+ {!! Form::label('projectName', trans('general.projectName') ) !!}
+ {!! Form::text('projectName', null, ['placeholder'=> trans('general.wprojectName') ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -93,9 +82,9 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('budget', {{trans('general.estimatedHours')}}) !!}
+ {!! Form::label('projectAddress', trans('general.projectAddress') ) !!}
 
- {!! Form::text('budget', null, ['placeholder'=> {{trans('general.westimatedHours')}} ,'class' => 'form-control']) !!}
+ {!! Form::text('projectAddress', null, ['placeholder'=> trans('general.wprojectAddress') ,'class' => 'form-control']) !!}
 
 </div>
 
@@ -103,9 +92,19 @@ $( "#datepicker" ).datepicker();
 
 <div class="form-group">
 
- {!! Form::label('description', 'Project description:') !!}
+ {!! Form::label('budget', trans('general.estimatedHours')) !!}
 
- {!! Form::textarea('description', null, ['placeholder'=>{{trans('general.wprojectDescription')}},'class' => 'form-control']) !!}
+ {!! Form::text('budget', null, ['placeholder'=> trans('general.westimatedHours') ,'class' => 'form-control']) !!}
+
+</div>
+
+<br>
+
+<div class="form-group">
+
+ {!! Form::label('description', trans('general.projectDescription')) !!}
+
+ {!! Form::textarea('description', null, ['placeholder'=> trans('general.wprojectDescription'),'class' => 'form-control']) !!}
 
 </div>
 
@@ -115,12 +114,12 @@ $( "#datepicker" ).datepicker();
 
 
 
- {!! Form::label('contactpersonID',{{trans('general.contactPersons')}}) !!}
+ {!! Form::label('contactpersonID',trans('general.contactPersons')) !!}
 
 
 
 
-<center><table width="90%" style="border: 1px solid black;"><tr><td class="over">Kontaktpersoner</td><td class="over">Byggherre</td></tr><tr><td width="50%" class="oppdeltprosjekt">
+<center><table width="90%" style="border: 1px solid black;"><tr><td class="over">{{trans('general.contactPerson')}}</td><td class="over">{{trans('general.builder')}}</td></tr><tr><td width="50%" class="oppdeltprosjekt">
                 
 <div class="form-group" >
 
@@ -138,7 +137,7 @@ $( "#datepicker" ).datepicker();
 </table>
 </div>
 
-</br><a href="#" onclick="test()">+ Ny kontaktperson</a>
+</br><a href="#" onclick="test()">+ {{trans('general.newContactperson')}}</a>
 </div>
 
 
@@ -161,7 +160,7 @@ $( "#datepicker" ).datepicker();
 </div>
                 
  
-            </td></tr><tr><td class="over">Oppstartsdato</td><td class="over">Estimert dato ferdig</td></tr>
+            </td></tr><tr><td class="over">{{trans('general.startDate')}}</td><td class="over">{{trans('general.estimatedFinish')}}</td></tr>
                 <tr><td class="oppdeltprosjekt">
             
            
@@ -191,7 +190,7 @@ $( "#datepicker" ).datepicker();
 <div class="form-group">
 
 
- {!! Form::submit({{trans('general.registrateNewproject')}}, ['class' => 'btn btn-primary form-control']) !!}
+ {!! Form::submit(trans('general.registrateNewproject'), ['class' => 'btn btn-primary form-control']) !!}
 
 </div>
 
@@ -427,8 +426,4 @@ select.appendChild(option);
 
 
 @stop
-<<<<<<< HEAD
 
-=======
- {!! Form::label('customerID', {{trans('general.builder')}}) !!}
->>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7
