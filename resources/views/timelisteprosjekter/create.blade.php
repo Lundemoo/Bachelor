@@ -22,7 +22,7 @@
 
 <div class="form-group">
 
-{!! Form::label('projectIDs', {{trans('general.project')}}) !!}
+{!! Form::label('projectID', {{trans('general.project')}}) !!}
 
 <!--<input type="text", id="datepicker">-->
 
