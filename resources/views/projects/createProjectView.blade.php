@@ -119,12 +119,9 @@ $( "#datepicker" ).datepicker();
 
 
 
-<center><table width="90%" style="border: 1px solid black;"><tr><td class="over">{{trans('general.contactPerson')}}</td><td class="over">{{trans('general.builder')}}</td></tr><tr><td width="50%" class="oppdeltprosjekt">
+<center><table width="90%" style="border: 1px solid black;"><tr><td class="over"> {{trans('general.contactPerson')}} </td><td class="over"> {{trans('general.builder')}} </td></tr><tr><td width="50%" class="oppdeltprosjekt">
                 
-<div class="form-group" >
 
-</br><a href="#" onclick="test()">+ {{trans('general.newContactPerson')}}</a>
-</div>
 
 
 <div style='height: 80px; width: auto; overflow: auto;'>

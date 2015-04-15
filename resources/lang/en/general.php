@@ -116,6 +116,11 @@ return [
     'editContactperson' => 'Edit Contactperson',
     'companyId' => 'Company Id',
     'updatedContactp' => 'Update Contactperson',
+    'builder' => 'Builder',
+    'contactPerson' => 'Contact person',
+    'contactPersons' => 'Contact persons',
+
+
 
 
 
