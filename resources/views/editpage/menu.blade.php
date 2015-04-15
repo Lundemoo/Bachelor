@@ -520,10 +520,6 @@
 
                                 </td></tr>
 
-
-
-
-
                         <!-- REDIGERE FIRMA -->
 
                         @elseif($siden == 4)
