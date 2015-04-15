@@ -114,30 +114,76 @@ $( "#datepicker" ).datepicker();
 
 
 
-<div class="form-group" >
 
  {!! Form::label('contactpersonID',{{trans('general.contactPersons')}}) !!}
 
-  <!--<input type="text", id="datepicker">-->
 
-{!! Form::select('contactpersonID', $contactperson_list) !!}
 
+<<<<<<< HEAD
+<center><table width="90%" style="border: 1px solid black;"><tr><td class="over">Kontaktpersoner</td><td class="over">Byggherre</td></tr><tr><td width="50%" class="oppdeltprosjekt">
+                
+<div class="form-group" >
+=======
 </br><a href="#" onclick="test()">+ {{trans('general.newContactPerson')}}</a>
 </div>
+>>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7
 
 
+<div style='height: 80px; width: auto; overflow: auto;'>
+    <table>
+@foreach ($contactperson_list as $con)
+
+<tr><td><input type="checkbox" name="con[]" value="{{$con[2]}}" id='{{$con[2]}}'> <label for='{{$con[2]}}'>{{$con[0]}} {{$con[1]}}, {{$con[3]}}</label></td></tr>
+    
+@endforeach
+</table>
+</div>
+
+</br><a href="#" onclick="test()">+ Ny kontaktperson</a>
+</div>
 
 
-<div class="form-group" >
+            </td><td width="50%" class="oppdeltprosjekt">
+                <div class="form-group" >
 
- {!! Form::label('customerID', {{trans('general.builder')}}) !!}
+ 
 
-  <!--<input type="text", id="datepicker">-->
-
-{!! Form::select('customerID', $customer_list) !!}
-
+ <div style='height: 80px; width: auto; overflow: auto;'>
+     <table>
+     @foreach ($customer_list as $con)
+    
+<tr><td><input type="radio" name="byggherre"  value="{{$con[0]}}" id="f{{$con[0]}}"> <label for='f{{$con[0]}}'>{{$con[1]}}</label></td></tr>
+    
+@endforeach
+     </table>
+     
+ </div>
 
 </div>
+                
+ 
+            </td></tr><tr><td class="over">Oppstartsdato</td><td class="over">Estimert dato ferdig</td></tr>
+                <tr><td class="oppdeltprosjekt">
+            
+           
+    
+    {!! Form::text('startdate', date('Y-m-d'), array('class' => 'datepicker') ) !!}
+           
+                        
+                        
+            </td>
+            <td class="oppdeltprosjekt">
+                
+               
+    
+    {!! Form::text('sluttdate', date('Y-m-d'), array('class' => 'datepicker') ) !!}
+              
+                <div id="container"></div>
+                <script>
+    var minimal = 0;
+    </script>
+            </td></tr></table>
+</center></br></br>
 
 
 
@@ -149,6 +195,9 @@ $( "#datepicker" ).datepicker();
  {!! Form::submit({{trans('general.registrateNewproject')}}, ['class' => 'btn btn-primary form-control']) !!}
 
 </div>
+
+
+
 
 
 {!! Form::close() !!}
@@ -379,3 +428,8 @@ select.appendChild(option);
 
 
 @stop
+<<<<<<< HEAD
+
+=======
+ {!! Form::label('customerID', {{trans('general.builder')}}) !!}
+>>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7
