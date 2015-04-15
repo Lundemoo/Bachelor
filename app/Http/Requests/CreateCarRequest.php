@@ -24,7 +24,7 @@ class CreateCarRequest extends Request {
 		return [
 			'registrationNR' => 'required|max:7',
 			'nickname' => 'required',
-			'brand' => 'required',
+			'brand' => 'required'
 		];
 	}
 
