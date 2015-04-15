@@ -20,7 +20,7 @@
                                     @if(Auth::user()->brukertype == 1)
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.changes')}}</div></br>
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.statistic')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.apporveTimesheets')}}</div>
+                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.approveTimesheets')}}</div>
                                     
                                     @endif
                                     </center>

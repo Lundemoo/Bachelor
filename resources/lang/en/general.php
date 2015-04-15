@@ -121,7 +121,9 @@ return [
     'contactPersons' => 'Contact persons',
     'yourOverview' => 'Your overview',
     'changes' => 'Changes',
-    'approveTimesheet' => 'Approve timesheets',
+    'approveTimesheets' => 'Approve timesheets',
+    'registerTimesheet' => 'Register timesheet',
+
 
 
 
