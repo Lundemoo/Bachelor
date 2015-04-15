@@ -25,7 +25,7 @@ class CreateContactpersonRequest extends Request {
             'contactname' => 'required',
             'contactsurname' => 'required',
             'contactemail' => 'required',
-            'contacttelephone' => 'required',
+            'contacttelephone' => 'required'
         ];
     }
 
