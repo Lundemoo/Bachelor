@@ -3,10 +3,11 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model {
-//protected $table = "companies";
+protected $table = "companies";
+    protected $primaryKey = 'companyID';
     protected $fillable = [
         'companyname',
-        'role',
+        'role'
     ];
 
 }
