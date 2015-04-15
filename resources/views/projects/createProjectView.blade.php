@@ -119,14 +119,13 @@ $( "#datepicker" ).datepicker();
 
 
 
-<<<<<<< HEAD
+
 <center><table width="90%" style="border: 1px solid black;"><tr><td class="over">Kontaktpersoner</td><td class="over">Byggherre</td></tr><tr><td width="50%" class="oppdeltprosjekt">
                 
 <div class="form-group" >
-=======
+
 </br><a href="#" onclick="test()">+ {{trans('general.newContactPerson')}}</a>
 </div>
->>>>>>> 0421a0db505f193f745553b73ec781d4c8e7c0a7
 
 
 <div style='height: 80px; width: auto; overflow: auto;'>

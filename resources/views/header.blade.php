@@ -12,7 +12,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Hovedmeny</a></li>
+					<li><a href="/">{{trans('general.mainMenu')}}</a></li>
                                         
 				</ul>
 <div>
@@ -20,18 +20,18 @@
 </div>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="/auth/login">Logg inn</a></li>
-						<li><a href="/auth/register">Registrer bruker</a></li>
+						<li><a href="/auth/login">{{trans('general.login')}}</a></li>
+						<li><a href="/auth/register">{{trans('general.registerUser')}}</a></li>
 						
 
 					@else
                                         
                                         @if(Auth::user()->brukertype == 1)
                                         
-                                        <li><a href="/car/create">Registrer bil</a></li>
-                        <li><a href="/project/create">Registrer prosjekt</a></li>
-                        <li><a href="/builder/create">Registrer byggherre</a></li>
-                        <li><a href="/auth/edit">Redigere bruker</a></li>
+                                        <li><a href="/car/create">{{trans('general.registerCar')}}</a></li>
+                        <li><a href="/project/create">{{trans('general.registerProject')}}</a></li>
+                        <li><a href="/builder/create">{{trans('general.registerBuilder')}}</a></li>
+                        <li><a href="/auth/edit">{{trans('general.registerUser')}}</a></li>
 
 
                                         
