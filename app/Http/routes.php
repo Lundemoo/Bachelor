@@ -76,18 +76,33 @@ Route::get('builder/create', 'BuilderController@create');
 Route::post('builder', 'BuilderController@store');
 Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
+Route::get('builder/destroy/{customerID}', 'BuilderController@destroy'); //deaktivere byggherre
+Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //aktivere byggherre
 
 Route::get('oversikt', 'OversiktController@show');
 
 
+/*
+ * editpage
+ */
 
 Route::get('editpage', 'EditpageController@index');
-Route::get('car/destroy/{registrationNR}', 'CarController@destroy');
-Route::delete('editpage/destroy', 'EditpageController@destroy');
+Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
+Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
 
-Route::delete('builder/destroy/{customerID}', 'BuilderController@destroy'); //slette byggherre
+Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
+
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
 
 Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
 Route::get('editpage/{id}/edit', 'EditpageController@edit');
+
+/*
+ * contactperson
+ */
+Route::get('contactperson', 'ContactpersonController@index');
+Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
+Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
+Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
+Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
