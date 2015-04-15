@@ -107,6 +107,7 @@ return [
     'startTime' => 'Start time',
     'stopTime' => 'Stop time',
     'mainMenu' => 'Main menu',
+    'logout' => 'Log out',
 
 
 

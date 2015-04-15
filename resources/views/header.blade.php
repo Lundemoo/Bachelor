@@ -37,13 +37,13 @@
                                         
                                         @endif
                                         
-                                                                <li><a href="/timelisteprosjekter/create">Registrer timelister</a></li>
-                        <li><a href="/logbookaddition/create">Registrer kjørebok</a></li>
+                                                                <li><a href="/timelisteprosjekter/create">{{trans('general.registrateTimesheet')}}</a></li>
+                        <li><a href="/logbookaddition/create">{{trans('general.registerLogbook')}}</a></li>
                                         
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="/auth/logout">Logg ut</a></li>
+								<li><a href="/auth/logout">{{trans('general.logout)}}</a></li>
 							</ul>
 						</li>
 					@endif
