@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'no',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -207,5 +207,12 @@ return [
             //Lage alias med full path, så bruk den som alias. Kanskje det går.
 
 	],
+
+    // De språkene som applikasjonen støtter
+    'languages'     => array(
+        'en' => 'en_US',
+        'no' => 'no_NO',
+        'est' => 'est_EST',
+    ),
 
 ];
