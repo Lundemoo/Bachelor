@@ -102,6 +102,14 @@ return [
     'description' => 'Description',
     'registrateTimesheet' => 'Registrate timesheet',
     'editTimesheet' => 'Edit timesheet',
+    'updateTimesheet' => 'Update timesheet',
+    'allTimesheets' => 'All timesheets',
+    'startTime' => 'Start time',
+    'stopTime' => 'Stop time',
+    
+
+
+
 
 
 
