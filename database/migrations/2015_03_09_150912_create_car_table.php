@@ -19,6 +19,8 @@ class CreateCarTable extends Migration {
 			$table->string('brand');
 			$table->boolean('active')->default(true);
 			$table->timestamps();
+
+			$table->primary('registrationNR');
 		});
 	}
 
