@@ -107,6 +107,25 @@ return [
     'startTime' => 'Start time',
     'stopTime' => 'Stop time',
     'mainMenu' => 'Main menu',
+    'logout' => 'Log out',
+    'registerProject' => 'Register project',
+    'registerLogbook' => 'Register logbook',
+    'newContactperson' => 'New Contacperson',
+    'startDate' => 'Start date',
+    'estimatedFinish' => 'Estimated Finish',
+    'editContactperson' => 'Edit Contactperson',
+    'companyId' => 'Company Id',
+    'updatedContactp' => 'Update Contactperson',
+    'builder' => 'Builder',
+    'contactPerson' => 'Contact person',
+    'contactPersons' => 'Contact persons',
+
+
+
+
+
+
+
 
 
 

@@ -62,11 +62,11 @@
     {!! Form::open(['url' => 'logbookaddition', ]) !!}
 <div class="form-group">
 
-    {!! Form::label('registrationNR', {{trans('general.car')}}) !!}
+    {!! Form::label('registrationNR', trans('general.car')) !!}
     {!! Form::select('registrationNR', $cars) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('date', {{trans('general.date')}}) !!}
+    {!! Form::label('date', trans('general.date')) !!}
     {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
 </div>
     <script>
@@ -88,13 +88,13 @@
         {!! Form::text('totalkm', null, ['placeholder'=>'Click here to find totalt km','class' => 'form-control'] ) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('bompenger', {{trans('general.roadTolls')}}) !!}
+        {!! Form::label('bompenger', trans('general.roadTolls')) !!}
         {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
     </div>
     <br/>
 
     <div class="form-group">
-        {!! Form::submit({{trans('general.registrateLogbook')}}, ['class' => 'btn btn-primary form-control'] ) !!}
+        {!! Form::submit(trans('general.registrateLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
     </div>
 
 </form>

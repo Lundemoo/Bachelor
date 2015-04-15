@@ -22,7 +22,7 @@
 
 <div class="form-group">
 
-{!! Form::label('projectID', {{trans('general.project')}}) !!}
+{!! Form::label('projectIDs', trans('general.project')) !!}
 
 <!--<input type="text", id="datepicker">-->
 
@@ -30,7 +30,7 @@
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('date', {{trans('general.date')}}) !!}
+    {!! Form::label('date', trans('general.date')) !!}
     {!! Form::text('date', date('Y-m-d'), array('class' => 'datepicker') ) !!}
 </div>
 <div id="container"></div>
@@ -51,12 +51,12 @@
 </div>
 <br/>
 <div class="form-group">
-    {!! Form::label('comment', {{trans('general.comment')}}) !!}
+    {!! Form::label('comment', trans('general.comment')) !!}
     {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::submit({{trans('general.registrateTimesheet')}}, ['class' => 'btn btn-primary form-control'] ) !!}
+    {!! Form::submit( trans('general.registrateTimesheet'), ['class' => 'btn btn-primary form-control'] ) !!}
 </div>
 
 {!! Form::close() !!}

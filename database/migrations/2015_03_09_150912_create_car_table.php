@@ -20,7 +20,7 @@ class CreateCarTable extends Migration {
 			$table->boolean('active')->default(true);
 			$table->timestamps();
 
-			$table->primary('registrationNR');
+
 		});
 	}
 
