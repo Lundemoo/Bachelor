@@ -106,7 +106,9 @@ return [
     'allTimesheets' => 'All timesheets',
     'startTime' => 'Start time',
     'stopTime' => 'Stop time',
-    
+    'mainMenu' => 'Main menu',
+
+
 
 
 
