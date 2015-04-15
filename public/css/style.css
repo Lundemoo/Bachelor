@@ -169,3 +169,51 @@ and open the template in the editor.
                                         td.infograf {
                                            
                                         }
+                                        
+                                        td.oppdeltprosjekt{
+                                            
+                                            width: 50%;
+                                            border: 1px solid gray;
+                                            background-color: #DDD;
+                                            padding: 10px;
+                                        }
+                                        
+                                        input[type=checkbox] {
+    display: none;
+    
+}
+
+.checkbox label:before {
+    border-radius: 3px;
+   
+}
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    
+    color: #00FF00;
+    text-align: center;
+    line-height: 15px;
+}
+
+
+input[type=checkbox]:not(:checked) + label:before {
+
+   content: "X";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    
+    color: #FF0000;
+    text-align: center;
+    line-height: 15px;
+}
+
+td.over {
+    border-top: 2px solid #e26300;
+    border-left: 2px solid #e26300;
+    border-right: 2px solid #e26300;
+    height: 30px;
+    background-color: #111;
+    text-align: center;
+}
