@@ -110,6 +110,9 @@ return [
     'logout' => 'Log out',
     'registerProject' => 'Register project',
     'registerLogbook' => 'Register logbook',
+    'newContactperson' => 'New Contacperson',
+    'startDate' => 'Start date',
+    'estimatedFinish' => 'Estimated Finish',
 
 
 
