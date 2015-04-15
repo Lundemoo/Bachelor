@@ -114,21 +114,19 @@ $( "#datepicker" ).datepicker();
 
 
 
- {!! Form::label('contactpersonID',trans('general.contactPersons')) !!}
+ 
 
 
 
 
-<center><table width="90%" style="border: 1px solid black;"><tr><td class="over">{{trans('general.contactPerson')}}</td><td class="over">{{trans('general.builder')}}</td></tr><tr><td width="50%" class="oppdeltprosjekt">
+<center><table width="90%" style="border: 1px solid black;"><tr><td class="over"> {{trans('general.contactPerson')}} </td><td class="over"> {{trans('general.builder')}} </td></tr><tr><td width="50%" class="oppdeltprosjekt">
                 
-<div class="form-group" >
 
-</br><a href="#" onclick="test()">+ {{trans('general.newContactPerson')}}</a>
-</div>
+
 
 
 <div style='height: 80px; width: auto; overflow: auto;'>
-    <table>
+    <table id="legginnher">
 @foreach ($contactperson_list as $con)
 
 <tr><td><input type="checkbox" name="con[]" value="{{$con[2]}}" id='{{$con[2]}}'> <label for='{{$con[2]}}'>{{$con[0]}} {{$con[1]}}, {{$con[3]}}</label></td></tr>
@@ -147,7 +145,7 @@ $( "#datepicker" ).datepicker();
  
 
  <div style='height: 80px; width: auto; overflow: auto;'>
-     <table>
+     <table id="legginnher2">
      @foreach ($customer_list as $con)
     
 <tr><td><input type="radio" name="byggherre"  value="{{$con[0]}}" id="f{{$con[0]}}"> <label for='f{{$con[0]}}'>{{$con[1]}}</label></td></tr>
@@ -273,11 +271,13 @@ function lagre() {
             var option = document.createElement("option");
             var e = document.getElementById('companyid');
             var firmanavnet = e.options[e.selectedIndex].text;
-option.text = firstname + " " + lastname + ", " + firmanavnet;
-option.value = data.substring(2);
-var select = document.getElementById("contactpersonID");
-select.appendChild(option);
+            var denne = data.substring(2);
+            
+var leggtil = "<tr><td><input type=\"checkbox\" name=\"con[]\" value=\"" + denne + "\" id=\"" + denne + "\" checked> <label for='" + denne + "'>" + firstname + " " + lastname + ", " + firmanavnet + "</label></td></tr>";
 
+// <tr><td><input type="radio" name="byggherre"  value="{{$con[0]}}" id="f{{$con[0]}}"> <label for='f{{$con[0]}}'>{{$con[1]}}</label></td></tr>
+
+document.getElementById("legginnher").innerHTML =  leggtil + document.getElementById('legginnher').innerHTML;
 test();
                  document.getElementById('fornavn').style.border = "1px solid gray";
             document.getElementById('etternavn').style.border = "1px solid gray";
@@ -401,26 +401,6 @@ select.appendChild(option);
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

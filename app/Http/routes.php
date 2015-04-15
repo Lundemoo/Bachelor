@@ -23,6 +23,14 @@ Route::filter('admin', function(){
    }
 });
 
+Route::filter('loggedin', function(){
+   if(Auth::check()){
+       return true;
+   }  else {
+       return false;
+   }
+});
+
 
 Route::get('/', 'HomeController@index');
 Route::post('/', 'WelcomeController@denne');

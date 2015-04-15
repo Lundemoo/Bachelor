@@ -113,6 +113,26 @@ return [
     'newContactperson' => 'New Contacperson',
     'startDate' => 'Start date',
     'estimatedFinish' => 'Estimated Finish',
+    'editContactperson' => 'Edit Contactperson',
+    'companyId' => 'Company Id',
+    'updatedContactp' => 'Update Contactperson',
+    'builder' => 'Builder',
+    'contactPerson' => 'Contact person',
+    'contactPersons' => 'Contact persons',
+    'yourOverview' => 'Your overview',
+    'changes' => 'Changes',
+    'approveTimesheets' => 'Approve timesheets',
+    'registerTimesheet' => 'Register timesheet',
+
+
+
+
+
+
+
+
+
+
 
 
 
