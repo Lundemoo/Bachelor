@@ -100,8 +100,9 @@ return [
     'registrateNewproject' => 'Registrate new project',
     'showprojects' => 'Shows the projects',
     'description' => 'Description',
-    'registrateTimehseet' => 'Registrate timesheet',
-    ''
+    'registrateTimesheet' => 'Registrate timesheet',
+    'editTimesheet' => 'Edit timesheet',
+
 
 
 
