@@ -100,6 +100,23 @@ return [
     'registrateNewproject' => 'Registrate new project',
     'showprojects' => 'Shows the projects',
     'description' => 'Description',
+    'registrateTimesheet' => 'Registrate timesheet',
+    'editTimesheet' => 'Edit timesheet',
+    'updateTimesheet' => 'Update timesheet',
+    'allTimesheets' => 'All timesheets',
+    'startTime' => 'Start time',
+    'stopTime' => 'Stop time',
+    'mainMenu' => 'Main menu',
+    'logout' => 'Log out',
+    'registerProject' => 'Register project',
+    'registerLogbook' => 'Register logbook',
+
+
+
+
+
+
+
 
 
 

@@ -4,16 +4,16 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit Timesheet</div>
+                    <div class="panel-heading">{{trans('general.editTimesheet')}}</div>
                     <div class="panel-body">
 
-                        <h1>Edit: {!! $timelisteprosjekt->projectID !!}</h1>
+                        <h1>{{trans('general.edit')}} {!! $timelisteprosjekt->projectID !!}</h1>
 
                         {!! Form::model($timelisteprosjekt, ['method'=> 'PATCH', 'action' => ['TimelisteprosjektController@update', $timelisteprosjekt->projectID]]) !!}
 
                         <div class="form-group">
 
-                            {!! Form::label('projectID', 'Prosjekter') !!}
+                            {!! Form::label('projectID', {{trans('general.projects')}}) !!}
 
                             <!--<input type="text", id="datepicker">-->
 
@@ -21,7 +21,7 @@
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('date', 'Date:') !!}
+                            {!! Form::label('date', {{trans('general.date')}}) !!}
                             {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
@@ -36,12 +36,12 @@
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('comment', 'Comment:') !!}
+                            {!! Form::label('comment', {{trans('general.comment')}}) !!}
                             {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Update timesheet', ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit({{trans('general.updateTimesheet')}}, ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}
