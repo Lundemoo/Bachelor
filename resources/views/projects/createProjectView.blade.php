@@ -291,7 +291,6 @@ test();
             document.getElementById('email').value = "";
             
             
-            
         } else {
             document.getElementById('fornavn').style.border = "1px solid gray";
             document.getElementById('etternavn').style.border = "1px solid gray";
