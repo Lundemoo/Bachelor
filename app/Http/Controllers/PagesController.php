@@ -42,13 +42,14 @@ class PagesController extends Controller {
     {
         
         
-        
-        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+         
+       $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         $customer_list = Builder::lists('customername','customerID');
         $company_list = Company::lists('companyname','companyid');
         
         $res = DB::table(DB::raw('contactpersons, companies'))->select('*')->whereRaw('contactpersons.companyID = companies.companyID')->get(); 
         $ar = array();
+        
         foreach ($res as $resen){
             $hver = array();
             $s = $resen->contactname . " " . $resen->contactsurname;
@@ -57,15 +58,18 @@ class PagesController extends Controller {
             array_push($hver, $resen->contactpersonID);
             array_push($hver, $resen->companyname);
             array_push($ar, $hver);
+        
         }
         
        $b = array();
         $res2 = Builder::all();
+        
         foreach ($res2 as $bb){
             $ny = array();
             array_push($ny, $bb->customerID);
             array_push($ny, $bb->customername);
             array_push($b, $ny);
+            
         }
         
        

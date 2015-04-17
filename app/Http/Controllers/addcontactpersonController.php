@@ -62,7 +62,6 @@ class addcontactpersonController extends Controller {
         
         
       
-       
         if($fail == 0){
        
             
@@ -137,8 +136,8 @@ class addcontactpersonController extends Controller {
             'companyname' => $alle[0],
             'role' => $alle[1]
         ));
-      
-        return "ID" . $restest->id;
+        
+        return "ID" . $restest->companyID;
         }
         
         
