@@ -123,6 +123,7 @@ return [
     'changes' => 'Endringer',
     'approveTimesheets' => 'Godkjenn timeslister',
     'registerTimesheet' => 'Registrer timeslister',
+    'language' => 'Velg språk',
 
 ];
 /* 

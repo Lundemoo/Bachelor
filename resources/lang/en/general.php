@@ -123,6 +123,8 @@ return [
     'changes' => 'Changes',
     'approveTimesheets' => 'Approve timesheets',
     'registerTimesheet' => 'Register timesheet',
+    'language' => 'Choose language',
+
 
 
 
