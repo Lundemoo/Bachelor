@@ -50,7 +50,7 @@ $( "#datepicker" ).datepicker();
                                            <tr><td colspan="7"></br>
                                             
                                                    <table><tr><td>
-                               <canvas id="graph" width="400" height="300">  
+                               <canvas id="graph" width="400" height="300">
                                </canvas> </td><td><p id='infoen'></p></br> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
                                                                
                                    
