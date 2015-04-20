@@ -52,7 +52,13 @@ return [
 	|
 	*/
 
-	'locale' => 'no',
+
+    // De språkene som applikasjonen støtter
+	'locales' => [
+    'en' => 'English',
+    'no' => 'Norwegian',
+    'est' => 'Estonian',
+],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +71,7 @@ return [
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'no',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -208,11 +214,5 @@ return [
 
 	],
 
-    // De språkene som applikasjonen støtter
-    'languages'     => array(
-        'en' => 'en_US',
-        'no' => 'no_NO',
-        'est' => 'est_EST',
-    ),
 
 ];
