@@ -125,6 +125,9 @@ return [
     'registerTimesheet' => 'Register timesheet',
     'language' => 'Choose language',
 
+    'avgPerDay' => 'Average hours per day',
+    'chooseMonth' => 'Select month',
+    'chooseProject' => 'Select project',
 
 
 

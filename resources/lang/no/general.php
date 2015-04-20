@@ -124,6 +124,9 @@ return [
     'approveTimesheets' => 'Godkjenn timeslister',
     'registerTimesheet' => 'Registrer timeslister',
     'language' => 'Velg språk',
+    'avgPerDay' => 'Gjennomsnittlig timer per dag',
+    'chooseMonth' => 'Velg måned',
+    'chooseProject' => 'Velg prosjekt',
 
 ];
 /* 
