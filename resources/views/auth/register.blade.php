@@ -78,6 +78,10 @@
 									{{trans('general.registrate')}}
 								</button>
 							</div>
+                                                    
+                                                    
+                                                    
+                                                    
 						</div>
                                         
 					</form>

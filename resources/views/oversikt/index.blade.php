@@ -19,7 +19,7 @@ $( "#datepicker" ).datepicker();
 				    <div class="panel-body">
                                     
 
-                        <table class="easynav" width="100%">
+                        <table class="easynav" width="100%" cellspacing="0" cellpadding="0">
                                         
                                         <tr>
                                             @if($siden == 0)
@@ -35,18 +35,47 @@ $( "#datepicker" ).datepicker();
                                         <tr><td colspan="3" class="innholdeasynav">
                                                 
                                         <center>
+                                            
+                                            
+                                            
+                                            
                                        @if($siden == 0)
                                        
                                        
-                                       @elseif($siden == 1)
-                                       
-                                       
-                                       @endif
                                        
                                        
                                        
-                                       <h5>{{trans('general.chooseMonth')}}</h5>
-                                        <select name="dato" class='months' onchange="oc('/oversikt?side={{$siden}}&dato=' + this.value)">
+                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
+                                           <tr><td class="framvisninghoved" colspan="7">few</td></tr>
+                                           <tr><td colspan="7"></br>
+                                            
+                                                   <table><tr><td>
+                               <canvas id="graph" width="400" height="300">  
+                               </canvas> </td><td><p id='infoen'></p></br> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
+                                                               
+                                   
+                                   <canvas id="andregraf" height="300" width="300" style="border: 1px solid black;"></canvas>
+                                   
+                                   
+                                   
+                               </td><td class="infograf"><p id="andregrafinfo"></p></td></tr></table>
+                                                   
+                                            
+                                            
+                                            
+                                            
+                                                    </td></tr>
+                                                <tr><td colspan="7"><center>
+                                                    
+                                                    
+                                                    
+                                                    <table><tr><td><h5>{{trans('general.chooseMonth')}}</h5></td><td><h5>{{trans('general.chooseProject')}}</h5></td></tr>
+                                                                
+                                                        <tr><td>
+                                                    @if(count($selecten) > 0)
+                                                    
+                                        <select name="dato" id="dato" class='months'>
+                                            <option value="-1">{{trans('general.chooseMonth')}}</option>
                                         @foreach ($selecten as $select)
                                         
                                         <option value="{{ $select->date }}">{{$select->dateshow}}</option>
@@ -54,7 +83,47 @@ $( "#datepicker" ).datepicker();
                                         
                                         @endforeach
                                         
-                                        </select></br></br>
+                                        </select>
+                                                    
+                                                    @endif
+                                                 </td><td>   
+                                                    
+                                                    @if(count($projects) > 0)
+                                                    
+                                        <select name="projects" id="projects" class='months'>
+                                            <option value="-1">{{trans('general.chooseProject')}}</option>
+                                        @foreach ($projects as $project)
+                                        
+                                        <option value="{{ $project->projectID }}">{{$project->projectName}}</option>
+                                        
+                                        
+                                        @endforeach
+                                        
+                                        </select>
+                                                    @endif
+                                                    
+                                                    
+                                                 </td><td><button onclick="send()">Change</button></td></tr></table>
+                                                       
+                                                    
+                                                    <script>
+                                                    function send(){
+                                                        
+                                                        var e = document.getElementById("dato");
+                                                    var strDato = e.options[e.selectedIndex].value;
+                                                        var a = document.getElementById("projects");
+                                                    var strProject = a.options[a.selectedIndex].value;
+                                                    oc('/oversikt?siden=0&dato=' + strDato + '&project=' + strProject);
+                                                    }
+                                                    </script>
+                                                    
+                                                    
+                                                    </br></br></center></td></tr>
+                                       
+                                       
+                                       
+                                       
+                                       
                                                 
                                        @if ($resultatene != 0)
                                        <?PHP
@@ -69,8 +138,9 @@ $( "#datepicker" ).datepicker();
                                        ?>
                                        @endforeach
                                        
-                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'><tr><td colspan='7' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
+                                       <tr><td colspan='7' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
                                            <tr><td class='framvisningrows' colspan='7'>{{trans('general.totalHoursMonth')}} <?PHP echo $totalt; ?>
+                                                   </br>{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
                                                
                                                
                                                
@@ -79,44 +149,9 @@ $( "#datepicker" ).datepicker();
                                                
                                                
                                                
-                                                   <table><tr><td>
-                               <canvas id="graph" width="400" height="300">  
-                               </canvas> </td><td><p id='infoen'></p></br> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td><td>
-                                                               
-                                   
-                                   <canvas id="andregraf" height="200" width="200" style="border: 1px solid black;"></canvas>
-                                   
-                                   
-                                   
-                               </td><td class="infograf"><p id="andregrafinfo"></p></td></tr></table>
-                                                   
                                                 
                                              
-                                                  
-                                                   
-                             <script>
-                                 function refreshit(lonn){
-                                     var alle = <?php echo json_encode($totaltimer); ?>;
-                                     
-                                     for(var i = 0; i < alle[0].length; i++){
-                                         
-                                    alle[0][i] = (alle[0][i] * lonn);     
-                                    
-                                    }
-                                    tegn("graph","infoen", alle[1], alle[0]);
-                                 }
-                                 </script>
-                                                   
-                                                   
-                                                   
-                             
-                                 
-                                 <script>
-                                     var alle = <?php echo json_encode($totaltimer); ?>;
-                                     tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],1,0.7);
-                                     </script>
-                                 
-                                 
+                   
                                  
                                  
                                  
@@ -155,24 +190,75 @@ $( "#datepicker" ).datepicker();
                                                ?>
                                                
                                        @endforeach
-                                       <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr></table>
+                                       <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr>
                                        @endif
                                        
-                                       
+                                       </table>
                                             
                                         </center>
-                                       
-                                                
-                                                
-                                    </table>
                                    
-                                    <script>
+                                        
+                                   
+                                        
+                                        
+                                          <script>
                                         
                                         
   
     var obj = <?php echo json_encode($totaltimer); ?>;
     
-    tegn("graph", "infoen", obj[1], obj[0]);</script>
+    tegn("graph", "infoen", obj[1], obj[0]);</script>       
+                                          
+                                          
+                                                                         
+                                                   
+                             <script>
+                                 function refreshit(lonn){
+                                     var alle = <?php echo json_encode($totaltimer); ?>;
+                                     
+                                     for(var i = 0; i < alle[0].length; i++){
+                                         
+                                    alle[0][i] = (alle[0][i] * lonn);     
+                                    
+                                    }
+                                    tegn("graph","infoen", alle[1], alle[0]);
+                                 }
+                                 </script>
+                                                   
+                                                   
+                                                   
+                             
+                                 
+                                 <script>
+                                     var alle = <?php echo json_encode($totaltimer); ?>;
+                                     tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],2,0.7);
+                                     </script>
+                                 
+                                 
+                                          
+                                          
+                                          
+                                          
+                                          
+                                          
+                                    
+                                    @elseif($siden == 1)
+                                       
+                                       
+                                       @endif
+                                    
+                                    
+                                    
+                                    </table>
+                                   
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                 </div>
             </div>
         </div>

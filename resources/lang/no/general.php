@@ -123,6 +123,9 @@ return [
     'changes' => 'Endringer',
     'approveTimesheets' => 'Godkjenn timeslister',
     'registerTimesheet' => 'Registrer timeslister',
+    'avgPerDay' => 'Gjennomsnittlig timer per dag',
+    'chooseMonth' => 'Velg måned',
+    'chooseProject' => 'Velg prosjekt',
 
 ];
 /* 

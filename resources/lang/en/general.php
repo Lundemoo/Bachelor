@@ -123,6 +123,9 @@ return [
     'changes' => 'Changes',
     'approveTimesheets' => 'Approve timesheets',
     'registerTimesheet' => 'Register timesheet',
+    'avgPerDay' => 'Average hours per day',
+    'chooseMonth' => 'Select month',
+    'chooseProject' => 'Select project',
 
 
 
