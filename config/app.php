@@ -52,13 +52,8 @@ return [
 	|
 	*/
 
-
-    // De språkene som applikasjonen støtter
-	'locales' => [
-    'en' => 'English',
-    'no' => 'Norwegian',
-    'est' => 'Estonian',
-],
+	'locale' => 'en',
+        
 
 	/*
 	|--------------------------------------------------------------------------
@@ -71,7 +66,7 @@ return [
 	|
 	*/
 
-	'fallback_locale' => 'no',
+	'fallback_locale' => 'en',
 
 	/*
 	|--------------------------------------------------------------------------

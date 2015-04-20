@@ -124,3 +124,6 @@ Route::get('company/{companyID}/edit', 'CompanyController@edit');
 Route::PATCH('company/{companyID}/update', 'CompanyController@update');
 Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
 Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');
+
+
+Route::get('/language/{sprak}', 'LanguageController@changeLanguage');

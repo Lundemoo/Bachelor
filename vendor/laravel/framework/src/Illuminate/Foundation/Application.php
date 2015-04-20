@@ -967,7 +967,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 */
 	public function getLocale()
 	{
-		return $this['config']->get('app.locale');
+		return $this['config']->get('app.locale') . " er det";
 	}
 
 	/**
