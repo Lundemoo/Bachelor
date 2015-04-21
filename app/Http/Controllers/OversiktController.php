@@ -37,14 +37,12 @@ class OversiktController extends Controller {
                 
                 
                 if($hvilkenmaned != "-1"){
-                    echo "Jeg velger dato";
                     $resultatene = $resultatene->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'");
                     
                    
                 }
                 
                  if($projectID != "-1"){
-                        echo "Jeg kom inn! - " . $projectID;
                         $resultatene = $resultatene->whereRaw("projects.projectID = '$projectID' AND timelisteprosjekter.projectID = '$projectID'");
                         
                     }
