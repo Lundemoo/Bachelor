@@ -11,44 +11,45 @@
 |
 */
 
-Route::filter('admin', function(){
-   if(Auth::check()){
-       
-   
-    if(Auth::user()->email != "petter_lundemo@hotmail.com"){
-       return "Du er ikke admin!";
-   } 
-   } else {
-       return "Du er ikke pålogget!";
+Route::filter('isboss', function(){
+   if(Auth::user()->brukertype != 1){
+       return Redirect::to('/');
    }
+    
+    
 });
 
 Route::filter('loggedin', function(){
-   if(Auth::check()){
-       return true;
-   }  else {
-       return false;
+    App::setLocale(Auth::user()->language);
+   if(!Auth::check()){
+       return Redirect::to('/auth/login');
    }
 });
 
 
-Route::get('/', 'HomeController@index');
-Route::post('/', 'WelcomeController@denne');
-Route::get('/a', array('uses' => 'WelcomeController@denne'));
-Route::get('/hei', array('before' => 'admin', function(){
+Route::filter('setLanguage', function(){
+   if(Auth::check()){
+       App::setLocale(Auth::user()->language);
+   }  else {
+       App::setLocale('en');
+   }
+    
+});
 
-    return "Halla Admin!";
-}));
 
-Route::get('project/create', 'PagesController@createProject');
-Route::get('project', 'PagesController@showProject');
-Route::post('project', 'PagesController@store');
+Route::get('/', array('before' => 'setLanguage', 'uses' => 'HomeController@index'));
 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::group(array('before' => 'loggedin'), function(){
+  
+
+
+
+
 
 //routes for timelisteregistrering aka timelisteprosjekter
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
@@ -63,6 +64,73 @@ Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skje
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
 Route::get('logbookaddition/{logbookadditionID}/edit', 'LogbookadditionController@edit'); // for å redigere kjørebok
 Route::PATCH('logbookaddition/{logbookadditionID}/update', 'LogbookadditionController@update'); //oppdaterer redigert info i DB
+
+
+Route::get('oversikt', 'OversiktController@show');
+
+
+
+Route::get('/language/{sprak}', 'LanguageController@changeLanguage');
+
+Route::group(array('before' => 'isboss'), function(){
+
+    
+    
+
+Route::get('project/create', 'PagesController@createProject');
+Route::get('project', 'PagesController@showProject');
+Route::post('project', 'PagesController@store');
+
+
+    
+    
+    /*
+ * company
+ */
+    
+    Route::get('company', 'CompanyController@index');
+Route::get('company/create', 'CompanyController@create'); //skjemautfylling
+Route::post('company', 'CompanyController@store');  //lagre i DB
+Route::get('company/{companyID}/edit', 'CompanyController@edit');
+Route::PATCH('company/{companyID}/update', 'CompanyController@update');
+Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
+Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');
+
+    
+
+/*
+ * contactperson
+ */
+Route::get('contactperson', 'ContactpersonController@index');
+Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
+Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
+Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
+Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
+
+
+    
+
+
+/*
+ * editpage
+ */
+
+Route::get('editpage', 'EditpageController@index');
+Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
+Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
+
+Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
+
+Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
+Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
+
+Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
+Route::get('editpage/{id}/edit', 'EditpageController@edit');
+
+
+
+
+
 
 
 //Route::any('/storecontact/{all}', function($all){ return $all;});
@@ -87,43 +155,11 @@ Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 Route::get('builder/destroy/{customerID}', 'BuilderController@destroy'); //deaktivere byggherre
 Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //aktivere byggherre
 
-Route::get('oversikt', 'OversiktController@show');
 
-/*
- * editpage
- */
-
-Route::get('editpage', 'EditpageController@index');
-Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
-Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
-
-Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
-
-Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
-Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
-
-Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
-Route::get('editpage/{id}/edit', 'EditpageController@edit');
-
-/*
- * contactperson
- */
-Route::get('contactperson', 'ContactpersonController@index');
-Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
-Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
-Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
-Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
-
-/*
- * company
- */
-Route::get('company', 'CompanyController@index');
-Route::get('company/create', 'CompanyController@create'); //skjemautfylling
-Route::post('company', 'CompanyController@store');  //lagre i DB
-Route::get('company/{companyID}/edit', 'CompanyController@edit');
-Route::PATCH('company/{companyID}/update', 'CompanyController@update');
-Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
-Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');
+    
+});
 
 
-Route::get('/language/{sprak}', 'LanguageController@changeLanguage');
+
+
+});

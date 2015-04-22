@@ -77,7 +77,7 @@ return [
     'logbook' => 'Kjørebok',
     'chooseMonth' => 'Velg måned',
     'statistic' => 'Statistikk',
-    'totalHoursMonth' => 'Totalt antall timer denne måneden',
+    'totalHoursMonth' => 'Totalt antall timer denne perioden',
     'hourPay' => 'Lønn per time',
     'project' => 'Prosjekt',
     'comment' => 'Kommentar',
@@ -128,6 +128,14 @@ return [
     'chooseMonth' => 'Velg måned',
     'chooseProject' => 'Velg prosjekt',
     'showOverOversikt' => 'Oversikt',
+    'chooseCar' => 'Velg bil',
+    'showAll' => 'Vis alle',
+    'startdestination' => 'Startdestinasjon',
+    'stopdestination' => 'Stoppdestinasjon',
+    'kilometer' => 'Kilometer',
+    'month' => 'Måned',
+    'go' => 'Gå',
+    'noresults' => 'Ingen resultater',
 
 ];
 /* 

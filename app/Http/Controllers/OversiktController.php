@@ -11,16 +11,22 @@ class OversiktController extends Controller {
     
     
     public function show(){
-        App::setLocale('en');
+        App::setLocale(Auth::user()->language);
         $siden = 0;
         $minid = Auth::user()->id;
         if(Input::get('side') == "" || Input::get('side') == "0"){
             $siden = 0;
             
             
+            $antall = $resultatene = DB::table(DB::raw("timelisteprosjekter, projects"))->select(DB::raw("timelisteprosjekter.*, projects.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid' AND projects.projectID = timelisteprosjekter.projectID")->count();
+            
             
             
             $resultatene = 0;
+            
+            if($antall > 0) {
+                $resultatene = $resultatene = DB::table(DB::raw("timelisteprosjekter, projects"))->select(DB::raw("timelisteprosjekter.*, projects.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid' AND projects.projectID = timelisteprosjekter.projectID");
+            }
             if((Input::get('dato') != "" && Helper::isSafe(Input::get('dato'), 5)) || (Input::get('project') != "" && Helper::isSafe(Input::get('project'), 4))){
 
                 
@@ -51,14 +57,19 @@ class OversiktController extends Controller {
                 
                 
                 
-             $resultatene = $resultatene->get();   
-                
+             
                 
                 //$resultatene = DB::table(DB::raw("timelisteprosjekter, projects"))->select(DB::raw("timelisteprosjekter.*, projects.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre' AND `employeeNR` = '$minid' AND projects.projectID = timelisteprosjekter.projectID")->get();
                 
                 
                 
             }
+            
+            if($antall != 0){
+            $resultatene = $resultatene->get();   
+            }
+            
+            
             
                 $dobbel = DB::table(DB::raw("timelisteprosjekter"))->select(DB::raw("timelisteprosjekter.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
                 $sendarray = array();
@@ -99,23 +110,19 @@ class OversiktController extends Controller {
             
             
             $getallmonths = DB::table(DB::raw("logbook"))->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->whereRaw("employeeNR = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
-            var_dump($getallmonths);
+            
             
             $getallcars = DB::table(DB::raw("car, logbookaddition"))->whereRaw("car.registrationNR = logbookaddition.registrationNR AND logbookaddition.employeeNR = '$minid'")->groupBy(DB::raw('car.registrationNR'))->get();
             
-            var_dump($getallcars);
             
             
             
             
             
             
-             // HER
             
             
-            
-            
-                 $dobbel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("timelisteprosjekter.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
+                 $dobbel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%d %M, %Y') as dateshow, DATE_FORMAT(logbookaddition.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
                 $sendarray = array();
                 $arrayx = array();
                 $arrayy = array();
@@ -124,11 +131,11 @@ class OversiktController extends Controller {
                     array_push($arrayy, $denne->dateshowmaned);
                     $hvilkenmaned = $denne->date;
                 $endre = date('Y-m', strtotime($hvilkenmaned));
-                    $trippel = DB::table(DB::raw("timelisteprosjekter"))->select(DB::raw("timelisteprosjekter.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshow"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre' AND `employeeNR` = '$minid'")->get();
+                    $trippel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%M') as dateshow"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre' AND `employeeNR` = '$minid'")->get();
                     $hvormange = 0;
             
                     foreach($trippel as $hver){
-                        $hvormange += (strtotime($hver->endtime) - strtotime($hver->starttime))/3600;
+                        $hvormange += $hver->totalkm;
                         
                     }
                     array_push($arrayx, $hvormange);
@@ -138,24 +145,37 @@ class OversiktController extends Controller {
             array_push($sendarray, $arrayx);
             array_push($sendarray, $arrayy);
            
+            $antallet = DB::table('logbookaddition')->where('employeeNR', '=', $minid)->count();
+            
+            $resultatene = 0;
+            if($antallet > 0){
+                $resultatene = DB::table('logbookaddition')->where('employeeNR', '=', $minid);
+            }
             
             
             
+            if((Input::get('car') != "" && Helper::isSafe(Input::get('car'), 0)) || (Input::get('maned') != "" && Helper::isSafe(Input::get('maned'), 5)) && $resultatene != 0){
+                $car = Input::get('car');
+                $maned = Input::get('maned');
+                
+                if($car != "-1"){
+                    
+                    $resultatene = $resultatene->where('registrationNR', '=', $car);
+                }
+                if($maned != "-1"){
+                    $endre = date('Y-m', strtotime($maned));
+                    $resultatene = $resultatene->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'");
+                }
+                
+                
+                
+                
+            }
+            if($antallet != 0){
+            $resultatene = $resultatene->get();
+            }
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            return view('oversikt.index')->with('siden', $siden)->with('biler', $getallcars)->with('alle', $getallmonths);
+            return view('oversikt.index')->with('siden', $siden)->with('biler', $getallcars)->with('maneder', $getallmonths)->with('totaltimer', $sendarray)->with('resultatene', $resultatene);
         }
         //$hei = Lang::get('general.main');
         

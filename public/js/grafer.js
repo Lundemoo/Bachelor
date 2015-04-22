@@ -111,7 +111,7 @@ function getrandomcolor(){
     
     for(var i = 0; i < getMaxY(x, y); i += getMaxY(x, y)/antally) {
         
-        c.fillText(i, ypad, getYPixel(i, x, y));
+        c.fillText(i.toFixed(1), ypad, getYPixel(i, x, y));
     }
     
     

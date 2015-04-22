@@ -2,6 +2,7 @@
 use App;
 use Auth;
 use App\User;
+use Redirect;
 
 class LanguageController extends Controller {
 
@@ -47,7 +48,7 @@ class LanguageController extends Controller {
 
                 Auth::user()->language = $spraket;
                 Auth::user()->save();
-                return view('home');
+                return Redirect::to("/");
 
             
         }
