@@ -1,4 +1,10 @@
+@if(Auth::check())
+{{ App::setLocale(Auth::user()->language)}}
+@endif
+
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
 
@@ -82,3 +88,4 @@
 	</script>
 </body>
 </html>
+

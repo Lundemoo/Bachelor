@@ -127,6 +127,7 @@ return [
     'avgPerDay' => 'Gjennomsnittlig timer per dag',
     'chooseMonth' => 'Velg måned',
     'chooseProject' => 'Velg prosjekt',
+    'showOverOversikt' => 'Oversikt',
 
 ];
 /* 

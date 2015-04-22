@@ -78,7 +78,7 @@ return [
     'chooseMonth' => 'Choose month',
     'statistic' => 'Statistic',
     'totalHoursMonth' => 'Total hours this month',
-    'hourPay' => 'Paymen per hour',
+    'hourPay' => 'Payment per hour',
     'project' => 'Project',
     'comment' => 'Comment',
     'hourCount' => 'Number of hours',
@@ -128,6 +128,7 @@ return [
     'avgPerDay' => 'Average hours per day',
     'chooseMonth' => 'Select month',
     'chooseProject' => 'Select project',
+    'showOverOversikt' => 'Overview',
 
 
 

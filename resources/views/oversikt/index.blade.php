@@ -46,7 +46,7 @@ $( "#datepicker" ).datepicker();
                                        
                                        
                                        <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
-                                           <tr><td class="framvisninghoved" colspan="7">few</td></tr>
+                                           <tr><td class="framvisninghoved" colspan="7">{{trans('general.showOverOversikt')}}</td></tr>
                                            <tr><td colspan="7"></br>
                                             
                                                    <table><tr><td>
@@ -237,13 +237,76 @@ $( "#datepicker" ).datepicker();
                                  
                                           
                                           
-                                          
+                                    
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
+                                     
                                           
                                           
                                           
                                     
                                     @elseif($siden == 1)
                                        
+                                    
+                                 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
                                        
                                        @endif
                                     

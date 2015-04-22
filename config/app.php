@@ -52,13 +52,8 @@ return [
 	|
 	*/
 
-
-    // De språkene som applikasjonen støtter
-	'locales' => [
-    'en' => 'English',
-    'no' => 'Norwegian',
-    'est' => 'Estonian',
-],
+	'locale' => 'en',
+        
 
 	/*
 	|--------------------------------------------------------------------------
