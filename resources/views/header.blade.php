@@ -1,16 +1,13 @@
-
+@if(Auth::check())
+{{App::setLocale(Auth::user()->language)}}
+@endif
 
 
 <nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-                            <a class="navbar-brand" href="#">Logo?</a> <a href="/language/no">Norsk</a><a href="/language/en">Engelsk</a><a href="/language/est">Estlandsk</a>
+				
+                            <a class="navbar-brand" href="/"><img src="/bilder/logo.png" height="30"></a> <a href="/language/no"><img src="/bilder/nor.png" height="20" width="30" style="border: 1px solid black; margin: 3px; margin-top: 15px;" alt="Norsk"></a><a href="/language/en"><img src="/bilder/eng.png" height="20" width="30" style="border: 1px solid black; margin: 3px; margin-top: 15px;" alt="Engelsk"></a><a href="/language/est"><img src="/bilder/est.png" height="20" width="30" style="border: 1px solid black; margin: 3px; margin-top: 15px;" alt="Estlandsk"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

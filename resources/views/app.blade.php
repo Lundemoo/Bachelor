@@ -1,6 +1,4 @@
-@if(Auth::check())
-{{ App::setLocale(Auth::user()->language)}}
-@endif
+
 
 <!DOCTYPE html>
 
