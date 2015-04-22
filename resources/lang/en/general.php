@@ -77,7 +77,7 @@ return [
     'logbook' => 'Logbook',
     'chooseMonth' => 'Choose month',
     'statistic' => 'Statistic',
-    'totalHoursMonth' => 'Total hours this month',
+    'totalHoursMonth' => 'Total hours this periode',
     'hourPay' => 'Payment per hour',
     'project' => 'Project',
     'comment' => 'Comment',
@@ -129,6 +129,14 @@ return [
     'chooseMonth' => 'Select month',
     'chooseProject' => 'Select project',
     'showOverOversikt' => 'Overview',
+    'chooseCar' => 'Select car',
+    'showAll' => 'Show all',
+    'startdestination' => 'Startdestination',
+    'stopdestination' => 'Stopdestination',
+    'kilometer' => 'Kilometer',
+    'month' => 'Month',
+    'go' => 'Go',
+    'noresults' => 'No results',
 
 
 
