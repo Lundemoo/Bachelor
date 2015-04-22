@@ -12,6 +12,7 @@
 */
 
 Route::filter('isboss', function(){
+ 
    if(Auth::user()->brukertype != 1){
        return Redirect::to('/');
    }
@@ -20,7 +21,7 @@ Route::filter('isboss', function(){
 });
 
 Route::filter('loggedin', function(){
-    App::setLocale(Auth::user()->language);
+    
    if(!Auth::check()){
        return Redirect::to('/auth/login');
    }
