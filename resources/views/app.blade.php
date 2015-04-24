@@ -1,4 +1,8 @@
+
+
 <!DOCTYPE html>
+
+
 <html lang="en">
 <head>
 
@@ -34,26 +38,7 @@
 	<!--Ikoner/logoer -->
 	<link rel="icon" href="/bilder/Miniminilogoen.png" type="image/x-icon">
 
-	<!--  <img href="bilder/logoen.png" alt="logo"> -->
-     
-     
-     
-     <!-- PICKER PICKER PICKER PICKER -->
-     
-     
-   
-     
-     
-     
-     
-     
-     <!-- PICKER PICKER PICKER PICKER -->
-     
-     
-     
-     
-     
-     
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,6 +50,13 @@
 	<![endif]-->
 </head>
 <body>
+<a href="/language/en"><img src="/bilder/country/en.gif" width="20" height="20"></a>
+	<a href="/language/no"><img src="/bilder/country/no.gif" width="20" height="20"></a>
+	<a href="/language/est"><img src="/bilder/country/est.gif" width="20" height="20"></a>
+
+		{{App::setLocale(Auth::user()->language) }}
+
+
 <header> @include('header')</header>
 
 <!--flash beskjeder -->
@@ -94,3 +86,4 @@
 	</script>
 </body>
 </html>
+

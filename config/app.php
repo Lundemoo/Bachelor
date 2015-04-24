@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://localhost/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +52,8 @@ return [
 	|
 	*/
 
-	'locale' => 'no',
+	'locale' => 'en',
+        
 
 	/*
 	|--------------------------------------------------------------------------
@@ -208,11 +209,5 @@ return [
 
 	],
 
-    // De språkene som applikasjonen støtter
-    'languages'     => array(
-        'en' => 'en_US',
-        'no' => 'no_NO',
-        'est' => 'est_EST',
-    ),
 
 ];

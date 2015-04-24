@@ -77,8 +77,8 @@ return [
     'logbook' => 'Logbook',
     'chooseMonth' => 'Choose month',
     'statistic' => 'Statistic',
-    'totalHoursMonth' => 'Total hours this month',
-    'hourPay' => 'Paymen per hour',
+    'totalHoursMonth' => 'Total hours this periode',
+    'hourPay' => 'Payment per hour',
     'project' => 'Project',
     'comment' => 'Comment',
     'hourCount' => 'Number of hours',
@@ -123,6 +123,20 @@ return [
     'changes' => 'Changes',
     'approveTimesheets' => 'Approve timesheets',
     'registerTimesheet' => 'Register timesheet',
+    'language' => 'Choose language',
+
+    'avgPerDay' => 'Average hours per day',
+    'chooseMonth' => 'Select month',
+    'chooseProject' => 'Select project',
+    'showOverOversikt' => 'Overview',
+    'chooseCar' => 'Select car',
+    'showAll' => 'Show all',
+    'startdestination' => 'Startdestination',
+    'stopdestination' => 'Stopdestination',
+    'kilometer' => 'Kilometer',
+    'month' => 'Month',
+    'go' => 'Go',
+    'noresults' => 'No results',
 
 
 

@@ -113,10 +113,14 @@ if(is_numeric($type)){
           }
       
       } elseif($type == 4){
+          
       if(!(is_numeric($var))){
           return false;
       }
       if(!(is_numeric($var))){
+          return false;
+      }
+      if($var < 0){
           return false;
       }
       } elseif($type == 5){
@@ -192,7 +196,9 @@ public function changeTime($var){
        
        $midlast = explode(" ", $secondpart);
        if($midlast[1] == "PM"){
+           if($firstpart < 12){
            $firstpart += 12;
+           }
        }
        $final = $firstpart . ":" . $midlast[0] . ":00";
        

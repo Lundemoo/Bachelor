@@ -19,7 +19,7 @@
 					@endif
                                         
                                       
-                                        
+
 					<form class="form-horizontal" role="form" method="POST" action="/auth/register">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 
@@ -71,13 +71,29 @@
 								<input type="password" class="form-control-required" name="password_confirmation">
 							</div>
 						</div>
-                                        
+
+						<div class="form-group">
+
+                        	<label class="col-md-4 control-label">{{trans('general.language')}}</label>
+
+                           <input type="radio" name="language" id="1" value="English"><label for="1"><img src="/bilder/country/en.gif" alt="English" height="30" width="30"></label>
+                           <input type="radio" name="language" id="2" value="English"><label for="2"><img src="/bilder/country/no.gif" alt="English" height="30" width="30"></label>
+                           <input type="radio" name="language" id="3" value="English"><label for="3"><img src="/bilder/country/est.gif" alt="English" height="30" width="30"></label>
+
+
+                        </div>
+
+
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
 									{{trans('general.registrate')}}
 								</button>
 							</div>
+                                                    
+                                                    
+                                                    
+                                                    
 						</div>
                                         
 					</form>
