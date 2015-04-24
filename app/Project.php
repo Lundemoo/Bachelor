@@ -6,7 +6,7 @@ class Project extends Model {
 
 
         protected $table = "projects";
-
+   // protected $primaryKey = 'projectID';
 	protected $fillable = [
         'projectID',
         'projectName',
@@ -29,7 +29,7 @@ class Project extends Model {
 
        public function builder(){
 
-                return $this->belongsTo('App\Builder');
+                return $this->belongsTo('App\Builder', 'customerID');
         }
 
     /**

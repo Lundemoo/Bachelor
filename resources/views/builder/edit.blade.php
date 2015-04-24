@@ -1,5 +1,11 @@
 @extends('app')
+
 @section('content')
+    <style>
+        #listen{
+            color: #f5f5f5;
+        }
+    </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -31,7 +37,14 @@
                             {!! Form::text('customeremail', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
+                        <div class="form-group">
+                        {!! Form::open(['url' => 'editpage']) !!}
+                        {!! Form::label('projectName', 'Byggherre for følgende prosjekter:') !!}
 
+                            @foreach ($arrayo as $arrayp)
+                            <li id="listen"> {{$arrayp}}</li>
+                        @endforeach
+                            </div>
                         <div class="form-group">
                             {!! Form::submit('Oppdater Byggherre', ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>

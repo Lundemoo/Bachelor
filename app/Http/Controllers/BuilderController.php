@@ -49,7 +49,17 @@ class BuilderController extends Controller
 
         $builder = Builder::findOrFail($customerID);
 
-        return view('builder.edit', compact('builder'));
+        //henter alle prosjekter som tilhører alle
+        $builders = DB::table('builder')->paginate(6); //henter alle byggherrer
+
+        foreach ($builders as $builder) {
+            //$arrayo  = DB::table('projects')->where('customerID', $builder->customerID)->pluck('projectID');
+            $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
+
+
+        }
+
+        return view('builder.edit',['builder'=> $builder, 'arrayo' =>$arrayo]);
 
     }
 
@@ -88,6 +98,21 @@ class BuilderController extends Controller
             ->update(array('active'=>'1'));
 
         return redirect('editpage?side=3');
+
+    }
+
+    /*
+    * Metode som viser all info om en byggherre
+    */
+
+
+    public function show($customerID){
+
+        $builder = Builder::find($customerID);
+
+
+        return $builder;
+
     }
 
 

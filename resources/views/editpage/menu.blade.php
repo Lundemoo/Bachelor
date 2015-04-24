@@ -63,10 +63,7 @@
                                             <td>
                                                 
                                                 
-                                              <!--  <form method="delete" action="car/destroy/{{$car->registrationNR}}"><input type="submit" value="Slett" onClick="if(window.confirm('Hei'))">
-                                                
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                </form> -->
+
                                                 <!--deaktivere knapp -->
 
 
@@ -111,6 +108,8 @@
                                                         'data-btntxt' => 'Slette'
                                                         ))
                                                         !!}
+
+                                                        {!! Form::close() !!}
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
 
@@ -312,11 +311,12 @@
                                 <tr><table class="table" cellspacing="5" id="byggherrevisning">
                                         <thead>
                                         <tr>
-                                            <th>{{trans('general.customerId')}} </th>
+                                          <!--  <th>{{trans('general.customerId')}} </th> -->
                                             <th>{{trans('general.customerName')}}</th>
                                             <th>{{trans('general.customerAddress')}}</th>
-                                            <th>{{trans('general.customerTelephone')}}</th>
-                                            <th>{{trans('general.customerEmail')}}</th>
+                                              <th>{{trans('general.customerTelephone')}}</th>
+                                             <th>{{trans('general.customerEmail')}}</th>
+                                            <th>Prosjekter</th>
                                             <th> </th>
 
                                         </tr>
@@ -330,11 +330,36 @@
                                                 <tbody>
                                                 <tr>
 
-                                                    <td> {{$builder->customerID}}<br></td>
-                                                    <td>  {{$builder->customername}}<br></td>
-                                                    <td>  {{$builder->customeraddress}}<br></td>
+                                                   <!-- <td> {{$builder->customerID}}</td> -->
+                                                    <td>  {{$builder->customername}}</td>
+                                                     <td> {{$builder->customeraddress}}<br></td>
                                                     <td>  {{$builder->customertelephone}}<br></td>
-                                                    <td>  {{$builder->customeremail}}</td>
+                                                   <td>  {{$builder->customeremail}}</td>
+                                                    <td>{!! Form::open(['url' => 'editpage']) !!}
+
+                                                        @foreach ($posts as $post)
+
+                                                            @if($post->customerID == $builder->customerID)
+                                                            <p>{{ $post->projectName }}</p>
+
+                                                            @endif
+
+
+
+                                                        @endforeach
+
+
+
+
+
+
+
+
+
+                                                           {!! Form::close() !!}
+                                                    <br></td>
+
+
 
                                                     @if($builder->active == "1")
                                                     <td>
@@ -352,12 +377,14 @@
                                                         'data-btntxt' => 'Slette'
                                                         ))
                                                         !!}
-
                                                         {!! Form::close() !!}
+
+
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
+
 
                                                     @else
 
@@ -376,6 +403,8 @@
                                                             'data-btntxt' => 'Slette'
                                                             ))
                                                             !!}
+
+                                                            {!! Form::close() !!}
 
                                                             {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
                                                             {!! Form::submit('Endre', ['class' => 'btn ']) !!}

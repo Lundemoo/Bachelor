@@ -22,7 +22,7 @@ class Builder extends Model {
 
   public function projects(){
 
-        return $this->hasMany('App\Project');
+        return $this->hasMany('App\Project', 'customerID');
 
 
     }

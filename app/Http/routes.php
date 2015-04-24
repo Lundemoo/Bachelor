@@ -86,6 +86,7 @@ Route::get('builder/{customerID}/edit', 'BuilderController@edit');
 Route::PATCH('builder/{customerID}/update', 'BuilderController@update');
 Route::get('builder/destroy/{customerID}', 'BuilderController@destroy'); //deaktivere byggherre
 Route::get('builder/aktiver/{customerID}', 'BuilderController@aktiver');  //aktivere byggherre
+Route::get('builder/{registrationNR}','BuilderController@show'); //vise all info
 
 Route::get('oversikt', 'OversiktController@show');
 
