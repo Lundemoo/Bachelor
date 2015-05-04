@@ -6,7 +6,7 @@ class Project extends Model {
 
 
         protected $table = "projects";
-   // protected $primaryKey = 'projectID';
+    protected $primaryKey = 'projectID';
 	protected $fillable = [
         'projectID',
         'projectName',
