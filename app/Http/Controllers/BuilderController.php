@@ -53,9 +53,7 @@ class BuilderController extends Controller
 
        // foreach ($builders as $builder) {
             $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
-
-
-      //  }
+        
 
         return view('builder.edit',['builder'=> $builder, 'arrayo' =>$arrayo]);
 

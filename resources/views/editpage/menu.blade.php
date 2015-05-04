@@ -651,7 +651,7 @@
                                         <th>FirmaID:</th>
                                         <th>Firmanavn:</th>
                                         <th>Rolle:</th>
-                                        <th>Aktiv:}</th>
+                                        <th>Aktiv:</th>
 
                                         <th> </th>
 
@@ -668,7 +668,7 @@
                                             <td> {{$company->companyID}}<br></td>
                                             <td>  {{$company->companyname}}<br></td>
                                             <td>  {{$company->role}}<br></td>
-                                            <td>  {{$company->activ}}<br></td>
+                                            <td>  {{$company->active}}<br></td>
 
 
                                             @if($company->active == "1")
@@ -741,7 +741,7 @@
                                 </table></tr>
 
 
-                            {!! $company->render()!!}
+                            {!! $companies->render()!!}
                             @include('includes.jara_confirm')
 
 

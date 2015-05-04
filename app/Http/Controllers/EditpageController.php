@@ -42,15 +42,15 @@ class EditpageController extends Controller
             ->leftJoin('projects', 'builder.customerID', '=', 'projects.customerID')
             ->get();
 
-        $siden = 0;
+        $siden = 1;
         if (Helper::isSafe(Input::get('side'), 4) && Input::get('side') != "") {
             $siden = Input::get('side');
         } else {
-            $siden = 0;
+            $siden = 1;
         }
 
-        if($siden > 4 || $siden < 0){
-            $siden = 0;
+        if($siden > 5 || $siden < 0){
+            $siden = 1;
         }
 
 
