@@ -147,9 +147,7 @@
 
                                 </td></tr>
 
-                            <!--include på jara confirm knapp
 
-                                ['includes.jara_confirm.blade'] -->
 
                             <!-- REDIGERE BRUKERE -->
 
@@ -275,22 +273,114 @@
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
+                                <tr><table class="table" cellspacing="5" id="prosjektervisning">
+                                        <thead>
+                                        <tr>
+
+                                            <th>ProsjektNavn</th>
+                                            <th>Prosjekt adresse</th>
+                                            <th>Budsjett</th>
+                                            <th>Beskrivelse</th>
+                                            <th>Forventet ferdig</th>
+                                            <th> </th>
+
+                                        </tr>
+                                        </thead>
 
                                         @foreach ($projects as $project)
 
-                                            <article class="col-md-6">
-                                                <h4> {{$project->projectName}}</h4>
+                                            <tbody>
+                                            <tr>
 
-                                            </article>
+                                                <td> {{$project->projectName}}</td>
+                                                <td> {{$project->projectAddress}}<br></td>
+                                                <td> {{$project->budget}}<br><br></td>
+                                                <td> {{$project->description}}<br><br></td>
+                                                <td> {{$project->expectedCompletion}}<br><br></td>
+
+                                                @if($project->active == "1")
+                                                    <td>
+
+                                                        <!--deaktivere knapp -->
+
+                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['project/destroy', $project->projectID]])!!}
+
+                                                        {!! Form::button('Deaktivere', array(
+                                                        'class' => 'btn btn-danger', 'onclick' => "func('project/destroy/$project->projectID')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+                                                        {!! Form::close() !!}
+
+                                                        <!--endre knapp -->
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
+
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                        {!! Form::close() !!}
+
+
+                                                @else
+
+                                                    <td>
+                                                        <!--aktivere knapp-->
+                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
+
+                                                        {!! Form::button('Aktivere', array(
+                                                        'class' => 'btn btn-success', 'onclick' => "func('project/aktiver/$project->projectID')",
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#confirmDelete',
+                                                        'data-title' => 'Slette',
+                                                        'data-message' => 'Vil du slette ?',
+                                                        'data-btncancel' => 'btn-default',
+                                                        'data-btnaction' => 'btn-danger',
+                                                        'data-btntxt' => 'Slette'
+                                                        ))
+                                                        !!}
+
+                                                        {!! Form::close() !!}
+
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['projectController@edit', $project->projectID]]) !!}
+
+
+                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+
+                                                        {!! Form::close() !!}
 
 
 
-                                        @endforeach
 
-                                        {!! $projects->render()!!}
+                                                    </td>
+                                                @endif
+
+                                            </tr>
+                                            @endforeach
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                }
+                                            </script>
 
 
-                                    </td></tr>
+                                            </tbody>
+
+                                    </table></tr>
+
+
+
+                                {!! $projects->render()!!}
+                                @include('includes.jara_confirm')
+
+                                </td></tr>
+
 
 
 
@@ -347,14 +437,6 @@
 
 
                                                         @endforeach
-
-
-
-
-
-
-
-
 
                                                            {!! Form::close() !!}
                                                     <br></td>
@@ -551,7 +633,7 @@
 
                         <!-- REDIGERE FIRMA -->
 
-                        @elseif($siden == 4)
+                        @elseif($siden == 5)
 
                             <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>

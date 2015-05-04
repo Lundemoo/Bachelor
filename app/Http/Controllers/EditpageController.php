@@ -26,39 +26,21 @@ class EditpageController extends Controller
 
     public function index()
     {
-        $cars = DB::table('car')->paginate(6);  //henter alle biler ->select('projectID as projectID', 'projectName as projectName')
-        $builders = DB::table('builder')->paginate(6); //henter alle byggherrer
-       /* $builderpro = array();
-        $arrayp = array();
-        foreach ($builders as $builder){
-            $builderpro = $builder->projects;
-        $arrayo  = DB::table('projects')->get();
-       // $arrayo  =   DB::table('projects')->where('customerID', $builder->customerID)->select('customerID as customerID')->lists('customerID');
 
-            /* kode for kombinere to stk */
+        /* henter alt som skal vises fra databasen med paginate */
 
-            $posts = DB::table('builder')
-                ->leftJoin('projects', 'builder.customerID', '=', 'projects.customerID')
-                ->get();
+        $cars = DB::table('car')->paginate(6);
+        $builders = DB::table('builder')->paginate(6);
+        $users = DB::table('users')->paginate(6);
+        $projects = DB::table('projects')->paginate(6);
+        $contactpersons = DB::table('contactpersons')->paginate(6);
+        $companies = DB::table('companies')->paginate(6);
 
+        /* kode for kombinere to stk */
 
-
-        // array_push($arrayp, $arrayo);
-
-
-       // }
-       // var_dump($posts);
-       // var_dump($arrayo);
-        //array_push($arrayp, $projecttab);
-
-        $users = DB::table('users')->paginate(6); //henter alle brukere
-        $projects = DB::table('projects')->paginate(6); //henter alle prosjekter
-        $contactpersons = DB::table('contactpersons')->paginate(6); //henter alle kontaktpersoner
-        $companies = DB::table('companies')->paginate(6); //henter alle firmaer
-        //$projectsLister = Project::lists('projectName', 'projectID');
-
-
-        
+        $posts = DB::table('builder')
+            ->leftJoin('projects', 'builder.customerID', '=', 'projects.customerID')
+            ->get();
 
         $siden = 0;
         if (Helper::isSafe(Input::get('side'), 4) && Input::get('side') != "") {
@@ -90,13 +72,10 @@ echo $siden; exit;
         return view('editpage.menu')->with('siden', $siden);
     }
 
-    // slettemetoden for bruker //
+    /*
+   * metode for å deaktivere bruker. Setter aktiv til 0. PS: kan flyttes til brukerkontroller
+   */
     public function destroy($ID){
-
-        /*$user= User::findOrFail($ID);
-        $user->delete();
-        \Session::flash('flash_message', 'Brukeren er slettet!');
-        return redirect('editpage?side=1');*/
 
         $user = User::find($ID);
         DB::table('users')
@@ -105,22 +84,20 @@ echo $siden; exit;
         $siden = 1;
         return redirect('editpage?side=1')->with('siden', $siden);
 
-
     }
 
-    // slettemetoden for kontaktperson //
+
+    /*
+     * metode for å deaktivere kontakperson. Setter aktiv til 0
+     */
     public function destroy_contact($contactpersonID){
 
-        $contactperson= ContactPerson::findOrFail($contactpersonID);
-        $contactperson->delete();
-        \Session::flash('flash_message', Lang::get('general.contactDeleted'));
+
         $siden=4;
         return redirect('editpage?side=4')->with('siden', $siden);
 
 
     }
-
-
 
     /*
      * metode for å aktivere bruker. Setter aktiv til 1
@@ -137,7 +114,7 @@ echo $siden; exit;
     }
 
 /*
- * ENDRE BRUKER. flyttes når brukercontroller er ok
+ * Endre bruker. kan flyttes når brukercontroller er ok
  */
 
     public function edit($id){

@@ -49,15 +49,13 @@ class BuilderController extends Controller
 
         $builder = Builder::findOrFail($customerID);
 
-        //henter alle prosjekter som tilhører alle
-        $builders = DB::table('builder')->paginate(6); //henter alle byggherrer
+       // $builders = DB::table('builder')->paginate(6); //henter alle byggherrer først
 
-        foreach ($builders as $builder) {
-            //$arrayo  = DB::table('projects')->where('customerID', $builder->customerID)->pluck('projectID');
+       // foreach ($builders as $builder) {
             $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
 
 
-        }
+      //  }
 
         return view('builder.edit',['builder'=> $builder, 'arrayo' =>$arrayo]);
 
