@@ -58,7 +58,7 @@ class EditpageController extends Controller
         //$projectsLister = Project::lists('projectName', 'projectID');
 
 
-        App::setLocale('en');
+        
 
         $siden = 0;
         if (Helper::isSafe(Input::get('side'), 4) && Input::get('side') != "") {

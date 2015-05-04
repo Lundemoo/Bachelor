@@ -21,7 +21,7 @@
                                     <div id=menyvalg onclick="oc('/logbookaddition/create')">{{trans('general.registerLogbook')}}</div></br>
                                     <div id=menyvalg onclick="oc('/oversikt')">{{trans('general.yourOverview')}}</div></br>
                                     @if(Auth::user()->brukertype == 1)
-                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.changes')}}</div></br>
+                                    <div id=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div></br>
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.statistic')}}</div></br>
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.approveTimesheets')}}</div>
                                     

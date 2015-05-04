@@ -11,7 +11,7 @@ class OversiktController extends Controller {
     
     
     public function show(){
-        App::setLocale(Auth::user()->language);
+        
         $siden = 0;
         $minid = Auth::user()->id;
         if(Input::get('side') == "" || Input::get('side') == "0"){

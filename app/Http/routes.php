@@ -12,15 +12,31 @@
 */
 
 Route::filter('isboss', function(){
- 
+    
+     if(Auth::check()){
+       App::setLocale(Auth::user()->language);
+   }  else {
+       App::setLocale('en');
+   }
+    
+    
+ if(Auth::check()){
    if(Auth::user()->brukertype != 1){
        return Redirect::to('/');
    }
+ }
     
     
 });
 
 Route::filter('loggedin', function(){
+    
+     if(Auth::check()){
+       App::setLocale(Auth::user()->language);
+   }  else {
+       App::setLocale('en');
+   }
+    
     
    if(!Auth::check()){
        return Redirect::to('/auth/login');

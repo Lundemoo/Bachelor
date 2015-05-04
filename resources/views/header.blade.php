@@ -7,7 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/bilder/jara_transparent.png"><img src="jara_transparent.png"></a>
+				<a class="navbar-brand" href="{{URL::to("/")}}"><img src="/bilder/logo.png" height="30" width="100"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

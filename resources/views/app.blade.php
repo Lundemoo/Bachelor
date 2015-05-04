@@ -36,7 +36,7 @@
 
 
 	<!--Ikoner/logoer -->
-	<link rel="icon" href="/bilder/Miniminilogoen.png" type="image/x-icon">
+	<link rel="icon" href="/bilder/logo.png" type="image/x-icon">
 
 
 
@@ -50,11 +50,11 @@
 	<![endif]-->
 </head>
 <body>
-<a href="/language/en"><img src="/bilder/country/en.gif" width="20" height="20"></a>
-	<a href="/language/no"><img src="/bilder/country/no.gif" width="20" height="20"></a>
-	<a href="/language/est"><img src="/bilder/country/est.gif" width="20" height="20"></a>
+<a href="/language/en"><img src="/bilder/eng.png" width="20" height="20"></a>
+	<a href="/language/no"><img src="/bilder/nor.png" width="20" height="20"></a>
+	<a href="/language/est"><img src="/bilder/est.png" width="20" height="20"></a>
 
-		{{App::setLocale(Auth::user()->language) }}
+		
 
 
 <header> @include('header')</header>
