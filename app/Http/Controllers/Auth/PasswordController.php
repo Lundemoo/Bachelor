@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Request;
+use App;
 
 class PasswordController extends Controller {
 
@@ -29,6 +31,11 @@ class PasswordController extends Controller {
 	 */
 	public function __construct(Guard $auth, PasswordBroker $passwords)
 	{
+            $lan = Request::get('lan');
+            if($lan != "" && ($lan == "en" || $lan == "no" || $lan == "est")){
+                App::setLocale($lan);
+            }
+            
 		$this->auth = $auth;
 		$this->passwords = $passwords;
 

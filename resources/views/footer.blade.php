@@ -1,1 +1,1 @@
-<h1> JARABYGG AS </h1>
+JARABYGG AS

@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration {
 	{
 		Schema::create('users', function(Blueprint $table)
 		{
-			$table->increments('id')->unsigned();
+			$table->integer('id')->unsigned();
 			$table->integer('brukertype')->default("0");
 			$table->string('firstname');
                         $table->string('lastname');
@@ -26,9 +26,17 @@ class CreateUsersTable extends Migration {
             $table->string('language');
 			$table->rememberToken();
 			$table->timestamps();
+                        
+                        
+                        $table->primary('id');
+                        
 		});
+                
+        
 	}
 
+        
+        
 	/**
 	 * Reverse the migrations.
 	 *

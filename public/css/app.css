@@ -6,17 +6,21 @@ html {
 }
 body {
     margin: 0;
+    
     background: url(../bilder/bakgrunn.png);
     background-repeat: repeat-x;
 }
 footer {
-
-    margin-top:15%;
+position: fixed;
+bottom: 0px;
+left: 0px;
+width:100%;
+    font-size: 20px;
     margin-right: auto;
     margin-left: auto;
     background-color: rgba(0, 0, 0, 0.75);
     text-align: center;
-    height: 80px;
+    height: 40px;
 
 
 }
@@ -901,7 +905,7 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #E26300;
-    background-color: #ffffff;
+    background-color: #444;
 }
 input,
 button,
@@ -1387,6 +1391,7 @@ pre code {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 @media (min-width: 768px) {
@@ -5000,14 +5005,14 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
     margin-bottom: 20px;
-    background-color: #transparent;
+    background-color: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 1);
 }
 .panel-body {
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: #111;
 }
 .panel-heading {
     padding: 10px 15px;

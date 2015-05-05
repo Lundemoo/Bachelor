@@ -39,6 +39,8 @@
 								<button type="submit" class="btn btn-primary">
 									{{trans('general.sendNewPass')}}
 								</button>
+                                                            
+                                                            <input type="hidden" id="lan" name="lan" value="{{Request::get('lan')}}">
 							</div>
 						</div>
 					</form>

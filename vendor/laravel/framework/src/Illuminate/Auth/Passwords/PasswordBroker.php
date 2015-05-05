@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Auth\PasswordBroker as PasswordBrokerContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Support\Facades\Request as req;
+use App;
 
 class PasswordBroker implements PasswordBrokerContract {
 
@@ -77,9 +79,16 @@ class PasswordBroker implements PasswordBrokerContract {
 		// if we did not we will redirect back to this current URI with a piece of
 		// "flash" data in the session to indicate to the developers the errors.
 		$user = $this->getUser($credentials);
+                
+                
+             
+            
+            
+            
 
 		if (is_null($user))
 		{
+                    
 			return PasswordBrokerContract::INVALID_USER;
 		}
 
@@ -89,6 +98,7 @@ class PasswordBroker implements PasswordBrokerContract {
 		$token = $this->tokens->create($user);
 
 		$this->emailResetLink($user, $token, $callback);
+                
 
 		return PasswordBrokerContract::RESET_LINK_SENT;
 	}
@@ -107,11 +117,12 @@ class PasswordBroker implements PasswordBrokerContract {
 		// password reminder e-mail. We'll pass a "token" variable into the views
 		// so that it may be displayed for an user to click for password reset.
 		$view = $this->emailView;
-
+                
 		return $this->mailer->send($view, compact('token', 'user'), function($m) use ($user, $token, $callback)
 		{
+                    
 			$m->to($user->getEmailForPasswordReset());
-
+                        
 			if ( ! is_null($callback)) call_user_func($callback, $m, $user, $token);
 		});
 	}

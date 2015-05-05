@@ -91,6 +91,7 @@ and open the template in the editor.
         font-size: 30px;
         
         
+        
     }
     
     
@@ -246,4 +247,24 @@ td.over {
     height: 30px;
     background-color: #111;
     text-align: center;
+}
+#admin {
+    display: block;
+ -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #000;
+     transform: scale(2.5);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(2.5);
+  margin: 15px;
+  outline: 0;
+ 
+}
+#admin:focus {
+    border: none;
+    outline: 0;
 }
