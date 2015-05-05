@@ -5009,6 +5009,14 @@ a.list-group-item-danger.active:focus {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.72);
 }
+
+/* denne brukes i editpage */
+
+.panel-body2 {
+    padding: 0px;
+    background-color: rgba(0, 0, 0, 0.72);
+}
+
 .panel-heading {
     padding: 10px 15px;
     border-bottom: 1px solid transparent;

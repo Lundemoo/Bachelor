@@ -1,14 +1,6 @@
 @extends('app')
 <link href="//netdna.bootstrapcdn.com/bootstrap.3.0.3/css/bootstrap.min.css/" rel="stylesheet">
 @section('content')
-    <style>
-        .panel-body2 {
-            padding: 0px;
-            background-color: rgba(0, 0, 0, 0.72);
-        }
-
-    </style>
-
 
     <div class="container-fluid">
         <div class="row">
