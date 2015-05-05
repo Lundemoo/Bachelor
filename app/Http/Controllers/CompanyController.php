@@ -88,7 +88,7 @@ class CompanyController extends Controller
             ->where('companyID', $companyID)
             ->update(array('active'=>'0'));
 
-        return redirect('editpage');
+        return redirect('editpage?side=5');
 
     }
 
@@ -103,7 +103,7 @@ class CompanyController extends Controller
             ->where('companyID', $companyID)
             ->update(array('active'=>'1'));
 
-        return redirect('editpage');
+        return redirect('editpage?side=5');
     }
 
 

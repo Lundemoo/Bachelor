@@ -22,7 +22,6 @@ class ContactpersonController extends Controller
     {
         $contactpersons = DB::table('contactpersons')->get();
 
-
         return view('contactperson.index', ['contactpersons' => $contactpersons]);
 
     }
@@ -44,7 +43,7 @@ class ContactpersonController extends Controller
     {
         $contactperson = ContactPerson::findOrFail($contactpersonID);
 
-        $contactpersonID->update($request->all());
+        $contactperson->update($request->all());
         \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('editpage');
     }

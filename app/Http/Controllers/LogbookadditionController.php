@@ -35,9 +35,7 @@ class LogbookadditionController extends Controller
     }
 
     public function create(){
-
-       // sender deg til siden logbookaddition.create med en liste av biler
-
+        
         $cars = Car::lists('nickname', 'registrationNR');
 
         return view('logbookaddition.create', array('cars' => $cars));
@@ -47,7 +45,6 @@ class LogbookadditionController extends Controller
 
     public function store(CreateLogbookadditionRequest $request){
 
-       // $input = Request::all();
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
         $thisid = "";
@@ -60,7 +57,6 @@ class LogbookadditionController extends Controller
                'employeeNR' => Auth::user()->id,
                 'registrationNR' => $input['registrationNR'],
                 'date' => $input['date'],
-                //'bompenger' => $input['bompenger']
                 
             ));
             $thisid = $mid->employeeNR;
