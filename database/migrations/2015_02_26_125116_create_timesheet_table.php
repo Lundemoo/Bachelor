@@ -27,7 +27,7 @@ class CreateTimesheetTable extends Migration {
              * foreign constraints.
              */
 			$table->foreign('employeeNR')  //fremmednøkkelen
-			->references('ID')
+			->references('id')
 				->on('users');
 
 		});

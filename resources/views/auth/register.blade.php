@@ -23,6 +23,16 @@
 					<form class="form-horizontal" role="form" method="POST" action="/auth/register">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                 
+                                                
+                                                 
+						<div class="form-group">
+                                                    <label class="col-md-4 control-label">{{trans('general.userIDregistrering')}}</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control-required" name="userid" value="{{ old('userid') }}">
+							</div>
+						</div>
+                                                
+                                                
 						<div class="form-group">
                                                     <label class="col-md-4 control-label">{{trans('general.firstname')}}</label>
 							<div class="col-md-6">
@@ -76,14 +86,23 @@
 
                         	<label class="col-md-4 control-label">{{trans('general.language')}}</label>
 
-                           <input type="radio" name="language" id="1" value="English"><label for="1"><img src="/bilder/country/en.gif" alt="English" height="30" width="30"></label>
-                           <input type="radio" name="language" id="2" value="English"><label for="2"><img src="/bilder/country/no.gif" alt="English" height="30" width="30"></label>
-                           <input type="radio" name="language" id="3" value="English"><label for="3"><img src="/bilder/country/est.gif" alt="English" height="30" width="30"></label>
+                           <input type="radio" name="language" id="1" value="en"><label for="1"><img src="/bilder/eng.png" alt="English" height="30" width="30"></label>
+                           <input type="radio" name="language" id="2" value="no"><label for="2"><img src="/bilder/nor.png" alt="English" height="30" width="30"></label>
+                           <input type="radio" name="language" id="3" value="es"><label for="3"><img src="/bilder/est.png" alt="English" height="30" width="30"></label>
+                           
 
+                                                </div>
+                                           
 
-                        </div>
-
-
+						<div class="form-group">
+							<div class="col-md-6 col-md-offset-4">
+								
+                                                            <table><tr><td> Administrator? </td><td><input type="checkbox" id="admin" name="admin"></td></tr></table>
+                                                
+							</div>
+                                                </div>
+                                                
+                                                
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">

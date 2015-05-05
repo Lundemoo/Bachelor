@@ -50,9 +50,7 @@
 	<![endif]-->
 </head>
 <body>
-<a href="/language/en"><img src="/bilder/eng.png" width="20" height="20"></a>
-	<a href="/language/no"><img src="/bilder/nor.png" width="20" height="20"></a>
-	<a href="/language/est"><img src="/bilder/est.png" width="20" height="20"></a>
+
 
 		
 

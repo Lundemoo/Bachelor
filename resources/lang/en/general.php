@@ -1,7 +1,5 @@
 <?php
 return [
-    
-    
     'main' => 'Welcome to Jara Bygg AS',
     'projectCreated' => 'Project is created',
     'loginErrorAttempts' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
@@ -124,7 +122,6 @@ return [
     'approveTimesheets' => 'Approve timesheets',
     'registerTimesheet' => 'Register timesheet',
     'language' => 'Choose language',
-
     'avgPerDay' => 'Average hours per day',
     'chooseMonth' => 'Select month',
     'chooseProject' => 'Select project',
@@ -137,6 +134,9 @@ return [
     'month' => 'Month',
     'go' => 'Go',
     'noresults' => 'No results',
+    'userIDregistrering' => 'Employee-ID',
+    'yourlink' => 'Your password reset link',
+    'warning' => 'If you did not ask for a new password you can ignore this mail.',
 
 
 

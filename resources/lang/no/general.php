@@ -1,7 +1,5 @@
 <?php
 return [
-    
-    
     'main' => 'Velkommen til Jara Bygg AS',
     'projectCreated' => 'Projektet er opprettet',
     'loginErrorAttempts' => 'Du har brukt for mange forsøk på å logge inn, vennligst prøv igjen etter 1 time.',
@@ -136,6 +134,9 @@ return [
     'month' => 'Måned',
     'go' => 'Gå',
     'noresults' => 'Ingen resultater',
+    'userIDregistrering' => 'Ansatt-ID',
+    'yourlink' => 'Din passordtilbakestillingslink',
+    'warning' => 'Om du ikke har bedt om å tilbakestille passordet så kan du overse denne mailen.',
 
 ];
 /* 

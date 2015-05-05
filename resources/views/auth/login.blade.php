@@ -1,6 +1,24 @@
 @extends('app')
 
 @section('content')
+
+
+<?PHP
+$add = "";
+?>
+
+@if(Request::get('lan') != "")
+                                    <?PHP
+                                    
+                                    $extension = $_GET['lan'];
+                                    if(!($extension == "no" || $extension == "en" || $extension == "est")){
+                                        $extension = "";
+                                        
+                                    }
+                                    $add = "?lan=" . $extension;
+                                    ?>
+                                    @endif
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -51,7 +69,7 @@
 									{{trans('general.login')}}
 								</button>
 
-								<a href="/password/email">{{trans('general.forgotPass')}}</a>
+								<a href="/password/email<?PHP echo $add; ?>">{{trans('general.forgotPass')}}</a>
 							</div>
 						</div>
 					</form>
