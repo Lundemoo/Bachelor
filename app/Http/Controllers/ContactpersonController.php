@@ -18,8 +18,8 @@ use Lang;
 class ContactpersonController extends Controller
 {
 
-    public function index()
-    {
+    public function index(){
+
         $contactpersons = DB::table('contactpersons')->get();
 
         return view('contactperson.index', ['contactpersons' => $contactpersons]);
@@ -27,8 +27,7 @@ class ContactpersonController extends Controller
     }
 
 
-    public function edit($contactpersonID)
-    {
+    public function edit($contactpersonID){
 
         $contactperson = ContactPerson::findOrFail($contactpersonID);
 

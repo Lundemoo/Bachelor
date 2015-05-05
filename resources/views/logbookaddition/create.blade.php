@@ -26,7 +26,7 @@
             geocoder.getLocations(document.forms[0].startdestination.value, function (response) {
                 if (!response || response.Status.code != 200)
                 {
-                    alert("cant fin geo location nr 1");
+                    alert("cant find geo location nr 1");
                 }
                 else
                 {

@@ -27,11 +27,9 @@ class CompanyController extends Controller
 
     }
 
-
     public function create(){
 
         return view('company.create');
-
 
     }
 
@@ -43,14 +41,12 @@ class CompanyController extends Controller
         $companies = DB::table('companies')->get();
         return view('company.create');
 
-
     }
 
     public function show($registrationNR){
 
         $company = Company::find($registrationNR);
         return $company;
-
     }
 
     /*

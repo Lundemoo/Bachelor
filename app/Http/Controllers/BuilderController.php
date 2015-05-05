@@ -18,10 +18,9 @@ use Lang;
 class BuilderController extends Controller
 {
 
-    public function index()
-    {
-        $builders = DB::table('builder')->get();
+    public function index(){
 
+        $builders = DB::table('builder')->get();
 
         return view('builder.index', ['builders' => $builders]);
 

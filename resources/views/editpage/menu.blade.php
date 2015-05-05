@@ -9,9 +9,6 @@
                     <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
 
-
-
-
                         <table class="easynav" width="100%">
 
                             @if($siden==0)
@@ -53,8 +50,6 @@
 
                                                 @if($car->active == "1")
                                             <td>
-                                                
-                                                
 
                                                 <!--deaktivere knapp -->
 
@@ -73,14 +68,11 @@
                                                 ))
                                                 !!}
 
-
                                                 {!! Form::close() !!}
 
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-
                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                 {!! Form::close() !!}
 
                                                 @else
@@ -102,20 +94,12 @@
                                                         !!}
 
                                                         {!! Form::close() !!}
-
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-
-
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                         {!! Form::close() !!}
-
-
-
 
                                             </td>
                                                     @endif
-
 
                                             </tr>
                                             @endforeach
@@ -126,20 +110,15 @@
 
                                             }
                                             </script>
-                                            
-                                            
+
                                             </tbody>
 
                                     </table></tr>
-
-
 
                                     {!! $cars->render()!!}
                                 @include('includes.jara_confirm')
 
                                 </td></tr>
-
-
 
                             <!-- REDIGERE BRUKERE -->
 
@@ -226,11 +205,6 @@
                                                         {!! Form::close() !!}
                                                     </td>
                                                     @endif
-
-
-
-
-
                                             </tr>
                                             @endforeach
                                             <input type='hidden' value='' id='gjemt'>
@@ -247,9 +221,6 @@
                                 @include('includes.jara_confirm')
 
                                 </td></tr>
-
-
-
 
                                         <!-- REDIGERE Prosjekter -->
 
@@ -312,11 +283,8 @@
 
                                                         <!--endre knapp -->
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
-
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                         {!! Form::close() !!}
-
 
                                                 @else
 
@@ -339,14 +307,8 @@
                                                         {!! Form::close() !!}
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['projectController@edit', $project->projectID]]) !!}
-
-
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                         {!! Form::close() !!}
-
-
-
 
                                                     </td>
                                                 @endif
@@ -361,20 +323,14 @@
                                                 }
                                             </script>
 
-
                                             </tbody>
 
                                     </table></tr>
-
-
 
                                 {!! $projects->render()!!}
                                 @include('includes.jara_confirm')
 
                                 </td></tr>
-
-
-
 
                                     <!-- REDIGERE BYGGHERRER -->
 
@@ -405,9 +361,7 @@
 
                                         </thead>
 
-
                                         @foreach ($builders as $builder)
-
 
                                                 <tbody>
                                                 <tr>
@@ -426,14 +380,10 @@
 
                                                             @endif
 
-
-
                                                         @endforeach
 
                                                            {!! Form::close() !!}
                                                     <br></td>
-
-
 
                                                     @if($builder->active == "1")
                                                     <td>
@@ -452,8 +402,6 @@
                                                         ))
                                                         !!}
                                                         {!! Form::close() !!}
-
-
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
@@ -484,8 +432,6 @@
                                                             {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                             {!! Form::close() !!}
 
-
-
                                                         </td>
                                                     @endif
                                                 </tr>
@@ -504,8 +450,6 @@
                                 @include('includes.jara_confirm')
 
                                 </td></tr>
-
-
 
                                     <!-- REDIGERE KONTAKTPERSONER -->
 
@@ -529,12 +473,12 @@
                                             <th>{{trans('general.surname')}}</th>
                                             <th>{{trans('general.telephone')}}</th>
                                             <th>{{trans('general.email')}}</th>
+                                            <th>Active:</th>
                                             <th> </th>
 
                                         </tr>
 
                                         </thead>
-
 
                                         @foreach ($contactpersons as $contactperson)
 
@@ -546,6 +490,7 @@
                                                 <td>  {{$contactperson->contactsurname}}<br></td>
                                                 <td>  {{$contactperson->contacttelephone}}<br></td>
                                                 <td>  {{$contactperson->contactemail}}<br></td>
+                                                <td>  {{$contactperson->active}}<br></td>
 
                                                 @if($contactperson->active == "1")
                                                 <td>
@@ -566,9 +511,7 @@
                                                     {!! Form::close() !!}
 
                                                     {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-
                                                     {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                     {!! Form::close() !!}
 
                                                 @else
@@ -591,17 +534,11 @@
                                                         {!! Form::close() !!}
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                         {!! Form::close() !!}
-
-
-
 
                                                     </td>
                                                 @endif
-
 
                                             </tr>
                                             @endforeach
@@ -615,7 +552,6 @@
                                             </tbody>
 
                                     </table></tr>
-
 
                                 {!! $contactpersons->render()!!}
                                 @include('includes.jara_confirm')
@@ -651,7 +587,6 @@
 
                                     </thead>
 
-
                                     @foreach ($companies as $company)
 
                                         <tbody>
@@ -682,9 +617,7 @@
                                                     {!! Form::close() !!}
 
                                                     {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-
                                                     {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                     {!! Form::close() !!}
 
                                             @else
@@ -707,17 +640,11 @@
                                                     {!! Form::close() !!}
 
                                                     {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-
                                                     {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-
                                                     {!! Form::close() !!}
-
-
-
 
                                                 </td>
                                             @endif
-
 
                                         </tr>
                                         @endforeach
@@ -732,25 +659,14 @@
 
                                 </table></tr>
 
-
                             {!! $companies->render()!!}
                             @include('includes.jara_confirm')
 
-
                             </td></tr>
-
 
                             @endif
 
-
-
                             </table>
-
-
-
-
-
-
 
                     </div>
                 </div>

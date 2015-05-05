@@ -88,18 +88,6 @@ echo $siden; exit;
 
 
     /*
-     * metode for å deaktivere kontaktperson. Setter aktiv til 0
-     */
-    public function destroy_contact($contactpersonID){
-
-
-        $siden=4;
-        return redirect('editpage?side=4')->with('siden', $siden);
-
-
-    }
-
-    /*
      * metode for å aktivere bruker. Setter aktiv til 1
      */
 
@@ -119,13 +107,13 @@ echo $siden; exit;
 
         $users = User::findOrFail($id);
 
-
         return view('auth.edit', compact('users'));
 
     }
 
-    public function liste($customerID){
+    /* metode for å få liste med prosjekter tilhørende hver byggherre */
 
+    public function liste($customerID){
 
         $prosjekter  = DB::table('projects')->where('customerID', $customerID);
         var_dump($prosjekter);

@@ -37,7 +37,7 @@ class TimelisteprosjektController extends Controller {
         return view('timelisteprosjekter.create', array('projects' => $projects));
     }
 
-   /* hente inn alt fra form, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.
+   /* hente inn alt fra skjema, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.
      I tillegg hente inn alle prosjekter og få det i en liste */
 
     public function store(CreateTimelisteprosjektRequest $request){
@@ -83,7 +83,7 @@ class TimelisteprosjektController extends Controller {
     }
 
     /*
-   * Metode som henter infi fra den edit-formen og oppdaterer aktuell bil i databasen
+   * Metode som henter info fra redigeringssiden til timeliste og oppdaterer aktuell timeliste i databasen
    */
     public function update($projectID, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
 

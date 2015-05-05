@@ -25,13 +25,11 @@ use Illuminate\Support\Facades\Input;
 class LogbookadditionController extends Controller
 {
 
-    public function index()
-    {
+    public function index(){
+
         $logbookadditions = DB::table('logbookaddition')->get();
 
-
         return view('logbookaddition.index',['logbookadditions'=> $logbookadditions]);
-
     }
 
     public function create(){
@@ -39,7 +37,6 @@ class LogbookadditionController extends Controller
         $cars = Car::lists('nickname', 'registrationNR');
 
         return view('logbookaddition.create', array('cars' => $cars));
-
 
     }
 
@@ -49,8 +46,7 @@ class LogbookadditionController extends Controller
         $input['date'] = Input::get('date_submit');
         $thisid = "";
         $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
-        
-        
+
         if($result == 0){
             
             $mid = Logbook::create(array(
