@@ -88,7 +88,7 @@ echo $siden; exit;
 
 
     /*
-     * metode for å deaktivere kontakperson. Setter aktiv til 0
+     * metode for å deaktivere kontaktperson. Setter aktiv til 0
      */
     public function destroy_contact($contactpersonID){
 
@@ -113,9 +113,7 @@ echo $siden; exit;
         return redirect('editpage?side=1')->with('siden', $siden);
     }
 
-/*
- * Endre bruker. kan flyttes når brukercontroller er ok
- */
+/* Endre bruker. kan flyttes når brukercontroller er ok */
 
     public function edit($id){
 

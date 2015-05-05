@@ -28,10 +28,7 @@
                             {!! Form::label('contacttelephone', trans('general.telephone')) !!}
                             {!! Form::text('contacttelephone', null, ['class' => 'form-control'] ) !!}
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('companyid', trans('general.companyId')) !!}
-                            {!! Form::text('companyid', null, ['class' => 'form-control'] ) !!}
-                        </div>
+
                         <br/>
 
                         <div class="form-group">
