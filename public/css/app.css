@@ -5028,7 +5028,15 @@ a.list-group-item-danger.active:focus {
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
 
+
 }
+.panel-heading > .backbutton {
+    width: 20px;
+    height: 20px;
+}
+
+
+
 .panel-heading > .dropdown .dropdown-toggle {
     color: inherit;
 

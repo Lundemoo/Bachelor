@@ -221,7 +221,7 @@ class ArtisanServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	/*protected function registerFreshCommand()
+/*	protected function registerFreshCommand()
 	{
 		$this->app->singleton('command.fresh', function()
 		{

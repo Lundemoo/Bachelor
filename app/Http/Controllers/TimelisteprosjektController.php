@@ -15,6 +15,7 @@ use DB;
 use Carbon\Carbon;
 use Lang;
 use App;
+use Excel;
 
 use Illuminate\Support\Facades\Input;
 
@@ -93,6 +94,70 @@ class TimelisteprosjektController extends Controller {
         return redirect('timelisteprosjekter');
     }
 
+    /* Export til Excel */
+    public function export($ID){
+
+    $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);  //skal brukes
+
+     Excel::create('Filename', function($excel) use($timelisteprosjekt){
+            $excel->sheet('JaraByggtimeliste', function($sheet) use($timelisteprosjekt) {
+                $sheet->fromArray(array('ProsjektID', 'AnsattNR', 'Dato', 'Start tid', 'Slutt tid', 'Kommentar'));
+
+                //hardkodet verdier foreløbig
+                $sheet->row(2, array(
+                    $timelisteprosjekt->ID, $timelisteprosjekt->employeeNR,
+                    $timelisteprosjekt->date, $timelisteprosjekt->starttime,
+                    $timelisteprosjekt->endtime, $timelisteprosjekt->comment
+
+                ));
+
+                $sheet->row(1, function($row) {
+                    //bakgrunnsfarge
+                    $row->setBackground('green');
+
+                });
+            });
+
+        })->download('xls');
+
+    }
+
+    /* Export Excel alle timelister for alle ansatte */
+    public function exportAll(){
+
+      // $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
+       $users = Db::table('users')->get();
+
+        Excel::create('AlleTimelisterforAnsatt', function($excel) use($users) {
+
+            // tittel
+            $excel->setTitle('Timelister');
+            $excel->setCreator('Rune')
+                ->setCompany('Jara Bygg AS');
+            $excel->setDescription('demonstrasjon timeliste export');
+
+            foreach ($users as $user) {
+                $excel->sheet('Timeliste Ansatt', function($sheet) use($user)  {
+                    $sheet->fromArray(array('ProsjektID', 'AnsattNR', 'Dato', 'Start tid', 'Slutt tid', 'Kommentar'));
+
+                    $timelisteprosjekter = DB::table('timelisteprosjekter')->where('employeeNR', '=', $user->id)->get();
+                    $rad = 2;
+                    foreach ($timelisteprosjekter as $timelisteprosjekt) {
+                    //nå henter den alle timelistene og gir et ark til hver. burde forandres til at alle timelistene til en ansatt kommer på hver side og kun for 1 mnd feks
+                    $sheet->row($rad, array(
+                        $timelisteprosjekt->projectID, $timelisteprosjekt->employeeNR,
+                        $timelisteprosjekt->date, $timelisteprosjekt->starttime,
+                        $timelisteprosjekt->endtime, $timelisteprosjekt->comment
+                ));
+                        $rad +=1;
+                    }
+                });
+
+            }
+           //  var_dump($timelisteprosjekt);
+
+        })->download('xls');
+    }
 
 
 }

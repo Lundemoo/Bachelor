@@ -18,22 +18,22 @@
                         {!! Form::model($builder, ['method' => 'PATCH', 'action' => ['BuilderController@update', $builder->customerID]]) !!}
 
                         <div class="form-group">
-                            {!! Form::label('customername', 'Kundenavn:') !!}
+                            {!! Form::label('customername', 'Kundenavn') !!}
                             {!! Form::text('customername', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('customeraddress', 'Kundeadresse:') !!}
+                            {!! Form::label('customeraddress', 'Kundeadresse') !!}
                             {!! Form::text('customeraddress', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customertelephone', 'Kundetelefon:') !!}
+                            {!! Form::label('customertelephone', 'Kundetelefon') !!}
                             {!! Form::text('customertelephone', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::label('customeremail', 'Kunde epost:') !!}
+                            {!! Form::label('customeremail', 'Kunde epost') !!}
                             {!! Form::text('customeremail', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'XdgBaseDir\\' => array($vendorDir . '/dnoegel/php-xdg-base-dir/src'),
+    'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
     'SuperClosure\\' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
     'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'React\\Promise\\' => array($vendorDir . '/react/promise/src'),
@@ -20,6 +21,7 @@ return array(
     'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Goutte\\' => array($vendorDir . '/fabpot/goutte/Goutte'),
+    'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'ClassPreloader\\' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'App\\' => array($baseDir . '/app'),
 );

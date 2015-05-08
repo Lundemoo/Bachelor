@@ -16,21 +16,19 @@
                         </ul>
 
                     @endif
-<br/>
+
 
 {!! Form::open(['url' => 'timelisteprosjekter']) !!}
 
 <div class="form-group">
 
-{!! Form::label('projectIDs', trans('general.project')) !!}
-
+{!! Form::label('projectIDs', trans('general.project')) !!} </br>
 <!--<input type="text", id="datepicker">-->
-
 {!! Form::select('projectID', $projects) !!}
 </div>
-<br/>
+
 <div class="form-group">
-    {!! Form::label('date', trans('general.date')) !!}
+    {!! Form::label('date', trans('general.date')) !!}</br>
     {!! Form::text('date', date('Y-m-d'), array('class' => 'datepicker') ) !!}
 </div>
 <div id="container"></div>
@@ -39,19 +37,19 @@
     var minimal = 0;
     </script>
 
-<br/>
+
 <div class="form-group">
-    {!! Form::label('start', 'Start time:') !!}
+    {!! Form::label('start', 'Start time') !!} </br>
     {!! Form::text('start', '7:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
-<br/>
+
 <div class="form-group">
-    {!! Form::label('slutt', 'Stop time:') !!}
+    {!! Form::label('slutt', 'Stop time') !!} </br>
     {!! Form::text('slutt', '3:00 PM', ['class' => 'timepicker'] ) !!}
 </div>
-<br/>
+
 <div class="form-group">
-    {!! Form::label('comment', trans('general.comment')) !!}
+    {!! Form::label('comment', trans('general.comment')) !!} </br>
     {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
 </div>
 

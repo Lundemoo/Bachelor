@@ -62,11 +62,11 @@
     {!! Form::open(['url' => 'logbookaddition', ]) !!}
 <div class="form-group">
 
-    {!! Form::label('registrationNR', trans('general.car')) !!}
+    {!! Form::label('registrationNR', trans('general.car')) !!} </br>
     {!! Form::select('registrationNR', $cars) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('date', trans('general.date')) !!}
+    {!! Form::label('date', trans('general.date')) !!} </br>
     {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
 </div>
     <script>
@@ -76,15 +76,15 @@
 
 
     <div class="form-group">
-        {!! Form::label('startdestination', 'Start:') !!}
+        {!! Form::label('startdestination', 'Start') !!}
         {!! Form::text('startdestination', null, ['placeholder'=>'Start address','class' => 'form-control'] ) !!}
     </div>
     <div class="form-group" onload="initialize()">
-        {!! Form::label('stopdestination', 'Stop:') !!}
+        {!! Form::label('stopdestination', 'Stop') !!}
         {!! Form::text('stopdestination', null, ['placeholder'=>'Stop address','class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('totalkm', 'Total km:') !!}
+        {!! Form::label('totalkm', 'Total km') !!}
         {!! Form::text('totalkm', null, ['placeholder'=>'Click here to find totalt km','class' => 'form-control'] ) !!}
     </div>
     <div class="form-group">

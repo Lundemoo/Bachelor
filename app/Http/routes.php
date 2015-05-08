@@ -74,6 +74,8 @@ Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); 
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
 Route::get('timelisteprosjekter/{projectID}/edit', 'TimelisteprosjektController@edit'); // for å redigere info om en timeliste som finns i DB
 Route::PATCH('timelisteprosjekter/{projectID}/update', 'TimelisteprosjektController@update'); //update metoden
+Route::get('timelisteprosjekter/{projectID}/export', 'TimelisteprosjektController@export'); //export excel
+Route::get('timelisteprosjekter/exportAll', 'TimelisteprosjektController@exportAll'); //export excel
 
 //routes for kjørebok registrering aka logbookaddition
 Route::get('logbookaddition', 'LogbookadditionController@index');

@@ -49,8 +49,6 @@
     </script>
 
 
-
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -62,7 +60,7 @@
                         {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->employeeNR ]]) !!}
                         <div class="form-group">
 
-                            {!! Form::label('registrationNR', trans('general.car')) !!}
+                            {!! Form::label('registrationNR', trans('general.car')) !!} </br>
                             {!! Form::select('registrationNR', $cars) !!}
                         </div>
                         <div class="form-group">
@@ -70,15 +68,15 @@
                             {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('startdestination', 'Start:') !!}
+                            {!! Form::label('startdestination', 'Start') !!}
                             {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group" onload="initialize()">
-                            {!! Form::label('stopdestination', 'Stop:') !!}
+                            {!! Form::label('stopdestination', 'Stop') !!}
                             {!! Form::text('stopdestination', null, ['class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('totalkm', 'Total km:') !!}
+                            {!! Form::label('totalkm', 'Total km') !!}
                             {!! Form::text('totalkm', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">

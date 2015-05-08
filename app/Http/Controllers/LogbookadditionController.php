@@ -39,7 +39,7 @@ class LogbookadditionController extends Controller
         return view('logbookaddition.create', array('cars' => $cars));
 
     }
-
+        /*lagrer kjørebok i database */
     public function store(CreateLogbookadditionRequest $request){
 
         $input = $request->all();

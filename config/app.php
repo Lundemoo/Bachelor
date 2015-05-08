@@ -151,7 +151,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
                 'App\Providers\Helper',
-        
+		'Maatwebsite\Excel\ExcelServiceProvider',  /* Excel */
+
 
 	],
 
@@ -203,6 +204,7 @@ return [
         'HTML'            => 'Illuminate\Html\HtmlFacade',
      'Form'            => 'Illuminate\Html\FormFacade',
             'Helper' => 'App\Facades\Helper',
+		'Excel' => 'Maatwebsite\Excel\Facades\Excel',   /*Excel */
            
            
             //Lage alias med full path, så bruk den som alias. Kanskje det går.

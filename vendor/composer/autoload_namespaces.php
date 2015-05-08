@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor' => array($vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'WebDriver' => array($vendorDir . '/instaclick/php-webdriver/lib'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
@@ -27,6 +28,8 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'PhpSpec' => array($vendorDir . '/phpspec/phpspec/src'),
+    'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
+    'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
     'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'Faker\\PHPUnit' => array($vendorDir . '/fzaninotto/faker/test'),

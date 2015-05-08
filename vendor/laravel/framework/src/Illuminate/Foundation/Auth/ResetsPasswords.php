@@ -4,8 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Illuminate\Support\Facades\Request as req;
-use App;
+
 trait ResetsPasswords {
 
 	/**
@@ -40,19 +39,11 @@ trait ResetsPasswords {
 	 */
 	public function postEmail(Request $request)
 	{
-             
-            $lan = req::get('lan');
-            if($lan != "" && ($lan == "en" || $lan == "no" || $lan == "est")){
-                App::setLocale($lan);
-            }
-            
 		$this->validate($request, ['email' => 'required|email']);
 
 		$response = $this->passwords->sendResetLink($request->only('email'), function($m)
 		{
-                    
 			$m->subject($this->getEmailSubject());
-                        
 		});
 
 		switch ($response)
@@ -72,7 +63,7 @@ trait ResetsPasswords {
 	 */
 	protected function getEmailSubject()
 	{
-		return isset($this->subject) ? $this->subject : trans('general.yourlink');
+		return isset($this->subject) ? $this->subject : 'Your Password Reset Link';
 	}
 
 	/**
