@@ -1,4 +1,4 @@
-<!-- ########################### Initialize Modal Window for confirmation ########################-->
+<!-- ########################### Initiere bekreftelsesboks ########################-->
 <div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -42,7 +42,7 @@
         $(this).find('.modal-footer #confirm').data('form', form);
     });
 
-    <!-- Form confirm (yes/ok) handler, submits form -->
+    <!-- Form bekreftelse (yes/ok) handler, submits form -->
     $('#confirmDelete').find('.modal-footer #confirm').on('click', function(){
         var all = document.getElementById('gjemt').value;
         window.location.replace(all);

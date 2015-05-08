@@ -53,23 +53,14 @@
 
                                                 <!--deaktivere knapp -->
 
-
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
-
                                                 {!! Form::button('Deaktivere', array(
                                                 'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
                                                 'data-toggle' => 'modal',
-                                                'data-target' => '#confirmDelete',
-                                                'data-title' => 'Slette',
-                                                'data-message' => 'Vil du slette ?',
-                                                'data-btncancel' => 'btn-default',
-                                                'data-btnaction' => 'btn-danger',
-                                                'data-btntxt' => 'Slette'
+                                                'data-target' => '#confirmDelete'
                                                 ))
                                                 !!}
-
                                                 {!! Form::close() !!}
-
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
@@ -84,16 +75,11 @@
                                                         {!! Form::button('Aktivere', array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
-
                                                         {!! Form::close() !!}
+
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
@@ -168,12 +154,7 @@
                                                     {!! Form::button('Deaktivere', array(
                                                     'class' => 'btn btn-danger', 'onclick' => "func('editpage/destroy/$user->id')",
                                                     'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete',
-                                                    'data-title' => 'Slette',
-                                                    'data-message' => 'Vil du slette ?',
-                                                    'data-btncancel' => 'btn-default',
-                                                    'data-btnaction' => 'btn-danger',
-                                                    'data-btntxt' => 'Slette'
+                                                    'data-target' => '#confirmDelete'
                                                     ))
                                                     !!}
 
@@ -191,17 +172,11 @@
                                                         {!! Form::button('Aktivere', array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('editpage/aktiver/$user->id')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
 
                                                         {!! Form::button('Endre', ['class' => 'btn ']) !!}
-
                                                         {!! Form::close() !!}
                                                     </td>
                                                     @endif
@@ -271,12 +246,7 @@
                                                         {!! Form::button('Deaktivere', array(
                                                         'class' => 'btn btn-danger', 'onclick' => "func('project/destroy/$project->projectID')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
                                                         {!! Form::close() !!}
@@ -295,12 +265,7 @@
                                                         {!! Form::button('Aktivere', array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('project/aktiver/$project->projectID')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
 
@@ -393,12 +358,7 @@
                                                         {!! Form::button('Deaktivere', array(
                                                         'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
                                                         {!! Form::close() !!}
@@ -417,15 +377,9 @@
                                                             {!! Form::button('Aktivere', array(
                                                             'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
                                                             'data-toggle' => 'modal',
-                                                            'data-target' => '#confirmDelete',
-                                                            'data-title' => 'Slette',
-                                                            'data-message' => 'Vil du slette ?',
-                                                            'data-btncancel' => 'btn-default',
-                                                            'data-btnaction' => 'btn-danger',
-                                                            'data-btntxt' => 'Slette'
+                                                            'data-target' => '#confirmDelete'
                                                             ))
                                                             !!}
-
                                                             {!! Form::close() !!}
 
                                                             {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
@@ -500,12 +454,7 @@
                                                     {!! Form::button('Deaktivere', array(
                                                     'class' => 'btn btn-danger', 'onclick' => "func('contactperson/destroy/$contactperson->contactpersonID')",
                                                     'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete',
-                                                    'data-title' => 'Slette',
-                                                    'data-message' => 'Vil du slette ?',
-                                                    'data-btncancel' => 'btn-default',
-                                                    'data-btnaction' => 'btn-danger',
-                                                    'data-btntxt' => 'Slette'
+                                                    'data-target' => '#confirmDelete'
                                                     ))
                                                     !!}
                                                     {!! Form::close() !!}
@@ -523,12 +472,7 @@
                                                         {!! Form::button('Aktivere', array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('contactperson/aktiver/$contactperson->contactpersonID')",
                                                         'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete',
-                                                        'data-title' => 'Slette',
-                                                        'data-message' => 'Vil du slette ?',
-                                                        'data-btncancel' => 'btn-default',
-                                                        'data-btnaction' => 'btn-danger',
-                                                        'data-btntxt' => 'Slette'
+                                                        'data-target' => '#confirmDelete'
                                                         ))
                                                         !!}
                                                         {!! Form::close() !!}
@@ -606,12 +550,7 @@
                                                     {!! Form::button('Deaktivere', array(
                                                     'class' => 'btn btn-danger', 'onclick' => "func('company/destroy/$company->companyID')",
                                                     'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete',
-                                                    'data-title' => 'Slette',
-                                                    'data-message' => 'Vil du slette ?',
-                                                    'data-btncancel' => 'btn-default',
-                                                    'data-btnaction' => 'btn-danger',
-                                                    'data-btntxt' => 'Slette'
+                                                    'data-target' => '#confirmDelete'
                                                     ))
                                                     !!}
                                                     {!! Form::close() !!}
@@ -629,12 +568,7 @@
                                                     {!! Form::button('Aktivere', array(
                                                     'class' => 'btn btn-success', 'onclick' => "func('company/aktiver/$company->companyID')",
                                                     'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete',
-                                                    'data-title' => 'Slette',
-                                                    'data-message' => 'Vil du slette ?',
-                                                    'data-btncancel' => 'btn-default',
-                                                    'data-btnaction' => 'btn-danger',
-                                                    'data-btntxt' => 'Slette'
+                                                    'data-target' => '#confirmDelete'
                                                     ))
                                                     !!}
                                                     {!! Form::close() !!}
