@@ -74,9 +74,9 @@ class TimelisteprosjektController extends Controller {
     /*
     * metode for å redigere en timeliste (timesheetproject) som er lagt inn i systemet/DB
     */
-    public function edit($projectID){
+    public function edit($ID){
 
-        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectID);
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);
         $projects = Project::lists('projectName', 'projectID'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
@@ -86,9 +86,9 @@ class TimelisteprosjektController extends Controller {
     /*
    * Metode som henter info fra redigeringssiden til timeliste og oppdaterer aktuell timeliste i databasen
    */
-    public function update($projectID, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
+    public function update($ID, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
 
-        $timelisteprosjekt = Timelisteprosjekt::findOrFail($projectID);
+        $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);
         $timelisteprosjekt->update($request->all());
 
         return redirect('timelisteprosjekter');

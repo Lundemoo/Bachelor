@@ -92,7 +92,7 @@ class CarController extends Controller
             ->where('registrationNR', $registrationNR)
             ->update(array('active'=>'0'));
 
-        return redirect('editpage');
+        return redirect('editpage?side=0');
 
     }
 
@@ -107,7 +107,7 @@ class CarController extends Controller
             ->where('registrationNR', $registrationNR)
             ->update(array('active'=>'1'));
 
-        return redirect('editpage');
+        return redirect('editpage?side=0');
     }
 
 

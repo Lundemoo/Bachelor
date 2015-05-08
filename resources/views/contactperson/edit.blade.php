@@ -4,7 +4,9 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.editContactperson')}}</div>
+                    <div class="panel-heading">{{trans('general.editContactperson')}}
+                    <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
+                    </div>
                     <div class="panel-body">
 
                         <h1>{{trans('general.edit')}} {!! $contactperson->contactname !!}</h1>
