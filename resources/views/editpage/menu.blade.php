@@ -1,4 +1,29 @@
 @extends('app')
+<style>
+    .panel2 {
+        margin-bottom: 0px;
+        background-color: black;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        box-shadow: 15px 15px 10px rgba(0, 0, 0, 1);
+    }
+
+    #firmavisning {
+        color: grey;
+    }
+
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color:grey;
+
+
+    }
+
+</style>
+
 <link href="//netdna.bootstrapcdn.com/bootstrap.3.0.3/css/bootstrap.min.css/" rel="stylesheet">
 @section('content')
 
@@ -25,7 +50,7 @@
 
                             <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                   <tr><table class="table" cellspacing="5" id="bilvisning">
+                                   <tr><table class="table" cellspacing="5" id="bilvisning" style="color:grey";>
                                         <thead>
                                         <tr>
                                             <th>{{trans('general.registrationNr')}}</th>
@@ -43,10 +68,10 @@
                                             <tbody>
                                             <tr>
 
-                                            <td> {{$car->registrationNR}}</td>
-                                            <td> {{$car->nickname}}<br></td>
-                                            <td> {{$car->brand}}<br><br></td>
-                                            <td> {{$car->active}}<br><br></td>
+                                            <td id="utlisting" style="color:burlywood";> {{$car->registrationNR}}</td>
+                                            <td id="utlisting" style="color:burlywood";> {{$car->nickname}}<br></td>
+                                            <td id="utlisting" style="color:burlywood";> {{$car->brand}}<br><br></td>
+                                            <td id="utlisting" style="color:burlywood";> {{$car->active}}<br><br></td>
 
                                                 @if($car->active == "1")
                                             <td>
@@ -71,7 +96,6 @@
                                                     <td>
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
-
                                                         {!! Form::button('Aktivere', array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
                                                         'data-toggle' => 'modal',
@@ -119,7 +143,7 @@
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
                                     <tr><td colspan="3" class="innholdeasynav"><br>
-                                <tr><table class="table" cellspacing="5" id="brukervisning">
+                                <tr><table class="table" cellspacing="5" id="brukervisning" style="color:grey";>
                                         <thead>
                                         <tr>
                                             <th>id </th>
@@ -138,12 +162,12 @@
                                             <tbody>
                                             <tr>
 
-                                                <td> {{$user->id}}<br></td>
-                                                <td>  {{$user->firstname}}<br></td>
-                                                <td>  {{$user->lastname}}<br></td>
-                                                <td>  {{$user->telephone}}<br></td>
-                                                <td>  {{$user->email}}</td>
-                                                <td>  {{$user->active}}</td>
+                                                <td id="utlisting" style="color:burlywood";> {{$user->id}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$user->firstname}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$user->lastname}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$user->telephone}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$user->email}}</td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$user->active}}</td>
 
                                                 @if($user->active == "1")
                                                 <td>
@@ -211,7 +235,7 @@
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                <tr><table class="table" cellspacing="5" id="prosjektervisning">
+                                <tr><table class="table" cellspacing="5" id="prosjektervisning" style="color:grey";>
                                         <thead>
                                         <tr>
 
@@ -230,11 +254,11 @@
                                             <tbody>
                                             <tr>
 
-                                                <td> {{$project->projectName}}</td>
-                                                <td> {{$project->projectAddress}}<br></td>
-                                                <td> {{$project->budget}}<br><br></td>
-                                                <td> {{$project->description}}<br><br></td>
-                                                <td> {{$project->expectedCompletion}}<br><br></td>
+                                                <td id="utlisting" style="color:burlywood";> {{$project->projectName}}</td>
+                                                <td id="utlisting" style="color:burlywood";> {{$project->projectAddress}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";> {{$project->budget}}<br><br></td>
+                                                <td id="utlisting" style="color:burlywood";> {{$project->description}}<br><br></td>
+                                                <td id="utlisting" style="color:burlywood";> {{$project->expectedCompletion}}<br><br></td>
 
                                                 @if($project->active == "1")
                                                     <td>
@@ -311,7 +335,7 @@
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                <tr><table class="table" cellspacing="5" id="byggherrevisning">
+                                <tr><table class="table" cellspacing="5" id="byggherrevisning" style="color:grey";>
                                         <thead>
                                         <tr>
                                           <!--  <th>{{trans('general.customerId')}} </th> -->
@@ -332,16 +356,16 @@
                                                 <tr>
 
                                                    <!-- <td> {{$builder->customerID}}</td> -->
-                                                    <td>  {{$builder->customername}}</td>
-                                                     <td> {{$builder->customeraddress}}<br></td>
-                                                    <td>  {{$builder->customertelephone}}<br></td>
-                                                   <td>  {{$builder->customeremail}}</td>
+                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customername}}</td>
+                                                    <td id="utlisting" style="color:burlywood";> {{$builder->customeraddress}}<br></td>
+                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customertelephone}}<br></td>
+                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customeremail}}</td>
                                                     <td>{!! Form::open(['url' => 'editpage']) !!}
 
                                                         @foreach ($posts as $post)
 
                                                             @if($post->customerID == $builder->customerID)
-                                                            <p>{{ $post->projectName }}</p>
+                                                            <p style="color:lightblue";>{{ $post->projectName }}</p>
 
                                                             @endif
 
@@ -419,7 +443,7 @@
 
                                 <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
+                                <tr><table class="table" cellspacing="5" id="kontaktpersonvisning" style="color:grey";>
                                         <thead>
                                         <tr>
                                             <th>{{trans('general.contactpersonId')}}</th>
@@ -439,12 +463,12 @@
                                             <tbody>
                                             <tr>
 
-                                                <td> {{$contactperson->contactpersonID}}<br></td>
-                                                <td>  {{$contactperson->contactname}}<br></td>
-                                                <td>  {{$contactperson->contactsurname}}<br></td>
-                                                <td>  {{$contactperson->contacttelephone}}<br></td>
-                                                <td>  {{$contactperson->contactemail}}<br></td>
-                                                <td>  {{$contactperson->active}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";> {{$contactperson->contactpersonID}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactname}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactsurname}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contacttelephone}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactemail}}<br></td>
+                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->active}}<br></td>
 
                                                 @if($contactperson->active == "1")
                                                 <td>
@@ -517,13 +541,13 @@
 
                             <tr><td colspan="3" class="innholdeasynav"><br>
 
-                            <tr><table class="table" cellspacing="5" id="kontaktpersonvisning">
+                            <tr><table class="table" cellspacing="5" id="firmavisning" style="color:grey";>
                                     <thead>
                                     <tr>
-                                        <th>FirmaID:</th>
-                                        <th>Firmanavn:</th>
-                                        <th>Rolle:</th>
-                                        <th>Aktiv:</th>
+                                        <th>FIRMAID</th>
+                                        <th>FIRMANAVN</th>
+                                        <th>ROLLE</th>
+                                        <th>AKTIV</th>
 
                                         <th> </th>
 
@@ -535,13 +559,12 @@
 
                                         <tbody>
                                         <tr>
-
-                                            <td> {{$company->companyID}}<br></td>
-                                            <td>  {{$company->companyname}}<br></td>
-                                            <td>  {{$company->role}}<br></td>
-                                            <td>  {{$company->active}}<br></td>
-
-
+<div id="utlisting" style="color:white";>
+                                            <td id="utlisting" style="color:burlywood";> {{$company->companyID}}<br></td>
+                                            <td id="utlisting" style="color:burlywood";>  {{$company->companyname}}<br></td>
+                                            <td id="utlisting" style="color:burlywood";>  {{$company->role}}<br></td>
+                                            <td id="utlisting" style="color:burlywood";>  {{$company->active}}<br></td>
+</div>
                                             @if($company->active == "1")
                                                 <td>
 
