@@ -9,7 +9,7 @@
                     </div>
                     <div class="panel-body">
 
-                        <h1>{{trans('general.edit')}} {!! $contactperson->contactname !!}</h1>
+                        <h1>{{trans('general.edit')}} {!! $contactperson->contactname   !!} {!! $contactperson->contactsurname  !!}</h1>
 
                         {!! Form::model($contactperson, ['method' => 'PATCH', 'action' => ['ContactpersonController@update', $contactperson->contactpersonID]]) !!}
                         <div class="form-group">
