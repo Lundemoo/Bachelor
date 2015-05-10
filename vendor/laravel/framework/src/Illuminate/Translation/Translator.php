@@ -180,6 +180,7 @@ class Translator extends NamespacedItemResolver implements TranslatorInterface {
 	 */
 	public function trans($id, array $parameters = array(), $domain = 'messages', $locale = null)
 	{
+            
 		return $this->get($id, $parameters, $locale);
 	}
 

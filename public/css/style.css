@@ -269,3 +269,10 @@ td.over {
     border: none;
     outline: 0;
 }
+#backbutton {
+font-size: 8px;
+}
+html * {
+    //color: pink !important;
+    font-family: "Times New Roman", Times, serif !important;
+}

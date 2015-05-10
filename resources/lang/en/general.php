@@ -137,69 +137,10 @@ return [
     'userIDregistrering' => 'Employee-ID',
     'yourlink' => 'Your password reset link',
     'warning' => 'If you did not ask for a new password you can ignore this mail.',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    'usersshowit' => 'Employees',
+    'employee' => 'Employee',
+    'exporttimesheet' => 'Eksporter timelister',
+    'exportlogbook' => '<p>Eksporter kjørebøker</p>'
 
 
 

@@ -137,6 +137,10 @@ return [
     'userIDregistrering' => 'Ansatt-ID',
     'yourlink' => 'Din passordtilbakestillingslink',
     'warning' => 'Om du ikke har bedt om å tilbakestille passordet så kan du overse denne mailen.',
+    'usersshowit' => 'Ansatte',
+    'employee' => 'Ansatt',
+    'exporttimesheet' => 'Export timesheets',
+    'exportlogbook' => 'Export logbooks'
 
 ];
 /* 
