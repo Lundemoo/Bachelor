@@ -72,6 +72,7 @@ return [
     'employeeNr' => 'Employee number',
     'overview' => 'Overview',
     'timesheets' => 'Timesheets',
+    'timesheet' => 'Timesheet',
     'logbook' => 'Logbook',
     'chooseMonth' => 'Choose month',
     'statistic' => 'Statistic',
@@ -139,11 +140,22 @@ return [
     'warning' => 'If you did not ask for a new password you can ignore this mail.',
     'usersshowit' => 'Employees',
     'employee' => 'Employee',
-    'exporttimesheet' => 'Eksporter timelister',
-    'exportlogbook' => '<p>Eksporter kjørebøker</p>'
+    
+   
 
 
-
+    
+    
+    'exporttimesheet' => 'Export timesheets',
+    'exportlogbook' => 'Export logbooks',
+    'timelisterlonn' => 'Timesheet payment',
+    'timelisterfaktura' => 'Timesheets invoice',
+    'choosetimeperiode' => 'Choose timeperiode',
+    'year' => 'Year',
+    'month' => 'Month',
+    'week' => 'Week',
+    'chooseYear' => 'Choose year',
+    'chooseWeek' => 'Choose week',
 
 ];
 /* 
