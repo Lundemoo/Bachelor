@@ -52,7 +52,7 @@ class ArtisanServiceProvider extends ServiceProvider {
 		'EventMake' => 'command.event.make',
 		'Down' => 'command.down',
 		'Environment' => 'command.environment',
-		//'Fresh' => 'command.fresh',
+		'Fresh' => 'command.fresh',
 		'HandlerCommand' => 'command.handler.command',
 		'HandlerEvent' => 'command.handler.event',
 		'KeyGenerate' => 'command.key.generate',
@@ -221,7 +221,7 @@ class ArtisanServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-/*	protected function registerFreshCommand()
+	protected function registerFreshCommand()
 	{
 		$this->app->singleton('command.fresh', function()
 		{

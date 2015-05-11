@@ -117,20 +117,20 @@ class AdminstatsController extends Controller {
             $siden = 1;
             
             
-            $getallmonths = DB::table(DB::raw("logbook"))->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->whereRaw("employeeNR = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
+            $getallmonths = DB::table(DB::raw("logbook"))->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->get();
             
             
-            $getallcars = DB::table(DB::raw("car, logbookaddition"))->whereRaw("car.registrationNR = logbookaddition.registrationNR AND logbookaddition.employeeNR = '$minid'")->groupBy(DB::raw('car.registrationNR'))->get();
-            
-            
-            
+            $getallcars = DB::table(DB::raw("car, logbookaddition, users"))->whereRaw("car.registrationNR = logbookaddition.registrationNR AND logbookaddition.employeeNR = users.id")->groupBy(DB::raw('car.registrationNR'))->get();
             
             
             
             
             
             
-                 $dobbel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%d %M, %Y') as dateshow, DATE_FORMAT(logbookaddition.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
+            
+            
+            
+                 $dobbel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%d %M, %Y') as dateshow, DATE_FORMAT(logbookaddition.date, '%M') as dateshowmaned"))->groupBy(DB::raw("MONTH(date)"))->get();
                 $sendarray = array();
                 $arrayx = array();
                 $arrayy = array();
@@ -139,7 +139,7 @@ class AdminstatsController extends Controller {
                     array_push($arrayy, $denne->dateshowmaned);
                     $hvilkenmaned = $denne->date;
                 $endre = date('Y-m', strtotime($hvilkenmaned));
-                    $trippel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%M') as dateshow"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre' AND `employeeNR` = '$minid'")->get();
+                    $trippel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%M') as dateshow"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'")->get();
                     $hvormange = 0;
             
                     foreach($trippel as $hver){
@@ -153,11 +153,14 @@ class AdminstatsController extends Controller {
             array_push($sendarray, $arrayx);
             array_push($sendarray, $arrayy);
            
-            $antallet = DB::table('logbookaddition')->where('employeeNR', '=', $minid)->count();
+            $antallet = DB::table('logbookaddition')->count();
             
             $resultatene = 0;
             if($antallet > 0){
-                $resultatene = DB::table('logbookaddition')->where('employeeNR', '=', $minid);
+                $resultatene = DB::table('logbookaddition');
+            
+                
+ 
             }
             
             
@@ -177,7 +180,7 @@ class AdminstatsController extends Controller {
                     $resultatene = $resultatene->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'");
                 }
                 if($bruker != "-1") {
-                    $resultatene = $resultatene->where("employeeNR", '=', $minid);
+                    $resultatene = $resultatene->where("employeeNR", '=', $bruker);
                     
                 }
                 
@@ -185,12 +188,15 @@ class AdminstatsController extends Controller {
                 
                 
             }
+            
             if($antallet != 0){
+                
             $resultatene = $resultatene->get();
             }
+            var_dump($resultatene);
             
             $aaa = DB::table('users')->get();
-            var_dump($aaa);
+            
             
             return view('admin.index')->with('siden', $siden)->with('biler', $getallcars)->with('maneder', $getallmonths)->with('totaltimer', $sendarray)->with('resultatene', $resultatene)->with('brukere', $aaa);
         }

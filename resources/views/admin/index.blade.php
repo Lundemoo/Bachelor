@@ -291,9 +291,7 @@ $( "#datepicker" ).datepicker();
                                        ?>
                                        @endforeach
                                        
-                                       <tr><td colspan='8' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
-                                           <tr><td class='framvisningrows' colspan='8'>{{trans('general.totalHoursMonth')}}: <?PHP echo $totalt; ?>
-                                                   </br>{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
+                                       
                                                
                                                
                                                
@@ -428,20 +426,7 @@ $( "#datepicker" ).datepicker();
                                            <tr><td class="framvisninghoved" colspan="7">{{trans('general.showOverOversikt')}}</td></tr>
                                            <tr><td colspan="7"></br>
                                             
-                                                   <table width="100%"><tr><td>
-                                                               <table><tr><td>
-                               <canvas id="graph" width="400" height="300">  
-                               </canvas></td><td> <p id='infoen'></p></td></tr></table></td><td>
-                                   <table><tr><td>                        
-                                   
-                                   <canvas id="andregraf" height="300" width="300"></canvas>
-                                           </td>
-                                   
-                                   
-                                   <td><p id="andregrafinfo"></p></td></tr></table></td></tr>
-                                                   
-                                                       
-                                                   </table>
+                                                  
                                     
                                     
                                     
@@ -498,6 +483,9 @@ $( "#datepicker" ).datepicker();
                                                        @endif
                                                @if(count($maneder) > 1)
                                                        <td class="framvisninghoved">{{trans('general.month')}}</td>
+                                                       @endif
+                                                        @if(count($brukere) > 1)
+                                                       <td class="framvisninghoved">{{trans('general.employee')}}</td>
                                                        @endif
                                                        <td class="framvisninghoved">#</td></tr><tr>
                                                

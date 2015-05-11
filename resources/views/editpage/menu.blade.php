@@ -33,7 +33,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
-
+                       
                         <table class="easynav" width="100%">
 
                             @if($siden==0)
@@ -66,6 +66,8 @@
                                     @foreach ($cars as $car)
 
                                             <tbody>
+                                                
+                                                <tr><td colspan="5"><hr>dsa</td></tr>
                                             <tr>
 
                                             <td id="utlisting" style="color:burlywood";> {{$car->registrationNR}}</td>
