@@ -5019,7 +5019,9 @@ a.list-group-item-danger.active:focus {
 
 .panel-body2 {
     padding: 0px;
-    background-color: #111111 ;
+    background-color: #111;
+    
+    
 }
 
 .panel-heading {

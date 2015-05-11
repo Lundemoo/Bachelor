@@ -104,7 +104,7 @@ class AdminstatsController extends Controller {
             $alle = DB::table('timesheet')->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->get();
             $alle2 = DB::table(DB::raw('timelisteprosjekter, projects'))->selectRaw('timelisteprosjekter.*, projects.*')->whereRaw('timelisteprosjekter.projectID = projects.projectID')->groupBy(DB::raw('projects.projectID'))->get();
             
-            $hentbrukere = DB::table('users')->where('active', '=', '1')->get();
+            $hentbrukere = DB::table(DB::raw('users, timelisteprosjekter'))->whereRaw("users.id = timelisteprosjekter.employeeNR")->groupBy(DB::raw("users.id"))->get();
             
             
             return view('admin.index')->with('siden', $siden)->with('selecten', $alle)->with('projects', $alle2)->with('resultatene', $resultatene)->with('totaltimer', $sendarray)->with('brukere', $hentbrukere);
@@ -113,14 +113,14 @@ class AdminstatsController extends Controller {
             
             
             
-        } else {
+        } elseif(Input::get('side') == "1") {
             $siden = 1;
             
             
             $getallmonths = DB::table(DB::raw("logbook"))->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->get();
             
             
-            $getallcars = DB::table(DB::raw("car, logbookaddition, users"))->whereRaw("car.registrationNR = logbookaddition.registrationNR AND logbookaddition.employeeNR = users.id")->groupBy(DB::raw('car.registrationNR'))->get();
+            $getallcars = DB::table(DB::raw("car, logbookaddition"))->whereRaw("car.registrationNR = logbookaddition.registrationNR")->groupBy(DB::raw('car.registrationNR'))->get();
             
             
             
@@ -157,7 +157,7 @@ class AdminstatsController extends Controller {
             
             $resultatene = 0;
             if($antallet > 0){
-                $resultatene = DB::table('logbookaddition');
+                $resultatene = DB::table(DB::raw("logbookaddition, users"))->whereRaw("logbookaddition.employeeNR = users.id");
             
                 
  
@@ -180,7 +180,9 @@ class AdminstatsController extends Controller {
                     $resultatene = $resultatene->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'");
                 }
                 if($bruker != "-1") {
+                    echo $bruker;
                     $resultatene = $resultatene->where("employeeNR", '=', $bruker);
+                    
                     
                 }
                 
@@ -192,13 +194,21 @@ class AdminstatsController extends Controller {
             if($antallet != 0){
                 
             $resultatene = $resultatene->get();
-            }
-            var_dump($resultatene);
             
-            $aaa = DB::table('users')->get();
+            }
+            
+            
+            $aaa = DB::table(DB::raw('users, logbookaddition'))->whereRaw("users.id = logbookaddition.employeeNR")->groupBy(DB::raw("users.id"))->get();
             
             
             return view('admin.index')->with('siden', $siden)->with('biler', $getallcars)->with('maneder', $getallmonths)->with('totaltimer', $sendarray)->with('resultatene', $resultatene)->with('brukere', $aaa);
+        } elseif(Input::get('side') == "2"){
+            $siden = 2;
+          return view('admin.index')->with('siden', $siden);
+            
+        } elseif(Input::get('side') == "3"){
+            $siden = 3;
+            return view('admin.index')->with('siden', $siden);
         }
         //$hei = Lang::get('general.main');
         
