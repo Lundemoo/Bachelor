@@ -63,7 +63,7 @@ Route::controllers([
 ]);
 Route::group(array('before' => 'loggedin'), function(){
   
-
+Route::post('admin/export', 'AdminstatsController@export'); //export excel
 
 
 

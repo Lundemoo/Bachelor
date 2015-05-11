@@ -72,6 +72,7 @@ return [
     'employeeNr' => 'Ansatt nummer',
     'overview' => 'Oversikt',
     'timesheets' => 'Timeslister',
+    'timesheet' => 'Timesliste',
     'logbook' => 'Kjørebok',
     'chooseMonth' => 'Velg måned',
     'statistic' => 'Statistikk',
@@ -139,8 +140,16 @@ return [
     'warning' => 'Om du ikke har bedt om å tilbakestille passordet så kan du overse denne mailen.',
     'usersshowit' => 'Ansatte',
     'employee' => 'Ansatt',
-    'exporttimesheet' => 'Export timesheets',
-    'exportlogbook' => 'Export logbooks'
+     'exporttimesheet' => 'Eksporter timelister',
+    'exportlogbook' => 'Eksporter kjørebøker',
+    'timelisterlonn' => 'Timelister lønn',
+    'timelisterfaktura' => 'Timelister faktura',
+    'choosetimeperiode' => 'Velg tidsperiode',
+    'year' => 'År',
+    'month' => 'Måned',
+    'week' => 'Uke',
+    'chooseYear' => 'Velg år',
+    'chooseWeek' => 'Velg uke',
 
 ];
 /* 

@@ -629,11 +629,179 @@ $( "#datepicker" ).datepicker();
                                     <h3>{{trans('general.noresults')}}</h3>
                                     @endif
                                        
+                                       @elseif($siden == 2)
+                                       
+                                       <table width="80%" class="framvisning">
+                                           <tr><td class="framvisninghoved" width="50%">{{trans('general.timelisterlonn')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.timelisterfaktura')}}</td></tr>
+                                               
+                                           <tr>
+                                               <td class="framvisninghoved">1</td><td class="framvisninghoved">1</td><td class="framvisninghoved">1</td>
+                                                   
+                                               
+                                           </tr>
+                                           
+                                           <tr><td class="framvisning">
+                                                   <form action="/admin/export" method="post">
+                                                   <center>
+                                                       
+                                                           
+                                                           <select name="month" id="month">
+                                                               <option value="-1">{{trans('general.chooseMonth')}}</option>
+                                                               @foreach($months as $month)
+                                                               
+                                                               <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                                               @endforeach
+                                                           </select>
+                                                           <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Send!">
+                                                      
+                                                   </center>
+                                       </form>
+                                               </td>
+                                               
+                                               <td class="framvisning" width="25%">
+                                                   <form method="post" action="/admin/export">
+                                               
+                                                       
+                                                       
+                                               <center> 
+                                                       
+                                                       
+                                                       <select name="project" id="project">
+                                                               <option value="-1">{{trans('general.chooseProject')}}</option>
+                                                               @foreach($projects as $project)
+                                                               
+                                                               <option value="{{$project->projectID}}">{{$project->projectName}}</option>
+                                                               @endforeach
+                                                           </select>
+                                                       
+                                                       
+                                                  </center>
+                                                   
+                                       </td><td class="framvisning" width="25%">
+                                           
+                                       <center>
+                                           <select name="time" id="time" onChange="vis()"><option value="-1">{{trans('general.choosetimeperiode')}}</option>
+                                               <option value="0">{{trans('general.year')}}</option>
+                                               <option value="1">{{trans('general.month')}}</option>
+                                               <option value="2">{{trans('general.week')}}</option>
+                                           </select>
+                                               
+                                       
+                                       
+                                           </br>
+                                       <select name="year" id="year" style="display:none;">
+                                           @if(count($years) > 1)
+                                           <option value="-1">{{trans('general.chooseYear')}}</option>
+                                       @foreach($years as $year)
+                                       <option value="{{$year->dateshow}}">{{$year->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($years as $year)
+                                       <option value="{{$year->dateshow}}">{{$year->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                           
+                                           
+                                           
+                                           
+                                           
+                                               
+                                       <select name="month2" id="month2" style="display:none;">
+                                           @if(count($months2) > 1)
+                                           <option value="-1">{{trans('general.chooseMonth')}}</option>
+                                       @foreach($months2 as $month)
+                                       <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($months2 as $month)
+                                       <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                               
+                                               
+                                               
+                                               
+                                               
+                                                  
+                                       <select name="week" id="week" style="display:none;">
+                                           @if(count($weeks) > 1)
+                                           <option value="-1">{{trans('general.chooseWeek')}}</option>
+                                       @foreach($weeks as $week)
+                                       <option value="{{$week->dateshow}}">{{$week->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($weeks as $week)
+                                       <option value="{{$week->dateshow}}">{{$week->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                                   </form>
+                                       </center></br>
+                                       
+                                       </br>
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
+                                       </td></tr>
+                                           
+                                                       
+                                       <tr><td class="framvisning">
+                                       
+                                           </td><td colspan="2">
+                                               
+                                                   </td></tr>       
+                                           
+                                           
+                                           
+                                       </table>
+                                     
+                                       <script>
+                                           function vis(){
+                                               
+                                                   var a = "-1";
+                                                    if(document.getElementById("time") != null){    
+                                                    var e = document.getElementById("time");
+                                                    a = e.options[e.selectedIndex].value;
+                                                    
+                                                    if(a == "0"){
+                                                        
+                                                        document.getElementById("year").style.display = "block";
+                                                        document.getElementById("month2").style.display = "none";
+                                                        document.getElementById("week").style.display = "none";
+                                                    }else if(a == 1){
+                                                        document.getElementById("year").style.display = "none";
+                                                        document.getElementById("month2").style.display = "block";
+                                                        document.getElementById("week").style.display = "none";
+                                                    }else if(a == 2){
+                                                        document.getElementById("year").style.display = "none";
+                                                        document.getElementById("month2").style.display = "none";
+                                                        document.getElementById("week").style.display = "block";
+                                                    }
+                                                }
+                                               
+                                           }
+                                           
+                                           </script>
+                                       @elseif($siden == 3)
+                                       Hade
+                                       
+                                       
+                                       
+                                       
+                                       
                                        @endif
                                     
                                        
                                        
-                                    
                                     
                                     </table>
                                    
