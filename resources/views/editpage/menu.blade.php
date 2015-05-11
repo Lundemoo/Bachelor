@@ -1,26 +1,12 @@
 @extends('app')
 <style>
-    .panel2 {
-        margin-bottom: 0px;
-        background-color: black;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        box-shadow: 15px 15px 10px rgba(0, 0, 0, 1);
-    }
+#utlisting{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+}
 
-    #firmavisning {
-        color: grey;
-    }
-
-    .panel-heading {
-        padding: 10px 15px;
-        border-bottom: 1px solid transparent;
-        border-top-right-radius: 3px;
-        border-top-left-radius: 3px;
-        background-color:grey;
-
-
-    }
 
 </style>
 

@@ -5015,11 +5015,11 @@ a.list-group-item-danger.active:focus {
     background-color: #111;
 }
 
-/* denne brukes i editpage */
+/* denne brukes i editpage  rgba(0, 0, 0, 0.72) */
 
 .panel-body2 {
     padding: 0px;
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: #111111 ;
 }
 
 .panel-heading {
@@ -5253,6 +5253,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default {
     border-color: #dddddd;
+    background: #111111;
 }
 .panel-default > .panel-heading {
     color: #333333;
