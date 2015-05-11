@@ -19,7 +19,7 @@ $( "#datepicker" ).datepicker();
 				    <div class="panel-body2">
                                     
 
-                        <table class="easynav" width="100%" cellspacing="0" cellpadding="0" style="border: 2px solid pink;">
+                        <table class="easynav" width="100%" cellspacing="0" cellpadding="0">
                                         
                                         <tr>
                                             @if($siden == 0)
@@ -577,7 +577,12 @@ $( "#datepicker" ).datepicker();
                                                         var a = document.getElementById("maned");
                                                     strProject = a.options[a.selectedIndex].value;
                                                 }
-                                                    oc('/admin?side=1&car=' + strDato + '&maned=' + strProject);
+                                                var bruker = "-1";
+                                                if(document.getElementById('brukere') != null){
+                                                    var f = document.getElementById('brukere');
+                                                    bruker = f.options[f.selectedIndex].value;
+                                                }
+                                                    oc('/admin?side=1&car=' + strDato + '&maned=' + strProject + '&bruker=' + bruker);
                                                     }
                                                     </script>
                                                
@@ -589,11 +594,11 @@ $( "#datepicker" ).datepicker();
                                           <?PHP
                                           $a = 1;
                                           ?>
-                                          <tr><td class="framvisninghoved">#</td><td class="framvisninghoved">{{trans('general.car')}}</td><td class="framvisninghoved">{{trans('general.date')}}</td><td class="framvisninghoved">{{trans('general.startdestination')}}</td><td class="framvisninghoved">{{trans('general.stopdestination')}}</td><td class="framvisninghoved">{{trans('general.kilometer')}}</td></tr>
+                                          <tr><td class="framvisninghoved">#</td><td class="framvisninghoved">{{trans('general.employee')}}</td><td class="framvisninghoved">{{trans('general.car')}}</td><td class="framvisninghoved">{{trans('general.date')}}</td><td class="framvisninghoved">{{trans('general.startdestination')}}</td><td class="framvisninghoved">{{trans('general.stopdestination')}}</td><td class="framvisninghoved">{{trans('general.kilometer')}}</td></tr>
                                           @foreach($resultatene as $res)
                                           
                                           
-                                          <tr><td class="framvisningrows"><?PHP echo $a; $a++; ?></td><td class="framvisningrows">{{$res->registrationNR}}</td><td class="framvisningrows">{{$res->date}}</td><td class="framvisningrows">{{$res->startdestination}}</td><td class="framvisningrows">{{$res->stopdestination}}</td><td class="framvisningrows">{{$res->totalkm}} km</td></tr>
+                                          <tr><td class="framvisningrows"><?PHP echo $a; $a++; ?></td><td class="framvisningrows">{{$res->firstname}} {{$res->lastname}}</td><td class="framvisningrows">{{$res->registrationNR}}</td><td class="framvisningrows">{{$res->date}}</td><td class="framvisningrows">{{$res->startdestination}}</td><td class="framvisningrows">{{$res->stopdestination}}</td><td class="framvisningrows">{{$res->totalkm}} km</td></tr>
                                           @endforeach
                                           
                                           
