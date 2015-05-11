@@ -1,57 +1,35 @@
 <?php namespace App\Http\Controllers;
-use App;
+
+use App\ContactPerson;
+use App\Http\Requests;
+use App\Http\Requests\CreateContactpersonRequest;
+use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
-use Redirect;
-
-class LanguageController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
+use Request;
+use DB;
+use Carbon\Carbon;
+use App;
+use Lang;
 
 
 
 
-	public function __construct()
-	{
-		
-	}
+class languagecontroller extends Controller
+{
 
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-            
-		
-	}
-        
-        
-        
-        public function changeLanguage($spraket){
+public function changeLang($language)
 
-                Auth::user()->language = $spraket;
-                Auth::user()->save();
-                return Redirect::to("/");
+{
 
-            
-        }
+Auth::User()->language=$language;
+    Auth::User()->save();
+
+    return view('home');
+
+}
+
+
 
 
 

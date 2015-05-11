@@ -89,11 +89,11 @@ Route::get('oversikt', 'OversiktController@show');
 
 
 
-Route::get('/language/{sprak}', 'LanguageController@changeLanguage');
+Route::get('/language/{sprak}', 'LanguageController@changeLang');
 
 Route::group(array('before' => 'isboss'), function(){
 
-    
+    Route::get('admin', 'AdminstatsController@show');
     
 
 Route::get('project/create', 'PagesController@createProject');

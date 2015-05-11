@@ -90,13 +90,13 @@ class PagesController extends Controller {
     $input['customerID'] = Input::get('byggherre');
     
     $p = Project::create($input);
-    
+   
     
     $v = Input::get('con');
     if(count($v) > 0){
         foreach($v as $vv){
    
-            Projectcontactpersons::create(array('projectID' => $p->id, 'contactpersonID' => $vv));
+            Projectcontactpersons::create(array('projectID' => $p->projectID, 'contactpersonID' => $vv));
             
         }
     } else {
