@@ -286,3 +286,18 @@ border-top: 1px solid #DDD;
     
     
 }
+td.error {
+    background-color: #ee0000;
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+    text-align: center;
+}
+td.invisible {
+    background-color: transparent;
+    border: 0px;
+}
+td.sammesomframvisning {
+  border: 2px solid grey;
+    background-color: #eee;
+}

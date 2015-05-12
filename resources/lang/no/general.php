@@ -150,6 +150,7 @@ return [
     'week' => 'Uke',
     'chooseYear' => 'Velg år',
     'chooseWeek' => 'Velg uke',
+    'errorexport1' => 'Du må velge en måned',
 
 ];
 /* 

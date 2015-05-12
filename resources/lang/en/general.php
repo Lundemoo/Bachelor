@@ -156,6 +156,7 @@ return [
     'week' => 'Week',
     'chooseYear' => 'Choose year',
     'chooseWeek' => 'Choose week',
+    'errorexport1' => 'You have to choose a month',
 
 ];
 /* 
