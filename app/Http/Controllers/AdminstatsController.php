@@ -454,6 +454,9 @@ class AdminstatsController extends Controller {
         }    else if($hvilken == "1"){
             
             
+            echo "Hei!";
+            exit;
+            
         }    else {
             echo "Error";
             exit;
