@@ -16,6 +16,7 @@ class Logbookaddition extends Migration {
 			$table->increments('logbookadditionID')->unsigned();
             $table->integer('employeeNR')->unsigned();
             $table->string('registrationNR')->index();
+			$table->integer('projectID')->unsigned();
             $table->string('startdestination');
             $table->string('stopdestination');
             $table->double('totalkm');
@@ -43,6 +44,10 @@ class Logbookaddition extends Migration {
 			   $table->foreign('date')
 				   ->references('date')
 				   ->on('logbook');
+
+			   $table->foreign('projectID')
+				   ->references('projectID')
+				   ->on('projects');
 
 
         });

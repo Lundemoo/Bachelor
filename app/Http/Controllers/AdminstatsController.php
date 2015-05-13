@@ -220,7 +220,18 @@ class AdminstatsController extends Controller {
             
         } elseif(Input::get('side') == "3"){
             $siden = 3;
-            return view('admin.index')->with('siden', $siden);
+            $months = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
+
+
+            $getallprojects = DB::table("projects")->get();
+
+            $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
+
+            $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
+            $getweeks  = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%u') as dateshow"))->groupBy(DB::raw("WEEK(date)"))->get();
+
+
+            return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks);
         }
         //$hei = Lang::get('general.main');
         
@@ -467,6 +478,230 @@ class AdminstatsController extends Controller {
        $users = Db::table('users')->get();
 
        
+    }
+
+    public function exportLogbook(){
+
+        //overskrift, prosjekt, tidsinteger, tidsvalg, overskrifttekst, data
+
+        $hvilken = Input::get('hvilken');
+
+        if(!Helper::isSafe($hvilken, 4)){
+            exit;
+        }
+
+
+        if($hvilken == "0"){
+
+
+            Excel::create('KjorebokMaaned', function($excel) {
+                $excel->setTitle('KjorebokerMnd');
+                $excel->setCreator('Jara')
+                    ->setCompany('Jara Bygg AS');
+                $excel->setDescription('demonstrasjon timeliste export');
+
+                $overskrift = trans('general.timesheet');
+                $excel->sheet($overskrift, function($sheet)  {
+
+
+
+
+                    $month = Input::get('month');
+
+                    if(!Helper::isSafe($month, 4)){
+                        echo "Error" . $month;
+                        exit;
+                    }
+
+
+
+
+
+                    $hentalleprosjekter = DB::table(DB::raw("logbookadditions, projects"))->whereRaw("MONTH(logbookadditions.date) = '$month' AND logbookadditions.projectID = projects.projectID")->groupBy(DB::raw("projects.projectID"))->get();
+
+
+
+                    $getalltimelister = DB::table(DB::raw("timelisteprosjekter, users, projects"))->select(DB::raw("timelisteprosjekter.*, users.firstname, users.lastname, users.id, projects.*"))->whereRaw("MONTH(timelisteprosjekter.date) = '$month' AND timelisteprosjekter.projectID = projects.projectID AND timelisteprosjekter.employeeNR = users.id")->get();
+
+                    $users = DB::table(DB::raw("timelisteprosjekter, users"))->whereRaw("MONTH(timelisteprosjekter.date) = '$month' AND timelisteprosjekter.employeeNR = users.id")->groupBy(DB::raw("users.id"))->get();
+
+
+
+                    // tittel
+
+                    $overskrift = trans('general.timesheet');
+
+
+
+
+                    $nyarray = Array();
+                    $prosjektidarray = Array();
+                    array_push($nyarray, "ID");
+                    array_push($nyarray, trans('general.employee'));
+
+
+                    foreach($hentalleprosjekter as $pro){
+                        array_push($nyarray, $pro->projectName);
+
+
+                        array_push($prosjektidarray, $pro->projectID);
+                    }
+                    array_push($nyarray, "SUM");
+
+
+
+                    $monthName = date("F", mktime(0, 0, 0, $month, 10));
+
+
+                    $rad = 1;
+                    $dis = trans('general.month') . ": " . $monthName;
+                    $sheet->row($rad, array($overskrift, $dis));
+                    $rad = 3;
+                    $sheet->row($rad, $nyarray);
+
+
+                    foreach($users as $user){
+                        $altarray = Array();
+                        array_push($altarray, $user->id);
+                        $denne = $user->firstname . " " . $user->lastname;
+                        array_push($altarray, $denne);
+                        $totalsum = 0;
+                        $sum = 0;
+                        $hvormange = 0;
+                        foreach($prosjektidarray as $projectid){
+
+                            $hentpaid = DB::table(DB::raw("timelisteprosjekter"))->where('projectID', '=', $projectid)->where('employeeNR', '=', $user->id)->whereRaw("MONTH(timelisteprosjekter.date) = '$month'")->get();
+                            $sum = 0;
+                            $hvormange = 0;
+                            foreach($hentpaid as $j){
+                                $hvormange = (strtotime($j->endtime) - strtotime($j->starttime))/3600;
+                                $sum += $hvormange;
+
+                            }
+                            $sum = $sum . "";
+                            array_push($altarray, $sum);
+
+                            $totalsum += $sum;
+                            $sum = 0;
+                        }
+
+                        $rad++;
+                        $totalsum = $totalsum . "";
+                        array_push($altarray, $totalsum);
+
+
+
+
+                        $sheet->row($rad, $altarray);
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+
+                    $hentalletimerperprosjekt = DB::table(DB::raw("timelisteprosjekter, projects"))->whereRaw("MONTH(timelisteprosjekter.date) = '$month' AND timelisteprosjekter.projectID = projects.projectID")->orderBy(DB::raw("projects.projectID"))->get();
+
+                    $idnu = 0;
+                    $sumarray = Array();
+                    array_push($sumarray, "SUM");
+                    array_push($sumarray, "");
+                    $sumtilnu = 0;
+                    $supertotal = 0;
+                    foreach ($hentalletimerperprosjekt as $s){
+
+                        if($idnu == 0){
+                            $idnu = $s->projectID;
+                        }
+
+                        if($s->projectID != $idnu){
+
+                            $idnu = $s->projectID;
+                            array_push($sumarray, $sumtilnu);
+                            $supertotal += $sumtilnu;
+                            $sumtilnu = 0;
+
+                        }
+                        $sumtilnu += (strtotime($j->endtime) - strtotime($j->starttime))/3600;
+
+                    }
+                    array_push($sumarray, $sumtilnu);
+                    $supertotal += $sumtilnu;
+                    array_push($sumarray, $supertotal);
+
+
+                    $rad += 2;
+                    $sheet->row($rad, $sumarray);
+
+
+
+                    /*foreach ($timelisteprosjekter as $timelisteprosjekt) {
+                    //nå henter den alle timelistene og gir et ark til hver. burde forandres til at alle timelistene til en ansatt kommer på hver side og kun for 1 mnd feks
+                    $sheet->row($rad, array(
+                        $timelisteprosjekt->projectID, $in,
+                        $timelisteprosjekt->date, $in,
+                        $timelisteprosjekt->endtime, $timelisteprosjekt->comment
+                ));
+                        $rad +=1;
+                     *
+
+                    }*/
+
+
+
+                });
+
+
+                //  var_dump($timelisteprosjekt);
+
+            })->download('xls');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }    else if($hvilken == "1"){
+
+
+        }    else {
+            echo "Error";
+            exit;
+        }
+
+
+
+
+
+        // $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
+        $users = Db::table('users')->get();
+
+
     }
     
     

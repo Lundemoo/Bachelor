@@ -27,6 +27,7 @@ class CarController extends Controller
 
     }
 
+
     public function create(){
 
          return view('car.create');
@@ -49,7 +50,7 @@ class CarController extends Controller
     public function show($registrationNR){
 
        $car = Car::find($registrationNR);
-        return $car;
+        return view('car.show', compact('car'));
 
     }
 
@@ -76,7 +77,7 @@ class CarController extends Controller
 
         $car->update($request->all());
         \Session::flash('flash_message', Lang::get('general.changeSuccess'));
-        return redirect('editpage');
+        return redirect('editpage?side=0');
     }
 
     /**

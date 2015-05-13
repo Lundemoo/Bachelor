@@ -1,11 +1,44 @@
 @extends('app')
 <style>
-#utlisting{
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #dddddd;
-}
+    #utlisting{
+        border:transparent;
+        cellpadding: 20px;
+
+    }
+    #tablesmall{
+        border-top:5px;
+        border-bottom:5px;
+        border:transparent;
+
+        cellspacing: 20px;
+        cellpadding:20px;
+
+    }
+
+    #tablesmall2{
+        border-top:5px;
+        border:transparent;
+        margin-left: 50px;
+        cellspacing: 20px;
+        cellpadding:20px;
+        border-color:grey;
+
+    }
+
+
+
+    .innholdeasynav{
+        align:center;
+        border: 0px;
+    }
+    th{
+        text-align:center;
+        margin-left: 50px;
+    }
+    td{
+        border-color: grey;
+        padding:20px;
+    }
 
 
 </style>
@@ -20,10 +53,10 @@
                     <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
                        
-                        <table class="easynav" width="100%">
+                        <table class="easynav" width="100%"> <!--easynav start -->
 
                             @if($siden==0)
-                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                <!--forste tr-->            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
@@ -34,35 +67,36 @@
 
 
 
-                            <tr><td colspan="3" class="innholdeasynav"><br>
+                        <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                   <tr><table class="table" cellspacing="5" id="bilvisning" style="color:grey";>
-                                        <thead>
+                                        <center>
+                                  <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+<br>
                                         <tr>
-                                            <th>{{trans('general.registrationNr')}}</th>
-                                            <th>{{trans('general.nickname')}}</th>
-                                            <th>{{trans('general.model')}}</th>
-                                            <th>Aktiv:</th>
-                                            <th> </th>
+                                            <th   width="20%" align="left" >{{trans('general.registrationNrLarge')}}</th>
+                                            <th   width="20%" align="left" >{{trans('general.nicknameLarge')}}</th>
+                                            <th   width="20%" align="left" >{{trans('general.modelLarge')}}</th>
+                                            <th width="30%" align="left"></th>
 
                                         </tr>
 
-                                        </thead>
+                                    </table>
+                                            <br>
+                                        </center>
 
                                     @foreach ($cars as $car)
 
-                                            <tbody>
-                                                
-                                                <tr><td colspan="5"><hr>dsa</td></tr>
-                                            <tr>
+                                            <center>
+                                          <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                            <td id="utlisting" style="color:burlywood";> {{$car->registrationNR}}</td>
-                                            <td id="utlisting" style="color:burlywood";> {{$car->nickname}}<br></td>
-                                            <td id="utlisting" style="color:burlywood";> {{$car->brand}}<br><br></td>
-                                            <td id="utlisting" style="color:burlywood";> {{$car->active}}<br><br></td>
+                                              <tr style="color:grey">
+                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->registrationNR}}</td>
+                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->nickname}}<br></td>
+                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->brand}}<br><br></td>
+                                           <!-- <td id="utlisting" width="15%" align="center"  style="color:burlywood"> {{$car->active}}<br><br></td> -->
 
                                                 @if($car->active == "1")
-                                            <td>
+                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
                                                 <!--deaktivere knapp -->
 
@@ -76,12 +110,16 @@
                                                 {!! Form::close() !!}
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                {!! Form::submit('Endre', ['class' => 'btn']) !!}
+                                                {!! Form::close() !!}
+
+                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
+                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                 {!! Form::close() !!}
 
                                                 @else
 
-                                                    <td>
+                                                    <td id="utlisting" width="30%" align="center">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
                                                         {!! Form::button('Aktivere', array(
@@ -96,10 +134,12 @@
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
 
-                                            </td>
+
                                                     @endif
 
-                                            </tr>
+                                                    </td> </tr>
+
+
                                             @endforeach
                                             <input type='hidden' value='' id='gjemt'>
                                             <script>
@@ -109,14 +149,21 @@
                                             }
                                             </script>
 
-                                            </tbody>
 
-                                    </table></tr>
 
-                                    {!! $cars->render()!!}
-                                @include('includes.jara_confirm')
 
-                                </td></tr>
+                            </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                                </center>
+
+                        <!--slutttd innholdeasynavn -->
+                        </td>  </tr>  <!--slutt forste tr  -->
+
+
+
+
+
 
                             <!-- REDIGERE BRUKERE -->
 
@@ -204,9 +251,9 @@
 
                                     </table></tr>
 
+
                                 {!! $users->render()!!}
                                 @include('includes.jara_confirm')
-
                                 </td></tr>
 
                                         <!-- REDIGERE Prosjekter -->
@@ -547,12 +594,12 @@
 
                                         <tbody>
                                         <tr>
-<div id="utlisting" style="color:white";>
+                                        <div id="utlisting" style="color:white";>
                                             <td id="utlisting" style="color:burlywood";> {{$company->companyID}}<br></td>
                                             <td id="utlisting" style="color:burlywood";>  {{$company->companyname}}<br></td>
                                             <td id="utlisting" style="color:burlywood";>  {{$company->role}}<br></td>
                                             <td id="utlisting" style="color:burlywood";>  {{$company->active}}<br></td>
-</div>
+                                        </div>
                                             @if($company->active == "1")
                                                 <td>
 

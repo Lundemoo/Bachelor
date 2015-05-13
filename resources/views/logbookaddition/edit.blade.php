@@ -53,10 +53,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.registrateDriving')}}
+                    <div class="panel-heading">{{trans('general.editDriving')}}
                     <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
-                    </div>
+                        </div>
                     <div class="panel-body">
+
                         <body onload="initialize()">
                         <!--fra min index blade fil -->
                         {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->employeeNR ]]) !!}
@@ -87,10 +88,11 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('active', 'Aktiv:') !!}
-                            {!! Form::checkbox('active', '1' , true) !!}
+                           <!-- {!! Form::checkbox('active', Input::old('active', $logbookaddition->active)) !!} -->
+                            <input type="checkbox" name="active" value="true">
                         </div>
-                        <br/>
 
+                        <br/>
                         <div class="form-group">
                             {!! Form::submit(trans('general.editLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>

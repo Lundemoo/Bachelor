@@ -76,7 +76,13 @@ class TimelisteprosjektController extends Controller {
     */
     public function edit($ID){
 
+        //$post_timeID= array();
         $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);
+
+      /*  foreach ($timelisteprosjekt as $timeID) {
+            $post_timeID[] = $timelisteprosjekt->ID;
+        }
+*/
         $projects = Project::lists('projectName', 'projectID'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));

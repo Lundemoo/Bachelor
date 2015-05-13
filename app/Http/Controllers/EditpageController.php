@@ -13,6 +13,7 @@ use Request;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\Factory;
 use Lang;
 use App;
 use Helper;
@@ -28,8 +29,9 @@ class EditpageController extends Controller
     {
 
         /* henter alt som skal vises fra databasen med paginate */
-
-        $cars = DB::table('car')->paginate(6);
+        //$cars->setBaseUrl('editpage?side=0');
+        $cars = DB::table('car')->simplePaginate(6);
+        $cars->setPath('editpage?side=0');
         $builders = DB::table('builder')->paginate(6);
         $users = DB::table('users')->paginate(6);
         $projects = DB::table('projects')->paginate(6);
@@ -42,8 +44,8 @@ class EditpageController extends Controller
             ->leftJoin('projects', 'builder.customerID', '=', 'projects.customerID')
             ->get();
 
-        $siden = 1;
-        if (Helper::isSafe(Input::get('side'), 4) && Input::get('side') != "") {
+      $siden = 1;
+      if (Helper::isSafe(Input::get('side'), 4) && Input::get('side') != "") {
             $siden = Input::get('side');
         } else {
             $siden = 1;
@@ -58,6 +60,7 @@ class EditpageController extends Controller
     }
 
     public function show(){
+        $siden=1;
         App::setLocale('en');
         if(Helper::isSafe(Input::get('side'), 4) && Input::get('side') != ""){
             $siden = Input::get('side');

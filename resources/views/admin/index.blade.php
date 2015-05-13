@@ -628,7 +628,8 @@ $( "#datepicker" ).datepicker();
                                     @else
                                     <h3>{{trans('general.noresults')}}</h3>
                                     @endif
-                                       
+
+                                    <!-- timelister excel -->
                                        @elseif($siden == 2)
                                        
                                        <table width="80%" class="framvisning">
@@ -791,14 +792,12 @@ $( "#datepicker" ).datepicker();
                                            }
                                            
                                            </script>
-                                       @elseif($siden == 3)
-                                       Hade
-                                       
-                                       
-                                       
-                                       
-                                       
-                                       @endif
+
+
+
+
+
+                                                @endif
                                     
                                        
                                        

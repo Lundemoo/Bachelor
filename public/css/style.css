@@ -24,7 +24,7 @@ and open the template in the editor.
         left: 50%;
         width: 60%;
         height-min: 200px;
-        border: 2px solid black;
+        border: 2px solid ;
         background-color: white;
         margin-left: -30%;
         
@@ -34,10 +34,11 @@ and open the template in the editor.
         color: black;
         padding: 20px;
         border: 2px solid gray;
-        
-        
-        
     }
+        
+
+        
+
     #grey {
         z-index: 9998;
         width: 100%;
@@ -130,6 +131,7 @@ and open the template in the editor.
                                             border: 0px;
                                         }
                                         td.innholdeasynav {
+                                            border: 0px;
                                             
                                         }
                                         table.framvisning {

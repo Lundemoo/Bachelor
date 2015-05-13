@@ -62,13 +62,14 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::group(array('before' => 'loggedin'), function(){
-  
+
+    /*export excel */
 Route::post('admin/export', 'AdminstatsController@export'); //export excel
 
 
 
 
-//routes for timelisteregistrering aka timelisteprosjekter
+/* timelisteregistrering aka timelisteprosjekter */
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
@@ -77,7 +78,7 @@ Route::PATCH('timelisteprosjekter/{projectID}/update', 'TimelisteprosjektControl
 Route::get('timelisteprosjekter/{projectID}/export', 'TimelisteprosjektController@export'); //export excel
 Route::get('timelisteprosjekter/exportAll', 'TimelisteprosjektController@exportAll'); //export excel
 
-//routes for kjørebok registrering aka logbookaddition
+/* kjørebok registrering aka logbookaddition */
 Route::get('logbookaddition', 'LogbookadditionController@index');
 Route::get('logbookaddition/create', 'LogbookadditionController@create'); //skjemautfylling
 Route::post('logbookaddition', 'LogbookadditionController@store');  //lagre i DB
@@ -94,7 +95,8 @@ Route::get('/language/{sprak}', 'LanguageController@changeLang');
 Route::group(array('before' => 'isboss'), function(){
 
     Route::get('admin', 'AdminstatsController@show');
-    
+
+    /*project */
 
 Route::get('project/create', 'PagesController@createProject');
 Route::get('project', 'PagesController@showProject');
@@ -157,15 +159,15 @@ Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 
 Route::get('/storefirm/{all}',  'addcontactpersonController@storefirm');
 
-//routes for å registrere/edit bil. skal kun være mulig for sjefene.
+/* bil */
 Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
-//Route::get('car/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
+Route::get('car/show/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
-Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden)
+Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
 
-//routes for builder Skal kun være mulig for sjefene.
+/* builder. Skal kun være mulig for sjefene */
 Route::get('builder', 'BuilderController@index');
 Route::get('builder/create', 'BuilderController@create');
 Route::post('builder', 'BuilderController@store');

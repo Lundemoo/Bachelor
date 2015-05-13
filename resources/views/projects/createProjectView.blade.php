@@ -1,7 +1,19 @@
 @extends('app')
 @section('content')
 
+<style>
+.newcontact{
+    background-color: black;
+    padding:10px;
+}
 
+    .newcontact:after{
+        background-color: orange;
+        padding:10px;
+
+    }
+
+</style>
 
 
  <script>
@@ -18,31 +30,39 @@ $( "#datepicker" ).datepicker();
 
 <div class="panel panel-default">
 				<div class="panel-heading"> {{trans('general.registrateProject')}} </div>
-				<div class="panel-body">
+				<div class="panel-body" >
                                     
-                                    <div id="newcontact">
+                                    <div id="newcontact" style="">
                                        
-                                        <table class="newcontact"><tr><td>
-                                        <table><tr><td class="newcontact">{{trans('general.firstname')}} </td><td class="newcontact"><input type="text" id="fornavn"></td></tr>
-                                            <tr><td class="newcontact">{{trans('general.surname')}} </td><td class="newcontact"><input type="text" id="etternavn"></td></tr>
-                                            <tr><td class="newcontact">{{trans('general.telephone')}}</td><td class="newcontact"><input type="text" id="telefon"></td></tr>
-                                            <tr><td class="newcontact">{{trans('general.email')}} </td><td class="newcontact"><input type="email" id="email"></td></tr>
-                                        
-                                            <tr><td colspan="2">
+                                        <table class="newcontact" style="padding:15px;" margin-top="2px"><tr><td>
+                                        <table><tr><td class="newcontact" >{{trans('general.firstname')}} </td><td class="newcontact"><label ><font color="#E26300">Fyll ut kontaktperson</font><input type="text" id="fornavn" placeholder="Fornavn"> </label></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.surname')}} </td><td class="newcontact"><input type="text" id="etternavn" placeholder="Etternavn"></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.telephone')}}</td><td class="newcontact"><input type="text" id="telefon" placeholder="tlf"></td></tr>
+                                            <tr><td class="newcontact">{{trans('general.email')}} </td><td class="newcontact"><input type="email" id="email" placeholder="Epost"></td></tr>
+
+
+                                            <tr>
+
+
+                                                <td colspan="2" align="center">
                                                 <input type="submit" name="store" id="store" value="Lagre!" onclick="lagre()"></br>
                                                 <a href="#" onclick="test()">{{trans('general.finish')}}</a><div id="result"><td></tr>
-                                            
+
+
                                         </table>
+
                                         </div>
+
                                                 </td><td valign="top" width="50%">
+<br>
                                                     <table width="100%" style="border: 0px solid red;"><tr><td>
                                         {!! Form::select('companyid', $company_list, null, array('size' => '5', 'id' => 'companyid')) !!}
                                                             </td></tr>
                                                         <tr>
                                                             <td>
                                                                 <p id="gjem" style="display: none;">
-                                                                {{trans('general.name')}} <input type="text" name="nyttfirmanavn" id="nyttfirmanavn"></br>
-                                                                {{trans('general.role')}} <input type="text" name="nyttfirmarolle" id="nyttfirmarolle"></p>
+                                                                {{trans('general.name')}}  <input type="text" name="nyttfirmanavn" id="nyttfirmanavn" placeholder="Firmanavn"></br>
+                                                                {{trans('general.role')}} <input type="text" name="nyttfirmarolle" id="nyttfirmarolle" placeholder="Firmaets rolle"></p>
                                                                 <p id="gjemandre"><a href="#" id="linkborte" onclick="leggtil()">+ {{trans('general.newFirm')}}</a></p>
                                                             </td>
                                                         </tr></table>
@@ -245,7 +265,11 @@ $( "#datepicker" ).datepicker();
 function test(){
     if(on == false){
         document.getElementById('newcontact').style.display = 'block';
+        document.getElementById('newcontact').style.border = '1px solid white';
+        document.getElementById('newcontact').style.textarea = ' black';
+        document.getElementById('newcontact').style.background = '#E26300';
         document.getElementById('grey').style.display = 'block';
+
         on = true;
     } else {
         document.getElementById('newcontact').style.display = 'none';
@@ -300,13 +324,14 @@ document.getElementById("legginnher").innerHTML =  leggtil + document.getElement
 document.getElementById("ingen").style.display = 'none';
 document.getElementById("ingen2").style.display = 'block';
 test();
-                 document.getElementById('fornavn').style.border = "1px solid gray";
+
+            document.getElementById('fornavn').style.border = "1px solid gray";
             document.getElementById('etternavn').style.border = "1px solid gray";
             document.getElementById('telefon').style.border = "1px solid gray";
             document.getElementById('email').style.border = "1px solid gray";
             
             
-                 document.getElementById('fornavn').value = "";
+            document.getElementById('fornavn').value = "";
             document.getElementById('etternavn').value = "";
             document.getElementById('telefon').value = "";
             document.getElementById('email').value = "";
