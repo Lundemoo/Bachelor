@@ -257,6 +257,30 @@ class AdminstatsController extends Controller {
         
         
         if($hvilken == "0"){
+            $month = Input::get('month');
+            if($month == "-1"){
+            
+                
+                $error = trans('general.errorexport1');
+                
+                
+                   $siden = 2;
+            $months = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
+            
+            
+            $getallprojects = DB::table("projects")->get();
+            
+            $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
+            
+            $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
+            $getweeks  = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%u') as dateshow"))->groupBy(DB::raw("WEEK(date)"))->get();
+            
+            
+          return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks)->with('error', $error);
+            
+                
+                
+            }
             
             
             Excel::create('AlleTimelisterforAnsatt', function($excel) {
@@ -268,10 +292,10 @@ class AdminstatsController extends Controller {
                 $overskrift = trans('general.timesheet');
                 $excel->sheet($overskrift, function($sheet)  {
                     
-            
-            
-            
             $month = Input::get('month');
+            
+            
+            
             
             if(!Helper::isSafe($month, 4)){
                 echo "Error" . $month;
@@ -464,6 +488,9 @@ class AdminstatsController extends Controller {
             
         }    else if($hvilken == "1"){
             
+            
+            echo "Hei!";
+            exit;
             
         }    else {
             echo "Error";

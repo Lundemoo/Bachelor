@@ -632,7 +632,13 @@ $( "#datepicker" ).datepicker();
                                     <!-- timelister excel -->
                                        @elseif($siden == 2)
                                        
-                                       <table width="80%" class="framvisning">
+                                       <table width="80%" class="">
+                                           @if(isset($error))
+                                           <tr><td class="error">{{$error}}</td><td class="invisible" colspan="2">&nbsp;</td></tr>
+                                           @endif
+                                           @if(isset($error2))
+                                           <tr><td class="invisible">&nbsp;</td><td class="error" colspan="2">{{$error2}}</td></tr>
+                                           @endif
                                            <tr><td class="framvisninghoved" width="50%">{{trans('general.timelisterlonn')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.timelisterfaktura')}}</td></tr>
                                                
                                            <tr>
@@ -641,7 +647,7 @@ $( "#datepicker" ).datepicker();
                                                
                                            </tr>
                                            
-                                           <tr><td class="framvisning">
+                                           <tr><td class="sammesomframvisning">
                                                    <form action="/admin/export" method="post">
                                                    <center>
                                                        
@@ -659,9 +665,9 @@ $( "#datepicker" ).datepicker();
                                        </form>
                                                </td>
                                                
-                                               <td class="framvisning" width="25%">
-                                                   <form method="post" action="/admin/export">
-                                               
+                                               <td class="sammesomframvisning" width="25%">
+                                                   
+                                               <form method="post" action="/admin/export">
                                                        
                                                        
                                                <center> 
@@ -677,17 +683,19 @@ $( "#datepicker" ).datepicker();
                                                        
                                                        
                                                   </center>
+                                       
                                                    
-                                       </td><td class="framvisning" width="25%">
-                                           
+                                       </td><td class="sammesomframvisning" width="25%">
+                                       
                                        <center>
+                                       
                                            <select name="time" id="time" onChange="vis()"><option value="-1">{{trans('general.choosetimeperiode')}}</option>
                                                <option value="0">{{trans('general.year')}}</option>
                                                <option value="1">{{trans('general.month')}}</option>
                                                <option value="2">{{trans('general.week')}}</option>
                                            </select>
                                                
-                                       
+                                      
                                        
                                            </br>
                                        <select name="year" id="year" style="display:none;">
@@ -747,12 +755,12 @@ $( "#datepicker" ).datepicker();
                                        
                                        @endif
                                        </select>
-                                                   </form>
+                                                   
                                        </center></br>
                                        
                                        </br>
                                        <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
-                                       </td></tr>
+                                           </td></tr>
                                            
                                                        
                                        <tr><td class="framvisning">
