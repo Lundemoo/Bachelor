@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Lang;
+use App\User;
+use App\Project;
 use App;
 use Helper;
 use App\Timesheet;
@@ -213,7 +215,7 @@ class AdminstatsController extends Controller {
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
             
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
-            $getweeks  = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%u') as dateshow"))->groupBy(DB::raw("WEEK(date)"))->get();
+            $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber, WEEKOFYEAR(date) as weeknumbershow"))->groupBy("weeknumber")->get();
             
             
           return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks);
@@ -228,8 +230,7 @@ class AdminstatsController extends Controller {
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
 
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
-            $getweeks  = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%u') as dateshow"))->groupBy(DB::raw("WEEK(date)"))->get();
-
+           $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber, WEEKOFYEAR(date) as weeknumbershow"))->groupBy("weeknumber")->get();
 
             return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks);
         }
@@ -273,7 +274,7 @@ class AdminstatsController extends Controller {
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
             
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
-            $getweeks  = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%u') as dateshow"))->groupBy(DB::raw("WEEK(date)"))->get();
+            $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber"))->groupBy("weeknumber")->get();
             
             
           return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks)->with('error', $error);
@@ -487,6 +488,273 @@ class AdminstatsController extends Controller {
             
             
         }    else if($hvilken == "1"){
+            
+                      $typenummer = -1;
+          $typeverdi = -1;
+            
+            
+            $hvilken = Input::get('time');
+          if(!Helper::isSafe($hvilken, 4)){
+              exit; // Legg inn feilmelding
+          }
+          
+          $prosjekt = Input::get('project');
+          if(!Helper::isSafe($prosjekt, 4)){
+              exit; //Feilmelding
+          }
+          
+          if($hvilken == 0 || $hvilken == 1 || $hvilken == 2){
+              if($hvilken == 0){
+                  $typeverdi = Input::get('year');
+              } elseif($hvilken == 1){
+                  $typeverdi = Input::get('month2');
+                  
+              } elseif($hvilken == 2){
+                  $typeverdi = Input::get('week');
+              }
+              $typenummer = $hvilken;
+              if(!Helper::isSafe($typeverdi, 4)){
+                  exit; // Legg til feilmelding
+              }
+          } else {
+              exit; //Legg inn feilmelding
+          }
+            
+            
+            
+            Excel::create('AlleTimelisterforAnsatt', function($excel) {
+                $excel->setTitle('Timelister');
+            $excel->setCreator('Rune')
+                ->setCompany('Jara Bygg AS');
+            $excel->setDescription('demonstrasjon timeliste export');
+
+                $overskrift = trans('general.timesheet');
+                $excel->sheet($overskrift, function($sheet)  {
+                    $super = Array();
+                    
+          $firstarray = Array();
+          $rad = 1;
+          $typenummer = -1;
+          $typeverdi = -1;
+          $hvilken = Input::get('time');
+          $prosjekt = Input::get('project');
+          
+          if($hvilken == 0 || $hvilken == 1 || $hvilken == 2){
+              
+              if($hvilken == 0){
+                  $typeverdi = Input::get('year');
+              } elseif($hvilken == 1){
+                  $typeverdi = Input::get('month2');
+                  
+              } elseif($hvilken == 2){
+                  $typeverdi = Input::get('week');
+              }
+              $typenummer = $hvilken;
+              if(!Helper::isSafe($typeverdi, 4)){
+                  exit; // Legg til feilmelding
+              }
+              
+          } else {
+              
+              exit; //Legg inn feilmelding
+          }
+          $thetext2 = ($typenummer == 1) ? trans('general.month') : trans('general.week');
+          $thetext = ($typenummer == 0) ? trans('general.year') : $thetext2;
+          if($typenummer == 1){
+              $neste = "";
+              
+              if($typeverdi == 1){ $neste = trans('general.january'); }
+              elseif($typeverdi == 2){ $neste = trans('general.february'); }
+              elseif($typeverdi == 3){ $neste = trans('general.march'); }
+              elseif($typeverdi == 4){ $neste = trans('general.april'); }
+              elseif($typeverdi == 5){ $neste = trans('general.may'); }
+              elseif($typeverdi == 6){ $neste = trans('general.june'); }
+              elseif($typeverdi == 7){ $neste = trans('general.july'); }
+              elseif($typeverdi == 8){ $neste = trans('general.august'); }
+              elseif($typeverdi == 9){ $neste = trans('general.september'); }
+              elseif($typeverdi == 10){ $neste = trans('general.october'); }
+              elseif($typeverdi == 11){ $neste = trans('general.november'); }
+              elseif($typeverdi == 12){ $neste = trans('general.december'); }
+              
+              
+              
+              $thetext .= ": " . $neste;
+          } else {
+          $thetext .= ": " . $typeverdi;
+          }
+          array_push($firstarray, trans('general.timesheet'));
+          array_push($firstarray, $thetext);
+          $sheet->row($rad, $firstarray);
+          
+          
+          
+          $rad = 2;
+          $prosjekttextarray = Array();
+          array_push($prosjekttextarray, "");
+          $projecttext = trans('general.project') . ": " . Project::find($prosjekt)->projectName;
+          array_push($prosjekttextarray, $projecttext);
+         $sheet->row($rad, $prosjekttextarray);
+          
+          $supersupertotal = 0;
+          
+          $rad = 4;
+          $andrearray = Array();
+          array_push($andrearray, "ID");
+          array_push($andrearray, trans('general.employee'));
+          if($typenummer == 0){
+              $dayarray = Array();
+              
+              array_push($dayarray, trans('general.january'));
+              array_push($dayarray, trans('general.february'));
+              array_push($dayarray, trans('general.march'));
+              array_push($dayarray, trans('general.april'));
+              array_push($dayarray, trans('general.may'));
+              array_push($dayarray, trans('general.june'));
+              array_push($dayarray, trans('general.july'));
+              array_push($dayarray, trans('general.august'));
+              array_push($dayarray, trans('general.september'));
+              array_push($dayarray, trans('general.october'));
+              array_push($dayarray, trans('general.november'));
+              array_push($dayarray, trans('general.december'));
+              
+              $allemulige = DB::table("timelisteprosjekter")->select(DB::raw("timelisteprosjekter.*, MONTH(date)-1 as verdi"))->whereRaw("projectID = '$prosjekt' AND YEAR(date) = '$typeverdi'")->groupBy(DB::raw("MONTH(date)"))->get();
+              foreach($allemulige as $a){
+                  array_push($andrearray, $dayarray[$a->verdi]);
+                  array_push($super, 0);
+              }
+          } elseif($typenummer == 1){
+              $info = DB::table('timelisteprosjekter')->select(DB::raw("WEEKOFYEAR(date)+1 as weeknumber, timelisteprosjekter.*"))->where('projectID', '=', $prosjekt)->whereRaw("MONTH(date) = '$typeverdi'")->groupBy(DB::raw("WEEKOFYEAR(date)"))->get();
+             
+              foreach($info as $in){
+                  array_push($andrearray, trans('general.week') . " " . $in->weeknumber);
+                  array_push($super, 0);
+              }
+              
+              
+          } elseif($typenummer == 2){
+              $dayarray = Array();
+              array_push($dayarray, trans('general.monday'));
+              array_push($dayarray, trans('general.tuesday'));
+              array_push($dayarray, trans('general.wednesday'));
+              array_push($dayarray, trans('general.thursday'));
+              array_push($dayarray, trans('general.friday'));
+              array_push($dayarray, trans('general.saturday'));
+              array_push($dayarray, trans('general.sunday'));
+              
+              $allemulige = DB::table("timelisteprosjekter")->select(DB::raw("timelisteprosjekter.*, WEEKDAY(date) as verdi, WEEKOFYEAR(date) as hei"))->whereRaw("projectID = '$prosjekt' AND WEEKOFYEAR(date) = '$typeverdi'")->groupBy(DB::raw("DAY(date)"))->orderBy(DB::raw("DAY(date)"), "desc")->get();
+            
+              foreach($allemulige as $a){
+                  
+                  array_push($andrearray, $dayarray[$a->verdi]);
+              array_push($super, 0);
+              }
+             
+          }
+          array_push($andrearray, "SUM");
+          $sheet->row($rad, $andrearray);
+          
+                    
+                    $allusers = DB::table(DB::raw('timelisteprosjekter'))->select(DB::raw("timelisteprosjekter.*, WEEKOFYEAR(date) as weeknumber"))->whereRaw("projectID = '$prosjekt'");
+                   
+                    if($typenummer == 0){
+                        $allusers->whereRaw("YEAR(date) = '$typeverdi'")->groupBy('employeeNR');
+                    } elseif($typenummer == 1){
+                        $allusers->whereRaw("MONTH(date) = '$typeverdi'")->groupBy('employeeNR');
+                    } elseif($typenummer == 2){
+                       $allusers->whereRaw("WEEKOFYEAR(date) = '$typeverdi'")->groupBy('employeeNR');
+                    }
+                    $allusers = $allusers->get();
+                    
+                        
+                        $alley = DB::table("timelisteprosjekter")->whereRaw("projectID = '$prosjekt'");
+                    if($typenummer == 0){
+                        $alley->whereRaw("YEAR(date) = '$typeverdi'")->groupBy(DB::raw("MONTH(date)"))->select(DB::raw("timelisteprosjekter.*, MONTH(date) as verdi"));
+                    } elseif($typenummer == 1){
+                        $alley->whereRaw("MONTH(date) = '$typeverdi'")->groupBy(DB::raw("WEEKOFYEAR(date)"))->select(DB::raw("timelisteprosjekter.*, WEEKOFYEAR(date) as verdi"));
+                    } elseif($typenummer == 2){
+                       $alley->whereRaw("WEEKOFYEAR(date) = '$typeverdi'")->groupBy(DB::raw("DAY(date)"))->select(DB::raw("timelisteprosjekter.*, DAY(date) as verdi"));
+                    }
+                    $alley = $alley->get();
+                    
+                    
+                    
+                        foreach($allusers as $user){
+                            $alleverdier = Array();
+                            array_push($alleverdier, $user->employeeNR);
+                            array_push($alleverdier, User::find($user->employeeNR)->firstname . " " . User::find($user->employeeNR)->lastname);
+                            $supertotal = 0;
+                            $forhver = 0;
+                            foreach($alley as $y){
+                                
+                                $hver = DB::table("timelisteprosjekter")->whereRaw("projectID = '$prosjekt'");
+                                if($typenummer == 0){
+                        $hver->whereRaw("MONTH(date) = MONTH('$y->date') AND employeeNR = '$user->employeeNR'")->select(DB::raw("timelisteprosjekter.*, MONTH(date) as verdi"))->orderBy(DB::raw("verdi"));
+                    } elseif($typenummer == 1){
+                        $hver->whereRaw("WEEKOFYEAR(date) = WEEKOFYEAR('$y->date') AND employeeNR = '$user->employeeNR'")->select(DB::raw("timelisteprosjekter.*, WEEKOFYEAR(date) as verdi"))->orderBy(DB::raw("verdi"));
+                    } elseif($typenummer == 2){
+                       $hver->whereRaw("DAY(date) = DAY('$y->date') AND employeeNR = '$user->employeeNR'")->select(DB::raw("timelisteprosjekter.*, DAY(date) as verdi"))->orderBy(DB::raw("verdi"));
+                    }
+                    $hver = $hver->get();
+                    
+                    $sum = 0;
+                    $idnu = 0;
+                    
+                    foreach($hver as $h){
+                   
+                        
+                        $sum += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
+                        $supertotal += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
+                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "</br>";
+                    }
+                    
+                    array_push($alleverdier, $sum);
+                    $super[$forhver] += $sum;
+                    
+                    $forhver++;
+                            }
+                            
+                            array_push($alleverdier, $supertotal);
+                            $rad++;
+                            $sheet->row($rad, $alleverdier);
+                            $supersupertotal += $supertotal;
+                        }
+                        $altsiste = Array();
+                        array_push($altsiste, "SUM");
+                        array_push($altsiste, "");
+                    foreach($super as $s){
+                        array_push($altsiste, $s);
+                    }
+                    array_push($altsiste, $supersupertotal);
+                        
+                 $rad += 2;
+                    $sheet->row($rad, $altsiste);
+                   
+                });
+
+           
+           //  var_dump($timelisteprosjekt);
+
+        })->download('xls');
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             echo "Hei!";

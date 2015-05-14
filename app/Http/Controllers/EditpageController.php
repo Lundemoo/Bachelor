@@ -30,8 +30,11 @@ class EditpageController extends Controller
 
         /* henter alt som skal vises fra databasen med paginate */
         //$cars->setBaseUrl('editpage?side=0');
+        
         $cars = DB::table('car')->simplePaginate(6);
-        $cars->setPath('editpage?side=0');
+        
+        
+        $cars->appends(Input::except('page'));
         $builders = DB::table('builder')->paginate(6);
         $users = DB::table('users')->paginate(6);
         $projects = DB::table('projects')->paginate(6);

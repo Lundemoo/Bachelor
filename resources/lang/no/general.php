@@ -158,6 +158,33 @@ return [
     'chooseYear' => 'Velg år',
     'chooseWeek' => 'Velg uke',
     'errorexport1' => 'Du må velge en måned',
+    
+    
+    
+        'monday' => 'Mandag',
+'tuesday' => 'Tirsdag',
+'wednesday' => 'Onsdag',
+'thursday' => 'Torsdag',
+'friday' => 'Fredag',
+'saturday' => 'Lørdag',
+'sunday' => 'Søndag',
+    
+    
+    
+        'january' => 'Januar',
+    'february' => 'Februar',
+    'march' => 'Mars',
+    'april' => 'April',
+    'may' => 'Mai',
+    'june' => 'Juni',
+    'july' => 'Juli',
+    'august' => 'August',
+    'september' => 'September',
+    'october' => 'Oktober',
+    'november' => 'November',
+    'december' => 'Desember',
+    
+    
 
 ];
 /* 

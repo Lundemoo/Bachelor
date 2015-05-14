@@ -744,13 +744,13 @@ $( "#datepicker" ).datepicker();
                                            @if(count($weeks) > 1)
                                            <option value="-1">{{trans('general.chooseWeek')}}</option>
                                        @foreach($weeks as $week)
-                                       <option value="{{$week->dateshow}}">{{$week->dateshow}}</option>
+                                       <option value="{{$week->weeknumber}}">{{$week->weeknumbershow}}</option>
                                        @endforeach
                                        
                                        
                                        @else
                                        @foreach($weeks as $week)
-                                       <option value="{{$week->dateshow}}">{{$week->dateshow}}</option>
+                                       <option value="{{$week->weeknumber}}">{{$week->weeknumbershow}}</option>
                                        @endforeach
                                        
                                        @endif
