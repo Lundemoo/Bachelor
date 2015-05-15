@@ -48,8 +48,43 @@ class TimelisteprosjektController extends Controller {
         $input['date'] = Input::get('date_submit');
         $input['starttime'] = Helper::changeTime(Input::get('start'));
         $input['endtime'] = Helper::changeTime(Input::get('slutt'));
-        
+        if($input['comment'] == ""){
+            $input['comment'] == " ";
+        }
         $input['employeeNR'] = Auth::user()->id;
+        
+        $exp1 = explode(":", $input['starttime']);
+        $exp2 = explode(":", $input['endtime']);
+        $stop = 0;
+        if(intval($exp1[0]) == intval($exp2[0])){
+            if(intval($exp1[1]) > intval($exp2[1])){
+        
+                
+                $stop = 1;
+                
+            }
+        } else {
+            if(intval($exp1[0]) > intval($exp2[0])){
+                $stop = 1;
+            }
+        }
+        
+        
+        
+        
+        if($stop == 1){
+            
+
+        $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
+         $projects = Project::lists('projectName', 'projectID');
+
+        return view('timelisteprosjekter.create', array('projects' => $projects))->withErrors(trans('general.timesheetFail1'));
+                
+        }
+        
+        
+        
+        
         
          $result = DB::table('timesheet')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('date', '=', $input['date'])->count();
         if($result == 0){

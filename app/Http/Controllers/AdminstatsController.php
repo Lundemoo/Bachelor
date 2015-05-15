@@ -210,7 +210,8 @@ class AdminstatsController extends Controller {
             $months = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
             
             
-            $getallprojects = DB::table("projects")->get();
+            $getallprojects = DB::table("projects")->groupBy('projectID')->get();
+            
             
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
             
@@ -285,6 +286,7 @@ class AdminstatsController extends Controller {
             
             
             Excel::create('AlleTimelisterforAnsatt', function($excel) {
+                
                 $excel->setTitle('Timelister');
             $excel->setCreator('Rune')
                 ->setCompany('Jara Bygg AS');
@@ -292,6 +294,17 @@ class AdminstatsController extends Controller {
 
                 $overskrift = trans('general.timesheet');
                 $excel->sheet($overskrift, function($sheet)  {
+                
+                    $sheet->setStyle(array(
+    'font' => array(
+        'name'      =>  'Times New Roman',
+        'size'      =>  11,
+        'bold'      =>  true
+    )
+));
+                    
+                    
+                    
                     
             $month = Input::get('month');
             
@@ -312,7 +325,7 @@ class AdminstatsController extends Controller {
             
             
             
-            
+            $summid = Array();
             
             
             
@@ -343,7 +356,7 @@ class AdminstatsController extends Controller {
 
                             foreach($hentalleprosjekter as $pro){
                                 array_push($nyarray, $pro->projectName);
-                                
+                                array_push($summid, 0);
                                 
                                 array_push($prosjektidarray, $pro->projectID);
                             }
@@ -369,6 +382,7 @@ class AdminstatsController extends Controller {
                         $totalsum = 0;
                         $sum = 0;
                         $hvormange = 0;
+                        $teller = 0;
                         foreach($prosjektidarray as $projectid){
                             
                             $hentpaid = DB::table(DB::raw("timelisteprosjekter"))->where('projectID', '=', $projectid)->where('employeeNR', '=', $user->id)->whereRaw("MONTH(timelisteprosjekter.date) = '$month'")->get();
@@ -381,9 +395,11 @@ class AdminstatsController extends Controller {
                             }
                             $sum = $sum . "";
                             array_push($altarray, $sum);
+                            $summid[$teller] += $sum;
                             
                             $totalsum += $sum;
                             $sum = 0;
+                            $teller++;
                         }
                         
                         $rad++;
@@ -408,35 +424,16 @@ class AdminstatsController extends Controller {
                     
                     
                     
-                    $hentalletimerperprosjekt = DB::table(DB::raw("timelisteprosjekter, projects"))->whereRaw("MONTH(timelisteprosjekter.date) = '$month' AND timelisteprosjekter.projectID = projects.projectID")->orderBy(DB::raw("projects.projectID"))->get();
                     
-                    $idnu = 0;
                     $sumarray = Array();
                     array_push($sumarray, "SUM");
                     array_push($sumarray, "");
-                    $sumtilnu = 0;
-                    $supertotal = 0;
-                    foreach ($hentalletimerperprosjekt as $s){
-                        
-                        if($idnu == 0){
-                         $idnu = $s->projectID;   
-                        }
-                        
-                        if($s->projectID != $idnu){
-                            
-                            $idnu = $s->projectID;
-                            array_push($sumarray, $sumtilnu);
-                            $supertotal += $sumtilnu;
-                            $sumtilnu = 0;
-                            
-                        }
-                        $sumtilnu += (strtotime($j->endtime) - strtotime($j->starttime))/3600;
-                        
+                    $total = 0;
+                    foreach($summid as $s){
+                        array_push($sumarray, $s);
+                        $total += $s;
                     }
-                    array_push($sumarray, $sumtilnu);
-                    $supertotal += $sumtilnu;
-                    array_push($sumarray, $supertotal);
-                    
+                    array_push($sumarray, $total);
                     
                     $rad += 2;
                     $sheet->row($rad, $sumarray);
@@ -530,6 +527,13 @@ class AdminstatsController extends Controller {
 
                 $overskrift = trans('general.timesheet');
                 $excel->sheet($overskrift, function($sheet)  {
+                                     $sheet->setStyle(array(
+    'font' => array(
+        'name'      =>  'Times New Roman',
+        'size'      =>  11,
+        'bold'      =>  true
+    )
+));
                     $super = Array();
                     
           $firstarray = Array();

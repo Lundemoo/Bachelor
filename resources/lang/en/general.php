@@ -93,6 +93,8 @@ return [
     'newFirm' => 'New Firm',
     'projectName' => 'Project Name',
     'wprojectName' => 'Write project name',
+    'projectID' => 'Project ID',
+    'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Project address',
     'wprojectAddress' => 'Write project address',
     'estimatedHours' => 'Estimated hours',
@@ -189,7 +191,8 @@ return [
     'december' => 'December',
     
     
-    
+    'timesheetFail1' => 'Starttime must be before endtime',
+    'nobuilder' => 'You have to choose a builder',
     
     
     

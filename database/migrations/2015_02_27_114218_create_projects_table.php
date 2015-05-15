@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration {
 	public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
-            $table->increments('projectID')->unsigned()->index();
+            $table->integer('projectID')->unsigned()->index();
             $table->string('projectName');
             $table->string('projectAddress');
             $table->integer('budget')->nullable();

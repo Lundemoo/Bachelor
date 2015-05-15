@@ -85,9 +85,48 @@ class PagesController extends Controller {
     public function store()
 {
     $input = Request::all();
+    
     $input['startDate'] = Input::get('startdate_submit');
     $input['expectedCompletion'] = Input::get('sluttdate_submit');
     $input['customerID'] = Input::get('byggherre');
+    
+    if(!isset($_POST['byggherre'])){
+         
+     
+$contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $customer_list = Builder::lists('customername','customerID');
+        $company_list = Company::lists('companyname','companyid');
+           
+        
+        
+        $res = DB::table(DB::raw('contactpersons, companies'))->select('*')->whereRaw('contactpersons.companyID = companies.companyID')->get(); 
+        $ar = array();
+        foreach ($res as $resen){
+            $hver = array();
+            $s = $resen->contactname . " " . $resen->contactsurname;
+            array_push($hver, $resen->contactname);
+            array_push($hver, $resen->contactsurname);
+            array_push($hver, $resen->contactpersonID);
+            array_push($hver, $resen->companyname);
+            array_push($ar, $hver);
+        }
+        
+        
+         $b = array();
+        $res2 = Builder::all();
+        foreach ($res2 as $bb){
+            $ny = array();
+            array_push($ny, $bb->customerID);
+            array_push($ny, $bb->customername);
+            array_push($b, $ny);
+        }
+        
+        
+        
+        return view('projects.createProjectView', array('contactperson_list' => $ar,'company_list' => $company_list, 'customer_list' => $b))->withErrors(trans('general.nobuilder'));
+
+    }
+    
     
     $p = Project::create($input);
    
@@ -96,13 +135,9 @@ class PagesController extends Controller {
     if(count($v) > 0){
         foreach($v as $vv){
    
-            Projectcontactpersons::create(array('projectID' => $p->projectID, 'contactpersonID' => $vv));
+            Projectcontactpersons::create(array('projectID' => $input['projectID'], 'contactpersonID' => $vv));
             
         }
-    } else {
-        
-    
-        exit;
     }
     
     

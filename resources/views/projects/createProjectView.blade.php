@@ -31,6 +31,14 @@ $( "#datepicker" ).datepicker();
 <div class="panel panel-default">
 				<div class="panel-heading"> {{trans('general.registrateProject')}} </div>
 				<div class="panel-body" >
+                                    @if ($errors->any())
+                        <ul class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+
+                    @endif
                                     
                                     <div id="newcontact" style="">
                                        
@@ -91,6 +99,13 @@ $( "#datepicker" ).datepicker();
 
                                     
 {!! Form::open(['url' => 'project']) !!}
+
+<div class="form-group">
+
+ {!! Form::label('projectID', trans('general.projectID') ) !!}
+ {!! Form::text('projectID', null, ['placeholder'=> trans('general.wprojectID') ,'class' => 'form-control']) !!}
+
+</div>
 
 <div class="form-group">
 

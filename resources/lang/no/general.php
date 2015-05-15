@@ -93,6 +93,8 @@ return [
     'newFirm' => 'Nytt Firma',
     'projectName' => 'Prosjekt Navn',
     'wprojectName' => 'Skriv prosjekt navn',
+    'projectID' => 'Project ID',
+    'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Prosjekt adresse',
     'wprojectAddress' => 'Skriv prosjekt adresse',
     'estimatedHours' => 'Estimert timeantall',
@@ -184,7 +186,8 @@ return [
     'november' => 'November',
     'december' => 'Desember',
     
-    
+    'timesheetFail1' => 'Starttime must be before endtime',
+    'nobuilder' => 'Du må velge en byggherre',
 
 ];
 /* 
