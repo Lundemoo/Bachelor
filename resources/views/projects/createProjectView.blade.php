@@ -54,7 +54,7 @@ $( "#datepicker" ).datepicker();
                                         </div>
 
                                                 </td><td valign="top" width="50%">
-<br>
+                                                <br>
                                                     <table width="100%" style="border: 0px solid red;"><tr><td>
                                         {!! Form::select('companyid', $company_list, null, array('size' => '5', 'id' => 'companyid')) !!}
                                                             </td></tr>

@@ -29,14 +29,18 @@ class EditpageController extends Controller
     {
 
         /* henter alt som skal vises fra databasen med paginate */
-        //$cars->setBaseUrl('editpage?side=0');
         $cars = DB::table('car')->simplePaginate(6);
-        $cars->setPath('editpage?side=0');
+        $cars->appends(Input::except('page'));
         $builders = DB::table('builder')->paginate(6);
+        $builders->appends(Input::except('page'));
         $users = DB::table('users')->paginate(6);
+        $users->appends(Input::except('page'));
         $projects = DB::table('projects')->paginate(6);
+        $projects->appends(Input::except('page'));
         $contactpersons = DB::table('contactpersons')->paginate(6);
+        $contactpersons->appends(Input::except('page'));
         $companies = DB::table('companies')->paginate(6);
+        $companies->appends(Input::except('page'));
 
         /* kode for kombinere to stk */
 

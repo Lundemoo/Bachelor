@@ -35,6 +35,7 @@ class CompanyController extends Controller
 
     public function store(CreateCompanyRequest $request){
 
+
         $input = $request->all();
         Company::create($input);
 

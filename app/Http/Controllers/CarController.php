@@ -35,7 +35,6 @@ class CarController extends Controller
     }
 
     public function store(CreateCarRequest $request){
-
         $input = $request->all();
         Car::create($input);
 

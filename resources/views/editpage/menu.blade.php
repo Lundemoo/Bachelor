@@ -44,6 +44,7 @@
 </style>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap.3.0.3/css/bootstrap.min.css/" rel="stylesheet">
+
 @section('content')
 
     <div class="container-fluid">
@@ -93,7 +94,6 @@
                                             <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->registrationNR}}</td>
                                             <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->nickname}}<br></td>
                                             <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->brand}}<br><br></td>
-                                           <!-- <td id="utlisting" width="15%" align="center"  style="color:burlywood"> {{$car->active}}<br><br></td> -->
 
                                                 @if($car->active == "1")
                                             <td id="utlisting" width="30%" align="center" style="color: #E26300">
@@ -108,6 +108,7 @@
                                                 ))
                                                 !!}
                                                 {!! Form::close() !!}
+
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
                                                 {!! Form::submit('Endre', ['class' => 'btn']) !!}
@@ -132,6 +133,9 @@
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::close() !!}
+                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
+                                                        {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
 
 
@@ -177,86 +181,81 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                    <tr><td colspan="3" class="innholdeasynav"><br>
-                                <tr><table class="table" cellspacing="5" id="brukervisning" style="color:grey";>
-                                        <thead>
-                                        <tr>
-                                            <th>id </th>
-                                            <th>{{trans('general.firstname')}}</th>
-                                            <th>{{trans('general.surname')}}</th>
-                                            <th>{{trans('general.telephone')}}</th>
-                                            <th>{{trans('general.email')}}</th>
-                                            <th>{{trans('general.active')}}</th>
-                                            <th>  </th>
-                                        </tr>
 
-                                        </thead>
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                            @foreach ($users as $user)
+                                        <center>
+                                            <table class="tablesmall" width="95%" id="brukervisning" style="color:grey";>
+                                                <br>
+                                                <tr>
+                                                    <th   width="20%" align="left" >brukernavn</th>
+                                                    <th   width="20%" align="left" >telefon</th>
+                                                    <th   width="20%" align="left" >adresse</th>
+                                                    <th width="30%" align="left"></th>
 
-                                            <tbody>
-                                            <tr>
+                                                </tr>
 
-                                                <td id="utlisting" style="color:burlywood";> {{$user->id}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$user->firstname}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$user->lastname}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$user->telephone}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$user->email}}</td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$user->active}}</td>
+                                            </table>
+                                            <br>
+                                        </center>
 
-                                                @if($user->active == "1")
-                                                <td>
+                                        @foreach ($users as $user)
 
-                                                    <!--deaktivere knapp -->
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['editpage/destroy', $user->id]])!!}
+                                            <center>
+                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                                    {!! Form::button('Deaktivere', array(
-                                                    'class' => 'btn btn-danger', 'onclick' => "func('editpage/destroy/$user->id')",
-                                                    'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete'
-                                                    ))
-                                                    !!}
+                                                    <tr style="color:grey">
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->firstname}}</td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->lastname}}<br></td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->telephone}}<br><br></td>
 
-                                                    {!! Form::button('Endre', ['class' => 'btn ']) !!}
+                                                        @if($user->active == "1")
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
-                                                    {!! Form::close() !!}
+                                                                <!--deaktivere knapp -->
 
 
-                                                    @else
-
-                                                    <td>
-                                                        <!--aktivere knapp-->
-                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['editpage/aktiver', $user->id]])!!}
-
-                                                        {!! Form::button('Aktivere', array(
-                                                        'class' => 'btn btn-success', 'onclick' => "func('editpage/aktiver/$user->id')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
-
-                                                        {!! Form::button('Endre', ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
-                                                    </td>
-                                                    @endif
-                                            </tr>
-                                            @endforeach
-                                            <input type='hidden' value='' id='gjemt'>
-                                            <script>
-                                                function func(variabelen){
-                                                    var knapp= document.getElementById('gjemt').value = variabelen;
-                                                }
-                                            </script>
-                                            </tbody>
-
-                                    </table></tr>
 
 
-                                {!! $users->render()!!}
-                                @include('includes.jara_confirm')
-                                </td></tr>
 
-                                        <!-- REDIGERE Prosjekter -->
+
+
+                                                        @else
+
+                                                            <td id="utlisting" width="30%" align="center">
+                                                                <!--aktivere knapp-->
+
+
+
+
+
+                                                                @endif
+
+                                                            </td> </tr>
+
+
+                                                    @endforeach
+                                                    <input type='hidden' value='' id='gjemt'>
+                                                    <script>
+                                                        function func(variabelen){
+                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                        }
+                                                    </script>
+
+
+
+
+                                                </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                            </center>
+
+                                            <!--slutttd innholdeasynavn -->
+                                    </td>  </tr>  <!--slutt forste tr  -->
+
+
+                                <!-- REDIGERE Prosjekter -->
 
                             @elseif($siden == 2)
 
@@ -268,95 +267,105 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                <tr><table class="table" cellspacing="5" id="prosjektervisning" style="color:grey";>
-                                        <thead>
-                                        <tr>
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                            <th>ProsjektNavn</th>
-                                            <th>Prosjekt adresse</th>
-                                            <th>Budsjett</th>
-                                            <th>Beskrivelse</th>
-                                            <th>Forventet ferdig</th>
-                                            <th> </th>
+                                        <center>
+                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                                <br>
+                                                <tr>
+                                                    <th   width="20%" align="left" >PROSJEKTNAVN</th>
+                                                    <th   width="20%" align="left" >PROSJEKTADRESSE</th>
+                                                    <th   width="20%" align="left" >BUDSJETT</th>
+                                                    <th width="30%" align="left"></th>
 
-                                        </tr>
-                                        </thead>
+
+
+                                                </tr>
+
+                                            </table>
+                                            <br>
+                                        </center>
 
                                         @foreach ($projects as $project)
 
-                                            <tbody>
-                                            <tr>
+                                            <center>
+                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                                <td id="utlisting" style="color:burlywood";> {{$project->projectName}}</td>
-                                                <td id="utlisting" style="color:burlywood";> {{$project->projectAddress}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";> {{$project->budget}}<br><br></td>
-                                                <td id="utlisting" style="color:burlywood";> {{$project->description}}<br><br></td>
-                                                <td id="utlisting" style="color:burlywood";> {{$project->expectedCompletion}}<br><br></td>
+                                                    <tr style="color:grey">
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->projectName}}</td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->projectAddress}}<br></td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->budget}}<br><br></td>
 
-                                                @if($project->active == "1")
-                                                    <td>
+                                                        @if($project->active == "1")
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
-                                                        <!--deaktivere knapp -->
+                                                                <!--deaktivere knapp -->
 
-                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['project/destroy', $project->projectID]])!!}
 
-                                                        {!! Form::button('Deaktivere', array(
-                                                        'class' => 'btn btn-danger', 'onclick' => "func('project/destroy/$project->projectID')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
-                                                        {!! Form::close() !!}
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['project/destroy', $project->projectID]])!!}
 
-                                                        <!--endre knapp -->
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
+                                                                {!! Form::button('Deaktivere', array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('project/destroy/$project->projectID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                                @else
+                                                                <!--endre knapp -->
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
-                                                    <td>
-                                                        <!--aktivere knapp-->
-                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
 
-                                                        {!! Form::button('Aktivere', array(
-                                                        'class' => 'btn btn-success', 'onclick' => "func('project/aktiver/$project->projectID')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
 
-                                                        {!! Form::close() !!}
+                                                        @else
 
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['projectController@edit', $project->projectID]]) !!}
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
+                                                            <td id="utlisting" width="30%" align="center">
+                                                                <!--aktivere knapp-->
 
-                                                    </td>
-                                                @endif
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
+                                                                {!! Form::button('Aktivere', array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('project/aktiver/$project->projectID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                            </tr>
-                                            @endforeach
-                                            <input type='hidden' value='' id='gjemt'>
-                                            <script>
-                                                function func(variabelen){
-                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['projectController@edit', $project->projectID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
-                                                }
-                                            </script>
 
-                                            </tbody>
+                                                                @endif
 
-                                    </table></tr>
+                                                            </td> </tr>
 
-                                {!! $projects->render()!!}
-                                @include('includes.jara_confirm')
 
-                                </td></tr>
+                                                    @endforeach
+                                                    <input type='hidden' value='' id='gjemt'>
+                                                    <script>
+                                                        function func(variabelen){
+                                                            var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                    <!-- REDIGERE BYGGHERRER -->
+                                                        }
+                                                    </script>
+
+
+
+
+                                                </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                            </center>
+
+                                            <!--slutttd innholdeasynavn -->
+                                    </td>  </tr>  <!--slutt forste tr  -->
+
+
+                                <!-- REDIGERE BYGGHERRER -->
 
                             @elseif($siden == 3)
 
@@ -368,103 +377,109 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav"><br>
 
-                                <tr><table class="table" cellspacing="5" id="byggherrevisning" style="color:grey";>
-                                        <thead>
-                                        <tr>
-                                          <!--  <th>{{trans('general.customerId')}} </th> -->
-                                            <th>{{trans('general.customerName')}}</th>
-                                            <th>{{trans('general.customerAddress')}}</th>
-                                              <th>{{trans('general.customerTelephone')}}</th>
-                                             <th>{{trans('general.customerEmail')}}</th>
-                                            <th>Prosjekter</th>
-                                            <th> </th>
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                        </tr>
+                                        <center>
+                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                                <br>
+                                                <tr>
+                                                    <th   width="20%" align="left" >{{trans('general.customerName')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.customerAddress')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.customerTelephone')}}</th>
+                                                    <th width="30%" align="left"></th>
 
-                                        </thead>
+                                                </tr>
+
+                                            </table>
+                                            <br>
+                                        </center>
 
                                         @foreach ($builders as $builder)
 
-                                                <tbody>
-                                                <tr>
+                                            <center>
+                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                                   <!-- <td> {{$builder->customerID}}</td> -->
-                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customername}}</td>
-                                                    <td id="utlisting" style="color:burlywood";> {{$builder->customeraddress}}<br></td>
-                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customertelephone}}<br></td>
-                                                    <td id="utlisting" style="color:burlywood";>  {{$builder->customeremail}}</td>
-                                                    <td>{!! Form::open(['url' => 'editpage']) !!}
+                                                    <tr style="color:grey">
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customername}}</td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customeraddress}}<br></td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customertelephone}}<br><br></td>
+                                                        <td>{!! Form::open(['url' => 'editpage']) !!}
 
-                                                        @foreach ($posts as $post)
+                                                            @foreach ($posts as $post)
 
-                                                            @if($post->customerID == $builder->customerID)
-                                                            <p style="color:lightblue";>{{ $post->projectName }}</p>
+                                                                @if($post->customerID == $builder->customerID)
+                                                                    <p style="color:lightblue";>{{ $post->projectName }}</p>
 
-                                                            @endif
+                                                                @endif
 
-                                                        @endforeach
+                                                            @endforeach
 
-                                                           {!! Form::close() !!}
-                                                    <br></td>
-
-                                                    @if($builder->active == "1")
-                                                    <td>
-
-                                                        {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]])!!}
-
-                                                        {!! Form::button('Deaktivere', array(
-                                                        'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
-                                                        {!! Form::close() !!}
-
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
-
-
-                                                    @else
-
-                                                        <td>
-                                                            <!--aktivere knapp-->
-                                                            {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
-
-                                                            {!! Form::button('Aktivere', array(
-                                                            'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
-                                                            'data-toggle' => 'modal',
-                                                            'data-target' => '#confirmDelete'
-                                                            ))
-                                                            !!}
                                                             {!! Form::close() !!}
+                                                            <br></td>
 
-                                                            {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
-                                                            {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                            {!! Form::close() !!}
+                                                        @if($builder->active == "1")
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
-                                                        </td>
-                                                    @endif
-                                                </tr>
-                                                @endforeach
-                                                <input type='hidden' value='' id='gjemt'>
-                                                <script>
-                                                    function func(variabelen){
-                                                        var knapp= document.getElementById('gjemt').value = variabelen;
-                                                    }
-                                                </script>
-                                                </tbody>
+                                                                <!--deaktivere knapp -->
 
-                                    </table></tr>
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]])!!}
 
-                                {!! $builders->render()!!}
-                                @include('includes.jara_confirm')
+                                                                {!! Form::button('Deaktivere', array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                </td></tr>
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+                                                        @else
 
-                                    <!-- REDIGERE KONTAKTPERSONER -->
+                                                            <td id="utlisting" width="30%" align="center">
+                                                                <!--aktivere knapp-->
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
+
+                                                                {!! Form::button('Aktivere', array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                                @endif
+
+                                                            </td> </tr>
+
+
+                                                    @endforeach
+                                                    <input type='hidden' value='' id='gjemt'>
+                                                    <script>
+                                                        function func(variabelen){
+                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                        }
+                                                    </script>
+
+
+
+
+                                                </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                            </center>
+
+                                            <!--slutttd innholdeasynavn -->
+                                    </td>  </tr>  <!--slutt forste tr  -->
+
+                                <!-- REDIGERE KONTAKTPERSONER -->
 
                             @elseif($siden == 4)
 
@@ -476,93 +491,98 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                <tr><td colspan="3" class="innholdeasynav"><br>
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                <tr><table class="table" cellspacing="5" id="kontaktpersonvisning" style="color:grey";>
-                                        <thead>
-                                        <tr>
-                                            <th>{{trans('general.contactpersonId')}}</th>
-                                            <th>{{trans('general.firstname')}}</th>
-                                            <th>{{trans('general.surname')}}</th>
-                                            <th>{{trans('general.telephone')}}</th>
-                                            <th>{{trans('general.email')}}</th>
-                                            <th>Active:</th>
-                                            <th> </th>
+                                        <center>
+                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                                <br>
+                                                <tr>
+                                                    <th   width="20%" align="left" >{{trans('general.firstname')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.surname')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.telephone')}}</th>
+                                                    <th width="30%" align="left"></th>
 
-                                        </tr>
+                                                </tr>
 
-                                        </thead>
+                                            </table>
+                                            <br>
+                                        </center>
 
                                         @foreach ($contactpersons as $contactperson)
 
-                                            <tbody>
-                                            <tr>
+                                            <center>
+                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                                <td id="utlisting" style="color:burlywood";> {{$contactperson->contactpersonID}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactname}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactsurname}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contacttelephone}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->contactemail}}<br></td>
-                                                <td id="utlisting" style="color:burlywood";>  {{$contactperson->active}}<br></td>
+                                                    <tr style="color:grey">
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contactname}}</td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contactsurname}}<br></td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contacttelephone}}<br><br></td>
 
-                                                @if($contactperson->active == "1")
-                                                <td>
+                                                        @if($contactperson->active == "1")
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['contactperson/destroy', $contactperson->contactpersonID]])!!}
+                                                                <!--deaktivere knapp -->
 
-                                                    {!! Form::button('Deaktivere', array(
-                                                    'class' => 'btn btn-danger', 'onclick' => "func('contactperson/destroy/$contactperson->contactpersonID')",
-                                                    'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete'
-                                                    ))
-                                                    !!}
-                                                    {!! Form::close() !!}
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['contactperson/destroy', $contactperson->contactpersonID]])!!}
 
-                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                    {!! Form::close() !!}
+                                                                {!! Form::button('Deaktivere', array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('contactperson/destroy/$contactperson->contactpersonID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                                @else
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
-                                                    <td>
-                                                        <!--aktivere knapp-->
-                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
+                                                        @else
 
-                                                        {!! Form::button('Aktivere', array(
-                                                        'class' => 'btn btn-success', 'onclick' => "func('contactperson/aktiver/$contactperson->contactpersonID')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
-                                                        {!! Form::close() !!}
+                                                            <td id="utlisting" width="30%" align="center">
+                                                                <!--aktivere knapp-->
 
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
+                                                                {!! Form::button('Aktivere', array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('contactperson/aktiver/$contactperson->contactpersonID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                                    </td>
-                                                @endif
-
-                                            </tr>
-                                            @endforeach
-                                            <input type='hidden' value='' id='gjemt'>
-                                            <script>
-                                                function func(variabelen){
-                                                    var knapp= document.getElementById('gjemt').value = variabelen;
-                                                }
-                                            </script>
-
-                                            </tbody>
-
-                                    </table></tr>
-
-                                {!! $contactpersons->render()!!}
-                                @include('includes.jara_confirm')
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
 
-                                </td></tr>
 
-                        <!-- REDIGERE FIRMA -->
+                                                                @endif
+
+                                                            </td> </tr>
+
+
+                                                    @endforeach
+                                                    <input type='hidden' value='' id='gjemt'>
+                                                    <script>
+                                                        function func(variabelen){
+                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                        }
+                                                    </script>
+
+
+
+
+                                                </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                            </center>
+
+                                            <!--slutttd innholdeasynavn -->
+                                    </td>  </tr>  <!--slutt forste tr  -->
+
+                                <!-- REDIGERE FIRMA -->
 
                         @elseif($siden == 5)
 
@@ -574,87 +594,97 @@
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                 <td class="tom" width="28%">&nbsp;</td></tr>
 
-                            <tr><td colspan="3" class="innholdeasynav"><br>
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                            <tr><table class="table" cellspacing="5" id="firmavisning" style="color:grey";>
-                                    <thead>
-                                    <tr>
-                                        <th>FIRMAID</th>
-                                        <th>FIRMANAVN</th>
-                                        <th>ROLLE</th>
-                                        <th>AKTIV</th>
+                                        <center>
+                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                                <br>
+                                                <tr>
+                                                    <th   width="20%" align="left" >FIRMAID</th>
+                                                    <th   width="20%" align="left" >FIRMANAVN</th>
+                                                    <th   width="20%" align="left" >ROLLE</th>
+                                                    <th width="30%" align="left"></th>
 
-                                        <th> </th>
+                                                </tr>
 
-                                    </tr>
+                                            </table>
+                                            <br>
+                                        </center>
 
-                                    </thead>
+                                        @foreach ($companies as $company)
 
-                                    @foreach ($companies as $company)
+                                            <center>
+                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
-                                        <tbody>
-                                        <tr>
-                                        <div id="utlisting" style="color:white";>
-                                            <td id="utlisting" style="color:burlywood";> {{$company->companyID}}<br></td>
-                                            <td id="utlisting" style="color:burlywood";>  {{$company->companyname}}<br></td>
-                                            <td id="utlisting" style="color:burlywood";>  {{$company->role}}<br></td>
-                                            <td id="utlisting" style="color:burlywood";>  {{$company->active}}<br></td>
-                                        </div>
-                                            @if($company->active == "1")
-                                                <td>
+                                                    <tr style="color:grey">
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->companyID}}</td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->companyname}}<br></td>
+                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->role}}<br><br></td>
 
-                                                    {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['company/destroy', $company->companyID]])!!}
+                                                        @if($company->active == "1")
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
-                                                    {!! Form::button('Deaktivere', array(
-                                                    'class' => 'btn btn-danger', 'onclick' => "func('company/destroy/$company->companyID')",
-                                                    'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete'
-                                                    ))
-                                                    !!}
-                                                    {!! Form::close() !!}
+                                                                <!--deaktivere knapp -->
 
-                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                    {!! Form::close() !!}
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['company/destroy', $company->companyID]])!!}
 
-                                            @else
+                                                                {!! Form::button('Deaktivere', array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('company/destroy/$company->companyID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                                <td>
-                                                    <!--aktivere knapp-->
-                                                    {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
-                                                    {!! Form::button('Aktivere', array(
-                                                    'class' => 'btn btn-success', 'onclick' => "func('company/aktiver/$company->companyID')",
-                                                    'data-toggle' => 'modal',
-                                                    'data-target' => '#confirmDelete'
-                                                    ))
-                                                    !!}
-                                                    {!! Form::close() !!}
 
-                                                    {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-                                                    {!! Form::submit('Endre', ['class' => 'btn ']) !!}
-                                                    {!! Form::close() !!}
 
-                                                </td>
-                                            @endif
+                                                        @else
 
-                                        </tr>
-                                        @endforeach
-                                        <input type='hidden' value='' id='gjemt'>
-                                        <script>
-                                            function func(variabelen){
-                                                var knapp= document.getElementById('gjemt').value = variabelen;
-                                            }
-                                        </script>
+                                                            <td id="utlisting" width="30%" align="center">
+                                                                <!--aktivere knapp-->
+                                                                <!--aktivere knapp-->
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
 
-                                        </tbody>
+                                                                {!! Form::button('Aktivere', array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('company/aktiver/$company->companyID')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-                                </table></tr>
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
+                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
-                            {!! $companies->render()!!}
-                            @include('includes.jara_confirm')
+                                                                @endif
 
-                            </td></tr>
+                                                            </td> </tr>
+
+
+                                                    @endforeach
+                                                    <input type='hidden' value='' id='gjemt'>
+                                                    <script>
+                                                        function func(variabelen){
+                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                        }
+                                                    </script>
+
+
+
+
+                                                </table>
+                                                {!! $cars->render()!!}
+                                                @include('includes.jara_confirm')
+                                            </center>
+
+                                            <!--slutttd innholdeasynavn -->
+                                    </td>  </tr>  <!--slutt forste tr  -->
 
                             @endif
 

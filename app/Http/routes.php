@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::filter('isboss', function(){
     
      if(Auth::check()){
@@ -69,7 +71,7 @@ Route::post('admin/export', 'AdminstatsController@export'); //export excel
 
 
 
-/* timelisteregistrering aka timelisteprosjekter */
+    /* timelisteregistrering aka timelisteprosjekter */
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB

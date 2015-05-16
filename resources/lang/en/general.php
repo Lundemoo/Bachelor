@@ -114,7 +114,7 @@ return [
     'registerProject' => 'Register project',
     'registerLogbook' => 'Register logbook',
     'editDriving' => 'Edit Driving',
-    'newContactperson' => 'New Contacperson',
+    'newContactperson' => 'New Contactperson',
     'startDate' => 'Start date',
     'estimatedFinish' => 'Estimated Finish',
     'editContactperson' => 'Edit Contactperson',
@@ -145,7 +145,7 @@ return [
     'warning' => 'If you did not ask for a new password you can ignore this mail.',
     'usersshowit' => 'Employees',
     'employee' => 'Employee',
-    
+
    
 
 

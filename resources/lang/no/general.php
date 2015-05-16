@@ -158,7 +158,7 @@ return [
     'chooseYear' => 'Velg år',
     'chooseWeek' => 'Velg uke',
     'errorexport1' => 'Du må velge en måned',
-
+    
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.
