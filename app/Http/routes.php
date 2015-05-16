@@ -118,6 +118,7 @@ Route::get('company/{companyID}/edit', 'CompanyController@edit');
 Route::PATCH('company/{companyID}/update', 'CompanyController@update');
 Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
 Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');
+Route::get('company/{companyID}/show', 'CompanyController@show');
 
     
 
@@ -129,7 +130,7 @@ Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit
 Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
 Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
 Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
-
+Route::get('contactperson/{contactpersonID}/show', 'ContactpersonController@show');
 
     
 

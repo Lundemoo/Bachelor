@@ -251,7 +251,7 @@
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                           
+
                                     </td>  </tr>
 
 
@@ -404,7 +404,7 @@
                                                         <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customername}}</td>
                                                         <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customeraddress}}<br></td>
                                                         <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customertelephone}}<br><br></td>
-                                                        <td>{!! Form::open(['url' => 'editpage']) !!}
+                                                       <!-- <td>{!! Form::open(['url' => 'editpage']) !!}
 
                                                             @foreach ($posts as $post)
 
@@ -416,7 +416,7 @@
                                                             @endforeach
 
                                                             {!! Form::close() !!}
-                                                            <br></td>
+                                                            <br></td>   -->
 
                                                         @if($builder->active == "1")
                                                             <td id="utlisting" width="30%" align="center" style="color: #E26300">
@@ -436,9 +436,13 @@
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@show', $builder->customerID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center">
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
 
@@ -452,6 +456,10 @@
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@show', $builder->customerID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 @endif
@@ -537,9 +545,15 @@
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@show', $contactperson->contactpersonID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+
+
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center">
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
@@ -553,6 +567,10 @@
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@show', $contactperson->contactpersonID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
 
@@ -640,11 +658,15 @@
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@show', $company->companyID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
 
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center">
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
 
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
@@ -659,6 +681,10 @@
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@show', $company->companyID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 @endif
@@ -679,7 +705,7 @@
 
 
                                                 </table>
-                                                {!! companies->render()!!}
+                                                {!! $companies->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 

@@ -105,8 +105,9 @@ class BuilderController extends Controller
 
         $builder = Builder::find($customerID);
 
+        $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
 
-        return $builder;
+        return view('builder.show', ['builder'=> $builder, 'arrayo' =>$arrayo]);
 
     }
 

@@ -26,6 +26,17 @@ class ContactpersonController extends Controller
 
     }
 
+    public function show($contactpersonID){
+
+        $contactperson = ContactPerson::find($contactpersonID);
+        $companyID = $contactperson->companyID;
+
+        $arrayo = DB::table('companies')->where('companyID', $companyID)->select('companyID as companyID', 'companyname as companyname')->lists('companyname');
+
+        return view('contactperson.show', ['contactperson'=> $contactperson, 'arrayo' =>$arrayo]);
+
+    }
+
 
     public function edit($contactpersonID){
 
