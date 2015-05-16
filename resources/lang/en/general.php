@@ -93,6 +93,8 @@ return [
     'newFirm' => 'New Firm',
     'projectName' => 'Project Name',
     'wprojectName' => 'Write project name',
+    'projectID' => 'Project ID',
+    'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Project address',
     'wprojectAddress' => 'Write project address',
     'estimatedHours' => 'Estimated hours',
@@ -165,6 +167,40 @@ return [
     'chooseWeek' => 'Choose week',
     'errorexport1' => 'You have to choose a month',
 
+    
+    'monday' => 'Monday',
+'tuesday' => 'Tuesday',
+'wednesday' => 'Wednesday',
+'thursday' => 'Thursday',
+'friday' => 'Friday',
+'saturday' => 'Saturday',
+'sunday' => 'Sunday',
+    
+    
+    'january' => 'January',
+    'february' => 'February',
+    'march' => 'March',
+    'april' => 'April',
+    'may' => 'May',
+    'june' => 'June',
+    'july' => 'July',
+    'august' => 'August',
+    'september' => 'September',
+    'october' => 'October',
+    'november' => 'November',
+    'december' => 'December',
+    
+    
+    'timesheetFail1' => 'Starttime must be before endtime',
+    'nobuilder' => 'You have to choose a builder',
+    
+    
+    
+    
+    
+    
+    
+    
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

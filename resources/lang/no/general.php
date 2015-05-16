@@ -93,6 +93,8 @@ return [
     'newFirm' => 'Nytt Firma',
     'projectName' => 'Prosjekt Navn',
     'wprojectName' => 'Skriv prosjekt navn',
+    'projectID' => 'Project ID',
+    'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Prosjekt adresse',
     'wprojectAddress' => 'Skriv prosjekt adresse',
     'estimatedHours' => 'Estimert timeantall',
@@ -159,6 +161,34 @@ return [
     'chooseWeek' => 'Velg uke',
     'errorexport1' => 'Du må velge en måned',
     
+    
+    
+        'monday' => 'Mandag',
+'tuesday' => 'Tirsdag',
+'wednesday' => 'Onsdag',
+'thursday' => 'Torsdag',
+'friday' => 'Fredag',
+'saturday' => 'Lørdag',
+'sunday' => 'Søndag',
+    
+    
+    
+        'january' => 'Januar',
+    'february' => 'Februar',
+    'march' => 'Mars',
+    'april' => 'April',
+    'may' => 'Mai',
+    'june' => 'Juni',
+    'july' => 'Juli',
+    'august' => 'August',
+    'september' => 'September',
+    'october' => 'Oktober',
+    'november' => 'November',
+    'december' => 'Desember',
+    
+    'timesheetFail1' => 'Starttime must be before endtime',
+    'nobuilder' => 'Du må velge en byggherre',
+
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.
