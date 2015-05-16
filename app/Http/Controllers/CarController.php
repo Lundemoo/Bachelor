@@ -11,6 +11,7 @@ use DB;
 use Carbon\Carbon;
 use App;
 use Lang;
+use Illuminate\Support\Facades\Input;
 
 
 
@@ -108,6 +109,24 @@ class CarController extends Controller
             ->update(array('active'=>'1'));
 
         return redirect('editpage?side=0');
+    }
+
+    public function search(){
+
+        $query = Input::get('q');
+
+        if($query){
+
+           $cars = Car::where('nickname', 'LIKE', "%$query%")->get();
+          //  dd($car);
+        }
+
+      /*  else{
+
+            $cars= Car::all();
+        } */
+
+       return view('car.showsearch')->withCars($cars);
     }
 
 

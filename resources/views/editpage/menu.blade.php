@@ -63,8 +63,16 @@
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                 <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
-                                <td class="tom" width="28%">&nbsp;</td></tr>
+                                <td class="tom" align="center"  width="28%">
 
+                                    {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
+                                        {!! Form::input('search', 'q', null, ['placeholder' => 'Search nickname']) !!}
+
+                                    {!! Form::close() !!}
+
+
+
+                                </td></tr>
 
 
 
@@ -72,7 +80,7 @@
 
                                         <center>
                                   <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
-<br>
+                                    <br>
                                         <tr>
                                             <th   width="20%" align="left" >{{trans('general.registrationNrLarge')}}</th>
                                             <th   width="20%" align="left" >{{trans('general.nicknameLarge')}}</th>
@@ -120,7 +128,7 @@
 
                                                 @else
 
-                                                    <td id="utlisting" width="30%" align="center">
+                                                    <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
                                                         {!! Form::button('Aktivere', array(
@@ -165,11 +173,6 @@
                         <!--slutttd innholdeasynavn -->
                         </td>  </tr>  <!--slutt forste tr  -->
 
-
-
-
-
-
                             <!-- REDIGERE BRUKERE -->
 
                                 @elseif($siden==1)
@@ -183,7 +186,7 @@
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
-                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                 <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
                                             <table class="tablesmall" width="95%" id="brukervisning" style="color:grey";>
@@ -269,7 +272,7 @@
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
-                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                 <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
                                             <table class="tablesmall" width="95%" id="prosjektvisning" style="color:grey";>
@@ -279,11 +282,7 @@
                                                     <th   width="20%" align="left" >PROSJEKTADRESSE</th>
                                                     <th   width="20%" align="left" >BUDSJETT</th>
                                                     <th width="30%" align="left"></th>
-
-
-
                                                 </tr>
-
                                             </table>
                                             <br>
                                         </center>
@@ -323,9 +322,6 @@
                                                                 {!! Form::close() !!}
 
 
-
-
-
                                                         @else
 
                                                             <td id="utlisting" width="30%" align="center" style="color: #E26300">
@@ -348,13 +344,9 @@
                                                                 {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
-
-
-
                                                                 @endif
 
                                                             </td> </tr>
-
 
                                                     @endforeach
                                                     <input type='hidden' value='' id='gjemt'>
@@ -365,14 +357,10 @@
                                                         }
                                                     </script>
 
-
-
-
                                                 </table>
                                                 {!! $projects->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
-
 
                                     </td>  </tr>
 
@@ -511,7 +499,7 @@
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
                                             <table class="tablesmall" width="95%" id="kontaktvisning" style="color:grey";>

@@ -175,6 +175,8 @@ Route::post('car', 'CarController@store');  //lagre i DB
 Route::get('car/show/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
 Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
+Route::get('car/search', 'CarController@search');
+Route::get('car/showsearch/{registrationNR}','CarController@show');  //Søkeresultater //
 
 /* builder. Skal kun være mulig for sjefene */
 Route::get('builder', 'BuilderController@index');
