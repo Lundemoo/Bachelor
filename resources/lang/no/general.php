@@ -160,6 +160,9 @@ return [
     'chooseYear' => 'Velg år',
     'chooseWeek' => 'Velg uke',
     'errorexport1' => 'Du må velge en måned',
+    'companyid '=> 'FIRMAID',
+    'companyname '=> 'FIRMANAVN',
+    'companyrole '=> 'FIRMAROLLE',
     
     
     

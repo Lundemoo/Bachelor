@@ -147,7 +147,9 @@ return [
     'warning' => 'If you did not ask for a new password you can ignore this mail.',
     'usersshowit' => 'Employees',
     'employee' => 'Employee',
-
+    'companyid' => 'COMPANYID',
+    'companyname' => 'COMPANYNAME',
+    'companyrole' => 'COMPANYROLE',
    
 
 

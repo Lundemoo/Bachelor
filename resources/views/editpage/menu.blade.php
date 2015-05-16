@@ -247,12 +247,12 @@
 
 
                                                 </table>
-                                                {!! $cars->render()!!}
+                                                {!! $users->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                            <!--slutttd innholdeasynavn -->
-                                    </td>  </tr>  <!--slutt forste tr  -->
+                                           
+                                    </td>  </tr>
 
 
                                 <!-- REDIGERE Prosjekter -->
@@ -271,7 +271,7 @@
                                 <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
-                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                            <table class="tablesmall" width="95%" id="prosjektvisning" style="color:grey";>
                                                 <br>
                                                 <tr>
                                                     <th   width="20%" align="left" >PROSJEKTNAVN</th>
@@ -357,12 +357,12 @@
 
 
                                                 </table>
-                                                {!! $cars->render()!!}
+                                                {!! $projects->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                            <!--slutttd innholdeasynavn -->
-                                    </td>  </tr>  <!--slutt forste tr  -->
+
+                                    </td>  </tr>
 
 
                                 <!-- REDIGERE BYGGHERRER -->
@@ -378,10 +378,10 @@
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
-                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
-                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                            <table class="tablesmall" width="95%" id="byggherrevisning" style="color:grey";>
                                                 <br>
                                                 <tr>
                                                     <th   width="20%" align="left" >{{trans('general.customerName')}}</th>
@@ -472,12 +472,12 @@
 
 
                                                 </table>
-                                                {!! $cars->render()!!}
+                                                {!! $builders->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                            <!--slutttd innholdeasynavn -->
-                                    </td>  </tr>  <!--slutt forste tr  -->
+
+                                    </td>  </tr>
 
                                 <!-- REDIGERE KONTAKTPERSONER -->
 
@@ -494,7 +494,7 @@
                                 <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
-                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                            <table class="tablesmall" width="95%" id="kontaktvisning" style="color:grey";>
                                                 <br>
                                                 <tr>
                                                     <th   width="20%" align="left" >{{trans('general.firstname')}}</th>
@@ -575,12 +575,12 @@
 
 
                                                 </table>
-                                                {!! $cars->render()!!}
+                                                {!! $contactpersons->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                            <!--slutttd innholdeasynavn -->
-                                    </td>  </tr>  <!--slutt forste tr  -->
+
+                                    </td>  </tr>
 
                                 <!-- REDIGERE FIRMA -->
 
@@ -594,15 +594,15 @@
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
                                 <td class="tom" width="28%">&nbsp;</td></tr>
 
-                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                <tr> <td colspan="7" class="innholdeasynav">
 
                                         <center>
-                                            <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                            <table class="tablesmall" width="95%" id="firmavisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >FIRMAID</th>
-                                                    <th   width="20%" align="left" >FIRMANAVN</th>
-                                                    <th   width="20%" align="left" >ROLLE</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companyid')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companyname')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companyrole')}}</th>
                                                     <th width="30%" align="left"></th>
 
                                                 </tr>
@@ -645,7 +645,7 @@
                                                         @else
 
                                                             <td id="utlisting" width="30%" align="center">
-                                                                <!--aktivere knapp-->
+
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
 
@@ -679,12 +679,11 @@
 
 
                                                 </table>
-                                                {!! $cars->render()!!}
+                                                {!! companies->render()!!}
                                                 @include('includes.jara_confirm')
                                             </center>
 
-                                            <!--slutttd innholdeasynavn -->
-                                    </td>  </tr>  <!--slutt forste tr  -->
+                                    </td>  </tr>
 
                             @endif
 
