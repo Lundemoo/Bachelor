@@ -150,6 +150,13 @@ return [
     'companyid' => 'COMPANYID',
     'companyname' => 'COMPANYNAME',
     'companyrole' => 'COMPANYROLE',
+    'usernameLarge' => 'USERNAME',
+    'tlfLarge' => 'TELEPHONE',
+    'addressLarge' => 'ADDRESS',
+    'projectnameLarge' => 'PROJECT NAME',
+    'projectaddressLarge' => 'PROJECT ADDRESS',
+    'budgetLarge' => 'BUDGET',
+
    
 
 

@@ -163,6 +163,12 @@ return [
     'companyid '=> 'FIRMAID',
     'companyname '=> 'FIRMANAVN',
     'companyrole '=> 'FIRMAROLLE',
+    'usernameLarge' => 'BRUKERNAVN',
+    'tlfLarge' => 'TELEFON',
+    'addressLarge' => 'ADDRESSE',
+    'projectnameLarge' => 'PROSJEKT NAVN',
+    'projectaddressLarge' => 'PROSJEKT ADRESSE',
+    'budgetLarge' => 'BUDSJETT',
     
     
     

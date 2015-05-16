@@ -66,12 +66,8 @@
                                 <td class="tom" align="center"  width="28%">
 
                                     {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
-                                        {!! Form::input('search', 'q', null, ['placeholder' => 'Search nickname']) !!}
-
+                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search nickname']) !!}
                                     {!! Form::close() !!}
-
-
-
                                 </td></tr>
 
 
@@ -163,8 +159,6 @@
                                             </script>
 
 
-
-
                             </table>
                                                 {!! $cars->render()!!}
                                                 @include('includes.jara_confirm')
@@ -192,9 +186,9 @@
                                             <table class="tablesmall" width="95%" id="brukervisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >brukernavn</th>
-                                                    <th   width="20%" align="left" >telefon</th>
-                                                    <th   width="20%" align="left" >adresse</th>
+                                                    <th   width="20%" align="left" >{{trans('general.usernameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.tlfLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.addressLarge')}}</th>
                                                     <th width="30%" align="left"></th>
 
                                                 </tr>
@@ -278,9 +272,9 @@
                                             <table class="tablesmall" width="95%" id="prosjektvisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >PROSJEKTNAVN</th>
-                                                    <th   width="20%" align="left" >PROSJEKTADRESSE</th>
-                                                    <th   width="20%" align="left" >BUDSJETT</th>
+                                                    <th   width="20%" align="left" >{{trans('general.projectnameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.projectaddressLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.budgetLarge')}}</th>
                                                     <th width="30%" align="left"></th>
                                                 </tr>
                                             </table>
