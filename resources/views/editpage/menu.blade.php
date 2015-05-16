@@ -134,6 +134,7 @@
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
                                                         {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
+
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
                                                         {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
@@ -313,16 +314,21 @@
                                                                 !!}
                                                                 {!! Form::close() !!}
 
-                                                                <!--endre knapp -->
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@show', $project->projectID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+
 
 
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center">
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
@@ -334,9 +340,15 @@
                                                                 !!}
                                                                 {!! Form::close() !!}
 
-                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['projectController@edit', $project->projectID]]) !!}
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
                                                                 {!! Form::submit('Endre', ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@show', $project->projectID]]) !!}
+                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+
 
 
                                                                 @endif

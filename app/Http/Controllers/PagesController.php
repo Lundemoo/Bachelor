@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
+use App\Http\Requests\CreateProjectRequest;
 use App\Project;
 use App\ContactPerson;
 use App\Company;
@@ -185,6 +186,63 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
 
 
 }
+
+        /*redigerings side for prosjekt */
+    public function edit($projectID){
+
+        $project = Project::findOrFail($projectID);
+
+        return view('projects.edit', compact('project'));
+
+    }
+
+    /*
+     * oppdaterer prosjekt
+     */
+    public function update($projectID, CreateProjectRequest $request)
+    {
+        $project = Project::findOrFail($projectID);
+
+        $project->update($request->all());
+        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
+        return redirect('editpage');
+    }
+
+    /* Vis mer siden for et prosjekt */
+
+    public function show($projectID){
+
+        $project = Project::find($projectID);
+        return view('projects.show', compact('project'));
+
+    }
+
+    /* Deaktivere prosjekt */
+
+    public function destroy($projectID){
+
+        $project = Project::find($projectID);
+        DB::table('projects')
+            ->where('projectID', $projectID)
+            ->update(array('active'=>'0'));
+
+        return redirect('editpage?side=2');
+
+    }
+
+    /*
+     * Aktivere prosjekt
+     */
+
+    public function aktiver($projectID){
+
+        $project = Project::find($projectID);
+        DB::table('projects')
+            ->where('projectID', $projectID)
+            ->update(array('active'=>'1'));
+
+        return redirect('editpage?side=2');
+    }
 
 
 

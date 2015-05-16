@@ -103,6 +103,12 @@ Route::group(array('before' => 'isboss'), function(){
 Route::get('project/create', 'PagesController@createProject');
 Route::get('project', 'PagesController@showProject');
 Route::post('project', 'PagesController@store');
+Route::get('project/{projectID}/edit', 'PagesController@edit');
+Route::PATCH('project/{projectID}/update', 'PagesController@update');
+Route::get('project/show/{projectID}','PagesController@show');
+Route::get('project/destroy/{projectID}', 'PagesController@destroy');
+Route::get('builder/aktiver/{projectID}', 'PagesController@aktiver');
+
 
 
     
