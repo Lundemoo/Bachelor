@@ -31,27 +31,17 @@
                             {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('startdestination', 'Start') !!}
+                            {!! Form::label('startdestination', trans('general.startdestination')) !!}
                             {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group" onload="initialize()">
-                            {!! Form::label('stopdestination', 'Stop') !!}
+                            {!! Form::label('stopdestination', trans('general.stopdestination')) !!}
                             {!! Form::text('stopdestination', null, ['class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('totalkm', 'Total km') !!}
+                            {!! Form::label('totalkm', trans('general.kilometer')) !!}
                             {!! Form::text('totalkm', null, ['class' => 'form-control'] ) !!}
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('bompenger', trans('general.roadTolls')) !!}
-                            {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('active', 'Aktiv') !!}
-                           <!-- {!! Form::checkbox('active', Input::old('active', $logbookaddition->active)) !!} -->
-                            <input type="checkbox" name="active" value="true">
-                        </div>
-
                         <br/>
                         <div class="form-group">
                             {!! Form::submit(trans('general.editLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}

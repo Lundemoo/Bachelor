@@ -78,7 +78,7 @@ return [
     'registrateLogbook' => 'Register logbook',
     'unableToFind' => 'Sorry, we were unable to geocode the first address',
     'unableToFind2' => 'Sorry, we were unable to geocode the second address',
-    'registrateDriving' => 'Registrate driving',
+    'registrateDriving' => 'Register driving',
     'car' => 'Car',
     'date' => 'Date',
     'roadTolls' => 'Road tolls',

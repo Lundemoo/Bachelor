@@ -44,6 +44,7 @@ class LogbookadditionController extends Controller
 
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
+        $input['totalkm'] *= 1.25;
         $thisid = "";
         $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
 
@@ -102,10 +103,12 @@ class LogbookadditionController extends Controller
     public function update($logbookadditionID, CreateLogbookadditionRequest $request){
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
+        $logbookaddition= $request->all();
+        $logbookaddition['totalkm'] *= 1.25;
+        $logbookaddition->update();
 
-        $logbookaddition->update($request->all());
-
-        return redirect('logbookaddition');
+        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
+        return redirect('logbookaddition/create');
     }
 
 

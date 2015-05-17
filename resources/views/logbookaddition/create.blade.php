@@ -35,23 +35,18 @@
 
 
     <div class="form-group">
-        {!! Form::label('startdestination', 'Start') !!}
+        {!! Form::label('startdestination', trans('general.startdestination')) !!}
         {!! Form::text('startdestination', null, ['placeholder'=>'Start address','class' => 'form-control'] ) !!}
     </div>
     <div class="form-group" onload="initialize()">
-        {!! Form::label('stopdestination', 'Stop') !!}
+        {!! Form::label('stopdestination', trans('general.stopdestination')) !!}
         {!! Form::text('stopdestination', null, ['placeholder'=>'Stop address','class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
     </div>
     <div class="form-group">
-        {!! Form::label('totalkm', 'Total km') !!}
+        {!! Form::label('totalkm', trans('general.kilometer')) !!}
         {!! Form::text('totalkm', null, ['placeholder'=>'Click here to find totalt km','class' => 'form-control'] ) !!}
     </div>
-    <div class="form-group">
-        {!! Form::label('bompenger', trans('general.roadTolls')) !!}
-        {!! Form::text('bompenger', 0, ['placeholder'=>'0','class' => 'form-control'] ) !!}
-    </div>
     <br/>
-
     <div class="form-group">
         {!! Form::submit(trans('general.registrateLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
     </div>
