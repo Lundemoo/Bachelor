@@ -105,7 +105,7 @@
                                                 <!--deaktivere knapp -->
 
                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
-                                                {!! Form::button('Deaktivere', array(
+                                                {!! Form::button(trans('general.deactivate'), array(
                                                 'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
                                                 'data-toggle' => 'modal',
                                                 'data-target' => '#confirmDelete'
@@ -115,11 +115,11 @@
 
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-                                                {!! Form::submit('Endre', ['class' => 'btn']) !!}
+                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn']) !!}
                                                 {!! Form::close() !!}
 
                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
-                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                 {!! Form::close() !!}
 
                                                 @else
@@ -127,7 +127,7 @@
                                                     <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
-                                                        {!! Form::button('Aktivere', array(
+                                                        {!! Form::button(trans('general.activate'), array(
                                                         'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
                                                         'data-toggle' => 'modal',
                                                         'data-target' => '#confirmDelete'
@@ -136,11 +136,11 @@
                                                         {!! Form::close() !!}
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-                                                        {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                        {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
 
                                                         {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
-                                                        {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                        {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                         {!! Form::close() !!}
 
 
@@ -299,7 +299,7 @@
 
                                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['project/destroy', $project->projectID]])!!}
 
-                                                                {!! Form::button('Deaktivere', array(
+                                                                {!! Form::button(trans('general.deactivate'), array(
                                                                 'class' => 'btn btn-danger', 'onclick' => "func('project/destroy/$project->projectID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -308,11 +308,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@show', $project->projectID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
 
@@ -322,7 +322,7 @@
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
-                                                                {!! Form::button('Aktivere', array(
+                                                                {!! Form::button(trans('general.activate'), array(
                                                                 'class' => 'btn btn-success', 'onclick' => "func('project/aktiver/$project->projectID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -331,11 +331,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@edit', $project->projectID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['PagesController@show', $project->projectID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 @endif
@@ -419,7 +419,7 @@
 
                                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['builder/destroy', $builder->customerID]])!!}
 
-                                                                {!! Form::button('Deaktivere', array(
+                                                                {!! Form::button(trans('general.deactivate'), array(
                                                                 'class' => 'btn btn-danger', 'onclick' => "func('builder/destroy/$builder->customerID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -428,11 +428,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@show', $builder->customerID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
                                                         @else
 
@@ -440,7 +440,7 @@
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
 
-                                                                {!! Form::button('Aktivere', array(
+                                                                {!! Form::button(trans('general.activate'), array(
                                                                 'class' => 'btn btn-success', 'onclick' => "func('builder/aktiver/$builder->customerID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -449,11 +449,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@edit', $builder->customerID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['BuilderController@show', $builder->customerID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 @endif
@@ -527,7 +527,7 @@
 
                                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['contactperson/destroy', $contactperson->contactpersonID]])!!}
 
-                                                                {!! Form::button('Deaktivere', array(
+                                                                {!! Form::button(trans('general.deactivate'), array(
                                                                 'class' => 'btn btn-danger', 'onclick' => "func('contactperson/destroy/$contactperson->contactpersonID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -536,11 +536,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@show', $contactperson->contactpersonID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
 
@@ -551,7 +551,7 @@
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
-                                                                {!! Form::button('Aktivere', array(
+                                                                {!! Form::button(trans('general.activate'), array(
                                                                 'class' => 'btn btn-success', 'onclick' => "func('contactperson/aktiver/$contactperson->contactpersonID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -560,11 +560,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@edit', $contactperson->contactpersonID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['ContactpersonController@show', $contactperson->contactpersonID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
 
@@ -640,7 +640,7 @@
 
                                                                 {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['company/destroy', $company->companyID]])!!}
 
-                                                                {!! Form::button('Deaktivere', array(
+                                                                {!! Form::button(trans('general.deactivate'), array(
                                                                 'class' => 'btn btn-danger', 'onclick' => "func('company/destroy/$company->companyID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -649,11 +649,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@show', $company->companyID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
 
@@ -665,7 +665,7 @@
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
 
-                                                                {!! Form::button('Aktivere', array(
+                                                                {!! Form::button(trans('general.activate'), array(
                                                                 'class' => 'btn btn-success', 'onclick' => "func('company/aktiver/$company->companyID')",
                                                                 'data-toggle' => 'modal',
                                                                 'data-target' => '#confirmDelete'
@@ -674,11 +674,11 @@
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@edit', $company->companyID]]) !!}
-                                                                {!! Form::submit('Endre', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CompanyController@show', $company->companyID]]) !!}
-                                                                {!! Form::submit('Se mer', ['class' => 'btn ']) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
                                                                 @endif

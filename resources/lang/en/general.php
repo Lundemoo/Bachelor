@@ -178,6 +178,12 @@ return [
     'customerAddressLarge' => 'BUILDER ADDRESS',
     'customerTelephoneLarge' => 'BUILDER TELEPHONE',
     'created_at' => 'Created at',
+    'deactivate' => 'Deactivate',
+    'activate' => 'Activate',
+    'seeMore' => 'See more',
+    'hits' => 'Hits',
+    'searchresults' => 'Search results',
+    'no_result' => 'no result',
 
 
    

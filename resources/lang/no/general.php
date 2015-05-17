@@ -190,6 +190,12 @@ return [
     'customerTelephoneLarge' => 'BYGGHERRE TELEFON',
     'created_at' => 'Opprettet',
     'builderFor' => 'Byggherre for følgende projekter:',
+    'deactivate' => 'Deaktivere',
+    'activate' => 'Aktivere',
+    'seeMore' => 'Se mer',
+    'hits' => 'Treff',
+    'searchresults' => 'Søkeresultat',
+    'no_result' => 'ingen resultat',
     
     
     
