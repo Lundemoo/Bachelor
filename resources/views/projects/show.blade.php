@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Prosjekt Informasjon
+                    <div class="panel-heading">{{trans('general.project')}} Informasjon
                         <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
                     </div>
 
@@ -13,17 +13,17 @@
                         <center>
                             <table class = "helelisten">
 
-                                <tr> <td> Project ID: {!! $project->projectID !!}</td></tr>
-                                <tr> <td> ProjectName: {!! $project->projectName !!}</td></tr>
-                                <tr> <td> Project Address: {!! $project->projectAddress !!}</td> </tr>
-                                <tr> <td> Budget: {!! $project->budget !!}</td> </tr>
-                                <tr> <td> Start Date: {!! $project->startDate !!}</td> </tr>
-                                <tr> <td> Description: {!! $project->description !!}</td> </tr>
-                                <tr> <td> Expected Completion: {!! $project->expectedCompletion !!}</td> </tr>
-                                <tr> <td> Done: {!! $project->Done !!}</td> </tr>
-                                <tr> <td> Active: {!! $project->active !!}</td> </tr>
-                                <tr> <td> created at: {!! $project->created_at !!}</td> </tr>
-                                <tr> <td> Byggherre for prosjektet: {!! $project->customerID !!}</td> </tr>
+                                <tr> <td> {{trans('general.projectID')}}: {!! $project->projectID !!}</td></tr>
+                                <tr> <td> {{trans('general.projectName')}}: {!! $project->projectName !!}</td></tr>
+                                <tr> <td> {{trans('general.projectAddress')}}: {!! $project->projectAddress !!}</td> </tr>
+                                <tr> <td> {{trans('general.budget')}}: {!! $project->budget !!}</td> </tr>
+                                <tr> <td> {{trans('general.startTime')}}: {!! $project->startDate !!}</td> </tr>
+                                <tr> <td> {{trans('general.projectDescription')}}: {!! $project->description !!}</td> </tr>
+                                <tr> <td> {{trans('general.expectedCompletion')}}: {!! $project->expectedCompletion !!}</td> </tr>
+                                <tr> <td> {{trans('general.done')}}: {!! $project->done !!}</td> </tr>
+                                <tr> <td> {{trans('general.active')}}: {!! $project->active !!}</td> </tr>
+                                <tr> <td> {{trans('general.created_at')}}: {!! $project->created_at !!}</td> </tr>
+                                <tr> <td> {{trans('general.builder')}}: {!! $project->customerID !!}</td> </tr>
 
                                 </tr>
                             </table>

@@ -62,7 +62,7 @@
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                 <td class="tom" align="center"  width="28%">
 
                                     {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
@@ -176,7 +176,7 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
@@ -262,7 +262,7 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
@@ -368,7 +368,7 @@
                                     <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
 
@@ -378,9 +378,9 @@
                                             <table class="tablesmall" width="95%" id="byggherrevisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.customerName')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.customerAddress')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.customerTelephone')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.customerNameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.customerAddressLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.customerTelephoneLarge')}}</th>
                                                     <th width="30%" align="left"></th>
 
                                                 </tr>
@@ -490,7 +490,7 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                     <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                     <td class="tom" width="28%">&nbsp;</td></tr>
 
                                 <tr> <td colspan="7" class="innholdeasynav">
@@ -499,9 +499,9 @@
                                             <table class="tablesmall" width="95%" id="kontaktvisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.firstname')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.surname')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.telephone')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.firstnameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.surnameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.telephoneLarge')}}</th>
                                                     <th width="30%" align="left"></th>
 
                                                 </tr>
@@ -603,7 +603,7 @@
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
                                 <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">Firmaer</td>
+                                <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
                                 <td class="tom" width="28%">&nbsp;</td></tr>
 
                                 <tr> <td colspan="7" class="innholdeasynav">
@@ -612,9 +612,9 @@
                                             <table class="tablesmall" width="95%" id="firmavisning" style="color:grey";>
                                                 <br>
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.companyid')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.companyname')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.companyrole')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companyidLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companynameLarge')}}</th>
+                                                    <th   width="20%" align="left" >{{trans('general.companyroleLarge')}}</th>
                                                     <th width="30%" align="left"></th>
 
                                                 </tr>

@@ -15,11 +15,11 @@
                         <center>
 <table class = "helelisten">
 
-    <tr> <td> RegistreringsNR: {!! $car->registrationNR !!}</td></tr>
-    <tr> <td> Kallenavn: {!! $car->nickname !!}</td></tr>
-    <tr> <td> Merke: {!! $car->brand !!}</td> </tr>
-    <tr> <td> Aktiv: {!! $car->active !!}</td> </tr>
-    <tr> <td> Opprettet: {!! $car->created_at !!}</td> </tr>
+    <tr> <td> {{trans('general.registrationNr')}}: {!! $car->registrationNR !!}</td></tr>
+    <tr> <td> {{trans('general.nickname')}}:  {!! $car->nickname !!}</td></tr>
+    <tr> <td> {{trans('general.model')}}: {!! $car->brand !!}</td> </tr>
+    <tr> <td> {{trans('general.active')}}: {!! $car->active !!}</td> </tr>
+    <tr> <td> {{trans('general.created_at')}}: {!! $car->created_at !!}</td> </tr>
 
     </tr>
 

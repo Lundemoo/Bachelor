@@ -16,6 +16,8 @@
                             <table class = "helelisten">
 
                                 @if($cars->count())
+                                    <p id="treff" style="color:lightblue">  Treff: {!! $cars->count(); !!}  </p>
+
                                     @foreach($cars as $car)
                                         <tr> <td> RegistreringsNR: {!! $car->registrationNR !!}</td></tr>
                                         <tr> <td> Kallenavn: {!! $car->nickname !!}</td></tr>

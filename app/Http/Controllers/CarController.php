@@ -83,7 +83,7 @@ class CarController extends Controller
     /**
      * @param $registrationNR
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * Metode som deaktiverer en valgt bil fra databasen. Kun for sjefer.
+     * Deaktiverer bil . Kun for sjefer.
      */
 
     public function destroy($registrationNR){
@@ -98,7 +98,7 @@ class CarController extends Controller
     }
 
     /*
-     * metode for å aktivere bil. Setter aktiv til 1
+     *  Aktivere bil. Setter aktiv til 1
      */
 
     public function aktiver($registrationNR){
