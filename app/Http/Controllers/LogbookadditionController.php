@@ -60,7 +60,7 @@ class LogbookadditionController extends Controller
             
         } else {
             $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->get();
-            
+
             foreach($result as $res){
                 $thisid = $res->employeeNR;
                 
@@ -98,8 +98,8 @@ class LogbookadditionController extends Controller
     }
 
     /*
- *  Henter fra edit.blade og oppdaterer aktuell bil i databasen
- *  Automatisk regning av bompenger 
+ *  Henter fra edit.blade og oppdaterer aktuell kjørebok i databasen
+ *  Automatisk regning av bompenger
  */
     public function update($logbookadditionID, CreateLogbookadditionRequest $request){
 

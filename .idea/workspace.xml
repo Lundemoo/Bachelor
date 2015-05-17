@@ -4,9 +4,7 @@
     <list default="true" id="029af3b2-73d2-420e-b838-16037a211078" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/general.php" afterPath="$PROJECT_DIR$/resources/lang/en/general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/builder/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/builder/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bachelor.iws" />
@@ -32,101 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menu.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/editpage/menu.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.769231" vertical-offset="11280" max-vertical-offset="12308">
-              <caret line="680" column="103" selection-start-line="680" selection-start-column="103" selection-end-line="680" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.230769" vertical-offset="899" max-vertical-offset="2210">
-              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showsearch.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/car/showsearch.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8076925" vertical-offset="120" max-vertical-offset="799">
-              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="81" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="general.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0727272" vertical-offset="1246" max-vertical-offset="4318">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogbookadditionController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19722222" vertical-offset="1425" max-vertical-offset="1785">
-              <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logbookaddition.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Logbookaddition.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="527">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Logbook.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Logbook.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="799">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2015_03_09_150914_logbookaddition.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditpageController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EditpageController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EditpageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="12.423077" vertical-offset="1666" max-vertical-offset="2125">
-              <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.230769" vertical-offset="491" max-vertical-offset="1258">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state vertical-scroll-proportion="2.9694445" vertical-offset="784" max-vertical-offset="2125">
+              <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -180,7 +88,6 @@
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CarController.php" />
         <option value="$PROJECT_DIR$/resources/views/car/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/builder/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contactperson/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/company/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
@@ -196,6 +103,7 @@
         <option value="$PROJECT_DIR$/resources/lang/en/general.php" />
         <option value="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php" />
+        <option value="$PROJECT_DIR$/resources/views/builder/show.blade.php" />
       </list>
     </option>
   </component>
@@ -724,18 +632,6 @@
       <option name="number" value="Default" />
       <updated>1425031471613</updated>
     </task>
-    <task id="LOCAL-00026" summary="alt fikset med Lang">
-      <created>1429088056173</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1429088056173</updated>
-    </task>
-    <task id="LOCAL-00027" summary="alt fikset med Lang">
-      <created>1429088287556</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1429088287556</updated>
-    </task>
     <task id="LOCAL-00028" summary="alt fikset med Lang">
       <created>1429088529812</created>
       <option name="number" value="00028" />
@@ -1018,7 +914,19 @@
       <option name="project" value="LOCAL" />
       <updated>1431863797809</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="bompenger">
+      <created>1431866885370</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1431866885370</updated>
+    </task>
+    <task id="LOCAL-00076" summary="bompenger lagt inn i kontroller">
+      <created>1431868221442</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1431868221442</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1088,8 +996,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="funker regCar og regTImesheet og regProject" />
-    <MESSAGE value="fikset edit contactperson" />
     <MESSAGE value="fikset createprojcet" />
     <MESSAGE value="fikset createproject helt ferdig" />
     <MESSAGE value="Hovedmenu siden eer fikset med Lang" />
@@ -1113,7 +1019,9 @@
     <MESSAGE value="search" />
     <MESSAGE value="translate" />
     <MESSAGE value="mer translate" />
-    <option name="LAST_COMMIT_MESSAGE" value="mer translate" />
+    <MESSAGE value="bompenger" />
+    <MESSAGE value="bompenger lagt inn i kontroller" />
+    <option name="LAST_COMMIT_MESSAGE" value="bompenger lagt inn i kontroller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1313,14 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/builder/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16388889" vertical-offset="43" max-vertical-offset="918">
-          <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/3110f7ca29dd1a98e10d210f60d016d4">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39378238" vertical-offset="307" max-vertical-offset="969">
@@ -1409,26 +1309,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0727272" vertical-offset="1246" max-vertical-offset="4318">
-          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelisteprosjektController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9222223" vertical-offset="2120" max-vertical-offset="3281">
           <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editpage/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.769231" vertical-offset="11280" max-vertical-offset="12308">
-          <caret line="680" column="103" selection-start-line="680" selection-start-column="103" selection-end-line="680" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -1441,34 +1325,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.4944444" vertical-offset="0" max-vertical-offset="1921">
+          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/car/showsearch.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8076925" vertical-offset="120" max-vertical-offset="799">
+        <state vertical-scroll-proportion="0.5638889" vertical-offset="120" max-vertical-offset="799">
           <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.230769" vertical-offset="491" max-vertical-offset="1258">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EditpageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.423077" vertical-offset="1666" max-vertical-offset="2125">
-          <caret line="97" column="45" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.230769" vertical-offset="899" max-vertical-offset="2210">
-          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.525" vertical-offset="899" max-vertical-offset="2210">
+          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/editpage/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7777778" vertical-offset="11280" max-vertical-offset="12308">
+          <caret line="680" column="103" selection-start-line="680" selection-start-column="103" selection-end-line="680" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -1483,7 +1367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Logbook.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+        <state vertical-scroll-proportion="-0.54959786" vertical-offset="205" max-vertical-offset="799">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1491,16 +1375,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1207">
+        <state vertical-scroll-proportion="-0.308311" vertical-offset="115" max-vertical-offset="1207">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19722222" vertical-offset="1425" max-vertical-offset="1785">
-          <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.44166666" vertical-offset="215" max-vertical-offset="1258">
+          <caret line="22" column="163" selection-start-line="22" selection-start-column="163" selection-end-line="22" selection-end-column="163" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0727272" vertical-offset="498" max-vertical-offset="4318">
+          <caret line="36" column="14" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/builder/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8" vertical-offset="35" max-vertical-offset="918">
+          <caret line="19" column="69" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EditpageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9694445" vertical-offset="784" max-vertical-offset="2125">
+          <caret line="127" column="76" selection-start-line="127" selection-start-column="76" selection-end-line="127" selection-end-column="76" />
           <folding />
         </state>
       </provider>
