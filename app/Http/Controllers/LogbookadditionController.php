@@ -98,14 +98,22 @@ class LogbookadditionController extends Controller
     }
 
     /*
- * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
+ *  Henter fra edit.blade og oppdaterer aktuell bil i databasen
+ *  Automatisk regning av bompenger 
  */
     public function update($logbookadditionID, CreateLogbookadditionRequest $request){
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
-        $logbookaddition= $request->all();
-        $logbookaddition['totalkm'] *= 1.25;
-        $logbookaddition->update();
+        $input= $request->all();
+        $kilometer = Input::get('totalkm');
+        $kilometer *= 1.25;
+        $logbookaddition->update(array(
+            'registrationNR' => $input['registrationNR'],
+            'date' => $input['date'],
+            'startdestination' => $input['startdestination'],
+            'stopdestination' => $input['stopdestination'],
+            'totalkm' => $kilometer,
+        ));
 
         \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('logbookaddition/create');

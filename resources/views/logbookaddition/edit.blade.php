@@ -20,7 +20,7 @@
 
                         <body onload="initialize()">
                         <!--fra min index blade fil -->
-                        {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->employeeNR ]]) !!}
+                        {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->logbookadditionID ]]) !!}
                         <div class="form-group">
 
                             {!! Form::label('registrationNR', trans('general.car')) !!} </br>
