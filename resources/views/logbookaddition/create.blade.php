@@ -19,6 +19,13 @@
                     <body onload="initialize()">
     <!--fra min index blade fil -->
     {!! Form::open(['url' => 'logbookaddition', ]) !!}
+
+    <div class="form-group">
+
+        {!! Form::label('projectIDs', trans('general.project')) !!} </br>
+        {!! Form::select('projectID', $projects) !!}
+    </div>
+
 <div class="form-group">
 
     {!! Form::label('registrationNR', trans('general.car')) !!} </br>
