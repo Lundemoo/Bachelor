@@ -244,6 +244,20 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         return redirect('editpage?side=2');
     }
 
+    public function search(){
+
+        $query = Input::get('q');
+
+        if($query){
+
+            $projects = Project::where('projectName', 'LIKE', "%$query%")->get();
+
+        }
+
+
+        return view('projects.showsearch')->withProjects($projects);
+    }
+
 
 
 }

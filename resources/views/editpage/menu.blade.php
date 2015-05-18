@@ -263,7 +263,10 @@
                                     <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom" width="28%">&nbsp;</td></tr>
+                                    <td class="tom" align="center"  width="28%"> {!!Form::open(['method' => 'GET' ,'action' =>['PagesController@search']]) !!}
+                                        {!! Form::input('search', 'q', null, ['placeholder' => 'Search project']) !!}
+                                        {!! Form::close() !!}
+                                    </td></tr>
 
 
                                  <tr> <td colspan="7" class="innholdeasynav">
