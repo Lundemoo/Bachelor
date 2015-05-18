@@ -117,7 +117,7 @@ class CarController extends Controller
 
         if($query){
 
-           $cars = Car::where('nickname', 'LIKE', "%$query%")->get();
+           $cars = Car::where('nickname', 'LIKE', "%$query%")->orWhere('brand', 'LIKE', "%$query%")->get();
           //  dd($car);
         }
 

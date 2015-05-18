@@ -66,7 +66,7 @@
                                 <td class="tom" align="center"  width="28%">
 
                                     {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
-                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search nickname']) !!}
+                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search cars']) !!}
                                     {!! Form::close() !!}
                                 </td></tr>
 

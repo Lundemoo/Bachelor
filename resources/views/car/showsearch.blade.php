@@ -11,7 +11,7 @@
 
                     <div class="panel-body">
                         <center>
-                            <table class = "helelisten">
+                            <table class = "helelisten" style="background:#AAA" width="100%" cellspacing="0" cellpadding="0">
 
                                 @if($cars->count())
                                     <p id="treff" style="color:lightblue">{{trans('general.hits') }}: {!! $cars->count(); !!}  </p>
@@ -22,9 +22,35 @@
                                         <tr> <td>{{trans('general.model')}}: {!! $car->brand !!}</td> </tr>
                                         <tr> <td>{{trans('general.active')}}: {!! $car->active !!}</td> </tr>
                                         <tr> <td>{{trans('general.created_at')}}: {!! $car->created_at !!}</td></tr>
-                                        <tr> <td>&nbsp; </td><br> </tr>
 
-                                    @endforeach
+                                        @if($car->active == "1")
+                                            <tr><td>
+
+
+                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
+                                        {!! Form::submit(trans('general.edit'), ['class' => 'btn']) !!}
+                                        {!! Form::close() !!}
+
+
+
+                                                        @endif
+
+                                                    </td> </tr>
+
+
+
+                                            @endforeach
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                }
+                                            </script>
+
+
+
+                                            @include('includes.jara_confirm')
 
                                 @else
                                     <p>{{trans('general.no_result')}}:</p>
