@@ -78,8 +78,9 @@ class LogbookadditionController extends Controller
 
 
         $cars = Car::lists('nickname', 'registrationNR');
+        $projects = Project::lists('projectName', 'projectID');
 
-        return view('logbookaddition.create', array('cars' => $cars));
+        return view('logbookaddition.create', array('cars' => $cars, 'projects' => $projects));
 
 
     }
