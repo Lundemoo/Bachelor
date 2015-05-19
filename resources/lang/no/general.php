@@ -184,7 +184,8 @@ return [
     'november' => 'November',
     'december' => 'Desember',
     
-    
+'newpassword' => 'Nytt passord',
+    'confirmnewpassword' => 'Bekreft nytt passord',    
 
 ];
 /* 

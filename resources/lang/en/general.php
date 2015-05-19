@@ -189,7 +189,8 @@ return [
     'december' => 'December',
     
     
-    
+    'newpassword' => 'New password',
+    'confirmnewpassword' => 'Confirm new password',
     
     
     
