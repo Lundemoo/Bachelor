@@ -15,6 +15,7 @@ class Logbook extends Migration {
               Schema::create('logbook', function (Blueprint $table) {
             $table->integer('employeeNR')->unsigned();
             $table->string('registrationNR')->index(); //fremmednøkkel
+			$table->integer('projectID')->unsigned();
             $table->date('date')->index();
             $table->timestamps();
 
@@ -30,6 +31,10 @@ class Logbook extends Migration {
 				  $table->foreign('registrationNR')
 				  ->references('registrationNR')
 				  ->on('car');
+
+				  $table->foreign('projectID')
+					  ->references('projectID')
+					  ->on('projects');
 
 				  $table->foreign('employeeNR')
 				  ->references('ID')

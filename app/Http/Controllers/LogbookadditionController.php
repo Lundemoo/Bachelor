@@ -55,6 +55,7 @@ class LogbookadditionController extends Controller
                'employeeNR' => Auth::user()->id,
                 'registrationNR' => $input['registrationNR'],
                 'date' => $input['date'],
+                'projectID' => $input['projectID'],
                 
             ));
             $thisid = $mid->employeeNR;

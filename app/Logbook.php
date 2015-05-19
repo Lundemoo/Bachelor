@@ -11,6 +11,7 @@ class Logbook extends Model
     protected $fillable = [
         'employeeNR',
         'registrationNR',
+        'projectID',
         'date'
 
     ];
