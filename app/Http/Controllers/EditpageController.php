@@ -114,7 +114,7 @@ echo $siden; exit;
 
         $users = User::findOrFail($id);
 
-        return view('auth.edit', compact('users'));
+        return view('auth.edit', compact('users'))->with('user', $users);
 
     }
 
@@ -129,9 +129,19 @@ echo $siden; exit;
 
 
     }
+    
+    
+    
+     public function update($userid){
 
+        $user = User::findOrFail($userid);
 
+        $user->update($request->all());
 
-
+        return redirect('editpage');
+    }
+    
+    
+   
 
 }

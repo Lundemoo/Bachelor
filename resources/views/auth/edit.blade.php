@@ -9,7 +9,7 @@
 
     <h1>{{Lang::get('general.edit')}} {!! $user->firstname !!}</h1>
 
-    {!! Form::model($user, ['method' => 'PATCH', 'action' => ['UserController@update', $user->email]]) !!}
+    {!! Form::model($user, ['method' => 'PATCH', 'action' => ['EditpageController@update', $user->id]]) !!}
     <div class="form-group">
         {!! Form::label('email', trans('general.email')) !!}
         {!! Form::text('email', null, ['class' => 'form-control'] ) !!}
@@ -21,8 +21,8 @@
     </div>
 
     <div class="form-group">
-        {!! Form::label('surname', trans('general.surname')) !!}
-        {!! Form::text('surname', null, ['class' => 'form-control'] ) !!}
+        {!! Form::label('lastname', trans('general.surname')) !!}
+        {!! Form::text('lastname', null, ['class' => 'form-control'] ) !!}
     </div>
     <br/>
      <div class="form-group">
@@ -33,6 +33,16 @@
          <div class="form-group">
                 {!! Form::label('address', trans('general.address')) !!}
                 {!! Form::text('address', null, ['class' => 'form-control'] ) !!}
+            </div>
+            <br/>
+              <div class="form-group">
+                {!! Form::label('password', trans('general.newpassword')) !!}
+                {!! Form::text(null, null, ['class' => 'form-control'] ) !!}
+            </div>
+            <br/>
+              <div class="form-group">
+                {!! Form::label('password', trans('general.confirmnewpassword')) !!}
+                {!! Form::text(null, null, ['class' => 'form-control'] ) !!}
             </div>
             <br/>
 

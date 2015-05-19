@@ -226,6 +226,8 @@ return [
     
     'timesheetFail1' => 'Starttime must be before endtime',
     'nobuilder' => 'Du må velge en byggherre',
+'newpassword' => 'Nytt passord',
+    'confirmnewpassword' => 'Bekreft nytt passord',    
 
 ];
 /* 

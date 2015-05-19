@@ -231,6 +231,8 @@ return [
     
     'timesheetFail1' => 'Starttime must be before endtime',
     'nobuilder' => 'You have to choose a builder',
+    'newpassword' => 'New password',
+    'confirmnewpassword' => 'Confirm new password',
     
     
     

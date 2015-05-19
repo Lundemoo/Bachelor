@@ -155,7 +155,7 @@ Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje f
 
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
-
+Route::PATCH('contactperson/{userid}/update', 'EditpageController@update');
 Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
 Route::get('editpage/{id}/edit', 'EditpageController@edit');
 
