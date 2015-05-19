@@ -196,6 +196,8 @@ return [
     'hits' => 'Treff',
     'searchresults' => 'Søkeresultat',
     'no_result' => 'ingen resultat',
+
+    'export_excel' => 'Eksportere Excel',
     
     
     

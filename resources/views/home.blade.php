@@ -23,7 +23,7 @@
                                     @if(Auth::user()->brukertype == 1)
                                     <div id=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div></br>
                                     <div id=menyvalg onclick="oc('/admin')">{{trans('general.statistic')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.approveTimesheets')}}</div>
+                                    <div id=menyvalg onclick="oc('/admin')">{{trans('general.export_excel')}}</div>
                                     
                                     @endif
                                     </center>
