@@ -21,8 +21,12 @@
                         <body onload="initialize()">
                         <!--fra min index blade fil -->
                         {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->logbookadditionID ]]) !!}
-                        <div class="form-group">
 
+                        <div class="form-group">
+                            {!! Form::label('projectIDs', trans('general.project')) !!} </br>
+                            {!! Form::select('projectID', $projects) !!}
+                        </div>
+                        <div class="form-group">
                             {!! Form::label('registrationNR', trans('general.car')) !!} </br>
                             {!! Form::select('registrationNR', $cars) !!}
                         </div>

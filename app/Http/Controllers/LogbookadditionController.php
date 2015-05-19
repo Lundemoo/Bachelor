@@ -94,8 +94,9 @@ class LogbookadditionController extends Controller
         $logbookaddition['totalkm'] = null;
 
         $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
+        $projects = Project::lists('projectName', 'projectID');
 
-        return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
+        return view('logbookaddition.edit',array('cars' => $cars, 'projects' => $projects), compact('logbookaddition'));
 
     }
 
@@ -110,6 +111,7 @@ class LogbookadditionController extends Controller
         $kilometer = Input::get('totalkm');
         $kilometer *= 1.25;
         $logbookaddition->update(array(
+            'projectID' => $input['projectID'],
             'registrationNR' => $input['registrationNR'],
             'date' => $input['date'],
             'startdestination' => $input['startdestination'],
