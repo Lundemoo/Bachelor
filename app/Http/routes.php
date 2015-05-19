@@ -107,7 +107,7 @@ Route::get('project/{projectID}/edit', 'PagesController@edit');
 Route::PATCH('project/{projectID}/update', 'PagesController@update');
 Route::get('project/show/{projectID}','PagesController@show');
 Route::get('project/destroy/{projectID}', 'PagesController@destroy');
-Route::get('builder/aktiver/{projectID}', 'PagesController@aktiver');
+Route::get('project/aktiver/{projectID}', 'PagesController@aktiver');
 Route::get('projects/search', 'PagesController@search');
 Route::get('projects/showsearch/{projectID}','PagesController@show');
 
