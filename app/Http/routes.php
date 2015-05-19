@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::filter('isboss', function(){
     
      if(Auth::check()){
@@ -69,7 +71,7 @@ Route::post('admin/export', 'AdminstatsController@export'); //export excel
 
 
 
-/* timelisteregistrering aka timelisteprosjekter */
+    /* timelisteregistrering aka timelisteprosjekter */
 Route::get('timelisteprosjekter', 'TimelisteprosjektController@index');
 Route::get('timelisteprosjekter/create', 'TimelisteprosjektController@create'); //skjemautfylling
 Route::post('timelisteprosjekter', 'TimelisteprosjektController@store');  //lagre i DB
@@ -101,10 +103,18 @@ Route::group(array('before' => 'isboss'), function(){
 Route::get('project/create', 'PagesController@createProject');
 Route::get('project', 'PagesController@showProject');
 Route::post('project', 'PagesController@store');
+Route::get('project/{projectID}/edit', 'PagesController@edit');
+Route::PATCH('project/{projectID}/update', 'PagesController@update');
+Route::get('project/show/{projectID}','PagesController@show');
+Route::get('project/destroy/{projectID}', 'PagesController@destroy');
+Route::get('builder/aktiver/{projectID}', 'PagesController@aktiver');
+Route::get('projects/search', 'PagesController@search');
+Route::get('projects/showsearch/{projectID}','PagesController@show');
 
 
-    
-    
+
+
+
     /*
  * company
  */
@@ -116,6 +126,7 @@ Route::get('company/{companyID}/edit', 'CompanyController@edit');
 Route::PATCH('company/{companyID}/update', 'CompanyController@update');
 Route::get('company/destroy/{companyID}', 'CompanyController@destroy');  // deaktivere company
 Route::get('company/aktiver/{companyID}', 'CompanyController@aktiver');
+Route::get('company/{companyID}/show', 'CompanyController@show');
 
     
 
@@ -127,7 +138,7 @@ Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit
 Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
 Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
 Route::get('contactperson/aktiver/{contactpersonID}', 'ContactpersonController@aktiver');  //aktivere kontaktperson
-
+Route::get('contactperson/{contactpersonID}/show', 'ContactpersonController@show');
 
     
 
@@ -166,6 +177,8 @@ Route::post('car', 'CarController@store');  //lagre i DB
 Route::get('car/show/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
 Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
+Route::get('car/search', 'CarController@search');
+Route::get('car/showsearch/{registrationNR}','CarController@show');  //Søkeresultater //
 
 /* builder. Skal kun være mulig for sjefene */
 Route::get('builder', 'BuilderController@index');

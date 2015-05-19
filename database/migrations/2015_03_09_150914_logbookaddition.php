@@ -45,6 +45,7 @@ class Logbookaddition extends Migration {
 				   ->references('date')
 				   ->on('logbook');
 
+			   /* foreign key 4 */
 			   $table->foreign('projectID')
 				   ->references('projectID')
 				   ->on('projects');

@@ -11,6 +11,7 @@ use DB;
 use Carbon\Carbon;
 use App;
 use Lang;
+use Illuminate\Support\Facades\Input;
 
 
 
@@ -35,7 +36,6 @@ class CarController extends Controller
     }
 
     public function store(CreateCarRequest $request){
-
         $input = $request->all();
         Car::create($input);
 
@@ -83,7 +83,7 @@ class CarController extends Controller
     /**
      * @param $registrationNR
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * Metode som deaktiverer en valgt bil fra databasen. Kun for sjefer.
+     * Deaktiverer bil . Kun for sjefer.
      */
 
     public function destroy($registrationNR){
@@ -98,7 +98,7 @@ class CarController extends Controller
     }
 
     /*
-     * metode for å aktivere bil. Setter aktiv til 1
+     *  Aktivere bil. Setter aktiv til 1
      */
 
     public function aktiver($registrationNR){
@@ -109,6 +109,24 @@ class CarController extends Controller
             ->update(array('active'=>'1'));
 
         return redirect('editpage?side=0');
+    }
+
+    public function search(){
+
+        $query = Input::get('q');
+
+        if($query){
+
+           $cars = Car::where('nickname', 'LIKE', "%$query%")->orWhere('brand', 'LIKE', "%$query%")->get();
+          //  dd($car);
+        }
+
+      /*  else{
+
+            $cars= Car::all();
+        } */
+
+       return view('car.showsearch')->withCars($cars);
     }
 
 

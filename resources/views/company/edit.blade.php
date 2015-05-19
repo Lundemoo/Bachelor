@@ -4,28 +4,28 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit company
+                    <div class="panel-heading">{{trans('general.editCompany')}}
                     <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
                     </div>
                     <div class="panel-body">
 
-                        <h1>Edit: {!! $company->companyname !!}</h1>
+                        <h1>{{trans('general.edit') }}: {!! $company->companyname !!}</h1>
 
                         {!! Form::model($company, ['method' => 'PATCH', 'action' => ['CompanyController@update', $company->companyID]]) !!}
                         <div class="form-group">
-                            {!! Form::label('companyname', 'Company name:') !!}
+                            {!! Form::label('companyname', trans('general.companyname')) !!}
                             {!! Form::text('companyname', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('role', 'Role:') !!}
+                            {!! Form::label('role', trans('general.companyrole')) !!}
                             {!! Form::text('role', null, ['class' => 'form-control'] ) !!}
                         </div>
 
                         <br/>
 
                         <div class="form-group">
-                            {!! Form::submit('Update company' , ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit(trans('general.updateCompany') , ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}

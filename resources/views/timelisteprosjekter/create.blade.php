@@ -24,7 +24,7 @@
 
 {!! Form::label('projectIDs', trans('general.project')) !!} </br>
 <!--<input type="text", id="datepicker">-->
-{!! Form::select('projectID', $projects) !!}
+{!! Form::select('projectID', $projects, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

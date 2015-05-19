@@ -35,8 +35,9 @@ class LogbookadditionController extends Controller
     public function create(){
         
         $cars = Car::lists('nickname', 'registrationNR');
+        $projects = Project::lists('projectName', 'projectID');
 
-        return view('logbookaddition.create', array('cars' => $cars));
+        return view('logbookaddition.create', array('cars' => $cars, 'projects' => $projects));
 
     }
         /*lagrer kjørebok i database */
@@ -44,6 +45,7 @@ class LogbookadditionController extends Controller
 
         $input = $request->all();
         $input['date'] = Input::get('date_submit');
+        $input['totalkm'] *= 1.25;
         $thisid = "";
         $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->count();
 
@@ -59,7 +61,7 @@ class LogbookadditionController extends Controller
             
         } else {
             $result = DB::table('logbook')->select('*')->where('employeeNR', '=', Auth::user()->id)->where('registrationNR', '=', $input['registrationNR'])->where('date', '=', $input['date'])->get();
-            
+
             foreach($result as $res){
                 $thisid = $res->employeeNR;
                 
@@ -76,8 +78,9 @@ class LogbookadditionController extends Controller
 
 
         $cars = Car::lists('nickname', 'registrationNR');
+        $projects = Project::lists('projectName', 'projectID');
 
-        return view('logbookaddition.create', array('cars' => $cars));
+        return view('logbookaddition.create', array('cars' => $cars, 'projects' => $projects));
 
 
     }
@@ -85,27 +88,39 @@ class LogbookadditionController extends Controller
     /*
    * metode for å redigere en kjørebok som er lagt inn i systemet/DB
    */
-    public function edit($logbookadditionID){  //argumenter på endres ettervært som primary key er endret i DB
+    public function edit($logbookadditionID){
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
         $logbookaddition['totalkm'] = null;
 
         $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
+        $projects = Project::lists('projectName', 'projectID');
 
-        return view('logbookaddition.edit',array('cars' => $cars), compact('logbookaddition'));
+        return view('logbookaddition.edit',array('cars' => $cars, 'projects' => $projects), compact('logbookaddition'));
 
     }
 
     /*
- * Metode som henter fra edit.blade og oppdaterer aktuell bil i databasen
+ *  Henter fra edit.blade og oppdaterer aktuell kjørebok i databasen
+ *  Automatisk regning av bompenger
  */
     public function update($logbookadditionID, CreateLogbookadditionRequest $request){
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
+        $input= $request->all();
+        $kilometer = Input::get('totalkm');
+        $kilometer *= 1.25;
+        $logbookaddition->update(array(
+            'projectID' => $input['projectID'],
+            'registrationNR' => $input['registrationNR'],
+            'date' => $input['date'],
+            'startdestination' => $input['startdestination'],
+            'stopdestination' => $input['stopdestination'],
+            'totalkm' => $kilometer,
+        ));
 
-        $logbookaddition->update($request->all());
-
-        return redirect('logbookaddition');
+        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
+        return redirect('logbookaddition/create');
     }
 
 

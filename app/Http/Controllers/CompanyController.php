@@ -35,6 +35,7 @@ class CompanyController extends Controller
 
     public function store(CreateCompanyRequest $request){
 
+
         $input = $request->all();
         Company::create($input);
 
@@ -43,10 +44,10 @@ class CompanyController extends Controller
 
     }
 
-    public function show($registrationNR){
+    public function show($companyID){
 
-        $company = Company::find($registrationNR);
-        return $company;
+        $company = Company::find($companyID);
+        return view('company.show', compact('company'));
     }
 
     /*

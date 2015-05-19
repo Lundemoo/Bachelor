@@ -27,7 +27,7 @@ class CreateTimelisteprosjektRequest extends Request {
 			'date' => 'required',
 			'starttime' => '',
 			'endtime' => '',
-			'comment' => 'required'
+			'comment' => ''
 
 
 		];
