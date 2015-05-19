@@ -88,7 +88,7 @@ class LogbookadditionController extends Controller
     /*
    * metode for å redigere en kjørebok som er lagt inn i systemet/DB
    */
-    public function edit($logbookadditionID){  //argumenter på endres ettervært som primary key er endret i DB
+    public function edit($logbookadditionID){
 
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
         $logbookaddition['totalkm'] = null;
