@@ -190,7 +190,7 @@ return [
 
 
     
-    
+    'export_excel' => 'Export Excel',
     'exporttimesheet' => 'Export timesheets',
     'exportlogbook' => 'Export logbooks',
     'timelisterlonn' => 'Timesheet payment',

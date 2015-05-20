@@ -9,6 +9,7 @@ class Logbookaddition extends Model {
     protected $fillable = [
         'employeeNR',
         'registrationNR',
+        'projectID',
         'startdestination',
         'stopdestination',
         'totalkm',
