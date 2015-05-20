@@ -23,7 +23,14 @@
                                 <tr> <td> {{trans('general.done')}}: {!! $project->done !!}</td> </tr>
                                 <tr> <td> {{trans('general.active')}}: {!! $project->active !!}</td> </tr>
                                 <tr> <td> {{trans('general.created_at')}}: {!! $project->created_at !!}</td> </tr>
-                                <tr> <td> {{trans('general.builder')}}: {!! $project->customerID !!}</td> </tr>
+                                <tr> <td> {!! Form::open(['url' => 'editpage']) !!}
+                                        {!! Form::label('customer', trans('general.builder')) !!}:
+
+                                        @foreach ($arrayo as $arrayp)
+                                            {{$arrayp}}
+                                        @endforeach
+                                        {!! Form::close() !!}
+                                    </td> </tr>
 
                                 </tr>
                             </table>

@@ -170,7 +170,7 @@ return [
     'chooseYear' => 'Velg år',
     'chooseWeek' => 'Velg uke',
     'errorexport1' => 'Du må velge en måned',
-    'comapany' => 'Firma',
+    'company' => 'Firma',
     'companies' => 'Firmaer',
     'companyid '=> 'Firma ID',
     'companyidLarge' => 'FIRMA ID',

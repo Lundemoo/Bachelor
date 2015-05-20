@@ -19,6 +19,10 @@
                             {!! Form::label('projectID', trans('general.projectID')) !!}
                             {!! Form::text('projectID', null, ['class' => 'form-control'] ) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('builder', trans('general.builder')) !!} </br>
+                            {!! Form::select(trans('general.builder'), $builders) !!}
+                        </div>
 
                         <div class="form-group">
                             {!! Form::label('projectName', trans('general.projectName')) !!}

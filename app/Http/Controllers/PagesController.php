@@ -191,8 +191,9 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
     public function edit($projectID){
 
         $project = Project::findOrFail($projectID);
+        $builders = Builder::lists('customername', 'customerID');
 
-        return view('projects.edit', compact('project'));
+        return view('projects.edit', compact('project'))->with('builders', $builders);
 
     }
 
@@ -213,7 +214,12 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
     public function show($projectID){
 
         $project = Project::find($projectID);
-        return view('projects.show', compact('project'));
+        $customerID = $project-> customerID;
+
+            /* for å få byggherrenavn til prosjektet */
+        $arrayo = DB::table('builder')->where('customerID', $customerID)->select('customerID as customerID', 'customername as customername')->lists('customername');
+
+        return view('projects.show', ['project'=> $project, 'arrayo' =>$arrayo]);
 
     }
 
