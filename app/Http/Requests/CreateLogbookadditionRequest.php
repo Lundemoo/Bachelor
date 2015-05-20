@@ -22,6 +22,7 @@ class CreateLogbookadditionRequest extends Request {
 	public function rules()
 	{
 		return [
+			'projectID' => 'required',
 			'registrationNR' => 'required|max:7',
 			'startdestination' => 'required',
 			'stopdestination' => 'required',

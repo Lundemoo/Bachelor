@@ -24,7 +24,7 @@ class CreateProjectRequest extends Request {
         return [
             'projectID' => 'required',
             'projectName' => 'required',
-            'projectAddres' => 'required',
+            'projectAddress' => 'required',
             'budget' => 'required',
             'startDate' => 'required',
             'description' => 'required',
