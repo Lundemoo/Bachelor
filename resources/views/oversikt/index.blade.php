@@ -239,8 +239,8 @@ $( "#datepicker" ).datepicker();
                                        ?>
                                        @endforeach
                                        
-                                       <tr><td colspan='7' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
-                                           <tr><td class='framvisningrows' colspan='7'>{{trans('general.totalHoursMonth')}}: <?PHP echo $totalt; ?>
+                                       <tr><td colspan='8' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
+                                           <tr><td class='framvisningrows' colspan='8'>{{trans('general.totalHoursMonth')}}: <?PHP echo $totalt; ?>
                                                    </br>{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
                                                
                                                
@@ -276,14 +276,14 @@ $( "#datepicker" ).datepicker();
                                            
                                            
                                            
-                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td width='20%' class='framvisninghoved'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td></tr>
+                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td width='20%' class='framvisninghoved'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td><td class='framvisninghoved'> {{trans('general.edit')}} </td></tr>
                                            <?PHP
                                            $i = 1;
                                            $totalt = 0;
                                            ?>
                                        @foreach($resultatene as $resultat)
                                        
-                                       <tr><td class='framvisningrows'>{{$i}}</td><td class='framvisningrows'>{{$resultat->projectName}}</td><td class='framvisningrows'>{{$resultat->comment}}<td class='framvisningrows'>{{$resultat->dateshow}}</td><td class='framvisningrows'>{{$resultat->starttime}}</td><td class='framvisningrows'>{{$resultat->endtime}}</td><td class='framvisningrows'><?PHP $antall = (strtotime($resultat->endtime) - strtotime($resultat->starttime)) / 3600; echo $antall; $totalt += $antall;   ?></td></tr>
+                                       <tr><td class='framvisningrows'>{{$i}}</td><td class='framvisningrows'>{{$resultat->projectName}}</td><td class='framvisningrows'>{{$resultat->comment}}<td class='framvisningrows'>{{$resultat->dateshow}}</td><td class='framvisningrows'>{{$resultat->starttime}}</td><td class='framvisningrows'>{{$resultat->endtime}}</td><td class='framvisningrows'><?PHP $antall = (strtotime($resultat->endtime) - strtotime($resultat->starttime)) / 3600; echo $antall; $totalt += $antall;   ?></td><td class="framvisningrows"><a href="/timelisteprosjekter/<?PHP echo $resultat->ID ?>/edit">{{trans('general.edit')}}</a></td></tr>
                                        
                                                
                                                <?PHP
@@ -518,11 +518,11 @@ $( "#datepicker" ).datepicker();
                                           <?PHP
                                           $a = 1;
                                           ?>
-                                          <tr><td class="framvisninghoved">#</td><td class="framvisninghoved">{{trans('general.car')}}</td><td class="framvisninghoved">{{trans('general.date')}}</td><td class="framvisninghoved">{{trans('general.startdestination')}}</td><td class="framvisninghoved">{{trans('general.stopdestination')}}</td><td class="framvisninghoved">{{trans('general.kilometer')}}</td></tr>
+                                          <tr><td class="framvisninghoved">#</td><td class="framvisninghoved">{{trans('general.car')}}</td><td class="framvisninghoved">{{trans('general.date')}}</td><td class="framvisninghoved">{{trans('general.startdestination')}}</td><td class="framvisninghoved">{{trans('general.stopdestination')}}</td><td class="framvisninghoved">{{trans('general.kilometer')}}</td><td class="framvisninghoved">{{trans('general.edit')}}</td></tr>
                                           @foreach($resultatene as $res)
                                           
                                           
-                                          <tr><td class="framvisningrows"><?PHP echo $a; $a++; ?></td><td class="framvisningrows">{{$res->registrationNR}}</td><td class="framvisningrows">{{$res->date}}</td><td class="framvisningrows">{{$res->startdestination}}</td><td class="framvisningrows">{{$res->stopdestination}}</td><td class="framvisningrows">{{$res->totalkm}} km</td></tr>
+                                          <tr><td class="framvisningrows"><?PHP echo $a; $a++; ?></td><td class="framvisningrows">{{$res->registrationNR}}</td><td class="framvisningrows">{{$res->date}}</td><td class="framvisningrows">{{$res->startdestination}}</td><td class="framvisningrows">{{$res->stopdestination}}</td><td class="framvisningrows">{{$res->totalkm}} km</td><td class="framvisningrows"><a href="/logbookaddition/<?PHP echo $res->logbookadditionID; ?>/edit">{{trans('general.edit')}}</a></tr>
                                           @endforeach
                                           
                                           

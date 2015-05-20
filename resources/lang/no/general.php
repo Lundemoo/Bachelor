@@ -233,6 +233,7 @@ return [
     'nbwarning' => 'NB: Dette vil vises som klartekst',
     'userlocked' => 'Denne kontoen er ikke lenger aktiv',
     'export' => 'Eksporter timeslister',
+    'edit' => 'Endre'
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

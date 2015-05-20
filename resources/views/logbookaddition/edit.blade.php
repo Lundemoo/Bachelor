@@ -8,7 +8,12 @@
     <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" type="text/javascript"></script>
     <!-- According to the Google Maps API Terms of Service you are required display a Google map when using the Google Maps API. see: http://code.google.com/apis/maps/terms.html -->
     <script src="/js/kjorerute.js"></script>
-
+     <script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -31,9 +36,9 @@
                             {!! Form::select('registrationNR', $cars) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('date', trans('general.date')) !!}
-                            {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
-                        </div>
+                            {!! Form::label('date', trans('general.date')) !!}</br>
+                            {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+                        </div><div id="container"></div>
                         <div class="form-group">
                             {!! Form::label('startdestination', trans('general.startdestination')) !!}
                             {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
@@ -60,7 +65,8 @@
                             </ul>
 
                         @endif
-
+<script>
+        var minimal = 0;</script>
                     </div>
                 </div>
             </div>
