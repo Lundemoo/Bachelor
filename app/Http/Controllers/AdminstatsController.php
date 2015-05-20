@@ -275,7 +275,7 @@ class AdminstatsController extends Controller {
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();
             
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
-            $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber"))->groupBy("weeknumber")->get();
+            $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumbershow, WEEKOFYEAR(date) as weeknumber"))->groupBy("weeknumbershow")->get();
             
             
           return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks)->with('error', $error);
@@ -295,14 +295,12 @@ class AdminstatsController extends Controller {
                 $overskrift = trans('general.timesheet');
                 $excel->sheet($overskrift, function($sheet)  {
                 
-                    $sheet->setStyle(array(
-    'font' => array(
-        'name'      =>  'Times New Roman',
-        'size'      =>  11,
-        'bold'      =>  true
-    )
-));
-                    
+                    $sheet->row(1, function($row){
+                        
+    $row->setFontWeight('bold');
+
+                    }
+                    );
                     
                     
                     
@@ -390,6 +388,9 @@ class AdminstatsController extends Controller {
                             $hvormange = 0;
                             foreach($hentpaid as $j){
                                 $hvormange = (strtotime($j->endtime) - strtotime($j->starttime))/3600;
+                                if($hvormange > 6){
+                                    $hvormange += 0.5;
+                                }
                                 $sum += $hvormange;
                                 
                             }
@@ -704,7 +705,10 @@ class AdminstatsController extends Controller {
                     $idnu = 0;
                     
                     foreach($hver as $h){
-                   
+                        if(((strtotime($h->endtime) - strtotime($h->starttime))/3600) > 6){
+                            $sum += 0.5;
+                            $supertotal += 0.5;
+                        }
                         
                         $sum += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
                         $supertotal += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
@@ -761,8 +765,7 @@ class AdminstatsController extends Controller {
             
             
             
-            echo "Hei!";
-            exit;
+            
             
         }    else {
             echo "Error";

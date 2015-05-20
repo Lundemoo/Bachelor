@@ -13,6 +13,7 @@
 				<div class="panel-body">
                                     <center>
                                         <h1>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h1>
+                                                
                                         <hr width="70%">
                                         
                                         
@@ -23,7 +24,7 @@
                                     @if(Auth::user()->brukertype == 1)
                                     <div id=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div></br>
                                     <div id=menyvalg onclick="oc('/admin')">{{trans('general.statistic')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/admin')">{{trans('general.export_excel')}}</div>
+                                    <div id=menyvalg onclick="oc('/admin?side=2')">{{trans('general.export')}}</div>
                                     
                                     @endif
                                     </center>

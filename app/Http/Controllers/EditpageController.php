@@ -19,6 +19,7 @@ use App;
 use Helper;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Database\Eloquent;
+use bcrypt;
 
 
 class EditpageController extends Controller
@@ -113,8 +114,53 @@ echo $siden; exit;
     public function edit($id){
 
         $users = User::findOrFail($id);
+        
+        
+        
 
         return view('auth.edit', compact('users'))->with('user', $users);
+
+    }
+    
+       public function editpress($id){
+          $all = Request::all();
+        
+          if($all['newpassword'] != "" || $all['newpasswordconfirm'] != ""){
+             $fail = 0;
+             $n = $all['newpassword'];
+             $nc = $all['newpasswordconfirm'];
+             if($n != $nc){
+                 $fail == 1;
+             }
+             if(strlen($n) < 6){
+                 $fail = 1;
+             }
+             if($fail == 1){
+                 $all['newpassword'] = "";
+                 $all['newpasswordconfirm'] = "";
+                 $users = User::findOrFail($id);
+                     return redirect('/editpage/' . $users->id . '/edit')->withErrors(trans('general.wrongwithpassword'));
+             } else {
+                
+                 $all['newpassword'] = bcrypt($all['newpassword']);
+                 
+               
+             }
+              
+             
+          }
+          
+          
+        $users = User::findOrFail($id);
+        $users->update($all);
+        if($all['newpassword'] != ""){
+            $users->password = $all['newpassword'];
+            $users->save();
+        }
+        
+        \Session::flash('flash_message', Lang::get('general.changeduser'));
+
+        return redirect('/editpage/' . $users->id . '/edit');
 
     }
 

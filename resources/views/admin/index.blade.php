@@ -26,22 +26,22 @@ $( "#datepicker" ).datepicker();
                                             <td class="besoker" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>
+                                              
                                             @elseif($siden == 1)
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besoker" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>
+                                              
                                               @elseif($siden == 2)
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besoker" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>  
+                                               
                                               @else
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              <td class="besoker" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>  
+                                              
                                               
                                               
                                             @endif
@@ -811,7 +811,7 @@ $( "#datepicker" ).datepicker();
                                        
                                     
                                     </table>
-                                   
+                                        </br>
                                     
                                     
                                     

@@ -212,24 +212,47 @@
 
                                                                 <!--deaktivere knapp -->
 
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['/editpage/destroy', $user->id]])!!}
 
+                                                                {!! Form::button(trans('general.deactivate'), array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('/editpage/destroy/$user->id')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@edit', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
 
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center">
+                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
                                                                 <!--aktivere knapp-->
 
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['/editpage/aktiver', $user->id]])!!}
+                                                                {!! Form::button(trans('general.activate'), array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('/editpage/aktiver/$user->id')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
-
-
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@edit', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
                                                                 @endif
 
-                                                            </td> </tr>
+                                                            </td>
+
+
+
+ </tr>
 
 
                                                     @endforeach

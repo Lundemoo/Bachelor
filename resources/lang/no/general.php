@@ -228,7 +228,11 @@ return [
     'nobuilder' => 'Du må velge en byggherre',
 'newpassword' => 'Nytt passord',
     'confirmnewpassword' => 'Bekreft nytt passord',    
-
+'changeduser' => 'Endring vellykket',
+    'wrongwithpassword' => 'Det er noe galt med det nye passordet',
+    'nbwarning' => 'NB: Dette vil vises som klartekst',
+    'userlocked' => 'Denne kontoen er ikke lenger aktiv',
+    'export' => 'Eksporter timeslister',
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.
