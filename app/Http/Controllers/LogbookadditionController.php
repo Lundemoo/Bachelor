@@ -111,6 +111,7 @@ class LogbookadditionController extends Controller
         $input= $request->all();
         $kilometer = Input::get('totalkm');
         $kilometer *= 1.25;
+        //$input['date'] = Input::get('date_submit');
         $logbookaddition->update(array(
             'projectID' => $input['projectID'],
             'registrationNR' => $input['registrationNR'],
