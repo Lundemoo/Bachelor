@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Timelisteprosjekt extends Model {
 
     protected $table = "timelisteprosjekter";
-    protected $primaryKey = 'projectID';
+    protected $primaryKey = 'ID';
     protected $fillable = [
         'projectID',
         'employeeNR',

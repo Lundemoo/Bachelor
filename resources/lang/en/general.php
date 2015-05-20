@@ -239,6 +239,7 @@ return [
     'nbwarning' => 'This will show as clear text',
     'userlocked' => 'This account is not active anymore',
     'export' => 'Export timesheets',
+    'edit' => 'Edit'
     
     
     

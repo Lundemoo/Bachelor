@@ -8,6 +8,7 @@ use Auth;
 use App\User;
 use App\Project;
 use App\Timesheet;
+
 use Helper;
 //use Illuminate\Http\Request;
 use Request;
@@ -120,7 +121,7 @@ class TimelisteprosjektController extends Controller {
 */
         $projects = Project::lists('projectName', 'projectID'); // henter alle prosjekter
 
-        return view('timelisteprosjekter.edit',array('projects' => $projects), compact('timelisteprosjekt'));
+        return view('timelisteprosjekter.edit', compact('timelisteprosjekt'))->with('projects', $projects);
 
     }
 
@@ -132,7 +133,7 @@ class TimelisteprosjektController extends Controller {
         $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);
         $timelisteprosjekt->update($request->all());
 
-        return redirect('timelisteprosjekter');
+        return redirect('oversikt');
     }
 
     /* Export til Excel */
