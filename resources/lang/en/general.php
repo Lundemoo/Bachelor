@@ -120,6 +120,7 @@ return [
     'registrateTimesheet' => 'Register timesheet',
     'editTimesheet' => 'Edit timesheet',
     'updateTimesheet' => 'Update timesheet',
+    'updateLogbook' => 'Update logbook',
     'allTimesheets' => 'All timesheets',
     'startTime' => 'Start time',
     'stopTime' => 'Stop time',

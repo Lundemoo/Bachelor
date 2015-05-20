@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="029af3b2-73d2-420e-b838-16037a211078" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/en/general.php" afterPath="$PROJECT_DIR$/resources/lang/en/general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/no/general.php" afterPath="$PROJECT_DIR$/resources/lang/no/general.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Bachelor.iws" />
@@ -47,11 +51,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminstatsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminstatsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminstatsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17153">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="17204">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/car/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="7.1923075" vertical-offset="425" max-vertical-offset="1088">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/car/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.769231" vertical-offset="51" max-vertical-offset="697">
+              <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="646" max-vertical-offset="1360">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7416667" vertical-offset="668" max-vertical-offset="1428">
+              <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3818183" vertical-offset="1943" max-vertical-offset="4471">
+              <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/no/general.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3818183" vertical-offset="1892" max-vertical-offset="4250">
+              <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -72,11 +136,9 @@
       <list>
         <option value="$PROJECT_DIR$/resources/views/includes/jara_confirm.blade.php" />
         <option value="$PROJECT_DIR$/public/css/app.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminstatsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TimelisteprosjektController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateTimelisteprosjektRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/projects/createProjectView.blade.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
@@ -93,7 +155,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EditpageController.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/CreateProjectRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/car/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/contactperson/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/company/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
@@ -109,10 +170,8 @@
         <option value="$PROJECT_DIR$/resources/views/editpage/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/car/showsearch.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150914_logbookaddition.php" />
-        <option value="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/timelisteprosjekter/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/general.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/logbookaddition/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Logbookaddition.php" />
@@ -120,7 +179,12 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_03_09_150913_logbook.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LogbookadditionController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminstatsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/car/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/general.php" />
         <option value="$PROJECT_DIR$/resources/lang/no/general.php" />
+        <option value="$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -383,6 +447,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="car" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="builder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -518,6 +604,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bachelor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bilder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -670,18 +774,6 @@
       <created>1425031471613</created>
       <option name="number" value="Default" />
       <updated>1425031471613</updated>
-    </task>
-    <task id="LOCAL-00038" summary="endret create project view">
-      <created>1429264717797</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1429264717797</updated>
-    </task>
-    <task id="LOCAL-00039" summary="endret create project view">
-      <created>1429520854228</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1429520854228</updated>
     </task>
     <task id="LOCAL-00040" summary="Merge branch 'master' of https://github.com/Lundemoo/Bachelor&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;">
       <created>1429520962778</created>
@@ -965,13 +1057,26 @@
       <option name="project" value="LOCAL" />
       <updated>1432066523537</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="fiks kjørebok">
+      <created>1432118808097</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1432118808136</updated>
+    </task>
+    <task id="LOCAL-00088" summary="fiks kjørebok">
+      <created>1432123772396</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1432123772396</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -982,13 +1087,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30673498" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.5043924" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.4956076" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32861635" sideWeight="0.4956076" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1069,13 +1173,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/3110f7ca29dd1a98e10d210f60d016d4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39378238" vertical-offset="307" max-vertical-offset="969">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/contactperson/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8055556" vertical-offset="33" max-vertical-offset="867">
@@ -1111,24 +1208,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/car/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.51944447" vertical-offset="425" max-vertical-offset="1088">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/builder/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49722221" vertical-offset="110" max-vertical-offset="1309">
           <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/car/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2777778" vertical-offset="87" max-vertical-offset="697">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1258,13 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.423077" vertical-offset="704" max-vertical-offset="1326">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/addcontactpersonController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3077">
@@ -1297,13 +1373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.9583333" vertical-offset="345" max-vertical-offset="782">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1923075" vertical-offset="3274" max-vertical-offset="4352">
-          <caret line="199" column="14" selection-start-line="199" selection-start-column="14" selection-end-line="199" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1353,13 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2692308" vertical-offset="128" max-vertical-offset="544">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/no/general.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33139536" vertical-offset="2232" max-vertical-offset="4148">
-          <caret line="138" column="47" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1425,6 +1487,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17153">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/car/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.1923075" vertical-offset="425" max-vertical-offset="1088">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/car/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="51" max-vertical-offset="697">
+          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/timelisteprosjekter/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="646" max-vertical-offset="1360">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3818183" vertical-offset="1943" max-vertical-offset="4471">
+          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/no/general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3818183" vertical-offset="1892" max-vertical-offset="4250">
+          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logbookaddition/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7416667" vertical-offset="668" max-vertical-offset="1428">
+          <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
           <folding />
         </state>
       </provider>

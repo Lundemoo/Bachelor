@@ -117,6 +117,7 @@ return [
     'registrateTimesheet' => 'Registrer timeliste',
     'editTimesheet' => 'Rediger timeliste',
     'updateTimesheet' => 'Oppdater timeliste',
+    'updateLogbook' => 'Oppdater kjørebok',
     'allTimesheets' => 'Alle timelister',
     'editDriving' => 'Redigere Kjørebok',
     'startTime' => 'Start tid',

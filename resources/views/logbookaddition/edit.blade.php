@@ -53,7 +53,7 @@ $( "#datepicker" ).datepicker();
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::submit(trans('general.editLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit(trans('general.updateLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}
