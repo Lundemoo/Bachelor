@@ -35,6 +35,14 @@ Route::filter('loggedin', function(){
     
      if(Auth::check()){
        App::setLocale(Auth::user()->language);
+       
+       if(Auth::user()->active == 0){
+           echo "<center>" . trans('general.userlocked') . "</center><meta http-equiv=\"refresh\" content=\"5; url=/auth/logout\" />";
+           
+           Auth::logout();
+           
+           exit;
+       }
    }  else {
        App::setLocale('en');
    }
@@ -151,13 +159,15 @@ Route::get('editpage', 'EditpageController@index');
 Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktivere bil , kan flyttes til de andre bilmetodene litt lengre opp
 Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
 
-Route::delete('editpage/destroy', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
+Route::delete('editpage/destroy/{id}', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
 
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker
 Route::PATCH('contactperson/{userid}/update', 'EditpageController@update');
 Route::delete('editpage/destroy_contact/{contactpersonID}', 'EditpageController@destroy_contact'); //slette kontaktperson
 Route::get('editpage/{id}/edit', 'EditpageController@edit');
+
+Route::post('editpage/{id}/editpress', 'EditpageController@editpress');
 
 
 

@@ -41,17 +41,18 @@ $add = "";
 			
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+				@if(Auth::check())
+                                <ul class="nav navbar-nav">
 					<li><a href="/auth/login/<?PHP echo $add; ?>">{{trans('general.mainMenu')}}</a></li>
                                         
-				</ul>
+				</ul>@endif
 <div>
 
 </div>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="/auth/login<?PHP echo $add; ?>">{{trans('general.login')}}</a></li>
-						<li><a href="/auth/register<?PHP echo $add; ?>">{{trans('general.registerUser')}}</a></li>
+						
 						
 
 					@else
@@ -61,7 +62,7 @@ $add = "";
                                         <li><a href="/car/create">{{trans('general.registerCar')}}</a></li>
                         <li><a href="/project/create">{{trans('general.registerProject')}}</a></li>
                         <li><a href="/builder/create">{{trans('general.registerBuilder')}}</a></li>
-                        <li><a href="/auth/edit">{{trans('general.registerUser')}}</a></li>
+                        <li><a href="/auth/register">{{trans('general.registerUser')}}</a></li>
 
 
                                         

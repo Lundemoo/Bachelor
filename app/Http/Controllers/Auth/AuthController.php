@@ -36,7 +36,7 @@ class AuthController extends Controller {
 	 */
 	public function __construct(Guard $auth, Registrar $registrar)
 	{
-         
+        
             $lan = req::get('lan');
             
             if($lan != "" && ($lan == "en" || $lan == "no" || $lan == "est")){
@@ -46,7 +46,7 @@ class AuthController extends Controller {
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => ['getLogout', 'getRegister']]);
 	}
 
         

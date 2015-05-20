@@ -233,7 +233,12 @@ return [
     'nobuilder' => 'You have to choose a builder',
     'newpassword' => 'New password',
     'confirmnewpassword' => 'Confirm new password',
+    'changeduser' => 'Change successfull',
+    'wrongwithpassword' => 'There is somwthing wrong with the new password',
     
+    'nbwarning' => 'This will show as clear text',
+    'userlocked' => 'This account is not active anymore',
+    'export' => 'Export timesheets',
     
     
     

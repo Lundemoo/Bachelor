@@ -1,6 +1,24 @@
 @extends('app')
 
 @section('content')
+@if(!Auth::check())
+<?PHP
+
+exit;
+?>
+@endif
+
+@if(Auth::check())
+@if(Auth::user()->brukertype != 1)
+<?PHP
+exit;
+?>
+@endif
+@endif
+
+{{
+    App::setLocale(Auth::user()->language)
+    }}
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
