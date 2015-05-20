@@ -239,9 +239,11 @@ return [
     'nbwarning' => 'This will show as clear text',
     'userlocked' => 'This account is not active anymore',
     'export' => 'Export timesheets',
-    'edit' => 'Edit'
+    'edit' => 'Edit',
+    'exportchooseall' => 'You have to choose both a project and a time period',
     
-    
+    'logbook1' => 'Logbook month',
+    'logbook2' => 'Logbook advanced',
     
     
     

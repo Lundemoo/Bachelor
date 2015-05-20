@@ -161,6 +161,10 @@ and open the template in the editor.
                                             border: 1px solid grey;
                                             padding: 5px;
                                         }
+                                        select {
+                                            border: 1px solid grey;
+                                            padding: 5px;
+                                        }
                                         div.rund {
                                             -moz-border-radius: 15px/15px;
                                             -webkit-border-radius: 15px 15px;

@@ -233,7 +233,10 @@ return [
     'nbwarning' => 'NB: Dette vil vises som klartekst',
     'userlocked' => 'Denne kontoen er ikke lenger aktiv',
     'export' => 'Eksporter timeslister',
-    'edit' => 'Endre'
+    'edit' => 'Endre',
+    'exportchooseall' => 'Du må både velge prosjekt og tidsperiode',
+    'logbook1' => 'Kjørebok måned',
+    'logbook2' => 'Kjørebok avansert',
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

@@ -61,6 +61,7 @@ class AuthController extends Controller {
       
             
             $userid = $request->only('email')['email'];
+           
     $getall = Loginattempt::whereBetween('created_at', array($then, $now))->where('userID', '=', $userid)->where('active', '=', '1')->count();
             
             

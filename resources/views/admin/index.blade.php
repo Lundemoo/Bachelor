@@ -26,22 +26,23 @@ $( "#datepicker" ).datepicker();
                                             <td class="besoker" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
+                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>
                                               
                                             @elseif($siden == 1)
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besoker" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              
+                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
                                               @elseif($siden == 2)
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besoker" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                               
+                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>  
                                               @else
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
                                              <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                              
+                                             <td class="besoker" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
                                               
                                               
                                             @endif
@@ -629,7 +630,7 @@ $( "#datepicker" ).datepicker();
                                     <h3>{{trans('general.noresults')}}</h3>
                                     @endif
 
-                                    <!-- timelister excel -->
+                                    <!-- timelister excel -->  <!-- ............................................................................ -->
                                        @elseif($siden == 2)
                                        
                                        <table width="80%" class="">
@@ -641,11 +642,7 @@ $( "#datepicker" ).datepicker();
                                            @endif
                                            <tr><td class="framvisninghoved" width="50%">{{trans('general.timelisterlonn')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.timelisterfaktura')}}</td></tr>
                                                
-                                           <tr>
-                                               <td class="framvisninghoved">1</td><td class="framvisninghoved">1</td><td class="framvisninghoved">1</td>
-                                                   
-                                               
-                                           </tr>
+                                           
                                            
                                            <tr><td class="sammesomframvisning">
                                                    <form action="/admin/export" method="post">
@@ -800,6 +797,206 @@ $( "#datepicker" ).datepicker();
                                            }
                                            
                                            </script>
+
+
+@elseif($siden == 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+                                       <table width="80%" class="">
+                                           @if(isset($error))
+                                           <tr><td class="error">{{$error}}</td><td class="invisible" colspan="2">&nbsp;</td></tr>
+                                           @endif
+                                           @if(isset($error2))
+                                           <tr><td class="invisible">&nbsp;</td><td class="error" colspan="2">{{$error2}}</td></tr>
+                                           @endif
+                                           <tr><td class="framvisninghoved" width="50%">{{trans('general.logbook1')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.logbook2')}}</td></tr>
+                                               
+                                           
+                                           
+                                           <tr><td class="sammesomframvisning">
+                                                   <form action="/admin/export2" method="post">
+                                                   <center>
+                                                       
+                                                           
+                                                           <select name="month" id="month">
+                                                               <option value="-1">{{trans('general.chooseMonth')}}</option>
+                                                               @foreach($months as $month)
+                                                               
+                                                               <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                                               @endforeach
+                                                           </select>
+                                                           <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Send!">
+                                                      
+                                                   </center>
+                                       </form>
+                                               </td>
+                                               
+                                               <td class="sammesomframvisning" width="25%">
+                                                   
+                                               <form method="post" action="/admin/export2">
+                                                       
+                                                       
+                                               <center> 
+                                                       
+                                                       
+                                                       <select name="project" id="project">
+                                                               <option value="-1">{{trans('general.chooseProject')}}</option>
+                                                               @foreach($projects as $project)
+                                                               
+                                                               <option value="{{$project->projectID}}">{{$project->projectName}}</option>
+                                                               @endforeach
+                                                           </select>
+                                                       
+                                                       
+                                                  </center>
+                                       
+                                                   
+                                       </td><td class="sammesomframvisning" width="25%">
+                                       
+                                       <center>
+                                       
+                                           <select name="time" id="time" onChange="vis()"><option value="-1">{{trans('general.choosetimeperiode')}}</option>
+                                               <option value="0">{{trans('general.year')}}</option>
+                                               <option value="1">{{trans('general.month')}}</option>
+                                               <option value="2">{{trans('general.week')}}</option>
+                                           </select>
+                                               
+                                      
+                                       
+                                           </br>
+                                       <select name="year" id="year" style="display:none;">
+                                           @if(count($years) > 1)
+                                           <option value="-1">{{trans('general.chooseYear')}}</option>
+                                       @foreach($years as $year)
+                                       <option value="{{$year->dateshow}}">{{$year->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($years as $year)
+                                       <option value="{{$year->dateshow}}">{{$year->dateshow}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                           
+                                           
+                                           
+                                           
+                                           
+                                               
+                                       <select name="month2" id="month2" style="display:none;">
+                                           @if(count($months2) > 1)
+                                           <option value="-1">{{trans('general.chooseMonth')}}</option>
+                                       @foreach($months2 as $month)
+                                       <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($months2 as $month)
+                                       <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                               
+                                               
+                                               
+                                               
+                                               
+                                                  
+                                       <select name="week" id="week" style="display:none;">
+                                           @if(count($weeks) > 1)
+                                           <option value="-1">{{trans('general.chooseWeek')}}</option>
+                                       @foreach($weeks as $week)
+                                       <option value="{{$week->weeknumber}}">{{$week->weeknumbershow}}</option>
+                                       @endforeach
+                                       
+                                       
+                                       @else
+                                       @foreach($weeks as $week)
+                                       <option value="{{$week->weeknumber}}">{{$week->weeknumbershow}}</option>
+                                       @endforeach
+                                       
+                                       @endif
+                                       </select>
+                                                   
+                                       </center></br>
+                                       
+                                       </br>
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
+                                           </td></tr>
+                                           
+                                                       
+                                       <tr><td class="framvisning">
+                                       
+                                           </td><td colspan="2">
+                                               
+                                                   </td></tr>       
+                                           
+                                           
+                                           
+                                       </table>
+                                     
+                                       <script>
+                                           function vis(){
+                                               
+                                                   var a = "-1";
+                                                    if(document.getElementById("time") != null){    
+                                                    var e = document.getElementById("time");
+                                                    a = e.options[e.selectedIndex].value;
+                                                    
+                                                    if(a == "0"){
+                                                        
+                                                        document.getElementById("year").style.display = "block";
+                                                        document.getElementById("month2").style.display = "none";
+                                                        document.getElementById("week").style.display = "none";
+                                                    }else if(a == 1){
+                                                        document.getElementById("year").style.display = "none";
+                                                        document.getElementById("month2").style.display = "block";
+                                                        document.getElementById("week").style.display = "none";
+                                                    }else if(a == 2){
+                                                        document.getElementById("year").style.display = "none";
+                                                        document.getElementById("month2").style.display = "none";
+                                                        document.getElementById("week").style.display = "block";
+                                                    }
+                                                }
+                                               
+                                           }
+                                           
+                                           </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
