@@ -21,7 +21,7 @@
                     </div>
                     <div class="panel-body">
 
-                        <h1>{{trans('general.edit')}} {!! $timelisteprosjekt->ID !!}</h1>
+                        <h1>{{trans('general.edit')}} {{trans('general.timesheet')}}: {!! $timelisteprosjekt->date !!}</h1>
 
                         {!! Form::model($timelisteprosjekt, ['method'=> 'PATCH', 'action' => ['TimelisteprosjektController@update', $timelisteprosjekt->ID]]) !!}
 
@@ -56,12 +56,6 @@
 
                        {!! Form::close() !!}
 
-                        <!--Export Excel -->
-                        {!! Form::open(['method' => 'get', 'style' => 'display:inline', 'action' =>['TimelisteprosjektController@export', $timelisteprosjekt->ID]]) !!}
-                        <div class="form-group">
-                        {!! Form::submit('Export', ['class' => 'btnexcel' ]) !!}
-                        </div>
-                        {!! Form::close() !!}
 
 
                         @if ($errors->any())

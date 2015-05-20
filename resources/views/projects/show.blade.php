@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.project')}} Informasjon
+                    <div class="panel-heading">{{trans('general.project')}} info
                         <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
                     </div>
 
@@ -23,7 +23,14 @@
                                 <tr> <td> {{trans('general.done')}}: {!! $project->done !!}</td> </tr>
                                 <tr> <td> {{trans('general.active')}}: {!! $project->active !!}</td> </tr>
                                 <tr> <td> {{trans('general.created_at')}}: {!! $project->created_at !!}</td> </tr>
-                                <tr> <td> {{trans('general.builder')}}: {!! $project->customerID !!}</td> </tr>
+                                <tr> <td> {!! Form::open(['url' => 'editpage']) !!}
+                                        {!! Form::label('customer', trans('general.builder')) !!}:
+
+                                        @foreach ($arrayo as $arrayp)
+                                            {{$arrayp}}
+                                        @endforeach
+                                        {!! Form::close() !!}
+                                    </td> </tr>
 
                                 </tr>
                             </table>

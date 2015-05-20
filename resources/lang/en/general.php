@@ -33,7 +33,7 @@ return [
     'ensurePass' => 'Ensure password',
     'resetPass' => 'Reset password',
     'sendNewPass' => 'Send new password',
-    'registrate' => 'Registrate',
+    'registrate' => 'Register',
     'customerId' => 'Customer ID',
     'customerName' => 'Customer name',
     'customerAddress' => 'Customer address',
@@ -80,6 +80,7 @@ return [
     'unableToFind2' => 'Sorry, we were unable to geocode the second address',
     'registrateDriving' => 'Register driving',
     'car' => 'Car',
+    'info' => 'info',
     'date' => 'Date',
     'roadTolls' => 'Road tolls',
     'editLogbook' => 'Edit logbook',
@@ -97,7 +98,7 @@ return [
     'comment' => 'Comment',
     'hourCount' => 'Number of hours',
     'total' => 'Total',
-    'registrateProject' => 'Registrate project',
+    'registrateProject' => 'Register project',
     'finish' => 'Finish',
     'name' => 'Name',
     'role' => 'Role',
@@ -114,12 +115,13 @@ return [
     'wprojectDescription' => 'Give a description of the project',
     'expectedCompletion' => 'Expected completion',
     'newContactPerson' => 'New Contactperson',
-    'registrateNewproject' => 'Registrate new project',
+    'registrateNewproject' => 'Register new project',
     'showprojects' => 'Shows the projects',
     'description' => 'Description',
     'registrateTimesheet' => 'Register timesheet',
     'editTimesheet' => 'Edit timesheet',
     'updateTimesheet' => 'Update timesheet',
+    'updateLogbook' => 'Update logbook',
     'allTimesheets' => 'All timesheets',
     'startTime' => 'Start time',
     'stopTime' => 'Stop time',
@@ -184,6 +186,7 @@ return [
     'hits' => 'Hits',
     'searchresults' => 'Search results',
     'no_result' => 'no result',
+
 
 
    

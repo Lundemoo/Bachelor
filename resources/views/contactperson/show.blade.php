@@ -25,7 +25,7 @@
                                 <tr> <td> {{trans('general.active')}}: {!! $contactperson->active !!}</td> </tr>
                                 <tr> <td> {{trans('general.created_at')}} {!! $contactperson->created_at !!}</td> </tr>
                                 <tr><td>{!! Form::open(['url' => 'editpage']) !!}
-                                        {!! Form::label('company', 'Tilhører firma:') !!}
+                                        {!! Form::label('company', trans('general.company')) !!}:
 
                                         @foreach ($arrayo as $arrayp)
                                             {{$arrayp}}

@@ -37,7 +37,7 @@ $( "#datepicker" ).datepicker();
                         </div>
                         <div class="form-group">
                             {!! Form::label('date', trans('general.date')) !!}</br>
-                            {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+                            {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
                         </div><div id="container"></div>
                         <div class="form-group">
                             {!! Form::label('startdestination', trans('general.startdestination')) !!}
@@ -53,7 +53,7 @@ $( "#datepicker" ).datepicker();
                         </div>
                         <br/>
                         <div class="form-group">
-                            {!! Form::submit(trans('general.editLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
+                            {!! Form::submit(trans('general.updateLogbook'), ['class' => 'btn btn-primary form-control'] ) !!}
                         </div>
 
                         {!! Form::close() !!}

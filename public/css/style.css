@@ -18,6 +18,30 @@ and open the template in the editor.
     
 }
 
+select {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    color: grey;
+}
+
+.datepicker {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    color: grey;
+}
+
+.timepicker {
+    border: 1px solid grey;
+    padding: 5px;
+    width: 100%;
+    border-radius: 4px;
+    color: grey;
+}
+
     #newcontact {
         position: absolute;
         top: 30%;
@@ -289,9 +313,9 @@ line-height: 1.42857;
 vertical-align: top;
 border-top: 1px solid #DDD;
 
-    
-    
 }
+
+
 td.error {
     background-color: #ee0000;
     border: 1px solid black;
