@@ -77,6 +77,7 @@ return [
     'unableToFind2' => 'Beklager, vi var ikke i stand til å geokode den andre adressen',
     'registrateDriving' => 'Registrer kjøring',
     'car' => 'Bil',
+    'info' => 'info',
     'date' => 'Dato',
     'roadTolls' => 'Bompenger',
     'editLogbook' => 'Rediger kjørebok',

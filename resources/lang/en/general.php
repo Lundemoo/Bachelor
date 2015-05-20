@@ -80,6 +80,7 @@ return [
     'unableToFind2' => 'Sorry, we were unable to geocode the second address',
     'registrateDriving' => 'Register driving',
     'car' => 'Car',
+    'info' => 'info',
     'date' => 'Date',
     'roadTolls' => 'Road tolls',
     'editLogbook' => 'Edit logbook',
