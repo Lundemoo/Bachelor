@@ -137,7 +137,7 @@ return [
     'editcompany' => 'Edit Company',
     'companyidLarge' => 'COMPANY ID',
     'company' => 'Company',
-    'updatedContactp' => 'Update Contactperson',
+    'updateContactp' => 'Update Contactperson',
     'builder' => 'Builder',
     'contactPerson' => 'Contact person',
     'contactPersons' => 'Contact persons',

@@ -59,6 +59,7 @@ return [
     'delete' => 'Slette',
     'editOverview' => 'Redigere oversikt',
     'updateCompany' => 'Oppdater firma',
+    'updateContactp' => 'Oppdater kontaktperson',
     'users' => 'Brukere',
     'projects' => 'Prosjekter',
     'builders' => 'Byggherrer',
