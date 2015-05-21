@@ -37,7 +37,7 @@ $( "#datepicker" ).datepicker();
                         </div>
                         <div class="form-group">
                             {!! Form::label('date', trans('general.date')) !!}</br>
-                            {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
+                            {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
                         </div><div id="container"></div>
                         <div class="form-group">
                             {!! Form::label('startdestination', trans('general.startdestination')) !!}

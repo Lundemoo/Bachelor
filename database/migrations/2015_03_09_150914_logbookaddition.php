@@ -36,14 +36,14 @@ class Logbookaddition extends Migration {
 				   ->on('logbook');
 
 				/* foreign key 2 */
-			   $table->foreign('registrationNR')
+			 /*  $table->foreign('registrationNR')
 				   ->references('registrationNR')
-				   ->on('logbook');
+				   ->on('logbook'); */
 
 				/* foreign key 3 */
-			   $table->foreign('date')
+			/*   $table->foreign('date')
 				   ->references('date')
-				   ->on('logbook');
+				   ->on('logbook');*/
 
 			   /* foreign key 4 */
 			   $table->foreign('projectID')

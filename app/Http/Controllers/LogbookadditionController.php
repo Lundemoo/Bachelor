@@ -115,7 +115,7 @@ class LogbookadditionController extends Controller
         $logbookaddition->update(array(
             'projectID' => $input['projectID'],
             'registrationNR' => $input['registrationNR'],
-            'date' => $input['date'],
+            'date' => $input['date_submit'],
             'startdestination' => $input['startdestination'],
             'stopdestination' => $input['stopdestination'],
             'totalkm' => $kilometer,
