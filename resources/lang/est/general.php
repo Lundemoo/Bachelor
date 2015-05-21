@@ -232,6 +232,7 @@ return [
 'exportchooseall' => 'Sa pead valima nii projekti ja aja jooksul',
 'logbook1' => 'Logiraamat kuu',
 'logbook2' => 'Logiraamat edenenud',
+    'intervalfail' => 'Oled juba esitatud ajaandmik selles intervall',
 
 
     

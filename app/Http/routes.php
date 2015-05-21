@@ -24,6 +24,7 @@ Route::filter('isboss', function(){
     
  if(Auth::check()){
    if(Auth::user()->brukertype != 1){
+       
        return Redirect::to('/');
    }
  }
@@ -66,13 +67,21 @@ Route::filter('setLanguage', function(){
 
 Route::get('/', array('before' => 'setLanguage', 'uses' => 'HomeController@index'));
 
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
 Route::group(array('before' => 'loggedin'), function(){
 
+    
+    
+    
+    
+    
+    
+    
     /*export excel */
 Route::post('admin/export', 'AdminstatsController@export'); //export excel
 Route::post('admin/export2', 'AdminstatsController@export2'); //export excel

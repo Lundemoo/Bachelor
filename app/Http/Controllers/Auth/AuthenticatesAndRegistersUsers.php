@@ -40,12 +40,14 @@ trait AuthenticatesAndRegistersUsers
      */
     public function postRegister(Request $request)
     {
+        
         $validator = $this->registrar->validator($request->all());
         if ($validator->fails()) {
             $this->throwValidationException(
                 $request, $validator
             );
         }
+        
         $this->registrar->create($request->all());
         return redirect($this->redirectPath());
     }
@@ -89,6 +91,7 @@ trait AuthenticatesAndRegistersUsers
      */
     protected function getFailedLoginMesssage()
     {
+      
         return Lang::get('general.loginError');
     }
 
@@ -110,6 +113,7 @@ trait AuthenticatesAndRegistersUsers
      */
     public function redirectPath()
     {
+       
         if (property_exists($this, 'redirectPath')) {
             return $this->redirectPath;
         }

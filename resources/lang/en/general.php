@@ -247,7 +247,7 @@ return [
     
     'logbook1' => 'Logbook month',
     'logbook2' => 'Logbook advanced',
-    
+    'intervalfail' => 'You have already registered a timesheet in this interval'
     
     
     
