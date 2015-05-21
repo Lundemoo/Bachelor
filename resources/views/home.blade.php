@@ -17,7 +17,14 @@
                                         <hr width="70%">
                                         
                                         
+                                    <?PHP
+                                    if(isset($_POST['hei'])){
+                                        echo "HEI!";
+                                    }
                                     
+                                    
+                                    ?>
+                                        
                                     <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.registerTimesheet')}}</div></br>
                                     <div id=menyvalg onclick="oc('/logbookaddition/create')">{{trans('general.registerLogbook')}}</div></br>
                                     <div id=menyvalg onclick="oc('/oversikt')">{{trans('general.yourOverview')}}</div></br>
