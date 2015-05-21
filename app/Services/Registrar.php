@@ -34,6 +34,8 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+            
+            
             $brukertype = 0;
             if(isset($_POST['admin'])){
                 $brukertype = 1;

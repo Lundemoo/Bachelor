@@ -27,6 +27,10 @@ class TimelisteprosjektController extends Controller {
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
 
+        
+        var_dump($db);
+        
+        
         return view('timelisteprosjekter.index',['timelisteprosjekter'=> $timelisteprosjekter]);
     }
 
@@ -35,7 +39,10 @@ class TimelisteprosjektController extends Controller {
     public function create(){
 
         $projects = Project::lists('projectName', 'projectID');
-
+        $now = date('Y-m-d');
+        
+$db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
+        
         return view('timelisteprosjekter.create', array('projects' => $projects));
     }
 
@@ -57,20 +64,59 @@ class TimelisteprosjektController extends Controller {
         $exp1 = explode(":", $input['starttime']);
         $exp2 = explode(":", $input['endtime']);
         $stop = 0;
+        $feilmelding = "";
         if(intval($exp1[0]) == intval($exp2[0])){
             if(intval($exp1[1]) > intval($exp2[1])){
         
                 
                 $stop = 1;
+                $feilmelding = trans('general.timesheetFail1');
                 
             }
         } else {
             if(intval($exp1[0]) > intval($exp2[0])){
                 $stop = 1;
+                
+                $feilmelding = trans('general.timesheetFail1');
             }
         }
         
         
+        $n1 = strtotime($input['starttime']);
+        $n2 = strtotime($input['endtime']);
+        $now = $input['date'];
+        
+        $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
+        foreach($db as $g){
+            if($n1 > strtotime($g->starttime) && $n1 < strtotime($g->endtime)){
+                
+             $stop = 1;
+             $feilmelding = trans('general.intervalfail');
+            }
+            if($n2 > strtotime($g->starttime) && $n2 < strtotime($g->endtime)){
+               
+             $stop = 1;
+             $feilmelding = trans('general.intervalfail');   
+            }
+            if(strtotime($g->starttime) > $n1 && strtotime($g->starttime) < $n2){
+            
+             $stop = 1;
+             $feilmelding = trans('general.intervalfail');   
+            }
+            if(strtotime($g->endtime) > $n1 && strtotime($g->endtime) < $n2){
+             
+             $stop = 1;
+             $feilmelding = trans('general.intervalfail');   
+            }
+            if(strtotime($g->starttime) == $n1 && strtotime($g->endtime) == $n2){
+               
+             $stop = 1;
+             $feilmelding = trans('general.intervalfail');   
+            }
+        }
+        
+        
+     
         
         
         if($stop == 1){
@@ -79,7 +125,7 @@ class TimelisteprosjektController extends Controller {
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
          $projects = Project::lists('projectName', 'projectID');
 
-        return view('timelisteprosjekter.create', array('projects' => $projects))->withErrors(trans('general.timesheetFail1'));
+        return view('timelisteprosjekter.create', array('projects' => $projects))->withErrors($feilmelding);
                 
         }
         
@@ -136,70 +182,5 @@ class TimelisteprosjektController extends Controller {
         return redirect('oversikt');
     }
 
-    /* Export til Excel */
-    public function export($ID){
-
-    $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);  //skal brukes
-
-     Excel::create('Filename', function($excel) use($timelisteprosjekt){
-            $excel->sheet('JaraByggtimeliste', function($sheet) use($timelisteprosjekt) {
-                $sheet->fromArray(array('ProsjektID', 'AnsattNR', 'Dato', 'Start tid', 'Slutt tid', 'Kommentar'));
-
-                //hardkodet verdier foreløbig
-                $sheet->row(2, array(
-                    $timelisteprosjekt->ID, $timelisteprosjekt->employeeNR,
-                    $timelisteprosjekt->date, $timelisteprosjekt->starttime,
-                    $timelisteprosjekt->endtime, $timelisteprosjekt->comment
-
-                ));
-
-                $sheet->row(1, function($row) {
-                    //bakgrunnsfarge
-                    $row->setBackground('green');
-
-                });
-            });
-
-        })->download('xls');
-
-    }
-
-    /* Export Excel alle timelister for alle ansatte */
-    public function exportAll(){
-
-      // $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
-       $users = Db::table('users')->get();
-
-        Excel::create('AlleTimelisterforAnsatt', function($excel) use($users) {
-
-            // tittel
-            $excel->setTitle('Timelister');
-            $excel->setCreator('Rune')
-                ->setCompany('Jara Bygg AS');
-            $excel->setDescription('demonstrasjon timeliste export');
-
-            foreach ($users as $user) {
-                $excel->sheet('Timeliste Ansatt', function($sheet) use($user)  {
-                    $sheet->fromArray(array('ProsjektID', 'AnsattNR', 'Dato', 'Start tid', 'Slutt tid', 'Kommentar'));
-
-                    $timelisteprosjekter = DB::table('timelisteprosjekter')->where('employeeNR', '=', $user->id)->get();
-                    $rad = 2;
-                    foreach ($timelisteprosjekter as $timelisteprosjekt) {
-                    //nå henter den alle timelistene og gir et ark til hver. burde forandres til at alle timelistene til en ansatt kommer på hver side og kun for 1 mnd feks
-                    $sheet->row($rad, array(
-                        $timelisteprosjekt->projectID, $timelisteprosjekt->employeeNR,
-                        $timelisteprosjekt->date, $timelisteprosjekt->starttime,
-                        $timelisteprosjekt->endtime, $timelisteprosjekt->comment
-                ));
-                        $rad +=1;
-                    }
-                });
-
-            }
-           //  var_dump($timelisteprosjekt);
-
-        })->download('xls');
-    }
-
-
+   
 }

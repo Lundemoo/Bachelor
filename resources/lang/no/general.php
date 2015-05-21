@@ -230,7 +230,7 @@ return [
     'november' => 'November',
     'december' => 'Desember',
     
-    'timesheetFail1' => 'Starttime must be before endtime',
+    'timesheetFail1' => 'Starttiden må være før slutt-tiden',
     'nobuilder' => 'Du må velge en byggherre',
 'newpassword' => 'Nytt passord',
     'confirmnewpassword' => 'Bekreft nytt passord',    
@@ -239,7 +239,11 @@ return [
     'nbwarning' => 'NB: Dette vil vises som klartekst',
     'userlocked' => 'Denne kontoen er ikke lenger aktiv',
     'export' => 'Eksporter timeslister',
-    'edit' => 'Endre'
+    'edit' => 'Endre',
+    'exportchooseall' => 'Du må både velge prosjekt og tidsperiode',
+    'logbook1' => 'Kjørebok måned',
+    'logbook2' => 'Kjørebok avansert',
+    'intervalfail' => 'Du har allerede registrert en timesliste i dette intervallet'
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

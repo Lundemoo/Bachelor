@@ -36,6 +36,7 @@ class AuthController extends Controller {
 	 */
 	public function __construct(Guard $auth, Registrar $registrar)
 	{
+            
         
             $lan = req::get('lan');
             
@@ -45,6 +46,7 @@ class AuthController extends Controller {
           
 		$this->auth = $auth;
 		$this->registrar = $registrar;
+                
 
         $this->middleware('guest', ['except' => ['getLogout', 'getRegister']]);
 	}
@@ -61,6 +63,7 @@ class AuthController extends Controller {
       
             
             $userid = $request->only('email')['email'];
+           
     $getall = Loginattempt::whereBetween('created_at', array($then, $now))->where('userID', '=', $userid)->where('active', '=', '1')->count();
             
             
