@@ -12,7 +12,7 @@
 {!! Form::open(['url' => 'car']) !!}
 <div class="form-group">
     {!! Form::label('registrationNR', trans('general.registrationNr')) !!}
-    {!! Form::text('registrationNR', null, [ 'placeholder'=>'NN12345', 'pattern' =>'^[A-Z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
+    {!! Form::text('registrationNR', null, [ 'placeholder'=>'NN12345', 'pattern' =>'^[A-Za-z]{2}[0-9]{5}$', 'class' => 'form-control'] ) !!}
 </div>
 <br/>
 <div class="form-group">

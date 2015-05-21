@@ -7,7 +7,15 @@
 		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
 				<div class="panel-heading">{{trans('general.registrateTimesheet')}}</div>
-				<div class="panel-body">
+                                <div class="panel-body"><center>
+                                        @if(isset($idag))
+                                        {{trans('general.registerettoday')}}</br>
+                                        @if(count($idag))
+                                        @foreach($idag as $dag)
+                                    {{trans('general.startTime')}}: {{$dag->starttime}}, {{trans('general.stopTime')}}: {{$dag->endtime}}
+                                    @endforeach
+                                    @endif
+                                    @endif</center>
  @if ($errors->any())
                         <ul class="alert alert-danger">
                             @foreach ($errors->all() as $error)

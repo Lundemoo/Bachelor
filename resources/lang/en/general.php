@@ -124,7 +124,7 @@ return [
     'updateLogbook' => 'Update logbook',
     'allTimesheets' => 'All timesheets',
     'startTime' => 'Start time',
-    'stopTime' => 'Stop time',
+    'stopTime' => 'End time',
     'mainMenu' => 'Main menu',
     'logout' => 'Log out',
     'registerProject' => 'Register project',
@@ -247,7 +247,8 @@ return [
     
     'logbook1' => 'Logbook month',
     'logbook2' => 'Logbook advanced',
-    'intervalfail' => 'You have already registered a timesheet in this interval'
+    'intervalfail' => 'You have already registered a timesheet in this interval',
+    'registerettoday' => 'You have registered these ours today:',
     
     
     

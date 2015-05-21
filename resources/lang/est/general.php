@@ -233,6 +233,7 @@ return [
 'logbook1' => 'Logiraamat kuu',
 'logbook2' => 'Logiraamat edenenud',
     'intervalfail' => 'Oled juba esitatud ajaandmik selles intervall',
+    'registerettoday' => 'Sa oled registreeritud need meie täna:',
 
 
     
