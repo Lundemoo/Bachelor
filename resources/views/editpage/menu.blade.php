@@ -66,10 +66,9 @@
                                 <td class="tom" align="center"  width="28%">
 
                                     {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
-                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search cars']) !!}
+                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search cars', 'class' => 'search']) !!}
                                     {!! Form::close() !!}
                                 </td></tr>
-
 
 
                         <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
