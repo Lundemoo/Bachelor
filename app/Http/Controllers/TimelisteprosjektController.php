@@ -27,8 +27,11 @@ class TimelisteprosjektController extends Controller {
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
 
+        $now = date('Y-m-d');
         
-        var_dump($db);
+$db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
+        
+      
         
         
         return view('timelisteprosjekter.index',['timelisteprosjekter'=> $timelisteprosjekter]);
@@ -43,7 +46,7 @@ class TimelisteprosjektController extends Controller {
         
 $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
         
-        return view('timelisteprosjekter.create', array('projects' => $projects));
+        return view('timelisteprosjekter.create', array('projects' => $projects))->with('idag', $db);
     }
 
    /* hente inn alt fra skjema, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.

@@ -243,7 +243,8 @@ return [
     'exportchooseall' => 'Du må både velge prosjekt og tidsperiode',
     'logbook1' => 'Kjørebok måned',
     'logbook2' => 'Kjørebok avansert',
-    'intervalfail' => 'Du har allerede registrert en timesliste i dette intervallet'
+    'intervalfail' => 'Du har allerede registrert en timesliste i dette intervallet',
+    'registerettoday' => 'Du har registrert disse timene idag:',
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.
