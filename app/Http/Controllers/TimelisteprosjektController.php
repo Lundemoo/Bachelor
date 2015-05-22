@@ -85,6 +85,29 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
         }
         
         
+        
+        $starten = strtotime($input['starttime']);
+        $slutten = strtotime($input['endtime']);
+        
+        $antalltimer = ($slutten - $starten)/3600;
+        if($antalltimer > 6){
+            
+            $slutten = $slutten-1800;
+        }
+        
+        $input['endtime'] = gmdate("H:i:s", $slutten);
+        
+        
+        
+        if($antalltimer <= 0){
+            $stop = 1;
+            $feilmelding = trans('general.timesheetFail1');
+        }
+        
+        
+        
+        
+        
         $n1 = strtotime($input['starttime']);
         $n2 = strtotime($input['endtime']);
         $now = $input['date'];

@@ -9,10 +9,12 @@
 				<div class="panel-heading">{{trans('general.registrateTimesheet')}}</div>
                                 <div class="panel-body"><center>
                                         @if(isset($idag))
+                                        
+                                        
+                                        @if(count($idag) > 0)
                                         {{trans('general.registerettoday')}}</br>
-                                        @if(count($idag))
                                         @foreach($idag as $dag)
-                                    {{trans('general.startTime')}}: {{$dag->starttime}}, {{trans('general.stopTime')}}: {{$dag->endtime}}
+                                        {{trans('general.startTime')}}: {{$dag->starttime}}, {{trans('general.stopTime')}}: {{$dag->endtime}}</br>
                                     @endforeach
                                     @endif
                                     @endif</center>
