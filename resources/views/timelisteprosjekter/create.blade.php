@@ -7,17 +7,17 @@
 		<div class="col-md-8 col-md-offset-2">
 <div class="panel panel-default">
 				<div class="panel-heading">{{trans('general.registrateTimesheet')}}</div>
-                                <div class="panel-body"><center>
+                                <div class="panel-body">
                                         @if(isset($idag))
                                         
                                         
                                         @if(count($idag) > 0)
-                                        {{trans('general.registerettoday')}}</br>
+                                        {{trans('general.registerettoday')}}<br />
                                         @foreach($idag as $dag)
-                                        {{trans('general.startTime')}}: {{$dag->starttime}}, {{trans('general.stopTime')}}: {{$dag->endtime}}</br>
+                                        {{trans('general.startTime')}}: {{$dag->starttime}}, {{trans('general.stopTime')}}: {{$dag->endtime}}<br />
                                     @endforeach
                                     @endif
-                                    @endif</center>
+                                    @endif
  @if ($errors->any())
                         <ul class="alert alert-danger">
                             @foreach ($errors->all() as $error)
@@ -32,13 +32,13 @@
 
 <div class="form-group">
 
-{!! Form::label('projectIDs', trans('general.project')) !!} </br>
+{!! Form::label('projectID', trans('general.project')) !!} <br />
 <!--<input type="text", id="datepicker">-->
 {!! Form::select('projectID', $projects, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('date', trans('general.date')) !!}</br>
+    {!! Form::label('date', trans('general.date')) !!}<br />
     {!! Form::text('date', date('Y-m-d'), array('class' => 'datepicker') ) !!}
 </div>
 <div id="container"></div>
@@ -49,17 +49,17 @@
 
 
 <div class="form-group">
-    {!! Form::label('start', 'Start time') !!} </br>
+    {!! Form::label('start', 'Start time') !!} <br />
     {!! Form::text('start', '7:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('slutt', 'Stop time') !!} </br>
+    {!! Form::label('slutt', 'Stop time') !!} <br />
     {!! Form::text('slutt', '3:00 PM', ['class' => 'timepicker'] ) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('comment', trans('general.comment')) !!} </br>
+    {!! Form::label('comment', trans('general.comment')) !!} <br />
     {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}
 </div>
 

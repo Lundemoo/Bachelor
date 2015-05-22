@@ -10,5 +10,5 @@
 ?>
                 {{trans('general.resetPassword')}} <a href="{{ url('password/reset/'.$token) }}<?PHP echo $add; ?>">{{ url('password/reset/'.$token) }}<?PHP echo $add; ?></a>
                 
-                </br></br>
+                <br /><br />
                 {{trans('general.warning')}}

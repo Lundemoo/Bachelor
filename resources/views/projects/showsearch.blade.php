@@ -28,7 +28,7 @@
                                         <tr> <td> {{trans('general.active')}}: {!! $project->active !!}</td> </tr>
                                         <tr> <td> {{trans('general.created_at')}}: {!! $project->created_at !!}</td> </tr>
                                         <tr> <td> {{trans('general.builder')}}: {!! $project->customerID !!}</td> </tr>
-                                        <tr> <td>&nbsp; </td><br> </tr>
+                                        <tr> <td>&nbsp; </td><br /> </tr>
 
                                     @endforeach
 

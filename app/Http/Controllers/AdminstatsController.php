@@ -743,7 +743,7 @@ class AdminstatsController extends Controller {
                         
                         $sum += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
                         $supertotal += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
-                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "</br>";
+                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "<br />";
                     }
                     
                     array_push($alleverdier, $sum);
@@ -1576,7 +1576,7 @@ public function export2(){
                         
                         $sum += $h->totalkm;
                         $supertotal += $h->totalkm;
-                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "</br>";
+                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "<br />";
                     }
                     
                     array_push($alleverdier, $sum);

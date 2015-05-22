@@ -33,7 +33,8 @@ Route::filter('isboss', function(){
 });
 
 Route::filter('loggedin', function(){
-    
+ 
+           
      if(Auth::check()){
        App::setLocale(Auth::user()->language);
        

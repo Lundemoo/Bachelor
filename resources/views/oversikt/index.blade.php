@@ -19,23 +19,23 @@ $( "#datepicker" ).datepicker();
 				    <div class="panel-body2">
                                     
 
-                        <table class="easynav" width="100%" cellspacing="0" cellpadding="0">
+                        <table class="easynav">
                                         
                                         <tr>
                                             @if($siden == 0)
-                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
+                                            <td class="besoker10" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
                                             @else
-                                            <td class="besokerikke" width="10%" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besoker" width="10%" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/oversikt?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besoker10" onclick="oc('/oversikt?side=1')">{{trans('general.logbook')}}</td>
                                             @endif
                                             
-                                            <td class="tom" width="80%">&nbsp;</td></tr>
+                                            <td class="tom80">&nbsp;</td></tr>
                                         
                                         <tr><td colspan="3" class="innholdeasynav">
                                                 
-                                        <center>
-                                            </br>
+                                        
+                                            <br />
                                             <?PHP
                                           
                                             ?>
@@ -47,11 +47,11 @@ $( "#datepicker" ).datepicker();
                                        
                                        
                                        
-                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
-                                           <tr><td class="framvisninghoved" colspan="7">{{trans('general.showOverOversikt')}}</td></tr>
-                                           <tr><td colspan="7"></br>
+                                       <table class='framvisning100'>
+                                           <tr><td class="framvisninghoved" colspan="8">{{trans('general.showOverOversikt')}}</td></tr>
+                                           <tr><td colspan="8"><br />
                                             
-                                                   <table width="100%"><tr><td>
+                                                   <table class="t100"><tr><td>
                                                                <table><tr><td>
                                <canvas id="graph" width="400" height="300">  
                                </canvas></td><td> <p id='infoen'></p></td></tr></table></td><td>
@@ -63,7 +63,7 @@ $( "#datepicker" ).datepicker();
                                    
                                    <td><p id="andregrafinfo"></p></td></tr></table></td></tr>
                                                    
-                                                       <tr><td colspan="2" style="padding-left: 20px"> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td></tr>
+                                                       <tr><td colspan="2" style="padding-left: 20px"> {{trans('general.hourPay')}} <br /><input onchange="refreshit(this.value)" type="text" name="lonn"></td></tr>
                                                    </table>
                                                    
                                             
@@ -71,7 +71,7 @@ $( "#datepicker" ).datepicker();
                                             
                                             
                                                     </td></tr>
-                                                <tr><td colspan="7"><center>
+                                                <tr><td colspan="7">
                                                     
                                                     
                                                     
@@ -157,7 +157,7 @@ $( "#datepicker" ).datepicker();
                                                     </td></tr></table>
                                                
                                                <?PHP } ?>
-                                               </br>
+                                               <br />
                                                     
                                                     
                                                     
@@ -219,7 +219,7 @@ $( "#datepicker" ).datepicker();
                                                     
                                                     
                                                     
-                                                    </br></center></td></tr>
+                                                    <br /></td></tr>
                                        
                                        
                                        
@@ -241,7 +241,7 @@ $( "#datepicker" ).datepicker();
                                        
                                        <tr><td colspan='8' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
                                            <tr><td class='framvisningrows' colspan='8'>{{trans('general.totalHoursMonth')}}: <?PHP echo $totalt; ?>
-                                                   </br>{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
+                                                   <br />{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
                                                
                                                
                                                
@@ -276,7 +276,7 @@ $( "#datepicker" ).datepicker();
                                            
                                            
                                            
-                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td width='20%' class='framvisninghoved'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td><td class='framvisninghoved'> {{trans('general.edit')}} </td></tr>
+                                           <tr><td class='framvisninghoved'>#</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td class='framvisninghoved20'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td><td class='framvisninghoved'> {{trans('general.edit')}} </td></tr>
                                            <?PHP
                                            $i = 1;
                                            $totalt = 0;
@@ -293,12 +293,12 @@ $( "#datepicker" ).datepicker();
                                        @endforeach
                                        <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr>
                                        @else
-                                       <tr><td class="framvisning"><center><h3>{{trans('general.noresults')}}</h3></center></td></tr>
+                                       <tr><td class="framvisning"><h3>{{trans('general.noresults')}}</h3></td></tr>
                                        @endif 
                                        
                                        </table>
                                             
-                                        </center>
+                                       
                                    
                                         
                                    
@@ -371,12 +371,12 @@ $( "#datepicker" ).datepicker();
                                     @elseif($siden == 1)
                                        @if(count($totaltimer[0]) != 0)
                                        
-                                           <tr><td colspan="6">
-                                                   <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
+                                           <tr><td colspan="3">
+                                                   <table class='framvisning1002'>
                                            <tr><td class="framvisninghoved" colspan="7">{{trans('general.showOverOversikt')}}</td></tr>
-                                           <tr><td colspan="7"></br>
+                                           <tr><td colspan="7"><br />
                                             
-                                                   <table width="100%"><tr><td>
+                                                   <table class="t100"><tr><td>
                                                                <table><tr><td>
                                <canvas id="graph" width="400" height="300">  
                                </canvas></td><td> <p id='infoen'></p></td></tr></table></td><td>
@@ -421,7 +421,7 @@ $( "#datepicker" ).datepicker();
                                      tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],2,0.7);
                                      </script>
                                  
-                                           <center></br>
+                                           <br />
                                                
                                                
                                                @if($resultatene != 0)
@@ -489,7 +489,7 @@ $( "#datepicker" ).datepicker();
                                                     </td></tr></table>
                                                
                                                <?PHP } ?>
-                                               </br>
+                                               <br />
                                                     
                                                     
                                                     
@@ -510,7 +510,7 @@ $( "#datepicker" ).datepicker();
                                                     }
                                                     </script>
                                                
-                                           </center>
+                                      
                                </td></tr>
                                            
                                            
@@ -528,13 +528,12 @@ $( "#datepicker" ).datepicker();
                                           
                                           
                                            @else
-                                           <tr><td class="framvisning"><center><h3>{{trans('general.noresults')}}</h3></center></td></tr>
+                                           <tr><td class="framvisning"><h3>{{trans('general.noresults')}}</h3></td></tr>
                                     @endif
                                           
                                           
                                           
                                           @endif
-                                    
                                     
                                     
                                     

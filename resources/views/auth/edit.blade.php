@@ -57,7 +57,7 @@
 
 
 
-</br>
+<br />
     <div class="form-group">
         {!! Form::submit(trans('general.updateUserbtn'), ['class' => 'btn btn-primary form-control'] ) !!}
     </div>

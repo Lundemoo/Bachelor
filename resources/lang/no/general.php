@@ -246,6 +246,7 @@ return [
     'logbook2' => 'Kjørebok avansert',
     'intervalfail' => 'Du har allerede registrert en timesliste i dette intervallet',
     'registerettoday' => 'Du har registrert disse timene idag:',
+    'fillin' => 'Fyll inn kontaktperson',
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

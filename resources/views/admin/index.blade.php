@@ -19,40 +19,40 @@ $( "#datepicker" ).datepicker();
 				    <div class="panel-body2">
                                     
 
-                        <table class="easynav" width="100%" cellspacing="0" cellpadding="0">
+                        <table class="easynav">
                                         
                                         <tr>
                                             @if($siden == 0)
-                                            <td class="besoker" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
-                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>
+                                            <td class="besoker10" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
+                                             <td class="besokerikke10" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
+                                             <td class="besokerikke10" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>
                                               
                                             @elseif($siden == 1)
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besoker" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
+                                            <td class="besokerikke10" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besoker10" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
+                                             <td class="besokerikke10" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
                                               @elseif($siden == 2)
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
-                                             <td class="besoker" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>  
+                                            <td class="besokerikke10" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
+                                             <td class="besoker10" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
+                                             <td class="besokerikke10" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td>  
                                               @else
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
-                                            <td class="besokerikke" width="10%" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
-                                             <td class="besokerikke" width="10%" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
-                                             <td class="besoker" width="10%" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
+                                            <td class="besokerikke10" onclick="oc('/admin?side=0')">{{trans('general.timesheets')}}</td>
+                                            <td class="besokerikke10" onclick="oc('/admin?side=1')">{{trans('general.logbook')}}</td>
+                                             <td class="besokerikke10" onclick="oc('/admin?side=2')">{{trans('general.exporttimesheet')}}</td>
+                                             <td class="besoker10" onclick="oc('/admin?side=3')">{{trans('general.exportlogbook')}}</td> 
                                               
                                               
                                             @endif
                                             
-                                            <td class="tom" width="60%">&nbsp;</td></tr>
+                                            <td class="tom60">&nbsp;</td></tr>
                                         
                                         <tr><td colspan="5" class="innholdeasynav">
                                                 
-                                        <center>
-                                            </br>
+                                                
+                                            <br />
                                             <?PHP
                                           
                                             ?>
@@ -64,9 +64,9 @@ $( "#datepicker" ).datepicker();
                                        
                                        
                                        
-                                       <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
+                                       <table class='framvisning1002'>
                                            <tr><td class="framvisninghoved" colspan="8">{{trans('general.showOverOversikt')}}</td></tr>
-                                           <tr><td colspan="7"></br>
+                                           <tr><td colspan="7"><br />
                                             <!--
                                                    <table width="100%"><tr><td>
                                                                <table><tr><td>
@@ -80,7 +80,7 @@ $( "#datepicker" ).datepicker();
                                    
                                    <td><p id="andregrafinfo"></p></td></tr></table></td></tr>
                                                    
-                                                       <tr><td colspan="2" style="padding-left: 20px"> {{trans('general.hourPay')}} </br><input onchange="refreshit(this.value)" type="text" name="lonn"></td></tr>
+                                                       <tr><td colspan="2" style="padding-left: 20px"> {{trans('general.hourPay')}} <br /><input onchange="refreshit(this.value)" type="text" name="lonn"></td></tr>
                                                    </table>
                                                    
                                             -->
@@ -88,7 +88,7 @@ $( "#datepicker" ).datepicker();
                                             
                                             
                                                     </td></tr>
-                                                <tr><td colspan="8"><center>
+                                                <tr><td colspan="8">
                                                     
                                                     
                                                     
@@ -205,7 +205,7 @@ $( "#datepicker" ).datepicker();
                                                     </td></tr></table>
                                                
                                                <?PHP } ?>
-                                               </br>
+                                               <br />
                                                     
                                                     
                                                     
@@ -272,7 +272,7 @@ $( "#datepicker" ).datepicker();
                                                     
                                                     
                                                     
-                                                    </br></center></td></tr>
+                                                    <br /></td></tr>
                                        
                                        
                                        
@@ -322,12 +322,10 @@ $( "#datepicker" ).datepicker();
                                                
                                                
                                                
-                                               
-                                               </td></tr>
+                                              
                                            
                                            
-                                           
-                                           <tr><td class='framvisninghoved'>#</td><td class="framvisninghoved">{{trans('general.employee')}}</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td width='20%' class='framvisninghoved'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td></tr>
+                                           <tr><td class='framvisninghoved'>#</td><td class="framvisninghoved">{{trans('general.employee')}}</td><td class='framvisninghoved'>{{trans('general.project')}}</td><td class='framvisninghoved20'> {{trans('general.comment')}} </td><td class='framvisninghoved'> {{trans('general.date')}} </td><td class='framvisninghoved'>Start</td><td class='framvisninghoved'>Stop</td><td class='framvisninghoved'> {{trans('general.hourCount')}} </td></tr>
                                            <?PHP
                                            $i = 1;
                                            $totalt = 0;
@@ -344,12 +342,12 @@ $( "#datepicker" ).datepicker();
                                        @endforeach
                                        <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr>
                                        @else
-                                       <tr><td class="framvisning"><center><h3>{{trans('general.noresults')}}</h3></center></td></tr>
+                                       <tr><td class="framvisning"><h3>{{trans('general.noresults')}}</h3></td></tr>
                                        @endif 
                                        
                                        </table>
                                             
-                                        </center>
+                                        
                                    
                                         
                                    
@@ -422,10 +420,10 @@ $( "#datepicker" ).datepicker();
                                     @elseif($siden == 1)
                                        @if(count($totaltimer[0]) != 0)
                                        
-                                           <tr><td colspan="6">
-                                                   <table width='100%' class='framvisning' cellspacing='1' cellpadding='1'>
+                                           <tr><td colspan="5">
+                                                   <table class='framvisning1002'>
                                            <tr><td class="framvisninghoved" colspan="7">{{trans('general.showOverOversikt')}}</td></tr>
-                                           <tr><td colspan="7"></br>
+                                           <tr><td colspan="7"><br />
                                             
                                                   
                                     
@@ -459,7 +457,7 @@ $( "#datepicker" ).datepicker();
                                      tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],2,0.7);
                                      </script>
                                  
-                                           <center></br>
+                                           <br />
                                                
                                                
                                                @if($resultatene != 0)
@@ -561,7 +559,7 @@ $( "#datepicker" ).datepicker();
                                                     </td></tr></table>
                                                
                                                <?PHP } ?>
-                                               </br>
+                                               <br />
                                                     
                                                     
                                                     
@@ -587,7 +585,7 @@ $( "#datepicker" ).datepicker();
                                                     }
                                                     </script>
                                                
-                                           </center>
+                                          
                                </td></tr>
                                            
                                            
@@ -605,7 +603,7 @@ $( "#datepicker" ).datepicker();
                                           
                                           
                                            @else
-                                           <tr><td class="framvisning"><center><h3>{{trans('general.noresults')}}</h3></center></td></tr>
+                                           <tr><td class="framvisning"><h3>{{trans('general.noresults')}}</h3></td></tr>
                                     @endif
                                           
                                           
@@ -633,20 +631,20 @@ $( "#datepicker" ).datepicker();
                                     <!-- timelister excel -->  <!-- ............................................................................ -->
                                        @elseif($siden == 2)
                                        
-                                       <table width="80%" class="">
+                                       <table class="width80">
                                            @if(isset($error))
                                            <tr><td class="error">{{$error}}</td><td class="invisible" colspan="2">&nbsp;</td></tr>
                                            @endif
                                            @if(isset($error2))
                                            <tr><td class="invisible">&nbsp;</td><td class="error" colspan="2">{{$error2}}</td></tr>
                                            @endif
-                                           <tr><td class="framvisninghoved" width="50%">{{trans('general.timelisterlonn')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.timelisterfaktura')}}</td></tr>
+                                           <tr><td class="framvisninghoved50">{{trans('general.timelisterlonn')}}</td><td class="framvisninghoved50" colspan="2">{{trans('general.timelisterfaktura')}}</td></tr>
                                                
                                            
                                            
                                            <tr><td class="sammesomframvisning">
                                                    <form action="/admin/export" method="post">
-                                                   <center>
+                                                 
                                                        
                                                            
                                                            <select name="month" id="month">
@@ -658,16 +656,16 @@ $( "#datepicker" ).datepicker();
                                                            </select>
                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Send!">
                                                       
-                                                   </center>
+                                                   
                                        </form>
                                                </td>
                                                
-                                               <td class="sammesomframvisning" width="25%">
+                                               <td class="sammesomframvisning25">
                                                    
                                                <form method="post" action="/admin/export">
                                                        
                                                        
-                                               <center> 
+                                             
                                                        
                                                        
                                                        <select name="project" id="project">
@@ -679,12 +677,12 @@ $( "#datepicker" ).datepicker();
                                                            </select>
                                                        
                                                        
-                                                  </center>
+                                                 
                                        
                                                    
-                                       </td><td class="sammesomframvisning" width="25%">
+                                       </td><td class="sammesomframvisning25"">
                                        
-                                       <center>
+                                       
                                        
                                            <select name="time" id="time" onChange="vis()"><option value="-1">{{trans('general.choosetimeperiode')}}</option>
                                                <option value="0">{{trans('general.year')}}</option>
@@ -694,7 +692,7 @@ $( "#datepicker" ).datepicker();
                                                
                                       
                                        
-                                           </br>
+                                           <br />
                                        <select name="year" id="year" style="display:none;">
                                            @if(count($years) > 1)
                                            <option value="-1">{{trans('general.chooseYear')}}</option>
@@ -753,9 +751,9 @@ $( "#datepicker" ).datepicker();
                                        @endif
                                        </select>
                                                    
-                                       </center></br>
+                                       <br />
                                        
-                                       </br>
+                                       <br />
                                        <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
                                            </td></tr>
                                            
@@ -817,20 +815,20 @@ $( "#datepicker" ).datepicker();
 
 
  
-                                       <table width="80%" class="">
+                                       <table class="width80" >
                                            @if(isset($error))
                                            <tr><td class="error">{{$error}}</td><td class="invisible" colspan="2">&nbsp;</td></tr>
                                            @endif
                                            @if(isset($error2))
                                            <tr><td class="invisible">&nbsp;</td><td class="error" colspan="2">{{$error2}}</td></tr>
                                            @endif
-                                           <tr><td class="framvisninghoved" width="50%">{{trans('general.logbook1')}}</td><td class="framvisninghoved" width="50%" colspan="2">{{trans('general.logbook2')}}</td></tr>
+                                           <tr><td class="framvisninghoved50">{{trans('general.logbook1')}}</td><td class="framvisninghoved50" colspan="2">{{trans('general.logbook2')}}</td></tr>
                                                
                                            
                                            
                                            <tr><td class="sammesomframvisning">
                                                    <form action="/admin/export2" method="post">
-                                                   <center>
+                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                        
                                                            
                                                            <select name="month" id="month">
@@ -840,18 +838,18 @@ $( "#datepicker" ).datepicker();
                                                                <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
                                                                @endforeach
                                                            </select>
-                                                           <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Send!">
+                                                         <input type="hidden" name="hvilken" value="0">    <input type="submit" value="Send!">
                                                       
-                                                   </center>
+                                                   
                                        </form>
                                                </td>
                                                
-                                               <td class="sammesomframvisning" width="25%">
+                                               <td class="sammesomframvisning25">
                                                    
                                                <form method="post" action="/admin/export2">
+                                                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                        
-                                                       
-                                               <center> 
+                                               
                                                        
                                                        
                                                        <select name="project" id="project">
@@ -863,12 +861,12 @@ $( "#datepicker" ).datepicker();
                                                            </select>
                                                        
                                                        
-                                                  </center>
+                                                  
                                        
                                                    
-                                       </td><td class="sammesomframvisning" width="25%">
+                                       </td><td class="sammesomframvisning25">
                                        
-                                       <center>
+                                       
                                        
                                            <select name="time" id="time" onChange="vis()"><option value="-1">{{trans('general.choosetimeperiode')}}</option>
                                                <option value="0">{{trans('general.year')}}</option>
@@ -878,7 +876,7 @@ $( "#datepicker" ).datepicker();
                                                
                                       
                                        
-                                           </br>
+                                           <br />
                                        <select name="year" id="year" style="display:none;">
                                            @if(count($years) > 1)
                                            <option value="-1">{{trans('general.chooseYear')}}</option>
@@ -937,10 +935,10 @@ $( "#datepicker" ).datepicker();
                                        @endif
                                        </select>
                                                    
-                                       </center></br>
+                                       <br />
                                        
-                                       </br>
-                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
+                                       <br />
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" value="1"><input type="submit" value="Send!"></form>
                                            </td></tr>
                                            
                                                        
@@ -1008,7 +1006,7 @@ $( "#datepicker" ).datepicker();
                                        
                                     
                                     </table>
-                                        </br>
+                                        <br />
                                     
                                     
                                     

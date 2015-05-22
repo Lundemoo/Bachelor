@@ -27,7 +27,7 @@
 
                         <div class="form-group">
 
-                           {!! Form::label('projectID', trans('general.projects')) !!} </br>
+                           {!! Form::label('projectID', trans('general.projects')) !!} <br />
                             {!! Form::select('projectID', $projects) !!}
                         </div>
                         <div class="form-group">

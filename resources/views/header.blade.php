@@ -23,17 +23,17 @@ $add = "";
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-                            <table cellspacing="1" cellpadding="1"><tr><td>
-                            <a class="navbar-brand" href="{{URL::to("/auth/login")}}<?PHP echo $add; ?>"><img src="/bilder/logo.png" height="30" width="100"></a></td>
+                            <table><tr><td>
+                            <a class="navbar-brand" href="{{URL::to("/auth/login")}}<?PHP echo $add; ?>"><img src="/bilder/logo.png" height="30" width="100" alt="logo JaraBygg AS"></a></td>
                                     @if(Auth::check())
-                                    <td style="padding:5px;">  <a href="/language/en"><img src="/bilder/eng.png" width="20" height="20"></a></td>
-                                    <td style="padding:5px;"><a href="/language/no"><img src="/bilder/nor.png" width="20" height="20"></a></td>
-                                    <td style="padding:5px;"><a href="/language/est"><img src="/bilder/est.png" width="20" height="20"></a></td>
+                                    <td style="padding:5px;">  <a href="/language/en"><img src="/bilder/eng.png" width="20" height="20" alt="Engelsk flagg"></a></td>
+                                    <td style="padding:5px;"><a href="/language/no"><img src="/bilder/nor.png" width="20" height="20" alt="Norsk flagg"></a></td>
+                                    <td style="padding:5px;"><a href="/language/est"><img src="/bilder/est.png" width="20" height="20" alt="Estlandsk flagg"></a></td>
                                     @else
                                     
                                     <td style="padding:5px;">  <a href="/{{Request::path()}}?lan=en"><img src="/bilder/eng.png" width="20" height="20"></a></td>
                                     <td style="padding:5px;"><a href="/{{Request::path()}}?lan=no"><img src="/bilder/nor.png" width="20" height="20"></a></td>
-                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=enest"><img src="/bilder/est.png" width="20" height="20"></a></td>
+                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=est"><img src="/bilder/est.png" width="20" height="20"></a></td>
                                     @endif
                                 </tr></table>
                                     
