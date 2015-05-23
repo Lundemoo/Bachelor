@@ -49,8 +49,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
         return view('timelisteprosjekter.create', array('projects' => $projects))->with('idag', $db);
     }
 
-   /* hente inn alt fra skjema, MEN hente inn brukeren som er logget inn nå og legg dette til input variabelen.
-     I tillegg hente inn alle prosjekter og få det i en liste */
+   /* lagrer timelisten i DB. Henter data fra skjema. */
 
     public function store(CreateTimelisteprosjektRequest $request){
 
@@ -200,7 +199,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
     /*
    * Metode som henter info fra redigeringssiden til timeliste og oppdaterer aktuell timeliste i databasen
    */
-    public function update($ID, CreateTimelisteprosjektRequest $request){ //litt usikker på om der er CreateTimelisteprosjektRequest som skal brukes her også
+    public function update($ID, CreateTimelisteprosjektRequest $request){
 
         $timelisteprosjekt = Timelisteprosjekt::findOrFail($ID);
         $timelisteprosjekt->update($request->all());

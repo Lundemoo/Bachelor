@@ -18,14 +18,7 @@ use Lang;
 class ContactpersonController extends Controller
 {
 
-    public function index(){
-
-        $contactpersons = DB::table('contactpersons')->get();
-
-        return view('contactperson.index', ['contactpersons' => $contactpersons]);
-
-    }
-
+        /* viser info om en kontaktperson */
     public function show($contactpersonID){
 
         $contactperson = ContactPerson::find($contactpersonID);
@@ -37,7 +30,7 @@ class ContactpersonController extends Controller
 
     }
 
-
+        /* redigering av en kontaktperson */
     public function edit($contactpersonID){
 
         $contactperson = ContactPerson::findOrFail($contactpersonID);
@@ -47,7 +40,7 @@ class ContactpersonController extends Controller
     }
 
     /*
-     * Metode som henter inn fra edit-formen og oppdaterer aktuell kontaktperson i databasen
+     * Metode som henter inn fra edit-skjema og oppdaterer aktuell kontaktperson i databasen
      */
     public function update($contactpersonID, CreateContactpersonRequest $request)
     {

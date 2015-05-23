@@ -19,13 +19,7 @@ use Lang;
 class CompanyController extends Controller
 {
 
-    public function index()
-    {
-        $companies = DB::table('companies')->get();
-
-        return view('company.index',['companies'=> $companies]);
-
-    }
+   /* Registrering skjema for firma */
 
     public function create(){
 
@@ -44,6 +38,8 @@ class CompanyController extends Controller
 
     }
 
+    /* viser info om et firma */
+
     public function show($companyID){
 
         $company = Company::find($companyID);
@@ -51,7 +47,7 @@ class CompanyController extends Controller
     }
 
     /*
-     * metode for å redigere en bil som er lagt inn i systemet/DB
+     * metode for å redigere et firma som er lagt inn i systemet/DB
      */
 
     public function edit($companyID){
@@ -63,7 +59,7 @@ class CompanyController extends Controller
     }
 
     /*
-     * Metode som henter inn fra edit-formen og oppdaterer aktuelt company i databasen
+     * Metode som henter inn fra edit-formen og oppdaterer aktuelt firma i databasen
      */
     public function update($companyID, CreateCompanyRequest $request){
 

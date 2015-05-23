@@ -25,9 +25,7 @@ class PagesController extends Controller {
     */
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     *  viser frem skjema for regitrering av nytt prosjekt
      */
     public function showProject()
     {
@@ -81,6 +79,8 @@ class PagesController extends Controller {
 
     }
 
+    /* lagrer et nytt prosjekt */
+
     public function store()
 {
     $input = Request::all();
@@ -92,7 +92,7 @@ class PagesController extends Controller {
     if(!isset($_POST['byggherre'])){
          
      
-$contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         $customer_list = Builder::lists('customername','customerID');
         $company_list = Company::lists('companyname','companyid');
            
@@ -149,7 +149,7 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
      
      
      
-$contactperson_list = ContactPerson::lists('contactname','contactpersonID');
+        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         $customer_list = Builder::lists('customername','customerID');
         $company_list = Company::lists('companyname','companyid');
         
@@ -248,19 +248,7 @@ $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
         return redirect('editpage?side=2');
     }
 
-    public function search(){
 
-        $query = Input::get('q');
-
-        if($query){
-
-            $projects = Project::where('projectName', 'LIKE', "%$query%")->get();
-
-        }
-
-
-        return view('projects.showsearch')->withProjects($projects);
-    }
 
 
 

@@ -25,12 +25,7 @@ use Illuminate\Support\Facades\Input;
 class LogbookadditionController extends Controller
 {
 
-    public function index(){
-
-        $logbookadditions = DB::table('logbookaddition')->get();
-
-        return view('logbookaddition.index',['logbookadditions'=> $logbookadditions]);
-    }
+    /* skjema for ny kjørebok */
 
     public function create(){
         

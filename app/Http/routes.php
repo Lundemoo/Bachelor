@@ -127,8 +127,7 @@ Route::PATCH('project/{projectID}/update', 'PagesController@update');
 Route::get('project/show/{projectID}','PagesController@show');
 Route::get('project/destroy/{projectID}', 'PagesController@destroy');
 Route::get('project/aktiver/{projectID}', 'PagesController@aktiver');
-Route::get('projects/search', 'PagesController@search');
-Route::get('projects/showsearch/{projectID}','PagesController@show');
+
 
 
 
@@ -137,8 +136,7 @@ Route::get('projects/showsearch/{projectID}','PagesController@show');
     /*
  * company
  */
-    
-    Route::get('company', 'CompanyController@index');
+
 Route::get('company/create', 'CompanyController@create'); //skjemautfylling
 Route::post('company', 'CompanyController@store');  //lagre i DB
 Route::get('company/{companyID}/edit', 'CompanyController@edit');
@@ -152,7 +150,6 @@ Route::get('company/{companyID}/show', 'CompanyController@show');
 /*
  * contactperson
  */
-Route::get('contactperson', 'ContactpersonController@index');
 Route::get('contactperson/{contactpersonID}/edit', 'ContactpersonController@edit'); // for å redigere info om en en kontaktperson som er lagt inn i DB
 Route::PATCH('contactperson/{contactpersonID}/update', 'ContactpersonController@update');
 Route::get('contactperson/destroy/{contactpersonID}', 'ContactpersonController@destroy'); //deaktivere kontaktperson
@@ -192,17 +189,13 @@ Route::get('/storecontact/{all}',  'addcontactpersonController@storecontact');
 Route::get('/storefirm/{all}',  'addcontactpersonController@storefirm');
 
 /* bil */
-Route::get('car', 'CarController@index');
 Route::get('car/create', 'CarController@create'); //skjemautfylling
 Route::post('car', 'CarController@store');  //lagre i DB
 Route::get('car/show/{registrationNR}','CarController@show'); //vise frem en bil basert på registrationNR
 Route::get('car/{registrationNR}/edit', 'CarController@edit'); // for å redigere info om en bil som er lagt inn i DB
 Route::PATCH('car/{registrationNR}/update', 'CarController@update'); //update metoden
-Route::get('car/search', 'CarController@search');
-Route::get('car/showsearch/{registrationNR}','CarController@show');  //Søkeresultater //
 
 /* builder. Skal kun være mulig for sjefene */
-Route::get('builder', 'BuilderController@index');
 Route::get('builder/create', 'BuilderController@create');
 Route::post('builder', 'BuilderController@store');
 Route::get('builder/{customerID}/edit', 'BuilderController@edit');

@@ -18,20 +18,14 @@ use Lang;
 class BuilderController extends Controller
 {
 
-    public function index(){
-
-        $builders = DB::table('builder')->get();
-
-        return view('builder.index', ['builders' => $builders]);
-
-    }
-
+    /* Skjema for registrering av en byggherre */
     public function create(){
 
         return view('builder.create');
 
     }
 
+    /* Lagrer en ny byggherre i databasen */
     public function store(CreateBuilderRequest $request){
 
         $input = $request->all();
@@ -43,20 +37,18 @@ class BuilderController extends Controller
         return view('builder.create');
 
     }
-
+    /* Redigering skjema for en Byggherre */
     public function edit($customerID){
 
         $builder = Builder::findOrFail($customerID);
 
-       // $builders = DB::table('builder')->paginate(6); //henter alle byggherrer først
-
-       // foreach ($builders as $builder) {
-            $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
-
+        $arrayo = DB::table('projects')->where('customerID', $customerID)->select('projectID as projectID', 'projectName as projectName')->lists('projectName');
 
         return view('builder.edit',['builder'=> $builder, 'arrayo' =>$arrayo]);
 
     }
+
+    /* Oppdaterer en byggherre i DB med info fra redigering skjema */
 
     public function update($customerID, CreateBuilderRequest $request){
 
@@ -78,7 +70,6 @@ class BuilderController extends Controller
 
         return redirect('editpage?side=3');
 
-
     }
 
     /*
@@ -95,12 +86,9 @@ class BuilderController extends Controller
         return redirect('editpage?side=3');
 
     }
-
     /*
     * Metode som viser all info om en byggherre
     */
-
-
     public function show($customerID){
 
         $builder = Builder::find($customerID);

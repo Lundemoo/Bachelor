@@ -20,20 +20,14 @@ use Illuminate\Support\Facades\Input;
 class CarController extends Controller
 {
 
-    public function index(){
-
-        $cars = DB::table('car')->get();
-
-        return view('car.index',['cars'=> $cars]);
-
-    }
-
-
+  /* Registrering skjema for bil */
     public function create(){
 
          return view('car.create');
 
     }
+
+    /* lagrer en ny bil */
 
     public function store(CreateCarRequest $request){
         $input = $request->all();
@@ -46,6 +40,8 @@ class CarController extends Controller
 
 
     }
+
+    /* viser info om en bil */
 
     public function show($registrationNR){
 
@@ -109,24 +105,6 @@ class CarController extends Controller
             ->update(array('active'=>'1'));
 
         return redirect('editpage?side=0');
-    }
-
-    public function search(){
-
-        $query = Input::get('q');
-
-        if($query){
-
-           $cars = Car::where('nickname', 'LIKE', "%$query%")->orWhere('brand', 'LIKE', "%$query%")->get();
-          //  dd($car);
-        }
-
-      /*  else{
-
-            $cars= Car::all();
-        } */
-
-       return view('car.showsearch')->withCars($cars);
     }
 
 
