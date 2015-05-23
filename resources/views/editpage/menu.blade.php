@@ -1,47 +1,5 @@
 @extends('app')
-<style>
-    #utlisting{
-        border:transparent;
-        cellpadding: 20px;
 
-    }
-    #tablesmall{
-        border-top:5px;
-        border-bottom:5px;
-        border:transparent;
-
-        cellspacing: 20px;
-        cellpadding:20px;
-
-    }
-
-    #tablesmall2{
-        border-top:5px;
-        border:transparent;
-        margin-left: 50px;
-        cellspacing: 20px;
-        cellpadding:20px;
-        border-color:grey;
-
-    }
-
-
-
-    .innholdeasynav{
-        align:center;
-        border: 0px;
-    }
-    th{
-        text-align:center;
-        margin-left: 50px;
-    }
-    td{
-        border-color: grey;
-        padding:20px;
-    }
-
-
-</style>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap.3.0.3/css/bootstrap.min.css/" rel="stylesheet">
 
