@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="029af3b2-73d2-420e-b838-16037a211078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/editpage/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/editpage/menu.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -32,8 +31,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="847" max-vertical-offset="9163">
-              <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1000" max-vertical-offset="9299">
+              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -52,9 +51,16 @@
       <file leaf-file-name="menu.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/editpage/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.358334" vertical-offset="4474" max-vertical-offset="12614">
-              <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
-              <folding />
+            <state vertical-scroll-proportion="-3.9361112" vertical-offset="12110" max-vertical-offset="12631">
+              <caret line="629" column="54" selection-start-line="629" selection-start-column="54" selection-end-line="629" selection-end-column="54" />
+              <folding>
+                <element signature="e#3234#3252#0#HTML" expanded="true" />
+                <element signature="e#10155#10173#0#HTML" expanded="true" />
+                <element signature="e#16764#16782#0#HTML" expanded="true" />
+                <element signature="e#24215#24233#0#HTML" expanded="true" />
+                <element signature="e#32480#32498#0#HTML" expanded="true" />
+                <element signature="e#40140#40158#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -797,12 +803,6 @@
       <option name="number" value="Default" />
       <updated>1425031471613</updated>
     </task>
-    <task id="LOCAL-00051" summary="kontroller noe opprydding">
-      <created>1430848554972</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1430848554972</updated>
-    </task>
     <task id="LOCAL-00052" summary="kontroller noe opprydding">
       <created>1430929514978</created>
       <option name="number" value="00052" />
@@ -1091,7 +1091,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432368866670</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="tatt bort søk">
+      <created>1432380388064</created>
+      <option name="number" value="00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1432380388065</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1161,7 +1167,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="forandret til ID" />
     <MESSAGE value="tilbakeknapp" />
     <MESSAGE value="CCS bajs!" />
     <MESSAGE value="CSS bajs!" />
@@ -1186,7 +1191,8 @@
     <MESSAGE value="smpting" />
     <MESSAGE value="keys" />
     <MESSAGE value="nada" />
-    <option name="LAST_COMMIT_MESSAGE" value="nada" />
+    <MESSAGE value="tatt bort søk" />
+    <option name="LAST_COMMIT_MESSAGE" value="tatt bort søk" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1536,8 +1542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="847" max-vertical-offset="9163">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1000" max-vertical-offset="9299">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1552,9 +1558,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/editpage/menu.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.358334" vertical-offset="4474" max-vertical-offset="12614">
-          <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
-          <folding />
+        <state vertical-scroll-proportion="-3.9361112" vertical-offset="12110" max-vertical-offset="12631">
+          <caret line="629" column="54" selection-start-line="629" selection-start-column="54" selection-end-line="629" selection-end-column="54" />
+          <folding>
+            <element signature="e#3234#3252#0#HTML" expanded="true" />
+            <element signature="e#10155#10173#0#HTML" expanded="true" />
+            <element signature="e#16764#16782#0#HTML" expanded="true" />
+            <element signature="e#24215#24233#0#HTML" expanded="true" />
+            <element signature="e#32480#32498#0#HTML" expanded="true" />
+            <element signature="e#40140#40158#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

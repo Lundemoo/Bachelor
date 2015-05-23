@@ -178,7 +178,7 @@
 
                                         
                                             <table class="tablesmall95grey" id="brukervisning">
-                                                
+                                                <br />
                                                 <tr>
                                                     <th class="width20">{{trans('general.usernameLarge')}}</th>
                                                     <th class="width20">{{trans('general.tlfLarge')}}</th>
@@ -286,7 +286,7 @@
 
                                         
                                             <table class="tablesmall95grey" id="prosjektvisning">
-                                               
+                                                <br />
                                                 <tr>
                                                     <th class="width20">{{trans('general.projectnameLarge')}}</th>
                                                     <th class="width20">{{trans('general.projectaddressLarge')}}</th>
@@ -391,7 +391,7 @@
 
                                         
                                             <table class="tablesmall95grey" id="byggherrevisning">
-                                                
+                                                <br />
                                                 <tr>
                                                     <th class="width20">{{trans('general.customerNameLarge')}}</th>
                                                     <th class="width20">{{trans('general.customerAddressLarge')}}</th>
@@ -513,7 +513,7 @@
 
                                         
                                             <table class="tablesmall95grey" id="kontaktvisning">
-                                                
+                                                <br />
                                                 <tr>
                                                     <th class="width20">{{trans('general.firstnameLarge')}}</th>
                                                     <th class="width20">{{trans('general.surnameLarge')}}</th>
@@ -627,7 +627,7 @@
 
                                         
                                             <table class="tablesmall95grey" id="firmavisning">
-                                                
+                                                <br />
                                                 <tr>
                                                     <th class="width20">{{trans('general.companyidLarge')}}</th>
                                                     <th class="width20">{{trans('general.companynameLarge')}}</th>
