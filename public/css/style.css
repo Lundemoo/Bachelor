@@ -532,3 +532,11 @@ vertical-align: top;
 border-top: 1px solid #DDD;
 
     }
+    table.midtstill {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    select {
+        color: black !important;
+    }

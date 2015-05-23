@@ -63,18 +63,16 @@
                                 <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besoker12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                 <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom28" align="center"  width="28%">
+                                <td class="tom28">
 
-                                    {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
-                                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search cars', 'class' => 'search']) !!}
-                                    {!! Form::close() !!}
+                                   
                                 </td></tr>
 
 
                         <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
                                         
-                                  <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
+                                  <table class="tablesmall95grey">
                                     <br />
                                         <tr>
                                             <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
@@ -91,15 +89,15 @@
                                     @foreach ($cars as $car)
 
                                             
-                                          <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                          <table class="tablesmall95grey2">
 
                                               <tr style="color:grey">
-                                            <td id="utlisting20"> {{$car->registrationNR}}</td>
-                                            <td id="utlisting"> {{$car->nickname}}<br /></td>
-                                            <td id="utlisting"> {{$car->brand}}<br /><br /></td>
+                                            <td class="utlisting20"> {{$car->registrationNR}}</td>
+                                            <td class="utlisting20"> {{$car->nickname}}<br /></td>
+                                            <td class="utlisting20"> {{$car->brand}}<br /><br /></td>
 
                                                 @if($car->active == "1")
-                                            <td id="utlisting30">
+                                            <td class="utlisting30">
 
                                                 <!--deaktivere knapp -->
 
@@ -284,9 +282,7 @@
                                     <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom28"> {!!Form::open(['method' => 'GET' ,'action' =>['PagesController@search']]) !!}
-                                        {!! Form::input('search', 'q', null, ['placeholder' => 'Search project']) !!}
-                                        {!! Form::close() !!}
+                                    <td class="tom28"> 
                                     </td></tr>
 
 
@@ -316,7 +312,7 @@
                                                         <td class="utlisting20"> {{$project->budget}}<br /><br /></td>
 
                                                         @if($project->active == "1")
-                                                            <td id="utlisting30">
+                                                            <td class="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -342,7 +338,7 @@
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td class="utlisting30">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['project/aktiver', $project->projectID]])!!}
@@ -436,7 +432,7 @@
                                                             <br /></td>   -->
 
                                                         @if($builder->active == "1")
-                                                            <td id="utlisting30">
+                                                            <td class="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -459,7 +455,7 @@
                                                                 {!! Form::close() !!}
                                                         @else
 
-                                                            <td id="utlisting30">
+                                                            <td class="utlisting30">
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
 
@@ -571,7 +567,7 @@
 
                                                         @else
 
-                                                            <td id="utlisting30">
+                                                            <td class="utlisting30">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}

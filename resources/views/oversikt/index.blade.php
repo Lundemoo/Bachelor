@@ -104,7 +104,7 @@ $( "#datepicker" ).datepicker();
                                                
                                                
                                                <?PHP if($vis > 1){ ?>
-                                               <table><tr><td class="framvisninghoved" colspan="<?PHP echo $vis; ?>">Valg</td></tr>
+                                               <table class="midtstill"><tr><td class="framvisninghoved" colspan="<?PHP echo $vis; ?>">Valg</td></tr>
                                                    <tr>
                                                        @if(count($selecten) > 1)
                                                        <td class="framvisninghoved">{{trans('general.month')}}</td>
@@ -436,7 +436,7 @@ $( "#datepicker" ).datepicker();
                                                
                                                
                                                <?PHP if($vis > 1){ ?>
-                                               <table><tr><td class="framvisninghoved" colspan="<?PHP echo $vis; ?>">Valg</td></tr>
+                                               <table class="midtstill"><tr><td class="framvisninghoved" colspan="<?PHP echo $vis; ?>">Valg</td></tr>
                                                    <tr>
                                                        @if(count($biler) > 1)
                                                        <td class="framvisninghoved">{{trans('general.car')}}</td>

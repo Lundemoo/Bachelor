@@ -2443,6 +2443,7 @@ input[type="search"] {
     margin-bottom: 15px;
     margin-right:20%;
     margin-left:20%;
+    text-align: left;
 }
 .radio,
 .checkbox {
