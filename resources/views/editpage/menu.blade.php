@@ -54,16 +54,16 @@
                     <div class="panel-heading">{{trans('general.editOverview')}}</div>
                     <div class="panel-body2">
                        
-                        <table class="easynav" width="100%"> <!--easynav start -->
+                        <table class="easynav"> <!--easynav start -->
 
                             @if($siden==0)
-                <!--forste tr-->            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                <td class="besoker" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom" align="center"  width="28%">
+                <!--forste tr-->            <tr><td class="besokerikke12" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                <td class="besoker12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                <td class="tom28" align="center"  width="28%">
 
                                     {!!Form::open(['method' => 'GET' ,'action' =>['CarController@search']]) !!}
                                     {!! Form::input('search', 'q', null, ['placeholder' => 'Search cars', 'class' => 'search']) !!}
@@ -73,33 +73,33 @@
 
                         <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
+                                        
                                   <table class="tablesmall" width="95%" id="bilvisning" style="color:grey";>
-                                    <br>
+                                    <br />
                                         <tr>
-                                            <th   width="20%" align="left" >{{trans('general.registrationNrLarge')}}</th>
-                                            <th   width="20%" align="left" >{{trans('general.nicknameLarge')}}</th>
-                                            <th   width="20%" align="left" >{{trans('general.modelLarge')}}</th>
-                                            <th width="30%" align="left"></th>
+                                            <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
+                                            <th class="width20" >{{trans('general.nicknameLarge')}}</th>
+                                            <th class="width20" >{{trans('general.modelLarge')}}</th>
+                                            <th class="width30" ></th>
 
                                         </tr>
 
                                     </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                     @foreach ($cars as $car)
 
-                                            <center>
+                                            
                                           <table class="tablesmall2"  width="95%" align="center" style="color:grey">
 
                                               <tr style="color:grey">
-                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->registrationNR}}</td>
-                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->nickname}}<br></td>
-                                            <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$car->brand}}<br><br></td>
+                                            <td id="utlisting20"> {{$car->registrationNR}}</td>
+                                            <td id="utlisting"> {{$car->nickname}}<br /></td>
+                                            <td id="utlisting"> {{$car->brand}}<br /><br /></td>
 
                                                 @if($car->active == "1")
-                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                            <td id="utlisting30">
 
                                                 <!--deaktivere knapp -->
 
@@ -123,7 +123,7 @@
 
                                                 @else
 
-                                                    <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                    <td id="utlisting30">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
                                                         {!! Form::button(trans('general.activate'), array(
@@ -145,7 +145,7 @@
 
                                                     @endif
 
-                                                    </td> </tr>
+                                                    </td> </tr></table>
 
 
                                             @endforeach
@@ -158,56 +158,56 @@
                                             </script>
 
 
-                            </table>
+                          
                                                 {!! $cars->render()!!}
                                                 @include('includes.jara_confirm')
-                                                </center>
+                                                
 
                         <!--slutttd innholdeasynavn -->
-                        </td>  </tr>  <!--slutt forste tr  -->
+                        <!--slutt forste tr  -->
 
                             <!-- REDIGERE BRUKERE -->
-
+                        
                                 @elseif($siden==1)
 
-                                <tr><td class="besoker" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom" width="28%">&nbsp;</td></tr>
+                                <tr><td class="besoker12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28">&nbsp;</td></tr>
 
 
                                  <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
-                                            <table class="tablesmall" width="95%" id="brukervisning" style="color:grey";>
-                                                <br>
+                                        
+                                            <table class="tablesmall95grey" id="brukervisning">
+                                                
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.usernameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.tlfLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.addressLarge')}}</th>
-                                                    <th width="30%" align="left"></th>
+                                                    <th class="width20">{{trans('general.usernameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.tlfLarge')}}</th>
+                                                    <th class="width20">{{trans('general.addressLarge')}}</th>
+                                                    <th class="width30"></th>
 
                                                 </tr>
 
                                             </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                         @foreach ($users as $user)
 
-                                            <center>
-                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                            
+                                                <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->firstname}}</td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->lastname}}<br></td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$user->telephone}}<br><br></td>
+                                                        <td class="utlisting20"> {{$user->firstname}}</td>
+                                                        <td class="utlisting20"> {{$user->lastname}}<br /></td>
+                                                        <td class="utlisting20"> {{$user->telephone}}<br /><br /></td>
 
                                                         @if($user->active == "1")
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td class="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -229,7 +229,7 @@
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td id="utlisting30">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['/editpage/aktiver', $user->id]])!!}
@@ -251,7 +251,7 @@
 
 
 
- </tr>
+                                                    </tr></table>
 
 
                                                     @endforeach
@@ -266,26 +266,25 @@
 
 
 
-                                                </table>
+                                              
                                                 {!! $users->render()!!}
                                                 @include('includes.jara_confirm')
-                                            </center>
+                                            
 
 
-                                    </td>  </tr>
-
+                                   
 
                                 <!-- REDIGERE Prosjekter -->
 
                             @elseif($siden == 2)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom" align="center"  width="28%"> {!!Form::open(['method' => 'GET' ,'action' =>['PagesController@search']]) !!}
+                                <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besoker12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28"> {!!Form::open(['method' => 'GET' ,'action' =>['PagesController@search']]) !!}
                                         {!! Form::input('search', 'q', null, ['placeholder' => 'Search project']) !!}
                                         {!! Form::close() !!}
                                     </td></tr>
@@ -293,31 +292,31 @@
 
                                  <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
-                                            <table class="tablesmall" width="95%" id="prosjektvisning" style="color:grey";>
-                                                <br>
+                                        
+                                            <table class="tablesmall95grey" id="prosjektvisning">
+                                               
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.projectnameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.projectaddressLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.budgetLarge')}}</th>
-                                                    <th width="30%" align="left"></th>
+                                                    <th class="width20">{{trans('general.projectnameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.projectaddressLarge')}}</th>
+                                                    <th class="width20">{{trans('general.budgetLarge')}}</th>
+                                                    <th class="width30"></th>
                                                 </tr>
                                             </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                         @foreach ($projects as $project)
 
-                                            <center>
-                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                            
+                                                <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->projectName}}</td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->projectAddress}}<br></td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$project->budget}}<br><br></td>
+                                                        <td class="utlisting20"> {{$project->projectName}}</td>
+                                                        <td class="utlisting20"> {{$project->projectAddress}}<br /></td>
+                                                        <td class="utlisting20"> {{$project->budget}}<br /><br /></td>
 
                                                         @if($project->active == "1")
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td id="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -365,7 +364,7 @@
 
                                                                 @endif
 
-                                                            </td> </tr>
+                                                            </td> </tr></table>
 
                                                     @endforeach
                                                     <input type='hidden' value='' id='gjemt'>
@@ -376,53 +375,52 @@
                                                         }
                                                     </script>
 
-                                                </table>
+                                                
                                                 {!! $projects->render()!!}
                                                 @include('includes.jara_confirm')
-                                            </center>
+                                            
 
-                                    </td>  </tr>
-
+                                 
 
                                 <!-- REDIGERE BYGGHERRER -->
 
                             @elseif($siden == 3)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom" width="28%">&nbsp;</td></tr>
+                                <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besoker12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28">&nbsp;</td></tr>
 
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
-                                            <table class="tablesmall" width="95%" id="byggherrevisning" style="color:grey";>
-                                                <br>
+                                        
+                                            <table class="tablesmall95grey" id="byggherrevisning">
+                                                
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.customerNameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.customerAddressLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.customerTelephoneLarge')}}</th>
-                                                    <th width="30%" align="left"></th>
+                                                    <th class="width20">{{trans('general.customerNameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.customerAddressLarge')}}</th>
+                                                    <th class="width20">{{trans('general.customerTelephoneLarge')}}</th>
+                                                    <th class="width30"></th>
 
                                                 </tr>
 
                                             </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                         @foreach ($builders as $builder)
 
-                                            <center>
-                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                            
+                                                <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customername}}</td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customeraddress}}<br></td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$builder->customertelephone}}<br><br></td>
+                                                        <td class="utlisting20"> {{$builder->customername}}</td>
+                                                        <td class="utlisting20"> {{$builder->customeraddress}}<br /></td>
+                                                        <td class="utlisting20"> {{$builder->customertelephone}}<br /><br /></td>
                                                        <!-- <td>{!! Form::open(['url' => 'editpage']) !!}
 
                                                             @foreach ($posts as $post)
@@ -435,10 +433,10 @@
                                                             @endforeach
 
                                                             {!! Form::close() !!}
-                                                            <br></td>   -->
+                                                            <br /></td>   -->
 
                                                         @if($builder->active == "1")
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td id="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -461,7 +459,7 @@
                                                                 {!! Form::close() !!}
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td id="utlisting30">
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['builder/aktiver', $builder->customerID]])!!}
 
@@ -487,6 +485,7 @@
 
 
                                                     @endforeach
+                                                </table>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
@@ -498,55 +497,55 @@
 
 
 
-                                                </table>
+                                               
                                                 {!! $builders->render()!!}
                                                 @include('includes.jara_confirm')
-                                            </center>
+                                            
 
 
-                                    </td>  </tr>
+                                    
 
                                 <!-- REDIGERE KONTAKTPERSONER -->
 
                             @elseif($siden == 4)
 
-                                <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                    <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                    <td class="besoker" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                    <td class="besokerikke" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom" width="28%">&nbsp;</td></tr>
+                                <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besoker12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28">&nbsp;</td></tr>
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
-                                            <table class="tablesmall" width="95%" id="kontaktvisning" style="color:grey";>
-                                                <br>
+                                        
+                                            <table class="tablesmall95grey" id="kontaktvisning">
+                                                
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.firstnameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.surnameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.telephoneLarge')}}</th>
-                                                    <th width="30%" align="left"></th>
+                                                    <th class="width20">{{trans('general.firstnameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.surnameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.telephoneLarge')}}</th>
+                                                    <th class="width30"></th>
 
                                                 </tr>
 
                                             </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                         @foreach ($contactpersons as $contactperson)
 
-                                            <center>
-                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                            
+                                                <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contactname}}</td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contactsurname}}<br></td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$contactperson->contacttelephone}}<br><br></td>
+                                                        <td class="utlisting20"> {{$contactperson->contactname}}</td>
+                                                        <td class="utlisting20"> {{$contactperson->contactsurname}}<br /></td>
+                                                        <td class="utlisting20"> {{$contactperson->contacttelephone}}<br /><br /></td>
 
                                                         @if($contactperson->active == "1")
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td class="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -572,7 +571,7 @@
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td id="utlisting30">
                                                                 <!--aktivere knapp-->
 
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['contactperson/aktiver', $contactperson->contactpersonID]])!!}
@@ -600,6 +599,7 @@
 
 
                                                     @endforeach
+                                                </table>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
@@ -611,10 +611,10 @@
 
 
 
-                                                </table>
+                                                
                                                 {!! $contactpersons->render()!!}
                                                 @include('includes.jara_confirm')
-                                            </center>
+                                            
 
 
                                     </td>  </tr>
@@ -623,43 +623,43 @@
 
                         @elseif($siden == 5)
 
-                            <tr><td class="besokerikke" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                <td class="besokerikke" width="12%" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                <td class="besokerikke" width="12%"onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besoker" width="12%"onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom" width="28%">&nbsp;</td></tr>
+                            <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                <td class="besoker12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                <td class="tom28">&nbsp;</td></tr>
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        <center>
-                                            <table class="tablesmall" width="95%" id="firmavisning" style="color:grey";>
-                                                <br>
+                                        
+                                            <table class="tablesmall95grey" id="firmavisning">
+                                                
                                                 <tr>
-                                                    <th   width="20%" align="left" >{{trans('general.companyidLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.companynameLarge')}}</th>
-                                                    <th   width="20%" align="left" >{{trans('general.companyroleLarge')}}</th>
-                                                    <th width="30%" align="left"></th>
+                                                    <th class="width20">{{trans('general.companyidLarge')}}</th>
+                                                    <th class="width20">{{trans('general.companynameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.companyroleLarge')}}</th>
+                                                    <th class="width30"></th>
 
                                                 </tr>
 
                                             </table>
-                                            <br>
-                                        </center>
+                                            <br />
+                                        
 
                                         @foreach ($companies as $company)
 
-                                            <center>
-                                                <table class="tablesmall2"  width="95%" align="center" style="color:grey">
+                                            
+                                                <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->companyID}}</td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->companyname}}<br></td>
-                                                        <td id="utlisting" width="20%" align="left" style="color:burlywood"> {{$company->role}}<br><br></td>
+                                                        <td class="utlisting20"> {{$company->companyID}}</td>
+                                                        <td class="utlisting20"> {{$company->companyname}}<br /></td>
+                                                        <td class="utlisting20"> {{$company->role}}<br /><br /></td>
 
                                                         @if($company->active == "1")
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td class="utlisting30">
 
                                                                 <!--deaktivere knapp -->
 
@@ -685,7 +685,7 @@
 
                                                         @else
 
-                                                            <td id="utlisting" width="30%" align="center" style="color: #E26300">
+                                                            <td class="utlisting30">
 
                                                                 <!--aktivere knapp-->
                                                                 {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['company/aktiver', $company->companyID]])!!}
@@ -712,6 +712,7 @@
 
 
                                                     @endforeach
+                                                </table>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
@@ -723,16 +724,16 @@
 
 
 
-                                                </table>
+                                                
                                                 {!! $companies->render()!!}
                                                 @include('includes.jara_confirm')
-                                            </center>
+                                            
 
                                     </td>  </tr>
 
                             @endif
 
-                            </table>
+                    </table>
 
                     </div>
                 </div>

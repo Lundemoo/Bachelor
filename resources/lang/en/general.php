@@ -249,6 +249,7 @@ return [
     'logbook2' => 'Logbook advanced',
     'intervalfail' => 'You have already registered a timesheet in this interval',
     'registerettoday' => 'You have registered these ours today:',
+    'fillin' => 'Fill inn contactperson',
     
     
     

@@ -389,9 +389,7 @@ class AdminstatsController extends Controller {
                             $hvormange = 0;
                             foreach($hentpaid as $j){
                                 $hvormange = (strtotime($j->endtime) - strtotime($j->starttime))/3600;
-                                if($hvormange > 6){
-                                    $hvormange += 0.5;
-                                }
+                                
                                 $sum += $hvormange;
                                 
                             }
@@ -741,14 +739,11 @@ class AdminstatsController extends Controller {
                     $idnu = 0;
                     
                     foreach($hver as $h){
-                        if(((strtotime($h->endtime) - strtotime($h->starttime))/3600) > 6){
-                            $sum += 0.5;
-                            $supertotal += 0.5;
-                        }
+                       
                         
                         $sum += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
                         $supertotal += (strtotime($h->endtime) - strtotime($h->starttime))/3600;
-                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "</br>";
+                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "<br />";
                     }
                     
                     array_push($alleverdier, $sum);
@@ -1581,7 +1576,7 @@ public function export2(){
                         
                         $sum += $h->totalkm;
                         $supertotal += $h->totalkm;
-                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "</br>";
+                       // echo "Bruker: " . $user->employeeNR . ", sum: " . $sum . ", dag: " . $h->verdi . "<br />";
                     }
                     
                     array_push($alleverdier, $sum);

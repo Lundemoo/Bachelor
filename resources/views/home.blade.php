@@ -11,10 +11,10 @@
 				<div class="panel-heading">Jara Bygg AS</div>
 
 				<div class="panel-body">
-                                    <center>
+                                    
                                         <h1>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h1>
                                                 
-                                        <hr width="70%">
+                                        <hr>
                                         
                                         
                                     <?PHP
@@ -25,16 +25,16 @@
                                     
                                     ?>
                                         
-                                    <div id=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.registerTimesheet')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/logbookaddition/create')">{{trans('general.registerLogbook')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/oversikt')">{{trans('general.yourOverview')}}</div></br>
+                                    <div class=menyvalg onclick="oc('/timelisteprosjekter/create')">{{trans('general.registerTimesheet')}}</div>
+                                    <div class=menyvalg onclick="oc('/logbookaddition/create')">{{trans('general.registerLogbook')}}</div>
+                                    <div class=menyvalg onclick="oc('/oversikt')">{{trans('general.yourOverview')}}</div>
                                     @if(Auth::user()->brukertype == 1)
-                                    <div id=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/admin')">{{trans('general.statistic')}}</div></br>
-                                    <div id=menyvalg onclick="oc('/admin?side=2')">{{trans('general.export')}}</div>
+                                    <div class=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div>
+                                    <div class=menyvalg onclick="oc('/admin')">{{trans('general.statistic')}}</div>
+                                    <div class=menyvalg onclick="oc('/admin?side=2')">{{trans('general.export')}}</div>
                                     
                                     @endif
-                                    </center>
+                                    
 
 <!--[if lt IE 9]>
     <script>document.createElement('section')</script>

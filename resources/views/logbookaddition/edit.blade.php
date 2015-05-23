@@ -28,15 +28,15 @@ $( "#datepicker" ).datepicker();
                         {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->logbookadditionID ]]) !!}
 
                         <div class="form-group">
-                            {!! Form::label('projectIDs', trans('general.project')) !!} </br>
+                            {!! Form::label('projectIDs', trans('general.project')) !!} <br />
                             {!! Form::select('projectID', $projects) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('registrationNR', trans('general.car')) !!} </br>
+                            {!! Form::label('registrationNR', trans('general.car')) !!} <br />
                             {!! Form::select('registrationNR', $cars) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('date', trans('general.date')) !!}</br>
+                            {!! Form::label('date', trans('general.date')) !!}<br />
                             {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
                         </div><div id="container"></div>
                         <div class="form-group">

@@ -2,11 +2,9 @@
 @section('content')
 
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="robots" content="noindex,follow" />
-    <title>{{trans('general.registrateLogbook')}}</title>
+  
     <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" type="text/javascript"></script>
-    <!-- According to the Google Maps API Terms of Service you are required display a Google map when using the Google Maps API. see: http://code.google.com/apis/maps/terms.html -->
+  
 
     <script src="/js/kjorerute.js"></script>
 
@@ -16,23 +14,23 @@
 <div class="panel panel-default">
 				<div class="panel-heading">{{trans('general.registrateDriving')}}</div>
 				<div class="panel-body">
-                    <body onload="initialize()">
+                    
     <!--fra min index blade fil -->
     {!! Form::open(['url' => 'logbookaddition', ]) !!}
 
     <div class="form-group">
 
-        {!! Form::label('projectIDs', trans('general.project')) !!} </br>
+        {!! Form::label('projectID', trans('general.project')) !!} <br />
         {!! Form::select('projectID', $projects, ['class' => 'form-control']) !!}
     </div>
 
 <div class="form-group">
 
-    {!! Form::label('registrationNR', trans('general.car')) !!} </br>
+    {!! Form::label('registrationNR', trans('general.car')) !!} <br />
     {!! Form::select('registrationNR', $cars) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('date', trans('general.date')) !!} </br>
+    {!! Form::label('date', trans('general.date')) !!} <br />
     {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
 </div>
     <script>
@@ -73,8 +71,8 @@
 </div>
 </div>
 </div>
-
+    <script>
+         initialize();
+        </script>
 @stop
 
-</body>
-</html>

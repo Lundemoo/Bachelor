@@ -234,7 +234,7 @@ return [
 'logbook2' => 'Logiraamat edenenud',
     'intervalfail' => 'Oled juba esitatud ajaandmik selles intervall',
     'registerettoday' => 'Sa oled registreeritud need meie täna:',
-
+'fillin' => 'Täida Kontaktisik',
 
     
     
