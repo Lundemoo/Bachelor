@@ -63,10 +63,7 @@
                                 <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                 <td class="besoker12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                 <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom28">
-
-                                   
-                                </td></tr>
+                                <td class="tom28" width="28%">&nbsp;</td></tr>
 
 
                         <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
@@ -282,8 +279,7 @@
                                     <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                    <td class="tom28"> 
-                                    </td></tr>
+                                    <td class="tom28">&nbsp;</td></tr>
 
 
                                  <tr> <td colspan="7" class="innholdeasynav">
