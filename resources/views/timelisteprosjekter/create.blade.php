@@ -49,12 +49,12 @@
 
 
 <div class="form-group">
-    {!! Form::label('start', 'Start time') !!} <br />
+    {!! Form::label('start', trans('general.startTime')) !!} <br />
     {!! Form::text('start', '7:00 AM', ['class' => 'timepicker'] ) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('slutt', 'Stop time') !!} <br />
+    {!! Form::label('slutt', trans('general.stopTime')) !!} <br />
     {!! Form::text('slutt', '3:00 PM', ['class' => 'timepicker'] ) !!}
 </div>
 

@@ -49,7 +49,7 @@ return [
     'registrationNr' => 'Registreringsnummer',
     'registrationNrLarge' => 'REGISTRERINGS NR',
     'nickname' => 'Kallenavn',
-    'nicknameLARGE' => 'KALLENAVN',
+    'nicknameLarge' => 'KALLENAVN',
     'nicknamePlaceholder' => 'Skriv et kallenavn for bilen',
     'model' => 'Modell',
     'modelLarge' => 'MODELL',
