@@ -114,7 +114,7 @@ select {
         border: 1px solid white;
         background-color: #E26300;
         color: black;
-        font-size: 30px;
+        font-size: 25px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
@@ -539,4 +539,14 @@ border-top: 1px solid #DDD;
     
     select {
         color: black !important;
+    }
+    
+    
+    @media screen and (max-width: 768px) {
+        
+        div.menyvalg {
+            min-width: 270px;
+            font-size: 24px;
+        }   
+        
     }
