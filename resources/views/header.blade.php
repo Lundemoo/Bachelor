@@ -31,9 +31,9 @@ $add = "";
                                     <td style="padding:5px;"><a href="/language/est"><img src="/bilder/est.png" width="20" height="20" alt="Estlandsk flagg"></a></td>
                                     @else
                                     
-                                    <td style="padding:5px;">  <a href="/{{Request::path()}}?lan=en"><img src="/bilder/eng.png" width="20" height="20"></a></td>
-                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=no"><img src="/bilder/nor.png" width="20" height="20"></a></td>
-                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=est"><img src="/bilder/est.png" width="20" height="20"></a></td>
+                                    <td style="padding:5px;">  <a href="/{{Request::path()}}?lan=en"><img src="/bilder/eng.png" width="20" height="20" alt="Engelsk flagg"></a></td>
+                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=no"><img src="/bilder/nor.png" width="20" height="20" alt="Norsk flagg"></a></td>
+                                    <td style="padding:5px;"><a href="/{{Request::path()}}?lan=est"><img src="/bilder/est.png" width="20" height="20" alt="Estlandsk flagg"></a></td>
                                     @endif
                                 </tr></table>
                                     

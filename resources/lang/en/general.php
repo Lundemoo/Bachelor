@@ -91,7 +91,7 @@ return [
     'timesheet' => 'Timesheet',
     'logbook' => 'Logbook',
     'chooseMonth' => 'Choose month',
-    'statistic' => 'Statistic',
+    'statistic' => 'Employee statistics',
     'totalHoursMonth' => 'Total hours this periode',
     'hourPay' => 'Payment per hour',
     'project' => 'Project',
@@ -142,7 +142,7 @@ return [
     'contactPerson' => 'Contact person',
     'contactPersons' => 'Contact persons',
     'yourOverview' => 'Your overview',
-    'changes' => 'Changes',
+    'changes' => 'Administration',
     'approveTimesheets' => 'Approve timesheets',
     'registerTimesheet' => 'Register timesheet',
     'language' => 'Choose language',
@@ -193,7 +193,7 @@ return [
 
 
     
-    'export_excel' => 'Export Excel',
+    'export_excel' => 'Export to Excel',
     'exporttimesheet' => 'Export timesheets',
     'exportlogbook' => 'Export logbooks',
     'timelisterlonn' => 'Timesheet payment',

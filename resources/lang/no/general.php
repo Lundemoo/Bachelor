@@ -90,7 +90,7 @@ return [
     'timesheet' => 'Timesliste',
     'logbook' => 'Kjørebok',
     'chooseMonth' => 'Velg måned',
-    'statistic' => 'Statistikk',
+    'statistic' => 'Ansattstatistikk',
     'totalHoursMonth' => 'Totalt antall timer denne perioden',
     'hourPay' => 'Lønn per time',
     'project' => 'Prosjekt',
@@ -137,7 +137,7 @@ return [
     'contactPerson' => 'Kontaktperson',
     'contactPersons' => 'Kontaktpersoner',
     'yourOverview' => 'Din oversikt',
-    'changes' => 'Endringer',
+    'changes' => 'Administrasjon',
     'approveTimesheets' => 'Godkjenn timelister',
     'registerTimesheet' => 'Registrer timeliste',
     'language' => 'Velg språk',
@@ -204,7 +204,7 @@ return [
     'searchresults' => 'Søkeresultat',
     'no_result' => 'ingen resultat',
 
-    'export_excel' => 'Eksportere Excel',
+    'export_excel' => 'Eksportere til Excel',
     
     
     

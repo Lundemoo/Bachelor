@@ -680,11 +680,12 @@ class AdminstatsController extends Controller {
               array_push($dayarray, trans('general.saturday'));
               array_push($dayarray, trans('general.sunday'));
               
-              $allemulige = DB::table("timelisteprosjekter")->select(DB::raw("timelisteprosjekter.*, WEEKDAY(date) as verdi, WEEKOFYEAR(date) as hei"))->whereRaw("projectID = '$prosjekt' AND WEEKOFYEAR(date) = '$typeverdi'")->groupBy(DB::raw("DAY(date)"))->orderBy(DB::raw("DAY(date)"), "desc")->get();
+              $allemulige = DB::table("timelisteprosjekter")->select(DB::raw("timelisteprosjekter.*, WEEKDAY(date) as verdi, WEEKOFYEAR(date) as hei"))->whereRaw("projectID = '$prosjekt' AND WEEKOFYEAR(date) = '$typeverdi'")->groupBy(DB::raw("DAY(date)"))->orderBy(DB::raw("DAY(date)"), "asc")->get();
             
               foreach($allemulige as $a){
                   
                   array_push($andrearray, $dayarray[$a->verdi]);
+                  
               array_push($super, 0);
               }
              

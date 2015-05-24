@@ -31,7 +31,7 @@
                                     @if(Auth::user()->brukertype == 1)
                                     <div class=menyvalg onclick="oc('/editpage')">{{trans('general.changes')}}</div>
                                     <div class=menyvalg onclick="oc('/admin')">{{trans('general.statistic')}}</div>
-                                    <div class=menyvalg onclick="oc('/admin?side=2')">{{trans('general.export')}}</div>
+                                    <div class=menyvalg onclick="oc('/admin?side=2')">{{trans('general.export_excel')}}</div>
                                     
                                     @endif
                                     
