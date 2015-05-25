@@ -78,10 +78,6 @@ select {
         
     }
 
-    .infoen{
-        align: center;
-    }
-
     
     table.newcontact {
         
@@ -130,7 +126,6 @@ select {
         margin-left: auto;
         margin-right: auto;
     }
-
     
     
                                         
@@ -510,16 +505,13 @@ td.sammesomframvisning25 {
     }
     table.tablesmall95grey {
         width: 95%;
-        color: darkgrey;
-        padding: 5px;
+        color: grey;
     }
         table.tablesmall95grey2 {
-        width: 98%;
-        color: lightgrey;
-        text-align: left;
+        width: 95%;
+        color: grey;
+        text-align: center;
     }
-
-
     td.utlisting20 {
         width: 20%;
         color: burlywood;
@@ -528,7 +520,6 @@ td.sammesomframvisning25 {
 line-height: 1.42857;
 vertical-align: top;
 border-top: 1px solid #DDD;
-
 
     }
         td.utlisting30 {
@@ -545,18 +536,11 @@ border-top: 1px solid #DDD;
         margin-left: auto;
         margin-right: auto;
     }
-
-
     
     select {
         color: black !important;
     }
-
-
-    .navet{
-        padding-left: 20px;
-        padding-top:5px;
-    }
+    
     
     @media screen and (max-width: 768px) {
         
