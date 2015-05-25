@@ -11,6 +11,8 @@ return array(
     'SuperClosure\\' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
     'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
     'React\\Promise\\' => array($vendorDir . '/react/promise/src'),
+    'Orchestra\\Testbench\\' => array($vendorDir . '/orchestra/testbench/src'),
+    'Orchestra\\Database\\' => array($vendorDir . '/orchestra/database'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'Laracasts\\TestDummy\\' => array($vendorDir . '/laracasts/testdummy/src'),

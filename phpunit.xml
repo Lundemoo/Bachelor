@@ -6,6 +6,11 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+         checkForUnintentionallyCoveredCode="false"
+         beStrictAboutOutputDuringTests="false"
+         beStrictAboutTestSize="false"
+         beStrictAboutChangesToGlobalState="false"
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false">
