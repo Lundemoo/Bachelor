@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.editOverview')}}</div>
+                    <div class="panel-heading">{{trans('general.administration')}}</div>
                     <div class="panel-body2">
                        
                         <table class="easynav"> <!--easynav start -->
@@ -28,7 +28,7 @@
 
                                         <nav style="padding-left: 20px">
                                   <table class="tablesmall95grey">
-                                    <br />
+                                    <br>
                                         <tr>
                                             <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
                                             <th class="width20" >{{trans('general.nicknameLarge')}}</th>
@@ -78,7 +78,7 @@
 
                                                 @else
 
-                                                    <td id="utlisting30">
+                                                    <td class="utlisting30">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
                                                         {!! Form::button(trans('general.activate'), array(
@@ -100,11 +100,13 @@
 
                                                     @endif
 
-                                                    </td> </tr></table>
+                                                    </td> </tr>
+                                              @endforeach
+                                          </table>
                                                 </nav>
 
 
-                                            @endforeach
+
                                             <input type='hidden' value='' id='gjemt'>
                                             <script>
                                             function func(variabelen){
@@ -119,8 +121,9 @@
                                                 @include('includes.jara_confirm')
                                                 
 
-                        <!--slutttd innholdeasynavn -->
-                        <!--slutt forste tr  -->
+
+
+                                    </td>  </tr>
 
                             <!-- REDIGERE BRUKERE -->
                         

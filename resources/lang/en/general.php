@@ -1,6 +1,7 @@
 <?php
 return [
     'main' => 'Welcome to Jara Bygg AS',
+    'administration' => 'Administration',
     'projectCreated' => 'Project is created',
     'loginErrorAttempts' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
     'loginError' => 'These credentials do not match our records.',

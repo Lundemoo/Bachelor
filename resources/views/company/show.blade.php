@@ -18,12 +18,13 @@
                                 <tr> <td class="framvisninghoved" colspan="8"><h4><b> {!! $company->companyname !!} </b></h4></td> </tr>
 
                                 <nav style ="background:#FFF">
+
                                     <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.companyid')}}: {!! $company->companyID!!}</b></h4></td></tr>
                                     <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.companyname')}}: {!! $company->companyname !!}</b></h4></td></tr>
                                     <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.active')}}: {!! $company->active !!}</b></h4></td> </tr>
                                     <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.created_at')}}: {!! $company->created_at !!}</b></h4></td> </tr>
 
-                                </tr> </nav>
+                                          </tr> </nav>
                             </table>
                         </center>
                     </div>

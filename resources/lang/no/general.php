@@ -1,6 +1,7 @@
 <?php
 return [
     'main' => 'Velkommen til Jara Bygg AS',
+    'administration' => 'Administrasjon',
     'projectCreated' => 'Prosjektet er opprettet',
     'loginErrorAttempts' => 'Du har brukt for mange forsøk på å logge inn, vennligst prøv igjen etter 1 time.',
     'loginError' => 'Denne påloggingsinformasjonen stemmer ikke overens med våre registre.',
@@ -79,7 +80,7 @@ return [
     'unableToFind2' => 'Beklager, vi var ikke i stand til å geokode den andre adressen',
     'registrateDriving' => 'Registrer kjøring',
     'car' => 'Bil',
-    'info' => 'information',
+    'info' => 'informasjon',
     'date' => 'Dato',
     'id' => 'ID',
     'user' => 'Bruker',
