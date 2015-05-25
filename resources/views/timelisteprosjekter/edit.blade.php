@@ -26,21 +26,20 @@
                         {!! Form::model($timelisteprosjekt, ['method'=> 'PATCH', 'action' => ['TimelisteprosjektController@update', $timelisteprosjekt->ID]]) !!}
 
                         <div class="form-group">
-
                            {!! Form::label('projectID', trans('general.projects')) !!} <br />
                             {!! Form::select('projectID', $projects) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('date', trans('general.date')) !!}
-                            {!! Form::text('date', date('Y-m-d'), ['class' => 'form-control'] ) !!}
+                            {!! Form::text('date', $timelisteprosjekt->date, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('starttime', 'Start time') !!}
-                            {!! Form::text('starttime', '07:00:00', ['class' => 'form-control'] ) !!}
+                            {!! Form::text('starttime', $timelisteprosjekt->starttime, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('endtime', 'Stop time') !!}
-                            {!! Form::text('endtime', '15:00:00', ['class' => 'form-control'] ) !!}
+                            {!! Form::text('endtime', $timelisteprosjekt->endtime, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('comment', trans('general.comment')) !!}
@@ -55,7 +54,6 @@
                         </div>
 
                        {!! Form::close() !!}
-
 
 
                         @if ($errors->any())
