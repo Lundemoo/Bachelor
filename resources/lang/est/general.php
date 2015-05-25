@@ -16,8 +16,6 @@ return [
 'registerBuilder' => 'Registreeru ehitaja',
 'edit' => 'Edit:',
 'email' => 'E-post',
-    'id' => 'ID',
-    'user' => 'Kasutaja',
 'firstname' => 'Eesnimi',
 'firstnameLarge' => 'FIRSTNAME',
 'surname' => 'Perekonnanimi',

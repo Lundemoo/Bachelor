@@ -64,9 +64,6 @@ class EditpageController extends Controller
        return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'companies' =>$companies,'posts' =>$posts, 'siden'=> $siden]);
     }
 
-
-    /* Viser frem administrasjonssiden */
-
     public function show(){
         $siden=1;
         App::setLocale('en');
@@ -124,8 +121,6 @@ echo $siden; exit;
         return view('auth.edit', compact('users'))->with('user', $users);
 
     }
-
-    /* redigering av bruker */
     
        public function editpress($id){
           $all = Request::all();
@@ -191,16 +186,7 @@ echo $siden; exit;
 
         return redirect('editpage');
     }
-
-
-    /* Vis mer side for en spesifikk bruker */
-
-    public function showuser($id){
-
-        $user = User::find($id);
-        return view('editpage.showuser', compact('user'));
-
-    }
+    
     
    
 

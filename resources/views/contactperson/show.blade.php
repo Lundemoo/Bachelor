@@ -4,38 +4,36 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.contactperson')}} {{trans('general.info')}}
+                    <div class="panel-heading">{{trans('general.contactperson')}} info
                         <a id="backbutton" href="{{ URL::previous() }}"><img src="/bilder/back-button.png" width="40" height="30" align="left"></a>
                     </div>
 
 
 
 
-                    <div class="panel-body2">
+                    <div class="panel-body">
                         <center>
-                            <table class = "framvisning100">
-
-                                <tr> <td class="framvisninghoved" colspan="8"> <h4><b>{!! $contactperson->contactname !!} {!! $contactperson->contactsurname !!}</b></h4> </td> </tr>
+                            <table class = "helelisten">
 
 
-                                <nav style ="background:#FFF">
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.contactpersonId')}}: {!! $contactperson->contactpersonID !!}</b></h4></td></tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.firstname')}}: {!! $contactperson->contactname !!}</b></h4></td></tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.surname')}}: {!! $contactperson->contactsurname !!}</b></h4></td> </tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.telephone')}}: {!! $contactperson->contacttelephone !!}</b></h4></td> </tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.email')}}: {!! $contactperson->contactemail !!}</b></h4></td> </tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.active')}}: {!! $contactperson->active !!}</b></h4></td> </tr>
-                                <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.created_at')}} {!! $contactperson->created_at !!}</b></h4></td> </tr>
-                                <tr> <td style="text-align:center">{!! Form::open(['url' => 'editpage']) !!}
-                                        <h4 style="color:#0e0e0e"><b>   {!! Form::label('company', trans('general.company')) !!}: <h4><b>
+
+                                <tr> <td> {{trans('general.contactpersonId')}}: {!! $contactperson->contactpersonID !!}</td></tr>
+                                <tr> <td> {{trans('general.firstname')}}: {!! $contactperson->contactname !!}</td></tr>
+                                <tr> <td> {{trans('general.surname')}}: {!! $contactperson->contactsurname !!}</td> </tr>
+                                <tr> <td> {{trans('general.telephone')}}: {!! $contactperson->contacttelephone !!}</td> </tr>
+                                <tr> <td> {{trans('general.email')}}: {!! $contactperson->contactemail !!}</td> </tr>
+                                <tr> <td> {{trans('general.active')}}: {!! $contactperson->active !!}</td> </tr>
+                                <tr> <td> {{trans('general.created_at')}} {!! $contactperson->created_at !!}</td> </tr>
+                                <tr><td>{!! Form::open(['url' => 'editpage']) !!}
+                                        {!! Form::label('company', trans('general.company')) !!}:
 
                                         @foreach ($arrayo as $arrayp)
-                                            <h4 style="color:#0e0e0e"> <b> {{$arrayp}} </b></h4>
+                                            {{$arrayp}}
                                         @endforeach
                                         {!! Form::close() !!}
                                     </td> </tr>
 
-                                </tr> </nav>
+                                </tr>
                             </table>
                         </center>
                     </div>

@@ -5282,7 +5282,7 @@ a.list-group-item-danger.active:focus {
     background: #111111;
 }
 .panel-default > .panel-heading {
-    color: #0e0e0e;
+    color: #333333;
     background-color: #E26300;
     text-align: center;
     font-weight: bold;

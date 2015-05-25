@@ -15,8 +15,6 @@ class AdminstatsController extends Controller {
     
     public function show(){
         
-        
-        
         $siden = 0;
         $minid = Auth::user()->id;
         if(Input::get('side') == "" || Input::get('side') == "0"){
