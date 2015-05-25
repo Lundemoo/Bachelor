@@ -16,8 +16,8 @@ class UserController extends Controller{
 
     public function show($id){
 
-        $users = users::find($id);
-        return $users;
+        $user = User::find($id);
+        return view('auth.show', compact('user'));
 
     }
 

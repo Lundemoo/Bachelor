@@ -168,6 +168,7 @@ Route::get('car/destroy/{registrationNR}', 'CarController@destroy');  // deaktiv
 Route::get('car/aktiver/{registrationNR}', 'CarController@aktiver');
 
 Route::delete('editpage/destroy/{id}', 'EditpageController@destroy'); //kan kanskje fjernes. sjekk det ut
+Route::get('editpage/showuser/{id}', 'EditpageController@showuser') ;  // viser info om en valgt bruker
 
 Route::get('editpage/destroy/{id}', 'EditpageController@destroy');      //deaktivere bruker
 Route::get('editpage/aktiver/{id}', 'EditpageController@aktiver');  //aktivere bruker

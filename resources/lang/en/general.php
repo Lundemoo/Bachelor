@@ -1,6 +1,7 @@
 <?php
 return [
     'main' => 'Welcome to Jara Bygg AS',
+    'administration' => 'Administration',
     'projectCreated' => 'Project is created',
     'loginErrorAttempts' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
     'loginError' => 'These credentials do not match our records.',
@@ -80,7 +81,7 @@ return [
     'unableToFind2' => 'We were unable to geocode the second address',
     'registrateDriving' => 'Register driving',
     'car' => 'Car',
-    'info' => 'info',
+    'info' => 'information',
     'date' => 'Date',
     'roadTolls' => 'Road tolls',
     'editLogbook' => 'Edit logbook',
@@ -105,6 +106,8 @@ return [
     'newFirm' => 'New Firm',
     'projectName' => 'Project name',
     'wprojectName' => 'Write project name',
+    'id' => 'ID',
+    'user' => 'User',
     'projectID' => 'Project ID',
     'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Project address',
@@ -135,6 +138,7 @@ return [
     'estimatedFinish' => 'Estimated Finish',
     'editContactperson' => 'Edit Contactperson',
     'editcompany' => 'Edit Company',
+    'companyid' => 'Company ID',
     'companyidLarge' => 'COMPANY ID',
     'company' => 'Company',
     'updateContactp' => 'Update Contactperson',

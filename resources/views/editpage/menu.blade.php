@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.editOverview')}}</div>
+                    <div class="panel-heading">{{trans('general.administration')}}</div>
                     <div class="panel-body2">
                        
                         <table class="easynav"> <!--easynav start -->
@@ -26,9 +26,9 @@
 
                         <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                   <table class="tablesmall95grey">
-                                    <br />
+                                    <br>
                                         <tr>
                                             <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
                                             <th class="width20" >{{trans('general.nicknameLarge')}}</th>
@@ -38,16 +38,18 @@
                                         </tr>
 
                                     </table>
-                                            <br />
+                                            </nav>
+
                                         
 
                                     @foreach ($cars as $car)
 
-                                            
+                                            <nav class = "navet">
                                           <table class="tablesmall95grey2">
 
+
                                               <tr style="color:grey">
-                                            <td class="utlisting20"> {{$car->registrationNR}}</td>
+                                            <td class="utlisting20" > {{$car->registrationNR}}</td>
                                             <td class="utlisting20"> {{$car->nickname}}<br /></td>
                                             <td class="utlisting20"> {{$car->brand}}<br /><br /></td>
 
@@ -76,7 +78,7 @@
 
                                                 @else
 
-                                                    <td id="utlisting30">
+                                                    <td class="utlisting30">
                                                         <!--aktivere knapp-->
                                                         {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
                                                         {!! Form::button(trans('general.activate'), array(
@@ -98,10 +100,13 @@
 
                                                     @endif
 
-                                                    </td> </tr></table>
+                                                    </td> </tr>
+                                              @endforeach
+                                          </table>
+                                                </nav>
 
 
-                                            @endforeach
+
                                             <input type='hidden' value='' id='gjemt'>
                                             <script>
                                             function func(variabelen){
@@ -116,8 +121,9 @@
                                                 @include('includes.jara_confirm')
                                                 
 
-                        <!--slutttd innholdeasynavn -->
-                        <!--slutt forste tr  -->
+
+
+                                    </td>  </tr>
 
                             <!-- REDIGERE BRUKERE -->
                         
@@ -134,7 +140,7 @@
 
                                  <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                         <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="brukervisning">
                                                 <br />
                                                 <tr>
@@ -146,12 +152,13 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
+                                             </nav>
+
                                         
 
                                         @foreach ($users as $user)
 
-                                            
+                                             <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -178,6 +185,10 @@
                                                                 {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@showuser', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
 
 
                                                         @else
@@ -198,13 +209,17 @@
                                                                 {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@showuser', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
                                                                 @endif
 
                                                             </td>
 
 
 
-                                                    </tr></table>
+                                                    </tr></table></nav>
 
 
                                                     @endforeach
@@ -242,7 +257,7 @@
 
                                  <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                         <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="prosjektvisning">
                                                 <br />
                                                 <tr>
@@ -252,12 +267,13 @@
                                                     <th class="width30"></th>
                                                 </tr>
                                             </table>
-                                            <br />
+                                             </nav>
+
                                         
 
                                         @foreach ($projects as $project)
 
-                                            
+                                             <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -314,7 +330,7 @@
 
                                                                 @endif
 
-                                                            </td> </tr></table>
+                                                            </td> </tr></table></nav>
 
                                                     @endforeach
                                                     <input type='hidden' value='' id='gjemt'>
@@ -347,7 +363,7 @@
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="byggherrevisning">
                                                 <br />
                                                 <tr>
@@ -359,12 +375,13 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
+                                            </nav>
+
                                         
 
                                         @foreach ($builders as $builder)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -435,7 +452,7 @@
 
 
                                                     @endforeach
-                                                </table>
+                                                </table> </nav>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
@@ -469,9 +486,9 @@
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
-                                            <table class="tablesmall95grey" id="kontaktvisning">
-                                                <br />
+                                        <nav style="padding-left: 20px">
+                                            <table class="tablesmall95grey">
+                                                <br>
                                                 <tr>
                                                     <th class="width20">{{trans('general.firstnameLarge')}}</th>
                                                     <th class="width20">{{trans('general.surnameLarge')}}</th>
@@ -481,12 +498,12 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
+                                            </nav>
                                         
 
                                         @foreach ($contactpersons as $contactperson)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -550,6 +567,8 @@
 
                                                     @endforeach
                                                 </table>
+
+                                            </nav>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
@@ -583,7 +602,7 @@
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="firmavisning">
                                                 <br />
                                                 <tr>
@@ -595,12 +614,12 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
+                                            </nav>
                                         
 
                                         @foreach ($companies as $company)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -663,6 +682,7 @@
 
                                                     @endforeach
                                                 </table>
+                                                </nav>
                                                     <input type='hidden' value='' id='gjemt'>
                                                     <script>
                                                         function func(variabelen){
