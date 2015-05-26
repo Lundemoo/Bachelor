@@ -37,19 +37,19 @@ $( "#datepicker" ).datepicker();
                         </div>
                         <div class="form-group">
                             {!! Form::label('date', trans('general.date')) !!}<br />
-                            {!! Form::text('date', date('Y-m-d'), ['class' => 'datepicker'] ) !!}
+                            {!! Form::text('date', $logbookaddition->date, ['class' => 'datepicker'] ) !!}
                         </div><div id="container"></div>
                         <div class="form-group">
                             {!! Form::label('startdestination', trans('general.startdestination')) !!}
-                            {!! Form::text('startdestination', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::text('startdestination', $logbookaddition->startdestination, ['class' => 'form-control'] ) !!}
                         </div>
                         <div class="form-group" onload="initialize()">
                             {!! Form::label('stopdestination', trans('general.stopdestination')) !!}
-                            {!! Form::text('stopdestination', null, ['class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
+                            {!! Form::text('stopdestination', $logbookaddition->stopdestination, ['class' => 'form-control', 'onblur' => 'showLocation()'] ) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('totalkm', trans('general.kilometer')) !!}
-                            {!! Form::text('totalkm', null, ['class' => 'form-control'] ) !!}
+                            {!! Form::text('totalkm', $logbookaddition->totalkm, ['class' => 'form-control'] ) !!}
                         </div>
                         <br/>
                         <div class="form-group">
