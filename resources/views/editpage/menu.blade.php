@@ -9,119 +9,124 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{trans('general.editOverview')}}</div>
+                    <div class="panel-heading">{{trans('general.administration')}}</div>
                     <div class="panel-body2">
-                       
+
                         <table class="easynav"> <!--easynav start -->
 
                             @if($siden==0)
-                <!--forste tr-->            <tr><td class="besokerikke12" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                <td class="besoker12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom28" width="28%">&nbsp;</td></tr>
+                                <!--forste tr-->            <tr><td class="besokerikke12" width="12%" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besoker12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28" width="28%">&nbsp;</td></tr>
 
 
-                        <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
+                                <!--start td innholdeasynavn --> <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
-                                  <table class="tablesmall95grey">
-                                    <br />
-                                        <tr>
-                                            <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
-                                            <th class="width20" >{{trans('general.nicknameLarge')}}</th>
-                                            <th class="width20" >{{trans('general.modelLarge')}}</th>
-                                            <th class="width30" ></th>
+                                        <nav style="padding-left: 20px">
+                                            <table class="tablesmall95grey">
+                                                <br>
+                                                <tr>
+                                                    <th class="width20" >{{trans('general.registrationNrLarge')}}</th>
+                                                    <th class="width20" >{{trans('general.nicknameLarge')}}</th>
+                                                    <th class="width20" >{{trans('general.modelLarge')}}</th>
+                                                    <th class="width30" ></th>
 
-                                        </tr>
+                                                </tr>
 
-                                    </table>
-                                            <br />
-                                        
-
-                                    @foreach ($cars as $car)
-
-                                            
-                                          <table class="tablesmall95grey2">
-
-                                              <tr style="color:grey">
-                                            <td class="utlisting20"> {{$car->registrationNR}}</td>
-                                            <td class="utlisting20"> {{$car->nickname}}<br /></td>
-                                            <td class="utlisting20"> {{$car->brand}}<br /><br /></td>
-
-                                                @if($car->active == "1")
-                                            <td class="utlisting30">
-
-                                                <!--deaktivere knapp -->
-
-                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
-                                                {!! Form::button(trans('general.deactivate'), array(
-                                                'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
-                                                'data-toggle' => 'modal',
-                                                'data-target' => '#confirmDelete'
-                                                ))
-                                                !!}
-                                                {!! Form::close() !!}
+                                            </table>
+                                        </nav>
 
 
-                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn']) !!}
-                                                {!! Form::close() !!}
 
-                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
-                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
-                                                {!! Form::close() !!}
+                                        @foreach ($cars as $car)
 
-                                                @else
+                                            <nav class = "navet">
+                                                <table class="tablesmall95grey2">
 
-                                                    <td id="utlisting30">
-                                                        <!--aktivere knapp-->
-                                                        {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
-                                                        {!! Form::button(trans('general.activate'), array(
-                                                        'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
-                                                        'data-toggle' => 'modal',
-                                                        'data-target' => '#confirmDelete'
-                                                        ))
-                                                        !!}
-                                                        {!! Form::close() !!}
+                                                    <tr style="color:grey">
+                                                        <td class="utlisting20" > {{$car->registrationNR}}</td>
+                                                        <td class="utlisting20"> {{$car->nickname}}<br /></td>
+                                                        <td class="utlisting20"> {{$car->brand}}<br /><br /></td>
 
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
-                                                        {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
+                                                        @if($car->active == "1")
+                                                            <td class="utlisting30">
 
-                                                        {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
-                                                        {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
-                                                        {!! Form::close() !!}
+                                                                <!--deaktivere knapp -->
+
+                                                                {!! Form::open(['method' => 'DELETE','style' => 'display:inline', 'url' =>['car/destroy', $car->registrationNR]])!!}
+                                                                {!! Form::button(trans('general.deactivate'), array(
+                                                                'class' => 'btn btn-danger', 'onclick' => "func('car/destroy/$car->registrationNR')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
 
 
-                                                    @endif
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn']) !!}
+                                                                {!! Form::close() !!}
 
-                                                    </td> </tr></table>
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                        @else
+
+                                                            <td class="utlisting30">
+                                                                <!--aktivere knapp-->
+                                                                {!! Form::open(['method' => 'PATCH','style' => 'display:inline', 'url' =>['car/aktiver', $car->registrationNR]])!!}
+                                                                {!! Form::button(trans('general.activate'), array(
+                                                                'class' => 'btn btn-success', 'onclick' => "func('car/aktiver/$car->registrationNR')",
+                                                                'data-toggle' => 'modal',
+                                                                'data-target' => '#confirmDelete'
+                                                                ))
+                                                                !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@edit', $car->registrationNR]]) !!}
+                                                                {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['CarController@show', $car->registrationNR]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
 
 
-                                            @endforeach
+                                                                @endif
+
+                                                            </td> </tr>
+                                                    @endforeach
+                                                </table>
+                                            </nav>
+
+
+
                                             <input type='hidden' value='' id='gjemt'>
                                             <script>
-                                            function func(variabelen){
-                                                var knapp= document.getElementById('gjemt').value = variabelen;
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                            }
+                                                }
                                             </script>
 
 
-                          
-                                                {!! $cars->render()!!}
-                                                @include('includes.jara_confirm')
-                                                
 
-                        <!--slutttd innholdeasynavn -->
-                        <!--slutt forste tr  -->
+                                            {!! $cars->render()!!}
+                                            @include('includes.jara_confirm')
 
-                            <!-- REDIGERE BRUKERE -->
-                        
-                                @elseif($siden==1)
+
+
+
+                                    </td>  </tr>
+
+                                <!-- REDIGERE BRUKERE -->
+
+                            @elseif($siden==1)
 
                                 <tr><td class="besoker12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
@@ -132,9 +137,9 @@
                                     <td class="tom28">&nbsp;</td></tr>
 
 
-                                 <tr> <td colspan="7" class="innholdeasynav">
+                                <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="brukervisning">
                                                 <br />
                                                 <tr>
@@ -146,12 +151,13 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
-                                        
+                                        </nav>
+
+
 
                                         @foreach ($users as $user)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -178,6 +184,10 @@
                                                                 {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@showuser', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
 
 
                                                         @else
@@ -198,38 +208,42 @@
                                                                 {!! Form::submit(trans('general.edit'), ['class' => 'btn ']) !!}
                                                                 {!! Form::close() !!}
 
+                                                                {!! Form::open(['method' => 'get','style' => 'display:inline', 'action' =>['EditpageController@showuser', $user->id]]) !!}
+                                                                {!! Form::submit(trans('general.seeMore'), ['class' => 'btn ']) !!}
+                                                                {!! Form::close() !!}
+
                                                                 @endif
 
                                                             </td>
 
 
 
-                                                    </tr></table>
+                                                    </tr></table></nav>
 
 
-                                                    @endforeach
-                                                    <input type='hidden' value='' id='gjemt'>
-                                                    <script>
-                                                        function func(variabelen){
-                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+                                        @endforeach
+                                        <input type='hidden' value='' id='gjemt'>
+                                        <script>
+                                            function func(variabelen){
+                                                var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                                        }
-                                                    </script>
-
-
+                                            }
+                                        </script>
 
 
-                                              
-                                                {!! $users->render()!!}
-                                                @include('includes.jara_confirm')
-                                            
 
 
-                                   
 
-                                <!-- REDIGERE Prosjekter -->
+                                        {!! $users->render()!!}
+                                        @include('includes.jara_confirm')
 
-                            @elseif($siden == 2)
+
+
+
+
+                                        <!-- REDIGERE Prosjekter -->
+
+                                        @elseif($siden == 2)
 
                                 <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                     <td class="besoker12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
@@ -240,9 +254,9 @@
                                     <td class="tom28">&nbsp;</td></tr>
 
 
-                                 <tr> <td colspan="7" class="innholdeasynav">
+                                <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="prosjektvisning">
                                                 <br />
                                                 <tr>
@@ -252,12 +266,13 @@
                                                     <th class="width30"></th>
                                                 </tr>
                                             </table>
-                                            <br />
-                                        
+                                        </nav>
+
+
 
                                         @foreach ($projects as $project)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -314,27 +329,27 @@
 
                                                                 @endif
 
-                                                            </td> </tr></table>
+                                                            </td> </tr></table></nav>
 
-                                                    @endforeach
-                                                    <input type='hidden' value='' id='gjemt'>
-                                                    <script>
-                                                        function func(variabelen){
-                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+                                        @endforeach
+                                        <input type='hidden' value='' id='gjemt'>
+                                        <script>
+                                            function func(variabelen){
+                                                var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                                        }
-                                                    </script>
+                                            }
+                                        </script>
 
-                                                
-                                                {!! $projects->render()!!}
-                                                @include('includes.jara_confirm')
-                                            
 
-                                 
+                                        {!! $projects->render()!!}
+                                        @include('includes.jara_confirm')
 
-                                <!-- REDIGERE BYGGHERRER -->
 
-                            @elseif($siden == 3)
+
+
+                                        <!-- REDIGERE BYGGHERRER -->
+
+                                        @elseif($siden == 3)
 
                                 <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
@@ -347,7 +362,7 @@
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="byggherrevisning">
                                                 <br />
                                                 <tr>
@@ -359,19 +374,20 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
-                                        
+                                        </nav>
+
+
 
                                         @foreach ($builders as $builder)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
                                                         <td class="utlisting20"> {{$builder->customername}}</td>
                                                         <td class="utlisting20"> {{$builder->customeraddress}}<br /></td>
                                                         <td class="utlisting20"> {{$builder->customertelephone}}<br /><br /></td>
-                                                       <!-- <td>{!! Form::open(['url' => 'editpage']) !!}
+                                                        <!-- <td>{!! Form::open(['url' => 'editpage']) !!}
 
                                                             @foreach ($posts as $post)
 
@@ -380,10 +396,10 @@
 
                                                                 @endif
 
-                                                            @endforeach
+                                                        @endforeach
 
-                                                            {!! Form::close() !!}
-                                                            <br /></td>   -->
+                                                                {!! Form::close() !!}
+                                                                <br /></td>   -->
 
                                                         @if($builder->active == "1")
                                                             <td class="utlisting30">
@@ -435,29 +451,29 @@
 
 
                                                     @endforeach
-                                                </table>
-                                                    <input type='hidden' value='' id='gjemt'>
-                                                    <script>
-                                                        function func(variabelen){
-                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+                                                </table> </nav>
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                                        }
-                                                    </script>
-
-
+                                                }
+                                            </script>
 
 
-                                               
-                                                {!! $builders->render()!!}
-                                                @include('includes.jara_confirm')
-                                            
 
 
-                                    
 
-                                <!-- REDIGERE KONTAKTPERSONER -->
+                                            {!! $builders->render()!!}
+                                            @include('includes.jara_confirm')
 
-                            @elseif($siden == 4)
+
+
+
+
+                                            <!-- REDIGERE KONTAKTPERSONER -->
+
+                                            @elseif($siden == 4)
 
                                 <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
                                     <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
@@ -469,9 +485,9 @@
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
-                                            <table class="tablesmall95grey" id="kontaktvisning">
-                                                <br />
+                                        <nav style="padding-left: 20px">
+                                            <table class="tablesmall95grey">
+                                                <br>
                                                 <tr>
                                                     <th class="width20">{{trans('general.firstnameLarge')}}</th>
                                                     <th class="width20">{{trans('general.surnameLarge')}}</th>
@@ -481,12 +497,12 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
-                                        
+                                        </nav>
+
 
                                         @foreach ($contactpersons as $contactperson)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -550,40 +566,42 @@
 
                                                     @endforeach
                                                 </table>
-                                                    <input type='hidden' value='' id='gjemt'>
-                                                    <script>
-                                                        function func(variabelen){
-                                                            var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                                        }
-                                                    </script>
+                                            </nav>
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
+
+                                                }
+                                            </script>
 
 
 
 
-                                                
-                                                {!! $contactpersons->render()!!}
-                                                @include('includes.jara_confirm')
-                                            
+
+                                            {!! $contactpersons->render()!!}
+                                            @include('includes.jara_confirm')
+
 
 
                                     </td>  </tr>
 
                                 <!-- REDIGERE FIRMA -->
 
-                        @elseif($siden == 5)
+                            @elseif($siden == 5)
 
-                            <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
-                                <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
-                                <td class="besoker12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
-                                <td class="tom28">&nbsp;</td></tr>
+                                <tr><td class="besokerikke12" onclick="oc('/editpage?side=1'),$siden=1">{{trans('general.users')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=2'),$siden=2">{{trans('general.projects')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=3'),$siden=3">{{trans('general.builders')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=4'),$siden=4">{{trans('general.contactpersons')}}</td>
+                                    <td class="besokerikke12" onclick="oc('/editpage?side=0'),$siden=0">{{trans('general.cars')}}</td>
+                                    <td class="besoker12" onclick="oc('/editpage?side=5'),$siden=5">{{trans('general.companies')}}</td>
+                                    <td class="tom28">&nbsp;</td></tr>
 
                                 <tr> <td colspan="7" class="innholdeasynav">
 
-                                        
+                                        <nav style="padding-left: 20px">
                                             <table class="tablesmall95grey" id="firmavisning">
                                                 <br />
                                                 <tr>
@@ -595,12 +613,12 @@
                                                 </tr>
 
                                             </table>
-                                            <br />
-                                        
+                                        </nav>
+
 
                                         @foreach ($companies as $company)
 
-                                            
+                                            <nav class = "navet">
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
@@ -663,27 +681,28 @@
 
                                                     @endforeach
                                                 </table>
-                                                    <input type='hidden' value='' id='gjemt'>
-                                                    <script>
-                                                        function func(variabelen){
-                                                            var knapp= document.getElementById('gjemt').value = variabelen;
+                                            </nav>
+                                            <input type='hidden' value='' id='gjemt'>
+                                            <script>
+                                                function func(variabelen){
+                                                    var knapp= document.getElementById('gjemt').value = variabelen;
 
-                                                        }
-                                                    </script>
+                                                }
+                                            </script>
 
 
 
 
-                                                
-                                                {!! $companies->render()!!}
-                                                @include('includes.jara_confirm')
-                                            
+
+                                            {!! $companies->render()!!}
+                                            @include('includes.jara_confirm')
+
 
                                     </td>  </tr>
 
                             @endif
 
-                    </table>
+                        </table>
 
                     </div>
                 </div>

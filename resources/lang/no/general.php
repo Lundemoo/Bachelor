@@ -1,6 +1,7 @@
 <?php
 return [
     'main' => 'Velkommen til Jara Bygg AS',
+    'administration' => 'Administrasjon',
     'projectCreated' => 'Prosjektet er opprettet',
     'loginErrorAttempts' => 'Du har brukt for mange forsøk på å logge inn, vennligst prøv igjen etter 1 time.',
     'loginError' => 'Denne påloggingsinformasjonen stemmer ikke overens med våre registre.',
@@ -19,9 +20,9 @@ return [
     'firstname' => 'Fornavn',
     'firstnameLarge' => 'FORNAVN',
     'surname' => 'Etternavn',
-    'SurnameLarge' => 'ETTERNAVN',
+    'surnameLarge' => 'ETTERNAVN',
     'telephone' => 'Telefon',
-    'telephoneLarge' => 'TELEPHONE',
+    'telephoneLarge' => 'TELEFON',
     'address' => 'Addresse',
     'updateUserbtn' => 'Oppdater bruker',
     'updateBuilderbtn' => 'Oppdater byggherre',
@@ -47,7 +48,8 @@ return [
     'registerCar' => 'Registrer bil',
     'editCar' => 'Redigere bil',
     'registrationNr' => 'Registreringsnummer',
-    'registrationNrLarge' => 'REGISTRERINGS NR',
+    'registrationNrLarge' => 'REGISTRERINGSNR',
+    'companyid' => 'Firma ID',
     'nickname' => 'Kallenavn',
     'nicknameLarge' => 'KALLENAVN',
     'nicknamePlaceholder' => 'Skriv et kallenavn for bilen',
@@ -78,8 +80,10 @@ return [
     'unableToFind2' => 'Beklager, vi var ikke i stand til å geokode den andre adressen',
     'registrateDriving' => 'Registrer kjøring',
     'car' => 'Bil',
-    'info' => 'info',
+    'info' => 'informasjon',
     'date' => 'Dato',
+    'id' => 'ID',
+    'user' => 'Bruker',
     'roadTolls' => 'Bompenger',
     'editLogbook' => 'Rediger kjørebok',
     'allLogbooks' => 'Alle kjørebøker',
@@ -159,7 +163,7 @@ return [
     'warning' => 'Om du ikke har bedt om å tilbakestille passordet så kan du overse denne mailen.',
     'usersshowit' => 'Ansatte',
     'employee' => 'Ansatt',
-     'exporttimesheet' => 'Eksporter timelister',
+    'exporttimesheet' => 'Eksporter timelister',
     'exportlogbook' => 'Eksporter kjørebøker',
     'timelisterlonn' => 'Timelister lønn',
     'timelisterfaktura' => 'Timelister faktura',
@@ -176,9 +180,9 @@ return [
     'companies' => 'Firmaer',
     'companyid '=> 'Firma ID',
     'companyidLarge' => 'FIRMA ID',
-    'companyname '=> 'Firmanavn',
+    'companyname'=> 'Firmanavn',
     'companynameLarge' => 'FIRMA NAVN',
-    'companyrole '=> 'Firmarolle',
+    'companyrole'=> 'Firmarolle',
     'companyroleLarge' => 'FIRMAROLLE',
     'usernameLarge' => 'BRUKERNAVN',
     'tlfLarge' => 'TELEFON',
@@ -206,20 +210,20 @@ return [
     'no_result' => 'ingen resultat',
 
     'export_excel' => 'Eksportere til Excel',
-    
-    
-    
-        'monday' => 'Mandag',
-'tuesday' => 'Tirsdag',
-'wednesday' => 'Onsdag',
-'thursday' => 'Torsdag',
-'friday' => 'Fredag',
-'saturday' => 'Lørdag',
-'sunday' => 'Søndag',
-    
-    
-    
-        'january' => 'Januar',
+
+
+
+    'monday' => 'Mandag',
+    'tuesday' => 'Tirsdag',
+    'wednesday' => 'Onsdag',
+    'thursday' => 'Torsdag',
+    'friday' => 'Fredag',
+    'saturday' => 'Lørdag',
+    'sunday' => 'Søndag',
+
+
+
+    'january' => 'Januar',
     'february' => 'Februar',
     'march' => 'Mars',
     'april' => 'April',
@@ -231,12 +235,12 @@ return [
     'october' => 'Oktober',
     'november' => 'November',
     'december' => 'Desember',
-    
+
     'timesheetFail1' => 'Starttiden må være før slutt-tiden',
     'nobuilder' => 'Du må velge en byggherre',
-'newpassword' => 'Nytt passord',
-    'confirmnewpassword' => 'Bekreft nytt passord',    
-'changeduser' => 'Endring vellykket',
+    'newpassword' => 'Nytt passord',
+    'confirmnewpassword' => 'Bekreft nytt passord',
+    'changeduser' => 'Endring vellykket',
     'wrongwithpassword' => 'Det er noe galt med det nye passordet',
     'nbwarning' => 'NB: Dette vil vises som klartekst',
     'userlocked' => 'Denne kontoen er ikke lenger aktiv',

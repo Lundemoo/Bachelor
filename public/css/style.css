@@ -14,8 +14,8 @@ and open the template in the editor.
     padding: 10px;
     width: 100%;
     margin-bottom: 5px;
-    
-    
+
+
 }
 
 select {
@@ -43,298 +43,303 @@ select {
 }
 
 
-    #newcontact {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        width: 60%;
-        min-height: 200px;
-        border: 2px solid ;
-        background-color: white;
-        margin-left: -30%;
-        
-        display:none;
-        z-index: 9999;
-        max-width: 800px;
-        color: black;
-        padding: 20px;
-        border: 2px solid gray;
-    }
-        
+#newcontact {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 60%;
+    min-height: 200px;
+    border: 2px solid ;
+    background-color: white;
+    margin-left: -30%;
 
-        
+    display:none;
+    z-index: 9999;
+    max-width: 800px;
+    color: black;
+    padding: 20px;
+    border: 2px solid gray;
+}
 
-    #grey {
-        z-index: 9998;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        opacity: 0.8;
-        display: none;
-        left: 0;
-        right: 0;
-        position: fixed;
-        border: 1px solid grey;
-        
-    }
 
-    
-    table.newcontact {
-        
-        border: 1px solid gray;
-        width: 100%;
-        
-    }
-    td.newcontact {
-        
-        padding: 3px;
-        
-        
-    }
-    
-    #companyid {
-        width: 200px;
-       
-        
-    }
-    
-    #nyttfirmanavn {
-        
-    }
-    #nyttfirmarolle {
-        
-    }
-    
-    #gjem {
-        display: none;
-    }
-    div.menyvalg {
-        width: 40%;
-        height: 50px;
-        border: 1px solid white;
-        background-color: #E26300;
-        color: black;
-        font-size: 25px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 15px;
-        
-        
-    }
-    div.panel-body {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    
-                                        
-                                        
-                                        table.easynav {
-                                       
-                                            border: none;
-                                            margin-top: 0px;
-                                            width: 100%;
-                                         
-                                        }
 
-                                        td.besokerikke {
-                                            
-                                        border-bottom: 1px solid white;
-                                        border-right: 1px solid white;
-                                        height: 50px;
-                                            text-align: center;
-                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
-                                            font-size: 12px;
-                                            font-weight: bold;
-                                            color:black;
-                                            line-height: 1.42857143;
-                                            background-color: #E26300;
 
-                                        }
-                                        
-                                        td.besoker {
-                                            border-bottom: 0px;
-                                            border-right: 1px solid white;
-                                            height: 50px;
-                                            text-align: center;
-                                            font-weight: bold;
-
-                                        }
-                                        td.besokerikke10 {
-                                            
-                                        border-bottom: 1px solid white;
-                                        border-right: 1px solid white;
-                                        height: 50px;
-                                            text-align: center;
-                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
-                                            font-size: 12px;
-                                            font-weight: bold;
-                                            color:black;
-                                            line-height: 1.42857143;
-                                            background-color: #E26300;
-                                            width: 10%;
-                                        }
-                                        
-                                        td.besoker10 {
-                                            border-bottom: 0px;
-                                            border-right: 1px solid white;
-                                            height: 50px;
-                                            text-align: center;
-                                            font-weight: bold;
-                                            width: 10%;
-
-                                        }
-                                           td.besokerikke12 {
-                                            
-                                        border-bottom: 1px solid white;
-                                        border-right: 1px solid white;
-                                        height: 50px;
-                                            text-align: center;
-                                            font-family: "Roboto", Helvetica, Arial, sans-serif;
-                                            font-size: 12px;
-                                            font-weight: bold;
-                                            color:black;
-                                            line-height: 1.42857143;
-                                            background-color: #E26300;
-                                            width: 12%;
-                                        }
-                                        
-                                        td.besoker12 {
-                                            border-bottom: 0px;
-                                            border-right: 1px solid white;
-                                            height: 50px;
-                                            text-align: center;
-                                            font-weight: bold;
-                                            width: 12%;
-
-                                        }
-                                        td.tom {
-                                            border: 0px;
-                                        }
-                                        td.tom80 {
-                                            border: 0px;
-                                            width: 80%;
-                                        }
-                                         td.tom60 {
-                                            border: 0px;
-                                            width: 60%;
-                                        }
-                                         td.tom28 {
-                                            border: 0px;
-                                            width: 60%;
-                                        }
-                                        td.innholdeasynav {
-                                            border: 0px;
-                                            
-                                        }
-                                        table.framvisning {
-                                            border: 2px solid grey;
-                                            background-color: #eee;
-                                        }
-                                        table.framvisning100 {
-                                            border: 2px solid grey;
-                                            background-color: #eee;
-                                            width: 100%;
-                                        
-                                        }
-                                         table.framvisning1002 {
-                                            border: 2px solid grey;
-                                            background-color: #eee;
-                                            width: 100%;
-                                   
-                                        }
-                                        table.t100 {
-                                            width: 100%;
-                                        }
-                                        td.framvisninghoved {
-                                            border: 1px solid #e26300;
-                                            background-color: #AAA;
-                                            text-align: center;
-                                            text-decoration: underline;
-                                            font-size: 16px;
-                                            padding: 3px;
-                                            font-weight: bold;
-                                            margin-left: auto;
-                                            margin-right: auto;
-                                        }
-                                        td.framvisninghoved20 {
-                                            border: 1px solid #e26300;
-                                            background-color: #AAA;
-                                            text-align: center;
-                                            text-decoration: underline;
-                                            font-size: 16px;
-                                            padding: 3px;
-                                            font-weight: bold;
-                                            margin-left: auto;
-                                            margin-right: auto;
-                                            width: 20%;
-                                        }
-                                        td.framvisninghoved50 {
-                                            border: 1px solid #e26300;
-                                            background-color: #AAA;
-                                            text-align: center;
-                                            text-decoration: underline;
-                                            font-size: 16px;
-                                            padding: 3px;
-                                            font-weight: bold;
-                                            margin-left: auto;
-                                            margin-right: auto;
-                                            width: 50%;
-                                        }
-                                        td.framvisningrows {
-                                            border: 1px solid #e26300;
-                                            padding:2px;
-                                            text-align: center;
-                                            color: #000;
-                                            font-weight: bold;
-                                        }
-                                        td.framvisningsiste {
-                                            
-                                        }
-                                        select.months {
-                                            border: 1px solid grey;
-                                            padding: 5px;
-                                        }
-                                        select {
-                                            border: 1px solid grey;
-                                            padding: 5px;
-                                        }
-                                        div.rund {
-                                            -moz-border-radius: 15px/15px;
-                                            -webkit-border-radius: 15px 15px;
-                                            border-radius: 15px/15px;
-                                            
-                                            
-                                            width:15px;
-                                            height:15px; 
-                                        }
-                                        td.infograf {
-                                           
-                                        }
-                                        
-                                        td.oppdeltprosjekt{
-                                            
-                                            width: 50%;
-                                            border: 1px solid gray;
-                                            background-color: #DDD;
-                                            padding: 10px;
-                                        }
-                                        
-                                        input[type=checkbox] {
+#grey {
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
     display: none;
-    
+    left: 0;
+    right: 0;
+    position: fixed;
+    border: 1px solid grey;
+
+}
+
+.infoen{
+    align: center;
+}
+
+
+table.newcontact {
+
+    border: 1px solid gray;
+    width: 100%;
+
+}
+td.newcontact {
+
+    padding: 3px;
+
+
+}
+
+#companyid {
+    width: 200px;
+
+
+}
+
+#nyttfirmanavn {
+
+}
+#nyttfirmarolle {
+
+}
+
+#gjem {
+    display: none;
+}
+div.menyvalg {
+    width: 40%;
+    height: 50px;
+    border: 1px solid white;
+    background-color: #E26300;
+    color: black;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+
+
+}
+div.panel-body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+table.easynav {
+
+    border: none;
+    margin-top: 0px;
+    width: 100%;
+
+}
+
+td.besokerikke {
+
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color:black;
+    line-height: 1.42857143;
+    background-color: #E26300;
+
+}
+
+td.besoker {
+    border-bottom: 0px;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+
+}
+td.besokerikke10 {
+
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color:black;
+    line-height: 1.42857143;
+    background-color: #E26300;
+    width: 10%;
+}
+
+td.besoker10 {
+    border-bottom: 0px;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    width: 10%;
+
+}
+td.besokerikke12 {
+
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color:black;
+    line-height: 1.42857143;
+    background-color: #E26300;
+    width: 12%;
+}
+
+td.besoker12 {
+    border-bottom: 0px;
+    border-right: 1px solid white;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    width: 12%;
+
+}
+td.tom {
+    border: 0px;
+}
+td.tom80 {
+    border: 0px;
+    width: 80%;
+}
+td.tom60 {
+    border: 0px;
+    width: 60%;
+}
+td.tom28 {
+    border: 0px;
+    width: 60%;
+}
+td.innholdeasynav {
+    border: 0px;
+
+}
+table.framvisning {
+    border: 2px solid grey;
+    background-color: #eee;
+}
+table.framvisning100 {
+    border: 2px solid grey;
+    background-color: #eee;
+    width: 100%;
+
+}
+table.framvisning1002 {
+    border: 2px solid grey;
+    background-color: #eee;
+    width: 100%;
+
+}
+table.t100 {
+    width: 100%;
+}
+td.framvisninghoved {
+    border: 1px solid #e26300;
+    background-color: #AAA;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+td.framvisninghoved20 {
+    border: 1px solid #e26300;
+    background-color: #AAA;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+td.framvisninghoved50 {
+    border: 1px solid #e26300;
+    background-color: #AAA;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 16px;
+    padding: 3px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+td.framvisningrows {
+    border: 1px solid #e26300;
+    padding:2px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+td.framvisningsiste {
+
+}
+select.months {
+    border: 1px solid grey;
+    padding: 5px;
+}
+select {
+    border: 1px solid grey;
+    padding: 5px;
+}
+div.rund {
+    -moz-border-radius: 15px/15px;
+    -webkit-border-radius: 15px 15px;
+    border-radius: 15px/15px;
+
+
+    width:15px;
+    height:15px;
+}
+td.infograf {
+
+}
+
+td.oppdeltprosjekt{
+
+    width: 50%;
+    border: 1px solid gray;
+    background-color: #DDD;
+    padding: 10px;
+}
+
+input[type=checkbox] {
+    display: none;
+
 }
 
 .checkbox label:before {
     border-radius: 3px;
-   
+
 }
 input[type=checkbox]:checked + label:before {
     content: "\2713";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     font-size: 15px;
-    
+
     color: #00FF00;
     text-align: center;
     line-height: 15px;
@@ -343,10 +348,10 @@ input[type=checkbox]:checked + label:before {
 
 input[type=checkbox]:not(:checked) + label:before {
 
-   content: "X";
+    content: "X";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     font-size: 15px;
-    
+
     color: #FF0000;
     text-align: center;
     line-height: 15px;
@@ -367,10 +372,10 @@ input[type=radio]:checked + label:before {
 
 input[type=radio]:not(:checked) + label:before {
 
-   content: "";
+    content: "";
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     font-size: 15px;
-    
+
     color: #000000;
     text-align: center;
     line-height: 15px;
@@ -392,37 +397,37 @@ td.over {
 }
 #admin {
     display: block;
- -webkit-appearance:none;
+    -webkit-appearance:none;
     width:30px;
     height:30px;
     background:white;
     border-radius:5px;
     border:2px solid #000;
-     transform: scale(2.5);
+    transform: scale(2.5);
 
-  /* Webkit browsers*/
-  -webkit-transform: scale(2.5);
-  margin: 15px;
-  outline: 0;
- 
+    /* Webkit browsers*/
+    -webkit-transform: scale(2.5);
+    margin: 15px;
+    outline: 0;
+
 }
 #admin:focus {
     border: none;
     outline: 0;
 }
 #backbutton {
-font-size: 8px;
+    font-size: 8px;
 }
 html * {
-    
+
     font-family: "Times New Roman" !important;
-    
+
 }
 #utlisting{
     padding: 8px;
-line-height: 1.42857;
-vertical-align: top;
-border-top: 1px solid #DDD;
+    line-height: 1.42857;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
 
 }
 
@@ -439,16 +444,16 @@ td.invisible {
     border: 0px;
 }
 td.sammesomframvisning {
-  border: 2px solid grey;
+    border: 2px solid grey;
     background-color: #eee;
 }
 td.sammesomframvisning50 {
-  border: 2px solid grey;
+    border: 2px solid grey;
     background-color: #eee;
     width: 50%;
 }
 td.sammesomframvisning25 {
-  border: 2px solid grey;
+    border: 2px solid grey;
     background-color: #eee;
     width: 25%;
 }
@@ -456,97 +461,108 @@ td.sammesomframvisning25 {
     background-color: black;
     padding:10px;
     color: white;
-    
+
 }
 
-    .newcontact:after{
-        background-color: orange;
-        padding:10px;
+.newcontact:after{
+    background-color: orange;
+    padding:10px;
 
-    }
-    #store {
-        color: black;
-    }
-    input[type=text]{
-        color: black;
-    }
-    input[type=email]{
-        color: black;
-    }
-    textarea {
-        color: black;
-    }
-    td.setwidth{
-        width: 50%;
-    }
-    table.setwidth{
-        width: 100%;
-        border: 0px solid red;
-    }
-    table.setwidthandcenter{
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        border: 1px solid black;
-        
-    }
-    table.width80{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    th.width20 {
-        width: 20%;
-        text-align: left;
-    }
-    th.width30 {
-        width: 30%;
-        text-align: left;
-    }
-    table.tablesmall95grey {
-        width: 95%;
-        color: grey;
-    }
-        table.tablesmall95grey2 {
-        width: 95%;
-        color: grey;
-        text-align: center;
-    }
-    td.utlisting20 {
-        width: 20%;
-        color: burlywood;
-        text-align: left;
-           padding: 8px;
-line-height: 1.42857;
-vertical-align: top;
-border-top: 1px solid #DDD;
+}
+#store {
+    color: black;
+}
+input[type=text]{
+    color: black;
+}
+input[type=email]{
+    color: black;
+}
+textarea {
+    color: black;
+}
+td.setwidth{
+    width: 50%;
+}
+table.setwidth{
+    width: 100%;
+    border: 0px solid red;
+}
+table.setwidthandcenter{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
 
-    }
-        td.utlisting30 {
-        width: 30%;
-        color: #E26300;
-        text-align: center;
-           padding: 8px;
-line-height: 1.42857;
-vertical-align: top;
-border-top: 1px solid #DDD;
+}
+table.width80{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+th.width20 {
+    width: 20%;
+    text-align: left;
+}
+th.width30 {
+    width: 30%;
+    text-align: left;
+}
+table.tablesmall95grey {
+    width: 95%;
+    color: darkgrey;
+    padding: 5px;
+}
+table.tablesmall95grey2 {
+    width: 98%;
+    color: lightgrey;
+    text-align: left;
+}
 
+
+td.utlisting20 {
+    width: 20%;
+    color: burlywood;
+    text-align: left;
+    padding: 8px;
+    line-height: 1.42857;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+
+
+}
+td.utlisting30 {
+    width: 30%;
+    color: #E26300;
+    text-align: center;
+    padding: 8px;
+    line-height: 1.42857;
+    vertical-align: top;
+    border-top: 1px solid #DDD;
+
+}
+table.midtstill {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+select {
+    color: black !important;
+}
+
+
+.navet{
+    padding-left: 20px;
+    padding-top:5px;
+}
+
+@media screen and (max-width: 768px) {
+
+    div.menyvalg {
+        min-width: 270px;
+        font-size: 24px;
     }
-    table.midtstill {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    select {
-        color: black !important;
-    }
-    
-    
-    @media screen and (max-width: 768px) {
-        
-        div.menyvalg {
-            min-width: 270px;
-            font-size: 24px;
-        }   
-        
-    }
+
+}

@@ -1,6 +1,7 @@
 <?php
 return [
     'main' => 'Welcome to Jara Bygg AS',
+    'administration' => 'Administration',
     'projectCreated' => 'Project is created',
     'loginErrorAttempts' => 'You\'ve had too many attempt to log in. Please try again in 1 hour.',
     'loginError' => 'These credentials do not match our records.',
@@ -80,7 +81,7 @@ return [
     'unableToFind2' => 'We were unable to geocode the second address',
     'registrateDriving' => 'Register driving',
     'car' => 'Car',
-    'info' => 'info',
+    'info' => 'information',
     'date' => 'Date',
     'roadTolls' => 'Road tolls',
     'editLogbook' => 'Edit logbook',
@@ -105,6 +106,8 @@ return [
     'newFirm' => 'New Firm',
     'projectName' => 'Project name',
     'wprojectName' => 'Write project name',
+    'id' => 'ID',
+    'user' => 'User',
     'projectID' => 'Project ID',
     'wprojectID' => 'Skriv prosjekt ID',
     'projectAddress' => 'Project address',
@@ -135,6 +138,7 @@ return [
     'estimatedFinish' => 'Estimated Finish',
     'editContactperson' => 'Edit Contactperson',
     'editcompany' => 'Edit Company',
+    'companyid' => 'Company ID',
     'companyidLarge' => 'COMPANY ID',
     'company' => 'Company',
     'updateContactp' => 'Update Contactperson',
@@ -189,10 +193,10 @@ return [
 
 
 
-   
 
 
-    
+
+
     'export_excel' => 'Export to Excel',
     'exporttimesheet' => 'Export timesheets',
     'exportlogbook' => 'Export logbooks',
@@ -208,16 +212,16 @@ return [
     'chooseWeek' => 'Choose week',
     'errorexport1' => 'You have to choose a month',
 
-    
+
     'monday' => 'Monday',
-'tuesday' => 'Tuesday',
-'wednesday' => 'Wednesday',
-'thursday' => 'Thursday',
-'friday' => 'Friday',
-'saturday' => 'Saturday',
-'sunday' => 'Sunday',
-    
-    
+    'tuesday' => 'Tuesday',
+    'wednesday' => 'Wednesday',
+    'thursday' => 'Thursday',
+    'friday' => 'Friday',
+    'saturday' => 'Saturday',
+    'sunday' => 'Sunday',
+
+
     'january' => 'January',
     'february' => 'February',
     'march' => 'March',
@@ -230,30 +234,30 @@ return [
     'october' => 'October',
     'november' => 'November',
     'december' => 'December',
-    
-    
+
+
     'timesheetFail1' => 'Starttime must be before endtime',
     'nobuilder' => 'You have to choose a builder',
     'newpassword' => 'New password',
     'confirmnewpassword' => 'Confirm new password',
     'changeduser' => 'Change successfull',
     'wrongwithpassword' => 'There is somwthing wrong with the new password',
-    
+
     'nbwarning' => 'This will show as clear text',
     'userlocked' => 'This account is not active anymore',
     'export' => 'Export timesheets',
     'edit' => 'Edit',
     'exportchooseall' => 'You have to choose both a project and a time period',
-    
+
     'logbook1' => 'Logbook month',
     'logbook2' => 'Logbook advanced',
     'intervalfail' => 'You have already registered a timesheet in this interval',
     'registerettoday' => 'You have registered these ours today:',
     'fillin' => 'Fill inn contactperson',
-    
-    
-    
-    
+
+
+
+
 ];
 /* 
  * To change this license header, choose License Headers in Project Properties.

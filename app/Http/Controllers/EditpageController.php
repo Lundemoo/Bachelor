@@ -186,7 +186,15 @@ echo $siden; exit;
 
         return redirect('editpage');
     }
-    
+
+    /* Vis mer side for en spesifikk bruker */
+
+    public function showuser($id){
+
+        $user = User::find($id);
+        return view('editpage.showuser', compact('user'));
+
+    }
     
    
 
