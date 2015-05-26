@@ -5237,7 +5237,7 @@ a.list-group-item-danger.active:focus {
     border-color: #dddddd;
 }
 .panel-default > .panel-heading {
-    color: #333333;
+    color: black;
     background-color: #E26300;
     text-align: center;
     font-weight: bold;
