@@ -21,6 +21,7 @@ class RedirectIfAuthenticated {
 	 */
 	public function __construct(Guard $auth)
 	{
+            
 		$this->auth = $auth;
 	}
 
@@ -33,7 +34,7 @@ class RedirectIfAuthenticated {
 	 */
 	public function handle($request, Closure $next)
 	{
-            
+           
 		if ($this->auth->check() && $_SERVER['REDIRECT_URL'] != "/auth/register")
 		{
 			return new RedirectResponse(url('/'));

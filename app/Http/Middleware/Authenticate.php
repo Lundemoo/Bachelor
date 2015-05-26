@@ -2,7 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-
+use Auth;
 class Authenticate {
 
 	/**
@@ -20,6 +20,7 @@ class Authenticate {
 	 */
 	public function __construct(Guard $auth)
 	{
+            
 		$this->auth = $auth;
 	}
 

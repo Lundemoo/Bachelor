@@ -9,6 +9,7 @@ use App;
 use Lang;
 use Illuminate\Support\Facades\Request as req;
 
+
 use Illuminate\Contracts\Auth\Registrar;
 //use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
