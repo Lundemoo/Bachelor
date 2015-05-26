@@ -11,12 +11,14 @@ body {
 }
 footer {
 
-    margin-top:15%;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    height: 80px;
+    
+    position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#111;
+   text-align: center;
 
 
 }
@@ -2415,6 +2417,7 @@ input[type="search"] {
     margin-bottom: 15px;
     margin-right:20%;
     margin-left:20%;
+    text-align: left;
 }
 .radio,
 .checkbox {
