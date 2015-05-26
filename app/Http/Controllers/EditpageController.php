@@ -64,6 +64,7 @@ class EditpageController extends Controller
        return view('editpage.menu',['cars'=> $cars,'builders' => $builders, 'users' =>$users, 'projects' =>$projects, 'contactpersons' =>$contactpersons, 'companies' =>$companies,'posts' =>$posts, 'siden'=> $siden]);
     }
 
+
     public function show(){
         $siden=1;
         App::setLocale('en');
@@ -176,7 +177,7 @@ echo $siden; exit;
 
     }
     
-    
+    /* oppdater bruker i DB */
     
      public function update($userid){
 

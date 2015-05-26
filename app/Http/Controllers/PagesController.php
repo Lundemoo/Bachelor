@@ -25,7 +25,7 @@ class PagesController extends Controller {
     */
 
     /**
-     *  viser frem skjema for regitrering av nytt prosjekt
+     *  henter prosjekter
      */
     public function showProject()
     {
@@ -34,6 +34,8 @@ class PagesController extends Controller {
 
         return view('projects.showProjectView',compact('projects'));
     }
+
+    /* lage nytt prosjekt */
 
     public function createProject()
     {
@@ -146,7 +148,7 @@ class PagesController extends Controller {
     \Session::flash('flash_message', Lang::get('general.projectCreated'));
 
      
-     
+      /* liste med kontaktpersoner og firma */
      
      
         $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
@@ -154,7 +156,7 @@ class PagesController extends Controller {
         $company_list = Company::lists('companyname','companyid');
         
         
-        
+        /* kontaktpersoon */
         
         $res = DB::table(DB::raw('contactpersons, companies'))->select('*')->whereRaw('contactpersons.companyID = companies.companyID')->get(); 
         $ar = array();
@@ -168,7 +170,8 @@ class PagesController extends Controller {
             array_push($ar, $hver);
         }
         
-        
+    /* firma */
+
          $b = array();
         $res2 = Builder::all();
         foreach ($res2 as $bb){

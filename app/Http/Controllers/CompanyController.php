@@ -27,6 +27,7 @@ class CompanyController extends Controller
 
     }
 
+/* lagre i DB */
     public function store(CreateCompanyRequest $request){
 
 
