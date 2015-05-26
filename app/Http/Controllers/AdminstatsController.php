@@ -13,11 +13,11 @@ use Excel;
 class AdminstatsController extends Controller {
     
     
-    public function show(){
+    public function show(){ //Sidevisningen for /admin
         
         $siden = 0;
         $minid = Auth::user()->id;
-        if(Input::get('side') == "" || Input::get('side') == "0"){
+        if(Input::get('side') == "" || Input::get('side') == "0"){ //Side velger hvilken side man er på
             $siden = 0;
             
            
@@ -44,7 +44,7 @@ class AdminstatsController extends Controller {
                 
                     $resultatene = DB::table(DB::raw("timelisteprosjekter, projects, users"))->select(DB::raw("timelisteprosjekter.*, projects.*, users.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("projects.projectID = timelisteprosjekter.projectID AND timelisteprosjekter.employeeNR = users.id");
                 
-                
+                //Velger hvilken tidsperiode man velger, og henter ut ifra det.
                 
                 if($hvilkenmaned != "-1"){
                     
@@ -80,7 +80,7 @@ class AdminstatsController extends Controller {
             $resultatene = $resultatene->get();   
             }
           
-            
+            //Regner ut totalen + supertotalen + hver enkelt celle.
                 $dobbel = DB::table(DB::raw("timelisteprosjekter"))->select(DB::raw("timelisteprosjekter.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->groupBy(DB::raw("MONTH(date)"))->get();
                 $sendarray = array();
                 $arrayx = array();
@@ -109,14 +109,14 @@ class AdminstatsController extends Controller {
             
             $hentbrukere = DB::table(DB::raw('users, timelisteprosjekter'))->whereRaw("users.id = timelisteprosjekter.employeeNR")->groupBy(DB::raw("users.id"))->get();
             
-            
+            // Returner standard view for /admin med resultat som er valgfritt
             return view('admin.index')->with('siden', $siden)->with('selecten', $alle)->with('projects', $alle2)->with('resultatene', $resultatene)->with('totaltimer', $sendarray)->with('brukere', $hentbrukere);
             
             
             
             
             
-        } elseif(Input::get('side') == "1") {
+        } elseif(Input::get('side') == "1") { 
             $siden = 1;
             
             
@@ -130,7 +130,7 @@ class AdminstatsController extends Controller {
             
             
             
-            
+            //Henter ut logbookadditions for utlisting og utregning
             
             
                  $dobbel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%d %M, %Y') as dateshow, DATE_FORMAT(logbookaddition.date, '%M') as dateshowmaned"))->groupBy(DB::raw("MONTH(date)"))->get();
@@ -144,7 +144,7 @@ class AdminstatsController extends Controller {
                 $endre = date('Y-m', strtotime($hvilkenmaned));
                     $trippel = DB::table(DB::raw("logbookaddition"))->select(DB::raw("logbookaddition.*, DATE_FORMAT(logbookaddition.date, '%M') as dateshow"))->whereRaw("DATE_FORMAT(date, '%Y-%m') = '$endre'")->get();
                     $hvormange = 0;
-            
+            // Trippel for å regne ut supertotal og hver cellesøyle
                     foreach($trippel as $hver){
                         $hvormange += $hver->totalkm;
                         
@@ -166,7 +166,7 @@ class AdminstatsController extends Controller {
  
             }
             
-            
+            //Her er filterene!!! Sjekker om all data er bra
             
             if((Input::get('car') != "" && Helper::isSafe(Input::get('car'), 0)) || (Input::get('brukere') != "" && Helper::isSafe(Input::get('brukere'), 4)) || (Input::get('maned') != "" && Helper::isSafe(Input::get('maned'), 5)) && $resultatene != 0){
                 $car = Input::get('car');
@@ -203,7 +203,7 @@ class AdminstatsController extends Controller {
             
             $aaa = DB::table(DB::raw('users, logbookaddition'))->whereRaw("users.id = logbookaddition.employeeNR")->groupBy(DB::raw("users.id"))->get();
             
-            
+            //Sender fail view
             return view('admin.index')->with('siden', $siden)->with('biler', $getallcars)->with('maneder', $getallmonths)->with('totaltimer', $sendarray)->with('resultatene', $resultatene)->with('brukere', $aaa);
         } elseif(Input::get('side') == "2"){
             $siden = 2;
@@ -218,7 +218,7 @@ class AdminstatsController extends Controller {
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
             $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber, WEEKOFYEAR(date) as weeknumbershow"))->groupBy("weeknumber")->get();
             
-            
+            //Sender fail view
           return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks);
             
         } elseif(Input::get('side') == "3"){
@@ -232,7 +232,7 @@ class AdminstatsController extends Controller {
 
             $getmonths = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
            $getweeks  = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, DATE_FORMAT(timelisteprosjekter.date, '%u') as dateshow, WEEKOFYEAR(date) as weeknumber, WEEKOFYEAR(date) as weeknumbershow"))->groupBy("weeknumber")->get();
-
+//Sender fail view
             return view('admin.index')->with('siden', $siden)->with('months', $months)->with('projects', $getallprojects)->with('months2', $getmonths)->with('years', $getyears)->with('weeks', $getweeks);
         }
         //$hei = Lang::get('general.main');
@@ -241,7 +241,7 @@ class AdminstatsController extends Controller {
     }
     
     
-    public function export(){
+    public function export(){ //Export til excel
         
         
         
@@ -361,7 +361,7 @@ class AdminstatsController extends Controller {
                             }
                             array_push($nyarray, "SUM");
                          
-                            
+                            //Henter månedsnavn
                                                   
                             $monthName = date("F", mktime(0, 0, 0, $month, 10));
 
@@ -373,7 +373,7 @@ class AdminstatsController extends Controller {
                     $sheet->row($rad, $nyarray);
 
                     
-                    foreach($users as $user){
+                    foreach($users as $user){ //For hver bruker i utlistingen
                         $altarray = Array();
                         array_push($altarray, $user->id);
                         $denne = $user->firstname . " " . $user->lastname;
@@ -390,7 +390,7 @@ class AdminstatsController extends Controller {
                             foreach($hentpaid as $j){
                                 $hvormange = (strtotime($j->endtime) - strtotime($j->starttime))/3600;
                                 
-                                $sum += $hvormange;
+                                $sum += $hvormange; //Supertotal og cellesøyletotal
                                 
                             }
                             $sum = $sum . "";
