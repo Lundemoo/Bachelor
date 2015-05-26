@@ -38,7 +38,7 @@ trait AuthenticatesAndRegistersUsers
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function postRegister(Request $request)
+    public function postRegister(Request $request) //Trykker på registrer-knappen
     {
         
         $validator = $this->registrar->validator($request->all());
@@ -47,7 +47,7 @@ trait AuthenticatesAndRegistersUsers
                 $request, $validator
             );
         }
-        
+        //Her legges brukeren til
         $this->registrar->create($request->all());
         return redirect($this->redirectPath());
     }

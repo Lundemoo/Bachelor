@@ -35,7 +35,7 @@ class AuthController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
+	public function __construct(Guard $auth, Registrar $registrar) // Legger til språk
 	{
             
         
@@ -57,7 +57,7 @@ class AuthController extends Controller {
         
         
         
-        public function postLogin(Request $request)
+        public function postLogin(Request $request) // Poster loginknappen
     {
             $now = date("Y-m-d H:i:s");
             $then = date("Y-m-d H:i:s", strtotime('- 2 hours'));
@@ -67,7 +67,7 @@ class AuthController extends Controller {
            
     $getall = Loginattempt::whereBetween('created_at', array($then, $now))->where('userID', '=', $userid)->where('active', '=', '1')->count();
             
-            
+            //Sjekker for antall feile innloggingsforsøk
             if($getall >= 5){
                 
             
@@ -79,12 +79,12 @@ class AuthController extends Controller {
                 
             }
             
-            
+            //Dette er plassen man logger inn på
         if ($this->auth->attempt($request->only('email', 'password')))
         {
             return redirect('/');
         }
-        
+        //Om mislykket innlogging, legg til et loogingsforsøk
         Loginattempt::create([
             'userID' => $userid,
             'IP' => $_SERVER['REMOTE_ADDR'],

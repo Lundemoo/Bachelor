@@ -1,19 +1,17 @@
-<?php
+<?php namespace Tests\Integration;
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase {
+use Laracasts\Integrated\Extensions\Laravel as IntegrationTest;
 
-	/**
-	 * Creates the application.
-	 *
-	 * @return \Illuminate\Foundation\Application
-	 */
-	public function createApplication()
-	{
-		$app = require __DIR__.'/../bootstrap/app.php';
+class TestCase extends IntegrationTest {
 
-		$app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+   
+    public function createApplication()
+    {
+        $app = require __DIR__.'/../bootstrap/app.php';
 
-		return $app;
-	}
+        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+
+        return $app;
+    }
 
 }
