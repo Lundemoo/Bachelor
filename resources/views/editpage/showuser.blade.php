@@ -12,24 +12,39 @@
 
                     <div class="panel-body2" >
                         <center>
-                            <table class = "framvisning100">
+                            
+                            
+                            
+                            
+                            
+                                    <table class = "framvisning502">
 
-                                <tr> <td class="framvisninghoved" colspan="8"><h4><b> {!! $user->firstname !!} {!! $user->lastname !!}</b></h4> </td> </tr>
+                                <tr> <td class="framvisninghoved" colspan="8"><h4><b> {!! $user->firstname !!} {!! $user->lastname !!}</b></h4></td> </tr>
 
-                                <nav style ="background:#FFF">
+                                
 
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.id')}}: {!! $user->id !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.firstname')}}:  {!! $user->firstname !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.surname')}}: {!! $user->lastname !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.address')}}: {!! $user->address !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.telephone')}}: {!! $user->telephone !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.email')}}: {!! $user->email !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.language')}}: {!! $user->language !!}</b></h4></td></tr>
-                                    <tr><td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.active')}}: {!! $user->active !!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.id')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->id!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.firstname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->firstname!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.surname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->lastname!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.address')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->address!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.telephone')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->telephone!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.email')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->email!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.language')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->language!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.active')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $user->active!!}</b></h4></td></tr>
+                                
+                                
+                                         
+                                </table>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
 
-                                    </tr> </nav>
-
-                            </table>
                         </center>
                     </div>
 

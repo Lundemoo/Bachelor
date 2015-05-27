@@ -27,8 +27,8 @@ return [
 	| the Mailgun mail service which will provide reliable deliveries.
 	|
 	*/
-
-	'host' => 'smtp.mailgun.org',
+// Må legges inn ved konfigurasjon
+	'host' => '',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,8 +79,8 @@ return [
 	| connection. You may also set the "password" value below this one.
 	|
 	*/
-
-	'username' => 'postmaster@sandbox039fc7bc647d4ae391ed376dc9005aca.mailgun.org',
+ //Legges inn ved konfigurasjon
+	'username' => '',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -92,8 +92,8 @@ return [
 	| connection so that the application will be able to send messages.
 	|
 	*/
-
-	'password' => 'a103ab15e350bba5cd90f0b45712d880',
+//Legg inn ved konfigurasjon
+	'password' => '',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -13,18 +13,20 @@
 
                     <div class="panel-body2" >
                         <center>
-                            <table class = "framvisning100">
+                            <table class = "framvisning502">
 
                                 <tr> <td class="framvisninghoved" colspan="8"><h4><b> {!! $company->companyname !!} </b></h4></td> </tr>
 
-                                <nav style ="background:#FFF">
+                                
 
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.companyid')}}: {!! $company->companyID!!}</b></h4></td></tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.companyname')}}: {!! $company->companyname !!}</b></h4></td></tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.active')}}: {!! $company->active !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b> {{trans('general.created_at')}}: {!! $company->created_at !!}</b></h4></td> </tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.companyid')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $company->companyID!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.companyname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $company->companyname!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.active')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $company->active!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.created_at')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $company->created_at!!}</b></h4></td></tr>
+                                
+                                
 
-                                    </tr> </nav>
+                                    
                             </table>
                         </center>
                     </div>

@@ -6,6 +6,21 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
+
+/**
+ * 
+ * 
+ * FOR TESTING AV SYSTEMET I SIN HELHET SÅ KAN MAN BESØKE:
+ * http://jara.amuze.no
+ * 
+ * Innloggingsinformasjon:
+ * Brukernavn: sensor@jarabygg.no
+ * Passord: sensor1234
+ * Denne brukeren vil være tilgjengelig helt fram til vurdering er satt
+ */
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

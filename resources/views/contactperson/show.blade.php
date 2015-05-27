@@ -13,30 +13,38 @@
 
                     <div class="panel-body2">
                         <center>
-                            <table class = "framvisning100">
+                            
+                            
+                            
+                            
+                            
+                            
+                               <table class = "framvisning502">
 
-                                <tr> <td class="framvisninghoved" colspan="8"> <h4><b>{!! $contactperson->contactname !!} {!! $contactperson->contactsurname !!}</b></h4> </td> </tr>
+                                <tr> <td class="framvisninghoved" colspan="8"><h4><b> {!! $contactperson->contactname !!} {!! $contactperson->contactsurname !!}</b></h4></td> </tr>
 
+                                
 
-                                <nav style ="background:#FFF">
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.contactpersonId')}}: {!! $contactperson->contactpersonID !!}</b></h4></td></tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.firstname')}}: {!! $contactperson->contactname !!}</b></h4></td></tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.surname')}}: {!! $contactperson->contactsurname !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.telephone')}}: {!! $contactperson->contacttelephone !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.email')}}: {!! $contactperson->contactemail !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.active')}}: {!! $contactperson->active !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center"><h4 style="color:#0e0e0e"><b>{{trans('general.created_at')}} {!! $contactperson->created_at !!}</b></h4></td> </tr>
-                                    <tr> <td style="text-align:center">{!! Form::open(['url' => 'editpage']) !!}
-                                            <h4 style="color:#0e0e0e"><b>   {!! Form::label('company', trans('general.company')) !!}: <h4><b>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.contactpersonId')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->contactpersonID!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.firstname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->contactname!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.surname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->contactsurname!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.telephone')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->contacttelephone!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.email')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->contactemail!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.active')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->active!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.created_at')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $contactperson->created_at!!}</b></h4></td></tr>
+                                
 
-                                                            @foreach ($arrayo as $arrayp)
-                                                                <h4 style="color:#0e0e0e"> <b> {{$arrayp}} </b></h4>
-                                                            @endforeach
-                                                            {!! Form::close() !!}
-                                        </td> </tr>
-
-                                    </tr> </nav>
+                                    
                             </table>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </center>
                     </div>
                 </div>

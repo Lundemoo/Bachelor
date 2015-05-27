@@ -143,7 +143,7 @@
                                             <table class="tablesmall95grey" id="brukervisning">
                                                 <br />
                                                 <tr>
-                                                    <th class="width20">{{trans('general.usernameLarge')}}</th>
+                                                    <th class="width20">{{trans('general.name')}}</th>
                                                     <th class="width20">{{trans('general.tlfLarge')}}</th>
                                                     <th class="width20">{{trans('general.addressLarge')}}</th>
                                                     <th class="width30"></th>
@@ -161,9 +161,9 @@
                                                 <table class="tablesmall95grey2">
 
                                                     <tr style="color:grey">
-                                                        <td class="utlisting20"> {{$user->firstname}}</td>
-                                                        <td class="utlisting20"> {{$user->lastname}}<br /></td>
-                                                        <td class="utlisting20"> {{$user->telephone}}<br /><br /></td>
+                                                        <td class="utlisting20"> {{$user->firstname}} {{$user->lastname}}</td>
+                                                        <td class="utlisting20"> {{$user->telephone}}<br /></td>
+                                                        <td class="utlisting20"> {{$user->address}}<br /><br /></td>
 
                                                         @if($user->active == "1")
                                                             <td class="utlisting30">

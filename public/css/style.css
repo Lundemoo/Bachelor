@@ -249,6 +249,13 @@ table.framvisning1002 {
     width: 100%;
 
 }
+table.framvisning502 {
+    border: 2px solid grey;
+    background-color: #eee;
+    color: black;
+    width: 50%;
+
+}
 table.t100 {
     width: 100%;
 }
