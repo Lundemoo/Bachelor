@@ -29,8 +29,8 @@ class LogbookadditionController extends Controller
 
     public function create(){
         
-        $cars = Car::lists('nickname', 'registrationNR');
-        $projects = Project::lists('projectName', 'projectID');
+        $cars = Car::where("active", "=", "1")->lists('nickname', 'registrationNR');
+        $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
 
         return view('logbookaddition.create', array('cars' => $cars, 'projects' => $projects));
 
@@ -73,8 +73,8 @@ class LogbookadditionController extends Controller
         \Session::flash('flash_message', Lang::get('general.logbookSuccess'));
 
 
-        $cars = Car::lists('nickname', 'registrationNR');
-        $projects = Project::lists('projectName', 'projectID');
+        $cars = Car::where("active", "=", "1")->lists('nickname', 'registrationNR');
+        $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
 
         return view('logbookaddition.create', array('cars' => $cars, 'projects' => $projects));
 
@@ -89,8 +89,8 @@ class LogbookadditionController extends Controller
         $logbookaddition = Logbookaddition::findOrFail($logbookadditionID);
         $logbookaddition['totalkm'] = null;
 
-        $cars = Car::lists('nickname', 'registrationNR'); //henter liste med alle biler
-        $projects = Project::lists('projectName', 'projectID');
+        $cars = Car::where("active", "=", "1")->lists('nickname', 'registrationNR'); //henter liste med alle biler
+        $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
 
         return view('logbookaddition.edit',array('cars' => $cars, 'projects' => $projects), compact('logbookaddition'));
 

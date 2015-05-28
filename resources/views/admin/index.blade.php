@@ -654,7 +654,7 @@ $( "#datepicker" ).datepicker();
                                                                <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
                                                                @endforeach
                                                            </select>
-                                                           <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Send!">
+                                                           <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="0">    <input type="submit" value="Hent!">
                                                       
                                                    
                                        </form>
@@ -754,7 +754,7 @@ $( "#datepicker" ).datepicker();
                                        <br />
                                        
                                        <br />
-                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Send!"></form>
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" id="hvilken" value="1"><input type="submit" value="Hent!"></form>
                                            </td></tr>
                                            
                                                        
@@ -838,7 +838,7 @@ $( "#datepicker" ).datepicker();
                                                                <option value="{{$month->dateshow}}">{{$month->dateshowtext}}</option>
                                                                @endforeach
                                                            </select>
-                                                         <input type="hidden" name="hvilken" value="0">    <input type="submit" value="Send!">
+                                                         <input type="hidden" name="hvilken" value="0">    <input type="submit" value="Hent!">
                                                       
                                                    
                                        </form>
@@ -938,7 +938,7 @@ $( "#datepicker" ).datepicker();
                                        <br />
                                        
                                        <br />
-                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" value="1"><input type="submit" value="Send!"></form>
+                                       <input type="hidden" name="_token" value="{{ csrf_token() }}"><input type="hidden" name="hvilken" value="1"><input type="submit" value="Hent!"></form>
                                            </td></tr>
                                            
                                                        
