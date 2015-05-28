@@ -291,10 +291,10 @@ $( "#datepicker" ).datepicker();
                                        $a++;
                                        ?>
                                        @endforeach
-                                       
-                                       
-                                               
-                                               
+
+
+
+
                                                
                                                
                                                
@@ -346,10 +346,10 @@ $( "#datepicker" ).datepicker();
                                        @endif 
                                        
                                        </table>
-                                            
-                                        
-                                   
-                                        
+
+
+
+                                                        {!! $resultatene->render()!!}
                                    
                                         
                                         
@@ -385,12 +385,12 @@ $( "#datepicker" ).datepicker();
                                      var alle = <?php echo json_encode($totaltimer); ?>;
                                      tegnpai("andregraf", "andregrafinfo", alle[1], alle[0],2,0.7);
                                      </script>
-                                 
-                                 
-                                          
-                                          
-                                    
-                                     
+
+
+
+
+
+
                                      
                                      
                                      

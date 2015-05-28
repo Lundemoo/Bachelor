@@ -10,6 +10,7 @@ use Auth;
 use DB;
 use Illuminate\Support\Facades\Input;
 use Excel;
+use Illuminate\Pagination\Paginator;
 class AdminstatsController extends Controller {
     
     
@@ -77,7 +78,7 @@ class AdminstatsController extends Controller {
             }
             
             if($antall != 0){
-            $resultatene = $resultatene->get();   
+            $resultatene = $resultatene->simplePaginate(15);
             }
           
             //Regner ut totalen + supertotalen + hver enkelt celle.
@@ -104,8 +105,8 @@ class AdminstatsController extends Controller {
             array_push($sendarray, $arrayx);
             array_push($sendarray, $arrayy);
            
-            $alle = DB::table('timesheet')->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->get();
-            $alle2 = DB::table(DB::raw('timelisteprosjekter, projects'))->selectRaw('timelisteprosjekter.*, projects.*')->whereRaw('timelisteprosjekter.projectID = projects.projectID')->groupBy(DB::raw('projects.projectID'))->get();
+            $alle = DB::table('timesheet')->selectRaw("DATE_FORMAT(date,'%Y-%m-%d') as date, DATE_FORMAT(date,'%M %Y') as dateshow")->groupBy(DB::raw("MONTH(date)"))->simplePaginate(15);
+            $alle2 = DB::table(DB::raw('timelisteprosjekter, projects'))->selectRaw('timelisteprosjekter.*, projects.*')->whereRaw('timelisteprosjekter.projectID = projects.projectID')->groupBy(DB::raw('projects.projectID'))->simplePaginate(15);
             
             $hentbrukere = DB::table(DB::raw('users, timelisteprosjekter'))->whereRaw("users.id = timelisteprosjekter.employeeNR")->groupBy(DB::raw("users.id"))->get();
             
