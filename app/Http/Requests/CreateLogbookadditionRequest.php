@@ -26,7 +26,7 @@ class CreateLogbookadditionRequest extends Request {
 			'registrationNR' => 'required|max:7',
 			'startdestination' => 'required',
 			'stopdestination' => 'required',
-			'totalkm' => 'required',
+			'totalkm' => 'numeric|min:0',
 			'date' => 'required',
 			'bompenger' => 'max:200'
 		];

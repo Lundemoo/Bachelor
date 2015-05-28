@@ -22,10 +22,10 @@ class CreateBuilderRequest extends Request {
     public function rules()
     {
         return [
-            'customername' => 'required',
+            'customername' => 'required|string',
             'customeraddress' => 'required',
-            'customeremail' => 'required',
-            'customertelephone' => 'required',
+            'customeremail' => 'required|email',
+            'customertelephone' => 'required|integer|max:8|min:8',
         ];
     }
 

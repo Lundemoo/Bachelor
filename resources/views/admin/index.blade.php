@@ -343,15 +343,16 @@ $( "#datepicker" ).datepicker();
                                        <tr><td class='framvisningsiste'> {{trans('general.total')}} </td><td class='framvisningsiste'>{{$totalt}}</td></tr>
                                        @else
                                        <tr><td class="framvisning"><h3>{{trans('general.noresults')}}</h3></td></tr>
-                                       @endif 
-                                       
+                                       @endif
+
+
                                        </table>
 
-
+                                    <div>
 
                                                         {!! $resultatene->render()!!}
                                    
-                                        
+                                        </div>
                                         
                                           <script>
                                         
