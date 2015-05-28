@@ -111,25 +111,26 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
         $n2 = strtotime($input['endtime']);
         $now = $input['date'];
         
-        $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
+        $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("date = '$now'")->get();
+        
         foreach($db as $g){
             if($n1 > strtotime($g->starttime) && $n1 < strtotime($g->endtime)){
-                
+        
              $stop = 1;
              $feilmelding = trans('general.intervalfail');
             }
             if($n2 > strtotime($g->starttime) && $n2 < strtotime($g->endtime)){
-               
+        
              $stop = 1;
              $feilmelding = trans('general.intervalfail');   
             }
             if(strtotime($g->starttime) > $n1 && strtotime($g->starttime) < $n2){
-            
+        
              $stop = 1;
              $feilmelding = trans('general.intervalfail');   
             }
             if(strtotime($g->endtime) > $n1 && strtotime($g->endtime) < $n2){
-             
+        
              $stop = 1;
              $feilmelding = trans('general.intervalfail');   
             }

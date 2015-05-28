@@ -13,6 +13,7 @@ use App\Projectcontactpersons;
 use Lang;
 use App;
 use DB;
+use Helper;
 class PagesController extends Controller {
 
     /*
@@ -104,14 +105,36 @@ class PagesController extends Controller {
         array_push($errors, "Alle felt må være utfyllt!");
     }
     
-    if(!is_numeric($projectID)){
-        $fail = 1;
-        array_push($errors, "Prosjekt-ID må være et nummer");
-    }
+   
     if(Project::find($projectID)){
         $fail = 1;
                array_push($errors, "Et prosjekt me denne ID'en eksisterer allerede.");
     }
+    if(!Helper::isSafe($projectID, 4)){
+        $fail = 1;
+        array_push($errors, "ProsjektID må være et tall");
+    }
+    if(!Helper::isSafe($projectName, 0)){
+        $fail = 1;
+        array_push($errors, "Prosjektnavnet inneholder ulovlige bokstaver");
+    }
+    if(!Helper::isSafe($projectAddress, 6)){
+        $fail = 1;
+        array_push($errors, "Prosjektadressen inneholder ulovlige bokstaver");
+    }
+    if(!Helper::isSafe($budget, 4)){
+        $fail = 1;
+        array_push($errors, "Estimert timeantall inneholder ulovlige bokstaver/tall");
+    }
+    if($budget < 0){
+        $fail = 1;
+        array_push($errors, "Estimert timeantall inneholder ulovlige bokstaver/tall");
+    }
+     if(!Helper::isSafe($description, 0)){
+        $fail = 1;
+        array_push($errors, "Beskrivelse inneholder ulovlige bokstaver");
+    }
+    
     
     if(!isset($_POST['byggherre'])){
          $fail = 1;
