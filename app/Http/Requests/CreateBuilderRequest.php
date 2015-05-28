@@ -25,7 +25,7 @@ class CreateBuilderRequest extends Request {
             'customername' => 'required|string',
             'customeraddress' => 'required',
             'customeremail' => 'required|email',
-            'customertelephone' => 'required|integer|max:8|min:8',
+            'customertelephone' => 'required|integer|size:8',
         ];
     }
 
