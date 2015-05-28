@@ -131,6 +131,7 @@ return [
     'startTime' => 'Start tid',
     'stopTime' => 'Stop tid',
     'startTimeLarge' => 'START DATO',
+
     'mainMenu' => 'Hovedmeny',
     'logout' => 'Logg ut',
     'registerProject' => 'Registrer prosjekt',
