@@ -424,7 +424,7 @@ $( "#datepicker" ).datepicker();
                                            <br />
                                                
                                                
-                                               @if($resultatene != 0)
+                                               @if(count($resultatene) != 0)
                                                
                                                <?PHP $vis = 1; ?>
                                                @if (count($biler) > 1)

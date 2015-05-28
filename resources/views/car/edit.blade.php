@@ -12,13 +12,10 @@
 
                     <div class="panel-body">
 
-    <h1>{{trans('general.edit') }}: {!! $car->nickname !!}</h1>
+    <h1>{{trans('general.edit') }}: {!! $car->registrationNR !!}</h1>
 
     {!! Form::model($car, ['method' => 'PATCH', 'action' => ['CarController@update', $car->registrationNR]]) !!}
-    <div class="form-group">
-        {!! Form::label('registrationNR', trans('general.registrationNr')) !!}
-        {!! Form::text('registrationNR', null, ['class' => 'form-control'] ) !!}
-    </div>
+    
 
     <div class="form-group">
         {!! Form::label('nickname', trans('general.nickname')) !!}
