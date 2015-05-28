@@ -70,7 +70,7 @@ class OversiktController extends Controller {
             }
             
             if($antall != 0){
-            $resultatene = $resultatene->simplePaginate(5);
+            $resultatene = $resultatene->simplePaginate(15);
             }
             
 
@@ -176,6 +176,7 @@ class OversiktController extends Controller {
             }
             if($antallet != 0){
             $resultatene = $resultatene->simplePaginate(15);
+                $resultatene->appends(Input::except('page'));
 
             }
             
