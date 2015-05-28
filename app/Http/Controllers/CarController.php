@@ -68,11 +68,16 @@ class CarController extends Controller
      * Metode som henter inn fra edit-formen og oppdaterer aktuell bil i databasen
      */
     public function update($registrationNR, CreatecarRequest $request){ //litt usikker på om der er CreateCarRequest som skal brukes her også
-
+echo $registrationNR;
+echo Input::get('registrationNR');
+exit;
         $car = Car::findOrFail($registrationNR);
-
+        if(Car::findOrFail($registrationNR)){
+            
+            \Session::flash('flash_message', "Lang::get('general.changeSuccess')");
+        }
         $car->update($request->all());
-        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
+//        \Session::flash('flash_message', Lang::get('general.changeSuccess'));
         return redirect('editpage?side=0');
     }
 
