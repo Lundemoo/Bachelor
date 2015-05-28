@@ -26,7 +26,7 @@
 
                                 
 
-                                <tr> <td class="understrektag"><h4><b> {{trans('general.registrationNr')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $car->registrationNr!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.registrationNr')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $car->registrationNR!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.nickname')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $car->nickname!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.model')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $car->brand!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.active')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $car->active!!}</b></h4></td></tr>

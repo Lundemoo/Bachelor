@@ -143,7 +143,7 @@
                                             <table class="tablesmall95grey" id="brukervisning">
                                                 <br />
                                                 <tr>
-                                                    <th class="width20">{{trans('general.name')}}</th>
+                                                    <th class="width20">{{trans('general.nameLarge')}}</th>
                                                     <th class="width20">{{trans('general.tlfLarge')}}</th>
                                                     <th class="width20">{{trans('general.addressLarge')}}</th>
                                                     <th class="width30"></th>
@@ -262,7 +262,7 @@
                                                 <tr>
                                                     <th class="width20">{{trans('general.projectnameLarge')}}</th>
                                                     <th class="width20">{{trans('general.projectaddressLarge')}}</th>
-                                                    <th class="width20">{{trans('general.budgetLarge')}}</th>
+                                                    <th class="width20">{{trans('general.startTimeLarge')}}</th>
                                                     <th class="width30"></th>
                                                 </tr>
                                             </table>
@@ -278,7 +278,7 @@
                                                     <tr style="color:grey">
                                                         <td class="utlisting20"> {{$project->projectName}}</td>
                                                         <td class="utlisting20"> {{$project->projectAddress}}<br /></td>
-                                                        <td class="utlisting20"> {{$project->budget}}<br /><br /></td>
+                                                        <td class="utlisting20"> {{$project->startDate}}<br /><br /></td>
 
                                                         @if($project->active == "1")
                                                             <td class="utlisting30">

@@ -21,7 +21,7 @@
 
                                 
 
-                                <tr> <td class="understrektag"><h4><b> {{trans('general.projectId')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $project->projectID!!}</b></h4></td></tr>
+                                <tr> <td class="understrektag"><h4><b> {{trans('general.projectID')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $project->projectID!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.projectName')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $project->projectName!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.projectAddress')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $project->projectAddress!!}</b></h4></td></tr>
                                 <tr> <td class="understrektag"><h4><b> {{trans('general.budget')}}:</b></h4></td><td class="understrektag"><h4><b> {!! $project->budget!!}</b></h4></td></tr>

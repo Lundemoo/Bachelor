@@ -42,7 +42,7 @@
                                             {!! Form::label('projectName', trans('general.builderFor')) !!}
 
                                             @foreach ($arrayo as $arrayp)
-                                                <li id="listen" style="color:#324aff; font-weight: bold"> <h4 ><b>{{$arrayp}}</b></h4></li>
+                                                <li id="listen" style="font-weight: bold"> <h4 ><b>{{$arrayp}}</b></h4></li>
                                             @endforeach
                                             {!! Form::close() !!}
                                         </td> </tr>
