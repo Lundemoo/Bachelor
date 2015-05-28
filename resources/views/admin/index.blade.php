@@ -348,7 +348,7 @@ $( "#datepicker" ).datepicker();
 
                                        </table>
 
-                                    <div>
+                                    <div style="background:white; padding:0px">
 
                                                         {!! $resultatene->render()!!}
                                    
