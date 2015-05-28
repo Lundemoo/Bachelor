@@ -42,9 +42,9 @@ class PagesController extends Controller {
         
         
          
-       $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
-        $customer_list = Builder::lists('customername','customerID');
-        $company_list = Company::lists('companyname','companyid');
+       $contactperson_list = ContactPerson::where("active", "=", "1")->lists('contactname','contactpersonID');
+        $customer_list = Builder::where("active", "=", "1")->lists('customername','customerID');
+        $company_list = Company::where("active", "=", "1")->lists('companyname','companyid');
         
         $res = DB::table(DB::raw('contactpersons, companies'))->select('*')->whereRaw('contactpersons.companyID = companies.companyID')->get(); 
         $ar = array();
@@ -91,12 +91,38 @@ class PagesController extends Controller {
     $input['expectedCompletion'] = Input::get('sluttdate_submit');
     $input['customerID'] = Input::get('byggherre');
     
+    $fail = 0;
+    
+    $projectID = $input['projectID'];
+    $projectName = $input['projectName'];
+    $projectAddress = $input['projectAddress'];
+    $budget = $input['budget'];
+    $description = $input['description'];
+    $errors = Array();
+    if($projectID == "" || $projectName == "" || $projectAddress == "" || $budget == ""){
+        $fail = 1;
+        array_push($errors, "Alle felt må være utfyllt!");
+    }
+    
+    if(!is_numeric($projectID)){
+        $fail = 1;
+        array_push($errors, "Prosjekt-ID må være et nummer");
+    }
+    if(Project::find($projectID)){
+        $fail = 1;
+               array_push($errors, "Et prosjekt me denne ID'en eksisterer allerede.");
+    }
+    
     if(!isset($_POST['byggherre'])){
-         
+         $fail = 1;
+         array_push($errors, trans('general.nobuilder'));
+        
+    }
+    if($fail == 1){
      
-        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
-        $customer_list = Builder::lists('customername','customerID');
-        $company_list = Company::lists('companyname','companyid');
+        $contactperson_list = ContactPerson::where("active", "=", "1")->lists('contactname','contactpersonID');
+        $customer_list = Builder::where("active", "=", "1")->lists('customername','customerID');
+        $company_list = Company::where("active", "=", "1")->lists('companyname','companyid');
            
         
         
@@ -124,7 +150,7 @@ class PagesController extends Controller {
         
         
         
-        return view('projects.createProjectView', array('contactperson_list' => $ar,'company_list' => $company_list, 'customer_list' => $b))->withErrors(trans('general.nobuilder'));
+        return view('projects.createProjectView', array('contactperson_list' => $ar,'company_list' => $company_list, 'customer_list' => $b))->withErrors($errors);
 
     }
     
@@ -151,9 +177,9 @@ class PagesController extends Controller {
       /* liste med kontaktpersoner og firma */
      
      
-        $contactperson_list = ContactPerson::lists('contactname','contactpersonID');
-        $customer_list = Builder::lists('customername','customerID');
-        $company_list = Company::lists('companyname','companyid');
+        $contactperson_list = ContactPerson::where("active", "=", "1")->lists('contactname','contactpersonID');
+        $customer_list = Builder::where("active", "=", "1")->lists('customername','customerID');
+        $company_list = Company::where("active", "=", "1")->lists('companyname','companyid');
         
         
         /* kontaktpersoon */
@@ -192,7 +218,7 @@ class PagesController extends Controller {
     public function edit($projectID){
 
         $project = Project::findOrFail($projectID);
-        $builders = Builder::lists('customername', 'customerID');
+        $builders = Builder::where("active", "=", "1")->lists('customername', 'customerID');
 
         return view('projects.edit', compact('project'))->with('builders', $builders);
 
@@ -218,7 +244,7 @@ class PagesController extends Controller {
         $customerID = $project-> customerID;
 
             /* for å få byggherrenavn til prosjektet */
-        $arrayo = DB::table('builder')->where('customerID', $customerID)->select('customerID as customerID', 'customername as customername')->lists('customername');
+        $arrayo = DB::table('builder')->where('customerID', $customerID)->select('customerID as customerID', 'customername as customername')->where("active", "=", "1")->lists('customername');
 
         return view('projects.show', ['project'=> $project, 'arrayo' =>$arrayo]);
 

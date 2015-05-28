@@ -41,7 +41,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
 
     public function create(){
 
-        $projects = Project::lists('projectName', 'projectID');
+        $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
         $now = date('Y-m-d');
         
 $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, CURDATE() as cur"))->where('employeeNR', '=', Auth::user()->id)->whereRaw("DAY(date) = DAY('$now')")->get();
@@ -148,7 +148,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
             
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
-         $projects = Project::lists('projectName', 'projectID');
+         $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
 
         return view('timelisteprosjekter.create', array('projects' => $projects))->withErrors($feilmelding);
                 
@@ -172,7 +172,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
         \Session::flash('flash_message', Lang::get('general.timesheetSuccess'));
 
         $timelisteprosjekter = DB::table('timelisteprosjekter')->get();
-         $projects = Project::lists('projectName', 'projectID');
+         $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID');
 
         return view('timelisteprosjekter.create', array('projects' => $projects));
     }
@@ -190,7 +190,7 @@ $db = DB::table('timelisteprosjekter')->select(DB::raw("timelisteprosjekter.*, C
             $post_timeID[] = $timelisteprosjekt->ID;
         }
 */
-        $projects = Project::lists('projectName', 'projectID'); // henter alle prosjekter
+        $projects = Project::where("active", "=", "1")->lists('projectName', 'projectID'); // henter alle prosjekter
 
         return view('timelisteprosjekter.edit', compact('timelisteprosjekt'))->with('projects', $projects);
 
