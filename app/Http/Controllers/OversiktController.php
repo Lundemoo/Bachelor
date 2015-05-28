@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Project;
 use Lang;
 use App;
 use Helper;
@@ -7,6 +9,8 @@ use App\Timesheet;
 use Auth;
 use DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\Factory;
 class OversiktController extends Controller {
     
     
@@ -66,11 +70,10 @@ class OversiktController extends Controller {
             }
             
             if($antall != 0){
-            $resultatene = $resultatene->get();   
+            $resultatene = $resultatene->simplePaginate(5);
             }
             
-            
-            
+
                 $dobbel = DB::table(DB::raw("timelisteprosjekter"))->select(DB::raw("timelisteprosjekter.*, TIME_FORMAT(timelisteprosjekter.starttime, '%H:%i') as starttime, TIME_FORMAT(timelisteprosjekter.endtime, '%H:%i') as endtime, DATE_FORMAT(timelisteprosjekter.date, '%d %M, %Y') as dateshow, DATE_FORMAT(timelisteprosjekter.date, '%M') as dateshowmaned"))->whereRaw("`employeeNR` = '$minid'")->groupBy(DB::raw("MONTH(date)"))->get();
                 $sendarray = array();
                 $arrayx = array();
@@ -103,7 +106,7 @@ class OversiktController extends Controller {
             
             
             
-            
+            /* Kjørebok */
             
         } else {
             $siden = 1;
@@ -172,12 +175,13 @@ class OversiktController extends Controller {
                 
             }
             if($antallet != 0){
-            $resultatene = $resultatene->get();
+            $resultatene = $resultatene->simplePaginate(15);
+
             }
             
             return view('oversikt.index')->with('siden', $siden)->with('biler', $getallcars)->with('maneder', $getallmonths)->with('totaltimer', $sendarray)->with('resultatene', $resultatene);
         }
-        //$hei = Lang::get('general.main');
+
         
         
     }

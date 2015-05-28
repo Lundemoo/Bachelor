@@ -11,6 +11,7 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Excel;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Database\Eloquent;
 class AdminstatsController extends Controller {
     
     
@@ -197,7 +198,7 @@ class AdminstatsController extends Controller {
             
             if($antallet != 0){
                 
-            $resultatene = $resultatene->get();
+            $resultatene = $resultatene->simplePaginate(15);
             
             }
             
@@ -211,7 +212,7 @@ class AdminstatsController extends Controller {
             $months = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%c') as dateshow, DATE_FORMAT(timesheet.date, '%M') as dateshowtext"))->groupBy(DB::raw("MONTH(date)"))->get();
             
             
-            $getallprojects = DB::table("projects")->groupBy('projectID')->get();
+            $getallprojects = DB::table("projects")->groupBy('projectID')->simplePaginate(15);
             
             
             $getyears = DB::table('timesheet')->select(DB::raw("timesheet.*, DATE_FORMAT(timesheet.date, '%X') as dateshow"))->groupBy(DB::raw("YEAR(date)"))->get();

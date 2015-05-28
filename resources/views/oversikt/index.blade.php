@@ -158,8 +158,8 @@ $( "#datepicker" ).datepicker();
                                                
                                                <?PHP } ?>
                                                <br />
-                                                    
-                                                    
+
+
                                                     
                                                     
                                                     
@@ -242,10 +242,10 @@ $( "#datepicker" ).datepicker();
                                        <tr><td colspan='8' class='framvisninghoved'>{{trans('general.statistic')}}</td></tr>
                                            <tr><td class='framvisningrows' colspan='8'>{{trans('general.totalHoursMonth')}}: <?PHP echo $totalt; ?>
                                                    <br />{{trans('general.avgPerDay')}}: <?PHP if($a != 0)echo round($totalt/$a, 2); ?>
-                                               
-                                               
-                                               
-                                               
+
+
+
+
                                                
                                                
                                                
@@ -559,7 +559,7 @@ $( "#datepicker" ).datepicker();
                                     
                                     
                                     </table>
-                                   
+                        {!! $resultatene->render()!!}
                                     
                                     
                                     

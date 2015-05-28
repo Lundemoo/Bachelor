@@ -348,11 +348,11 @@ $( "#datepicker" ).datepicker();
 
                                        </table>
 
-                                    <div style="background:white; padding:0px">
+
 
                                                         {!! $resultatene->render()!!}
                                    
-                                        </div>
+
                                         
                                           <script>
                                         
