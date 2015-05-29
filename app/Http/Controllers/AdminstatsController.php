@@ -556,8 +556,8 @@ class AdminstatsController extends Controller {
             
             
             
-            Excel::create('AlleTimelisterforAnsatt', function($excel) {
-                $excel->setTitle('Timelister');
+            Excel::create('FakturaProsjekt' . Project::find($prosjekt)->projectName, function($excel) {
+                $excel->setTitle('Faktura');
             $excel->setCreator('Rune')
                 ->setCompany('Jara Bygg AS');
             $excel->setDescription('demonstrasjon timeliste export');
@@ -623,8 +623,10 @@ class AdminstatsController extends Controller {
           } else {
           $thetext .= ": " . $typeverdi;
           }
+          
           array_push($firstarray, trans('general.timesheet'));
           array_push($firstarray, $thetext);
+          
           $sheet->row($rad, $firstarray);
           
           
@@ -632,7 +634,7 @@ class AdminstatsController extends Controller {
           $rad = 2;
           $prosjekttextarray = Array();
           array_push($prosjekttextarray, "");
-          $projecttext = trans('general.project') . ": " . Project::find($prosjekt)->projectName;
+          $projecttext = trans('general.project') . ": " . Project::find($prosjekt)->projectName . ", ID: " . $prosjekt;
           array_push($prosjekttextarray, $projecttext);
          $sheet->row($rad, $prosjekttextarray);
           
@@ -1122,12 +1124,12 @@ public function export2(){
             }
             
             
-            Excel::create('AlleTimelisterforAnsatt', function($excel) {
+            Excel::create('AlleKjørebøkerforAnsatt', function($excel) {
                 
-                $excel->setTitle('Timelister');
-            $excel->setCreator('Rune')
+                $excel->setTitle('Kjørebøker');
+            $excel->setCreator('Sjef')
                 ->setCompany('Jara Bygg AS');
-            $excel->setDescription('demonstrasjon timeliste export');
+            $excel->setDescription('Kjørebok export');
 
                 $overskrift = trans('general.logbook');
                 $excel->sheet($overskrift, function($sheet)  {
@@ -1390,11 +1392,11 @@ public function export2(){
             
             
             
-            Excel::create('AlleTimelisterforAnsatt', function($excel) {
-                $excel->setTitle('Timelister');
-            $excel->setCreator('Rune')
+            Excel::create('AlleKjørebøkerforAnsatt', function($excel) {
+                $excel->setTitle('Kjørebøker');
+            $excel->setCreator('Sjef')
                 ->setCompany('Jara Bygg AS');
-            $excel->setDescription('demonstrasjon timeliste export');
+            $excel->setDescription('Kjørebøker export');
 
                 $overskrift = trans('general.logbook');
                 $excel->sheet($overskrift, function($sheet)  {
@@ -1466,7 +1468,7 @@ public function export2(){
           $rad = 2;
           $prosjekttextarray = Array();
           array_push($prosjekttextarray, "");
-          $projecttext = trans('general.project') . ": " . Project::find($prosjekt)->projectName;
+          $projecttext = trans('general.project') . ": " . Project::find($prosjekt)->projectName . ", ID: " . $prosjekt;
           array_push($prosjekttextarray, $projecttext);
          $sheet->row($rad, $prosjekttextarray);
           

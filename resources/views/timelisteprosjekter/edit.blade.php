@@ -35,12 +35,17 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('starttime', 'Start time') !!}
-                            {!! Form::text('starttime', $timelisteprosjekt->starttime, ['class' => 'form-control'] ) !!}
+                            {!! Form::text('starttime', $timelisteprosjekt->starttime, ['class' => 'timepicker'] ) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('endtime', 'Stop time') !!}
-                            {!! Form::text('endtime', $timelisteprosjekt->endtime, ['class' => 'form-control'] ) !!}
+                            {!! Form::text('endtime', $timelisteprosjekt->endtime, ['class' => 'timepicker'] ) !!}
                         </div>
+                        <div id="container"></div>
+
+<script>
+    var minimal = 0;
+    </script>
                         <div class="form-group">
                             {!! Form::label('comment', trans('general.comment')) !!}
                             {!! Form::textarea('comment', null, ['class' => 'form-control'] ) !!}

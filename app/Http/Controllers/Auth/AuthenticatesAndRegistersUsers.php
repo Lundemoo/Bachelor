@@ -5,6 +5,7 @@ use Illuminate\Contracts\Auth\Guard;
 use App\Services\Registrar;
 use App;
 use Lang;
+use App\User;
 
 trait AuthenticatesAndRegistersUsers
 {
@@ -47,6 +48,12 @@ trait AuthenticatesAndRegistersUsers
                 $request, $validator
             );
         }
+        
+        if(User::find($request['userid'])){
+            
+        return redirect($this->redirectPath());    
+        }
+        
         //Her legges brukeren til
         $this->registrar->create($request->all());
         return redirect($this->redirectPath());

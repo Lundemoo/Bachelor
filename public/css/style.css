@@ -571,5 +571,35 @@ select {
         min-width: 270px;
         font-size: 24px;
     }
+    #graph {
+        display: block;
+    }
+    #andregraf {
+        display: block;
+    }
+    input.lonn {
+        display: block;
+    }
+    
 
+}
+
+@media screen and (max-width: 800px) {
+  #graph{
+    display: none !important;
+  }
+  #andregraf {
+        display: none !important;
+    }
+    
+    #infoen {
+        display: none !important;
+    }
+    #andregrafinfo {
+        display: none !important;
+    }
+}
+
+#lagrefirma {
+    color: black;
 }

@@ -72,7 +72,7 @@ $( "#datepicker" ).datepicker();
                                         document.getElementById('gjem').style.display = "block";
                                         
                                         
-                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\"> {{trans('general.cancel')}} </a> - <input type=submit onclick=\"lagrefirma()\" value=\"Lagre\">";
+                                        document.getElementById('gjemandre').innerHTML = "<a href=\"#\" id=\"linkborte\" onclick=\"leggtil()\"> {{trans('general.cancel')}} </a> - <input type=submit id=lagrefirma onclick=\"lagrefirma()\" value=\"Lagre\">";
                                     } else {
                                         
                                         document.getElementById('gjem').style.display = "none";

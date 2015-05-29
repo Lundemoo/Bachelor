@@ -26,7 +26,7 @@ $( "#datepicker" ).datepicker();
                         <body onload="initialize()">
                         <!--fra min index blade fil -->
                         {!! Form::model($logbookaddition, ['method' =>'PATCH', 'action' =>[ 'LogbookadditionController@update', $logbookaddition->logbookadditionID ]]) !!}
-
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             {!! Form::label('projectIDs', trans('general.project')) !!} <br />
                             {!! Form::select('projectID', $projects) !!}

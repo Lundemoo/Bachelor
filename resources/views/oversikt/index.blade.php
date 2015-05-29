@@ -8,7 +8,25 @@ $(function() {
 $( "#datepicker" ).datepicker();
 });
 </script>
-
+<style>
+    
+    @media screen and (max-width: 800px) {
+  #graph{
+    display: none !important;
+  }
+  #andregraf {
+        display: none !important;
+    }
+    
+    #infoen {
+        display: none !important;
+    }
+    #andregrafinfo {
+        display: none !important;
+    }
+}
+    
+</style>
 
 <div class="container-fluid">
 	<div class="row">
@@ -63,7 +81,7 @@ $( "#datepicker" ).datepicker();
                                    
                                    <td><p id="andregrafinfo"></p></td></tr></table></td></tr>
                                                    
-                                                       <tr><td colspan="2" style="padding-left: 20px"> {{trans('general.hourPay')}} <br /><input onchange="refreshit(this.value)" type="text" name="lonn"></td></tr>
+                                                       
                                                    </table>
                                                    
                                             
